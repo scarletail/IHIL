@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+  <Cell>
+    <CellV min="1000" max="5000" value="" Avg="" dw="mV"/>
+    <CellT min="-40"  max="85"   value="" dw="℃"/>
+  </Cell>
+
+  <Pack>
+    <PackV min="0"    max="600" value="" dw="V"/>
+    <PackC min="-500" max="500" value="" dw="A"/>
+    <PackT min=""     max=""    value="" dw="℃"/>
+  </Pack>
+
+  <BMS_Mode>
+    <Initial>
+      <ToStandby     title="跳转Standby"     KL15="1" ErrorLevel="0"/>
+      <ToAfterrun    title="跳转Afterrun"    KL15="0" OBC="0"/>
+      <ToInit_Failed title="跳转Init_Failed" KL15="1" ErrorLevel="3"/>
+    </Initial>
+
+    <Standby>
+      <ToShutdown      title="跳转Shutdown"	   KL15="0" OBC="0"/>
+      <ToPre_discharge title="跳转Pre_discharge" HCU="1"  OBC="0"/>
+      <ToPre_charge    title="跳转Pre_charge"	   HCU="1"  OBC="1"/>
+      <ToError         title="跳转Error"         ErrorLevel="3"/>
+    </Standby>
+
+    <Pre_charge>
+      <Set       title="预约时间设置" time="yy-MM-dd HH:mm:ss"/>
+      <Stop      title="停止预约充电" HCU="0"/>
+      <ToStandby title="跳转Standby"  Set="0"/>
+      <ToCharge  title="跳转Charge"   Set="1"/>
+      <ToError   title="跳转Error"    ErrorLevel="3"/>
+    </Pre_charge>
+
+    <Pre_discharge>
+      <ToStandby   title="跳转Standby"   Set="0"/>
+      <ToDisCharge title="跳转Discharge" Set="1"/>
+      <ToError     title="跳转Error"     ErrorLevel="3"/>
+    </Pre_discharge>
+
+    <Charge>
+      <Start   title="正常进入充电" ErrorLevel="0" OBC="1" HCU="1"/>
+      <Stop    title="充电结束"     HCU="0" SOC.Charge.value="0.95"/>
+      <Error_1 title="充电前故障"   ErrorLevel="3" Relay="0"/>
+      <Error_2 title="充电前故障"   ErrorLevel="4" Relay="0"/>
+      <Error_3 title="充电进行中故障" KL15="1" HCU="1" ErrorLevel="3" Relay="1"/>
+      <Error_4 title="充电进行中故障" KL15="1" HCU="1" ErrorLevel="4" Relay="1"/>
+      <ToPre_charge title="跳转Pre_charge" HCU="1"/>
+      <ToError title="跳转Error" ErrorLevel="3"/>
+    </Charge>
+
+    <DisCharge>
+      <Start   title="正常进入放电" KL15="1" HCU="1"/>
+      <Error_1 title="放电前故障"   KL15="1" HCU="1" ErrorLevel="3" Relay="0"/>
+      <Error_2 title="放电前故障"   KL15="1" HCU="1" ErrorLevel="4" Relay="0"/>
+      <Error_3 title="放电进行中故障" KL15="1" HCU="1" ErrorLevel="3" Relay="1"/>
+      <Error_4 title="放电进行中故障" KL15="1" HCU="1" ErrorLevel="4" Relay="1"/>
+      <ToPre_charge title="跳转Pre_charge" HCU="1" OBC="1"/>
+      <ToShutdown   title="跳转Shutdown"   HCU="1"/>
+      <ToError title="跳转Error" ErrorLevel="3"/>
+    </DisCharge>
+
+    <Sleep>
+      <ToInitial title="跳转Initial" KL15="1"/>
+    </Sleep>
+
+    <Error>
+      <ToAfterrun title="跳转Afterrun" KL15="0" OBC="0"/>
+    </Error>
+
+    <Combination>
+      <ToDisCharge title="跳转Discharge" HCU="1"/>
+      <ToCharge    title="跳转Charge"    HCU="1"/>
+      <ToError     title="跳转Error" ErrorLevel="3"/>
+    </Combination>
+
+    <Shutdown>
+      <ToStandby  title="跳转Standby"  KL15="1" ErrorLevel="0"/>
+      <ToAfterrun title="跳转Afterrun" KL15="0" OBC="0"/>
+      <ToError    title="跳转Error" ErrorLevel="3"/>
+    </Shutdown>
+
+    <Afterrun>
+      <ToStandby title="跳转Standby" KL15="1" ErrorLevel="0"/>
+      <ToSleep   title="跳转Sleep"   KL15="0" OBC="0"/>
+    </Afterrun>
+
+    <Init_Failed>
+      <ToAfterrun title="跳转Afterrun" KL15="0" OBC="0"/>
+      <ToSleep    title="跳转Sleep"    KL15="0" OBC="0" time="3" dw="s"/>
+    </Init_Failed>
+  </BMS_Mode>
+
+  <SOX>
+    <SOC>
+      <Charge    value=""/>
+      <DisCharge value=""/>
+    </SOC>
+
+    <SOP>
+      <Charge>
+        <Start   title="SOP正常充电测试"       ErrorLevel="0" value=""/>
+        <Error_1 title="SOP充电过程中故障测试" ErrorLevel="2"/>
+        <Error_2 title="SOP充电过程中故障测试" ErrorLevel="3"/>
+        <Error_3 title="SOP充电过程中故障测试" ErrorLevel="4"/>
+      </Charge>
+
+      <DisCharge>
+        <Start   title="SOP正常放电测试"       ErrorLevel="0" value=""/>
+        <Error_1 title="SOP放电过程中故障测试" ErrorLevel="2"/>
+        <Error_2 title="SOP放电过程中故障测试" ErrorLevel="3"/>
+        <Error_3 title="SOP放电过程中故障测试" ErrorLevel="4"/>
+      </DisCharge>
+    </SOP>
+
+    <SOH>
+      <Charge    value=""/>
+      <DisCharge value=""/>
+    </SOH>
+  </SOX>
+
+  <ThermalManagement>
+    <Charge>
+      <Cold   title="冷却管理" PackT.value="PackT.max"/>
+      <Heat_1 title="匀热管理" PackT.value="" PackT.max-PackT.min="3"/>
+      <Heat_2 title="加热管理" PackT.value="PackT.min"/>
+    </Charge>
+
+    <DisCharge>
+      <Cold   title="冷却管理" PackT.value="PackT.max"/>
+      <Heat_1 title="匀热管理" PackT.value="" PackT.max-PackT.min="3"/>
+      <Heat_2 title="加热管理" PackT.value="PackT.min"/>
+    </DisCharge>
+  </ThermalManagement>
+
+  <Diagnosis>
+    <Communication>
+      <Error_1 title="BMS与电流传感器的通讯丢失" BMS_电流传感器COM="0" ErrorLevel="3"/>
+      <Error_2 title="HCU通讯丢失" HCU="0" time="500" dw="ms" ErrorLevel="3"/>
+      <Error_3 title="从控CAN总线掉线" 从控CAN="0" time="2000" dw="ms" ErrorLevel="3"/>
+      <Error_4 title="OBC通讯故障" OBC="0" time="1000" dw="ms" ErrorLevel="2"/>
+      <Error_5 title="ACU通讯丢失" ACU="0" time="500" dw="ms"  ErrorLevel="1"/>
+      <Error_6 title="AC通讯丢失"  AC="0"  time="500" dw="ms"  ErrorLevel="1"/>
+    </Communication>
+
+    <Invalid>
+      <Error_1 title="单体电压低失效" CellV.value="0.9" dw="V" ErrorLevel="3"/>
+      <Error_2 title="单体电压高失效" CellV.value="4.6" dw="V" ErrorLevel="3"/>
+      <Error_3 title="电池温度高失效" CellT.value="51" dw="℃" ErrorLevel="3"/>
+    </Invalid>
+
+    <OverVoltage>
+      <Error_1 title="单体电压过高" CellV.value="4.18" time="3" dw="s" ErrorLevel="2"/>
+      <Error_2 title="单体电压过高" CellV.value="4.20" time="3" dw="s" ErrorLevel="3"/>
+    </OverVoltage>
+
+    <UnderVoltage>
+      <Error_1 title="单体电压过低" CellV.value="3.0" time="3" dw="s" ErrorLevel="2"/>
+      <Error_2 title="单体电压过低" CellV.value="2.6" time="3" dw="s" ErrorLevel="3"/>
+    </UnderVoltage>
+
+    <OverTemperature>
+      <Error_1 title="电池包温度过高" PackT.value="46" time="5" dw="s" ErrorLevel="2"/>
+      <Error_2 title="电池包温度过高" PackT.value="56" time="5" dw="s" ErrorLevel="3"/>
+    </OverTemperature>
+
+    <UnderTemperature>
+      <Error_1 title="电池包温度过低" PackT.value="-36" time="10" dw="s" ErrorLevel="2"/>
+      <Error_2 title="电池包温度过低" PackT.value="-40" time="10" dw="s" ErrorLevel="3"/>
+    </UnderTemperature>
+
+    <VoltageDifference>
+      <Error_1 title="单体电压之间差距过大" CellV.max-CellV.min="150" time="10" dw="s" ErrorLevel="1"/>
+      <Error_2 title="单体电压之间差距过大" CellV.max-CellV.min="400" time="10" dw="s" ErrorLevel="1"/>
+    </VoltageDifference>
+
+    <TemperatureDifference>
+      <Error_1 title="电池包内温差过大" CellT.max-CellT.min="8" time="10" dw="s" ErrorLevel="1"/>
+    </TemperatureDifference>
+
+    <TotalVoltage>
+      <Error_1 title="电池包总压过压" PackV.value="350.7" time="3" dw="s"    ErrorLevel="2"/>
+      <Error_2 title="电池包总压过压" PackV.value="361.0" time="500" dw="ms" ErrorLevel="3"/>
+      <Error_3 title="电池包总压欠压" PackV.value="260"   time="3" dw="s"    ErrorLevel="2"/>
+      <Error_4 title="电池包总压欠压" PackV.value="165"   time="500" dw="ms" ErrorLevel="3"/>
+    </TotalVoltage>
+
+    <InsulationFailure>
+      <Error_1 title="电池包绝缘故障"   BMS_Mode="Standby"   value="200" dw="kΩ" ErrorLevel="1"/>
+      <Error_2 title="高压母线绝缘故障" BMS_Mode="DisCharge" value="200" dw="kΩ" ErrorLevel="1"/>
+    </InsulationFailure>
+
+    <Other>
+      <Mode_1 title="充电回路预充超时" time="Pre_charge.Set.time" ErrorLevel="3"/>
+      <Mode_2 title="功率超出" PackP="(PackV.max*PackC.max)+0.1" time="1000" dw="ms" ErrorLevel="1"/>
+      <Mode_3 title="电池SOC过低" SOC.Discharge.value="0.05" time="2" dw="s" ErrorLevel="2"/>
+      <Mode_4 title="电池SOC过高" SOC.Charge.value="0.99"    time="2" dw="s" ErrorLevel="2"/>
+      <Mode_5 title="碰撞信号" BMS_Mode="Shutdown" time="240" dw="ms" ErrorLevel="4"/>
+    </Other>
+  </Diagnosis>
+
+  <ErrorManagement>
+    <Level_1 title="注入1级故障" ErrorLevel="1" errorcode=""/>
+    <Level_2 title="注入2级故障" ErrorLevel="2" errorcode=""/>
+    <Level_3 title="注入3级故障" ErrorLevel="3" errorcode=""/>
+    <Level_4 title="注入4级故障" ErrorLevel="4" errorcode=""/>
+  </ErrorManagement>
+
+  <Balance>
+    <Start title="开启均衡" BMS_Mode="Charge" CellT.max="46" CellT.min="-8" PackC.value="12" CellV.value="3980" CellV.value-CellV.avg="40"/>
+  </Balance>
+
+  <SoftUpdate>
+    <Bootloader title="Bootloader升级" CANoe="1" BootloaderFile=""/>
+    <APP        title="App升级" CAN="1" BaudRate="500" dw="k" AppFile=""/>
+  </SoftUpdate>
+
+  <LowVoltageElectric>
+    <Mode_1 title="长期过压测试"  BMS_Mode="Charge" BMS_Voltage="18" time="60" dw="min"/>
+    <Mode_2 title="长期欠压测试"  BMS_Mode="Charge" BMS_Voltage="9"  time="60" dw="min"/>
+    <Mode_3 title="电压缓升缓降1" BMS_Voltage="12" DletaV="1" time="5" dw="s" LB="5"/>
+    <Mode_4 title="电压缓升缓降2" BMS_Voltage="5"  DletaV="1" time="5" dw="s" UB="12"/>
+    <Mode_5 title="电压缓降快升"  BMS_Voltage="12" time="5" dw="min" LB="9" UB="18"/>
+    <Mode_6 title="供电电压瞬间下降" BMS_Voltage="12" time="1" dw="s" LB="2"/>
+  </LowVoltageElectric>
+</Root>

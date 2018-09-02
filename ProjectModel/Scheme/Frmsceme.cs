@@ -23,6 +23,7 @@ namespace Scheme
         /// 方案的顶级路径
         /// </summary>
         private string schemeTopPath = "";
+        string fileUrl = null;
         public Frmsceme()
         {
             InitializeComponent();
@@ -69,7 +70,8 @@ namespace Scheme
             //add folders
             FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
             folderBrowserDialog.ShowNewFolderButton = true;
-            folderBrowserDialog.SelectedPath = schemeTopPath;
+            //set the default folder path
+            //folderBrowserDialog.SelectedPath = schemeTopPath;
             folderBrowserDialog.ShowDialog();
             string path = folderBrowserDialog.SelectedPath;
             if (path != null)
@@ -95,7 +97,7 @@ namespace Scheme
             foreach (FileInfo childFile in TheFolder.GetFiles())
             {
                 TreeListNode fileNode = this.treeFile.AppendNode(null, null);
-                fileNode.Tag = childFile.FullName; 
+                fileNode.Tag = childFile.FullName;
                 //add node tag to bulid assosication between the filenode and the filepath
                 fileNode.SetValue(this.treeFile.Columns["FileName"], childFile.Name);
             }
@@ -185,14 +187,36 @@ namespace Scheme
 
         private void treeClass_FocusedNodeChanged(object sender, FocusedNodeChangedEventArgs e)
         {
-            Console.WriteLine("FocusNodeChanged function is being called!");
             treeFile.ClearNodes();
-            TreeListNode node = treeClass.FocusedNode;
-            if (node.Tag == null) return;
-            string path = node.Tag.ToString();
-            treeFile.AppendNode("begin", null);
-            TraverseFile(path);
-            treeFile.AppendNode("end", null);
+            try
+            {
+                TreeListNode node = treeClass.FocusedNode;
+                if (node.Tag == null) return;
+                string path = node.Tag.ToString();
+                treeFile.AppendNode("begin", null);
+                TraverseFile(path);
+                treeFile.AppendNode("end", null);
+            }
+            catch (System.NullReferenceException)
+            {
+                Console.WriteLine("System.NullReferenceException has occured!");
+            }
+        }
+
+        private void treeFile_FocusedNodeChanged(object sender, FocusedNodeChangedEventArgs e)
+        {
+            try
+            {
+                TreeListNode fnode = treeFile.FocusedNode;
+                if (fnode.Tag == null) return;
+                fileUrl = fnode.Tag.ToString();
+            }
+            catch (System.NullReferenceException)
+            {
+                Console.WriteLine("System.NullReferenceException has occured!");
+                return;
+            }
+            
         }
     }
 }

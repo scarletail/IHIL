@@ -308,7 +308,6 @@ F:\GitSync\IHIL\ProjectModel\Scheme\bin\Debug\de\DevExpress.XtraTreeList.v18.1.r
 F:\GitSync\IHIL\ProjectModel\Scheme\bin\Debug\es\DevExpress.XtraTreeList.v18.1.resources.dll
 F:\GitSync\IHIL\ProjectModel\Scheme\bin\Debug\ja\DevExpress.XtraTreeList.v18.1.resources.dll
 F:\GitSync\IHIL\ProjectModel\Scheme\bin\Debug\ru\DevExpress.XtraTreeList.v18.1.resources.dll
-F:\GitSync\IHIL\ProjectModel\Scheme\obj\Debug\Scheme.csprojAssemblyReference.cache
 F:\GitSync\IHIL\ProjectModel\Scheme\obj\Debug\Scheme.Frmsceme.resources
 F:\GitSync\IHIL\ProjectModel\Scheme\obj\Debug\Scheme.Properties.Resources.resources
 F:\GitSync\IHIL\ProjectModel\Scheme\obj\Debug\Scheme.csproj.GenerateResource.cache

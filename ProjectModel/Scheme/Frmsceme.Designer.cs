@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmsceme));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmsceme));
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.scemePanel = new System.Windows.Forms.Panel();
             this.gbScheme = new System.Windows.Forms.GroupBox();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.btnReName = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelClass = new DevExpress.XtraEditors.SimpleButton();
             this.btnAddclass = new DevExpress.XtraEditors.SimpleButton();
             this.treeFile = new DevExpress.XtraTreeList.TreeList();
@@ -128,7 +128,7 @@
             this.buttonEdit1 = new DevExpress.XtraEditors.ButtonEdit();
             this.buttonEdit2 = new DevExpress.XtraEditors.ButtonEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.tabNNarmalTest = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.tabNNormalTest = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.groupControl7 = new DevExpress.XtraEditors.GroupControl();
@@ -231,7 +231,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.NettextEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit2.Properties)).BeginInit();
-            this.tabNNarmalTest.SuspendLayout();
+            this.tabNNormalTest.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).BeginInit();
@@ -294,9 +294,9 @@
             this.gbScheme.Controls.Add(this.treeFile);
             this.gbScheme.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbScheme.Location = new System.Drawing.Point(0, 238);
-            this.gbScheme.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbScheme.Margin = new System.Windows.Forms.Padding(2);
             this.gbScheme.Name = "gbScheme";
-            this.gbScheme.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbScheme.Padding = new System.Windows.Forms.Padding(2);
             this.gbScheme.Size = new System.Drawing.Size(268, 312);
             this.gbScheme.TabIndex = 27;
             this.gbScheme.TabStop = false;
@@ -328,17 +328,6 @@
             this.btnReName.TabIndex = 9;
             this.btnReName.Text = "Rename";
             // 
-            // simpleButton4
-            // 
-            this.simpleButton4.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton4.Appearance.Options.UseFont = true;
-            this.simpleButton4.Location = new System.Drawing.Point(98, 6);
-            this.simpleButton4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(51, 26);
-            this.simpleButton4.TabIndex = 8;
-            this.simpleButton4.Text = "Save as";
-            // 
             // simpleButton2
             // 
             this.simpleButton2.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -349,6 +338,17 @@
             this.simpleButton2.Size = new System.Drawing.Size(60, 26);
             this.simpleButton2.TabIndex = 6;
             this.simpleButton2.Text = "Save";
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton4.Appearance.Options.UseFont = true;
+            this.simpleButton4.Location = new System.Drawing.Point(98, 6);
+            this.simpleButton4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(51, 26);
+            this.simpleButton4.TabIndex = 8;
+            this.simpleButton4.Text = "Save as";
             // 
             // btnDelClass
             // 
@@ -393,6 +393,7 @@
             this.treeFile.Size = new System.Drawing.Size(263, 251);
             this.treeFile.TabIndex = 28;
             this.treeFile.TreeLevelWidth = 13;
+            this.treeFile.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.treeFile_FocusedNodeChanged);
             // 
             // FileName
             // 
@@ -408,7 +409,7 @@
             // 
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter1.Location = new System.Drawing.Point(0, 236);
-            this.splitter1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitter1.Margin = new System.Windows.Forms.Padding(2);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(268, 2);
             this.splitter1.TabIndex = 26;
@@ -420,9 +421,9 @@
             this.GbFolder.Controls.Add(this.panel2);
             this.GbFolder.Dock = System.Windows.Forms.DockStyle.Top;
             this.GbFolder.Location = new System.Drawing.Point(0, 0);
-            this.GbFolder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GbFolder.Margin = new System.Windows.Forms.Padding(2);
             this.GbFolder.Name = "GbFolder";
-            this.GbFolder.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GbFolder.Padding = new System.Windows.Forms.Padding(2);
             this.GbFolder.Size = new System.Drawing.Size(268, 236);
             this.GbFolder.TabIndex = 0;
             this.GbFolder.TabStop = false;
@@ -472,7 +473,7 @@
             this.panel2.Controls.Add(this.addFolder);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(2, 17);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(264, 41);
             this.panel2.TabIndex = 1;
@@ -480,7 +481,7 @@
             // delFolder
             // 
             this.delFolder.Location = new System.Drawing.Point(94, 7);
-            this.delFolder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.delFolder.Margin = new System.Windows.Forms.Padding(2);
             this.delFolder.Name = "delFolder";
             this.delFolder.Size = new System.Drawing.Size(106, 29);
             this.delFolder.TabIndex = 1;
@@ -491,7 +492,7 @@
             // addFolder
             // 
             this.addFolder.Location = new System.Drawing.Point(7, 6);
-            this.addFolder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addFolder.Margin = new System.Windows.Forms.Padding(2);
             this.addFolder.Name = "addFolder";
             this.addFolder.Size = new System.Drawing.Size(82, 29);
             this.addFolder.TabIndex = 0;
@@ -505,17 +506,17 @@
             this.tabPane1.Controls.Add(this.tabNCAN);
             this.tabPane1.Controls.Add(this.tabNCOM);
             this.tabPane1.Controls.Add(this.tabNETH);
-            this.tabPane1.Controls.Add(this.tabNNarmalTest);
+            this.tabPane1.Controls.Add(this.tabNNormalTest);
             this.tabPane1.Controls.Add(this.tabNavigationPage1);
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabPane1.Location = new System.Drawing.Point(268, 0);
-            this.tabPane1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPane1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNCAN,
             this.tabNCOM,
             this.tabNETH,
-            this.tabNNarmalTest,
+            this.tabNNormalTest,
             this.tabNavigationPage1});
             this.tabPane1.RegularSize = new System.Drawing.Size(1080, 582);
             this.tabPane1.SelectedPage = this.tabNETH;
@@ -529,7 +530,7 @@
             this.tabNCAN.Controls.Add(this.panel8);
             this.tabNCAN.ImageOptions.ImageUri.Uri = "New";
             this.tabNCAN.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.tabNCAN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabNCAN.Margin = new System.Windows.Forms.Padding(2);
             this.tabNCAN.Name = "tabNCAN";
             this.tabNCAN.PageText = "CAN";
             this.tabNCAN.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
@@ -902,7 +903,7 @@
             this.tabNCOM.Controls.Add(this.panel7);
             this.tabNCOM.ImageOptions.ImageUri.Uri = "New";
             this.tabNCOM.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.Text;
-            this.tabNCOM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabNCOM.Margin = new System.Windows.Forms.Padding(2);
             this.tabNCOM.Name = "tabNCOM";
             this.tabNCOM.PageText = "COM";
             this.tabNCOM.PageVisible = false;
@@ -1332,7 +1333,7 @@
             this.tabNETH.Controls.Add(this.panel6);
             this.tabNETH.ImageOptions.ImageUri.Uri = "New";
             this.tabNETH.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.tabNETH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabNETH.Margin = new System.Windows.Forms.Padding(2);
             this.tabNETH.Name = "tabNETH";
             this.tabNETH.PageText = "Etherne";
             this.tabNETH.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
@@ -1509,20 +1510,20 @@
             this.labelControl5.TabIndex = 40;
             this.labelControl5.Text = "PORT";
             // 
-            // tabNNarmalTest
+            // tabNNormalTest
             // 
-            this.tabNNarmalTest.Caption = "NormalTest";
-            this.tabNNarmalTest.Controls.Add(this.panel4);
-            this.tabNNarmalTest.Controls.Add(this.splitter2);
-            this.tabNNarmalTest.Controls.Add(this.panel1);
-            this.tabNNarmalTest.ImageOptions.ImageUri.Uri = "New";
-            this.tabNNarmalTest.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.tabNNarmalTest.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabNNarmalTest.Name = "tabNNarmalTest";
-            this.tabNNarmalTest.PageText = "NarmalTest";
-            this.tabNNarmalTest.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.tabNNarmalTest.Size = new System.Drawing.Size(1080, 536);
-            this.tabNNarmalTest.Paint += new System.Windows.Forms.PaintEventHandler(this.tabNNarmalTest_Paint);
+            this.tabNNormalTest.Caption = "NormalTest";
+            this.tabNNormalTest.Controls.Add(this.panel4);
+            this.tabNNormalTest.Controls.Add(this.splitter2);
+            this.tabNNormalTest.Controls.Add(this.panel1);
+            this.tabNNormalTest.ImageOptions.ImageUri.Uri = "New";
+            this.tabNNormalTest.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
+            this.tabNNormalTest.Margin = new System.Windows.Forms.Padding(2);
+            this.tabNNormalTest.Name = "tabNNormalTest";
+            this.tabNNormalTest.PageText = "NarmalTest";
+            this.tabNNormalTest.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
+            this.tabNNormalTest.Size = new System.Drawing.Size(1080, 536);
+            this.tabNNormalTest.Paint += new System.Windows.Forms.PaintEventHandler(this.tabNNarmalTest_Paint);
             // 
             // panel4
             // 
@@ -1531,7 +1532,7 @@
             this.panel4.Controls.Add(this.panel3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(580, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(500, 536);
             this.panel4.TabIndex = 28;
@@ -1543,7 +1544,7 @@
             this.panel9.Controls.Add(this.groupControl1);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(0, 262);
-            this.panel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(500, 274);
             this.panel9.TabIndex = 29;
@@ -1554,7 +1555,7 @@
             this.groupControl7.Controls.Add(this.gridControl7);
             this.groupControl7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl7.Location = new System.Drawing.Point(302, 0);
-            this.groupControl7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupControl7.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl7.Name = "groupControl7";
             this.groupControl7.Size = new System.Drawing.Size(198, 274);
             this.groupControl7.TabIndex = 35;
@@ -1565,7 +1566,7 @@
             this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button14.ContextMenuStrip = this.contextMenuStripResult;
             this.button14.Location = new System.Drawing.Point(-748, -261);
-            this.button14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button14.Margin = new System.Windows.Forms.Padding(2);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(53, 21);
             this.button14.TabIndex = 11;
@@ -1632,7 +1633,7 @@
             // splitter6
             // 
             this.splitter6.Location = new System.Drawing.Point(298, 0);
-            this.splitter6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitter6.Margin = new System.Windows.Forms.Padding(2);
             this.splitter6.Name = "splitter6";
             this.splitter6.Size = new System.Drawing.Size(4, 274);
             this.splitter6.TabIndex = 34;
@@ -1644,7 +1645,7 @@
             this.groupControl1.Controls.Add(this.gridControl2);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(298, 274);
             this.groupControl1.TabIndex = 0;
@@ -1655,7 +1656,7 @@
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button4.ContextMenuStrip = this.contextMenuStripResult;
             this.button4.Location = new System.Drawing.Point(236, -262);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(53, 21);
             this.button4.TabIndex = 11;
@@ -1708,7 +1709,7 @@
             // 
             this.splitter3.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter3.Location = new System.Drawing.Point(0, 254);
-            this.splitter3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitter3.Margin = new System.Windows.Forms.Padding(2);
             this.splitter3.Name = "splitter3";
             this.splitter3.Size = new System.Drawing.Size(500, 8);
             this.splitter3.TabIndex = 28;
@@ -1721,7 +1722,7 @@
             this.panel3.Controls.Add(this.groupControl4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(500, 254);
             this.panel3.TabIndex = 31;
@@ -1729,7 +1730,7 @@
             // splitter4
             // 
             this.splitter4.Location = new System.Drawing.Point(298, 0);
-            this.splitter4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitter4.Margin = new System.Windows.Forms.Padding(2);
             this.splitter4.Name = "splitter4";
             this.splitter4.Size = new System.Drawing.Size(4, 254);
             this.splitter4.TabIndex = 33;
@@ -1741,7 +1742,7 @@
             this.groupControl2.Controls.Add(this.gridControl1);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(298, 0);
-            this.groupControl2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupControl2.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(202, 254);
             this.groupControl2.TabIndex = 31;
@@ -1752,7 +1753,7 @@
             this.buttonCmdSet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCmdSet.ContextMenuStrip = this.contextMenuStripResult;
             this.buttonCmdSet.Location = new System.Drawing.Point(-738, 0);
-            this.buttonCmdSet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonCmdSet.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCmdSet.Name = "buttonCmdSet";
             this.buttonCmdSet.Size = new System.Drawing.Size(53, 21);
             this.buttonCmdSet.TabIndex = 10;
@@ -1762,9 +1763,9 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode3.RelationName = "Level1";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode3});
             this.gridControl1.Location = new System.Drawing.Point(2, 21);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -1800,7 +1801,7 @@
             this.groupControl4.Controls.Add(this.gridControl4);
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupControl4.Location = new System.Drawing.Point(0, 0);
-            this.groupControl4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupControl4.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl4.Name = "groupControl4";
             this.groupControl4.Size = new System.Drawing.Size(298, 254);
             this.groupControl4.TabIndex = 32;
@@ -1811,7 +1812,7 @@
             this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button8.ContextMenuStrip = this.contextMenuStripResult;
             this.button8.Location = new System.Drawing.Point(242, -1);
-            this.button8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button8.Margin = new System.Windows.Forms.Padding(2);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(53, 21);
             this.button8.TabIndex = 10;
@@ -1853,7 +1854,7 @@
             // splitter2
             // 
             this.splitter2.Location = new System.Drawing.Point(576, 0);
-            this.splitter2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitter2.Margin = new System.Windows.Forms.Padding(2);
             this.splitter2.Name = "splitter2";
             this.splitter2.Size = new System.Drawing.Size(4, 536);
             this.splitter2.TabIndex = 27;
@@ -1867,7 +1868,7 @@
             this.panel1.Controls.Add(this.panel11);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(576, 536);
             this.panel1.TabIndex = 0;
@@ -1882,7 +1883,7 @@
             this.groupControl6.Controls.Add(this.gridControl6);
             this.groupControl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl6.Location = new System.Drawing.Point(284, 0);
-            this.groupControl6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupControl6.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl6.Name = "groupControl6";
             this.groupControl6.Size = new System.Drawing.Size(292, 472);
             this.groupControl6.TabIndex = 29;
@@ -1893,7 +1894,7 @@
             this.button16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button16.Image = ((System.Drawing.Image)(resources.GetObject("button16.Image")));
             this.button16.Location = new System.Drawing.Point(267, -64);
-            this.button16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button16.Margin = new System.Windows.Forms.Padding(2);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(22, 21);
             this.button16.TabIndex = 16;
@@ -1904,7 +1905,7 @@
             this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button10.Image = global::Scheme.Properties.Resources.down;
             this.button10.Location = new System.Drawing.Point(243, -64);
-            this.button10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button10.Margin = new System.Windows.Forms.Padding(2);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(22, 21);
             this.button10.TabIndex = 14;
@@ -1915,7 +1916,7 @@
             this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button11.Image = global::Scheme.Properties.Resources.up1;
             this.button11.Location = new System.Drawing.Point(217, -64);
-            this.button11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button11.Margin = new System.Windows.Forms.Padding(2);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(22, 21);
             this.button11.TabIndex = 13;
@@ -1926,7 +1927,7 @@
             this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button12.Image = global::Scheme.Properties.Resources.minus;
             this.button12.Location = new System.Drawing.Point(190, -64);
-            this.button12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button12.Margin = new System.Windows.Forms.Padding(2);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(22, 21);
             this.button12.TabIndex = 12;
@@ -1937,7 +1938,7 @@
             this.button13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button13.Image = global::Scheme.Properties.Resources._;
             this.button13.Location = new System.Drawing.Point(166, -64);
-            this.button13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button13.Margin = new System.Windows.Forms.Padding(2);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(22, 21);
             this.button13.TabIndex = 11;
@@ -1946,9 +1947,9 @@
             // gridControl6
             // 
             this.gridControl6.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode3.RelationName = "Level1";
+            gridLevelNode1.RelationName = "Level1";
             this.gridControl6.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode3});
+            gridLevelNode1});
             this.gridControl6.Location = new System.Drawing.Point(2, 21);
             this.gridControl6.MainView = this.gridView6;
             this.gridControl6.Name = "gridControl6";
@@ -1992,7 +1993,7 @@
             // splitter5
             // 
             this.splitter5.Location = new System.Drawing.Point(280, 0);
-            this.splitter5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitter5.Margin = new System.Windows.Forms.Padding(2);
             this.splitter5.Name = "splitter5";
             this.splitter5.Size = new System.Drawing.Size(4, 472);
             this.splitter5.TabIndex = 28;
@@ -2008,7 +2009,7 @@
             this.groupControl3.Controls.Add(this.gridControl3);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupControl3.Location = new System.Drawing.Point(0, 0);
-            this.groupControl3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupControl3.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(280, 472);
             this.groupControl3.TabIndex = 7;
@@ -2019,7 +2020,7 @@
             this.button15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button15.Image = ((System.Drawing.Image)(resources.GetObject("button15.Image")));
             this.button15.Location = new System.Drawing.Point(256, -64);
-            this.button15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button15.Margin = new System.Windows.Forms.Padding(2);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(22, 21);
             this.button15.TabIndex = 15;
@@ -2030,7 +2031,7 @@
             this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button7.Image = global::Scheme.Properties.Resources.down;
             this.button7.Location = new System.Drawing.Point(230, -64);
-            this.button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(22, 21);
             this.button7.TabIndex = 14;
@@ -2041,7 +2042,7 @@
             this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button6.Image = global::Scheme.Properties.Resources.up1;
             this.button6.Location = new System.Drawing.Point(205, -64);
-            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(22, 21);
             this.button6.TabIndex = 13;
@@ -2052,7 +2053,7 @@
             this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button5.Image = global::Scheme.Properties.Resources.minus;
             this.button5.Location = new System.Drawing.Point(179, -64);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(22, 21);
             this.button5.TabIndex = 12;
@@ -2063,7 +2064,7 @@
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.Image = global::Scheme.Properties.Resources._;
             this.button3.Location = new System.Drawing.Point(154, -64);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(22, 21);
             this.button3.TabIndex = 11;
@@ -2118,7 +2119,7 @@
             this.panel11.Controls.Add(this.richTextBox1);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel11.Location = new System.Drawing.Point(0, 472);
-            this.panel11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel11.Margin = new System.Windows.Forms.Padding(2);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(576, 64);
             this.panel11.TabIndex = 6;
@@ -2128,7 +2129,7 @@
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(576, 64);
             this.richTextBox1.TabIndex = 0;
@@ -2140,11 +2141,11 @@
             this.tabNavigationPage1.Controls.Add(this.groupControl5);
             this.tabNavigationPage1.ImageOptions.ImageUri.Uri = "New";
             this.tabNavigationPage1.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.tabNavigationPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabNavigationPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
             this.tabNavigationPage1.PageText = "Warn";
             this.tabNavigationPage1.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.tabNavigationPage1.Size = new System.Drawing.Size(1080, 536);
+            this.tabNavigationPage1.Size = new System.Drawing.Size(1080, 582);
             // 
             // groupControl5
             // 
@@ -2152,9 +2153,9 @@
             this.groupControl5.Controls.Add(this.gridControl5);
             this.groupControl5.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupControl5.Location = new System.Drawing.Point(0, 0);
-            this.groupControl5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupControl5.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(509, 536);
+            this.groupControl5.Size = new System.Drawing.Size(509, 582);
             this.groupControl5.TabIndex = 33;
             this.groupControl5.Text = "Init";
             // 
@@ -2163,7 +2164,7 @@
             this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button9.ContextMenuStrip = this.contextMenuStripResult;
             this.button9.Location = new System.Drawing.Point(447, 0);
-            this.button9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(53, 21);
             this.button9.TabIndex = 10;
@@ -2176,7 +2177,7 @@
             this.gridControl5.Location = new System.Drawing.Point(2, 21);
             this.gridControl5.MainView = this.gridView5;
             this.gridControl5.Name = "gridControl5";
-            this.gridControl5.Size = new System.Drawing.Size(505, 513);
+            this.gridControl5.Size = new System.Drawing.Size(505, 559);
             this.gridControl5.TabIndex = 8;
             this.gridControl5.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView5});
@@ -2209,7 +2210,7 @@
             this.toolboxControl1.Cursor = System.Windows.Forms.Cursors.Default;
             this.toolboxControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.toolboxControl1.Location = new System.Drawing.Point(0, 0);
-            this.toolboxControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.toolboxControl1.Margin = new System.Windows.Forms.Padding(2);
             this.toolboxControl1.Name = "toolboxControl1";
             this.toolboxControl1.OptionsMinimizing.NormalWidth = 268;
             this.toolboxControl1.OptionsView.ShowMenuButton = false;
@@ -2241,7 +2242,7 @@
             this.ClientSize = new System.Drawing.Size(1348, 582);
             this.Controls.Add(this.tabPane1);
             this.Controls.Add(this.toolboxControl1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Frmsceme";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Scheme Edit";
@@ -2286,7 +2287,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.NettextEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit2.Properties)).EndInit();
-            this.tabNNarmalTest.ResumeLayout(false);
+            this.tabNNormalTest.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).EndInit();
@@ -2431,7 +2432,7 @@
         private System.Windows.Forms.GroupBox gbScheme;
         private DevExpress.XtraTreeList.TreeList treeClass;
         private DevExpress.XtraTreeList.Columns.TreeListColumn FolderName;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNNarmalTest;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNNormalTest;
         private DevExpress.XtraToolbox.ToolboxControl toolboxControl1;
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
