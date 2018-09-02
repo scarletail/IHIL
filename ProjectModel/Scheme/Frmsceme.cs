@@ -36,10 +36,7 @@ namespace Scheme
         void TraverseFolder(TreeListNode ParentNode)
         {
             //overwrite the logic of function   
-            object O = treeClass.GetDataRecordByNode(ParentNode);
-            string path = O['FullName'];
-            DirectoryInfo DirInfo = (DirectoryInfo)treeClass.GetDataRecordByNode(ParentNode); //文件夹信息
-            
+            DirectoryInfo DirInfo = new DirectoryInfo(treeClass.GetDataRecordByNode(ParentNode).ToString()); //文件夹信息
             if (!DirInfo.Exists) return;
             foreach (DirectoryInfo childFolder in DirInfo.GetDirectories())//获取文件夹的子文件夹
             {
