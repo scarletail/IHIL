@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmsceme));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmsceme));
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             this.scemePanel = new System.Windows.Forms.Panel();
             this.gbScheme = new System.Windows.Forms.GroupBox();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
@@ -327,6 +327,7 @@
             this.btnReName.Size = new System.Drawing.Size(50, 26);
             this.btnReName.TabIndex = 9;
             this.btnReName.Text = "Rename";
+            this.btnReName.Click += new System.EventHandler(this.btnReName_Click);
             // 
             // simpleButton2
             // 
@@ -349,6 +350,7 @@
             this.simpleButton4.Size = new System.Drawing.Size(51, 26);
             this.simpleButton4.TabIndex = 8;
             this.simpleButton4.Text = "Save as";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // btnDelClass
             // 
@@ -360,6 +362,7 @@
             this.btnDelClass.Size = new System.Drawing.Size(46, 26);
             this.btnDelClass.TabIndex = 5;
             this.btnDelClass.Text = "Del";
+            this.btnDelClass.Click += new System.EventHandler(this.btnDelClass_Click);
             // 
             // btnAddclass
             // 
@@ -371,6 +374,7 @@
             this.btnAddclass.Size = new System.Drawing.Size(45, 26);
             this.btnAddclass.TabIndex = 4;
             this.btnAddclass.Text = "&Add";
+            this.btnAddclass.Click += new System.EventHandler(this.btnAddclass_Click);
             // 
             // treeFile
             // 
@@ -384,7 +388,7 @@
             this.treeFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.treeFile.MinWidth = 16;
             this.treeFile.Name = "treeFile";
-            this.treeFile.OptionsBehavior.Editable = false;
+            this.treeFile.OptionsBehavior.EditorShowMode = DevExpress.XtraTreeList.TreeListEditorShowMode.DoubleClick;
             this.treeFile.OptionsClipboard.AllowCopy = DevExpress.Utils.DefaultBoolean.True;
             this.treeFile.OptionsClipboard.CopyNodeHierarchy = DevExpress.Utils.DefaultBoolean.True;
             this.treeFile.OptionsView.ShowColumns = false;
@@ -394,6 +398,7 @@
             this.treeFile.TabIndex = 28;
             this.treeFile.TreeLevelWidth = 13;
             this.treeFile.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.treeFile_FocusedNodeChanged);
+            this.treeFile.HiddenEditor += new System.EventHandler(this.treeFile_HiddenEditor);
             // 
             // FileName
             // 
@@ -1337,7 +1342,7 @@
             this.tabNETH.Name = "tabNETH";
             this.tabNETH.PageText = "Etherne";
             this.tabNETH.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.tabNETH.Size = new System.Drawing.Size(1080, 536);
+            this.tabNETH.Size = new System.Drawing.Size(1080, 582);
             // 
             // panel6
             // 
@@ -1359,7 +1364,7 @@
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1080, 536);
+            this.panel6.Size = new System.Drawing.Size(1080, 582);
             this.panel6.TabIndex = 59;
             // 
             // label9
@@ -1520,7 +1525,7 @@
             this.tabNNormalTest.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             this.tabNNormalTest.Margin = new System.Windows.Forms.Padding(2);
             this.tabNNormalTest.Name = "tabNNormalTest";
-            this.tabNNormalTest.PageText = "NarmalTest";
+            this.tabNNormalTest.PageText = "NormalTest";
             this.tabNNormalTest.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             this.tabNNormalTest.Size = new System.Drawing.Size(1080, 536);
             this.tabNNormalTest.Paint += new System.Windows.Forms.PaintEventHandler(this.tabNNarmalTest_Paint);
@@ -1763,9 +1768,9 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode3.RelationName = "Level1";
+            gridLevelNode1.RelationName = "Level1";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode3});
+            gridLevelNode1});
             this.gridControl1.Location = new System.Drawing.Point(2, 21);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -1947,9 +1952,9 @@
             // gridControl6
             // 
             this.gridControl6.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.gridControl6.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.gridControl6.Location = new System.Drawing.Point(2, 21);
             this.gridControl6.MainView = this.gridView6;
             this.gridControl6.Name = "gridControl6";
