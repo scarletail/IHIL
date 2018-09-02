@@ -20,14 +20,9 @@ namespace Scheme
         /// <summary>
         /// 方案的顶级路径
         /// </summary>
-        private string schemeTopPath="";
-        List<string> foldersNameList;
-        List<string> foldersUrlList;
-        List<string> filesNameList;
-        List<string> filesUrlLsit;
+        private string schemeTopPath = "";
         public Frmsceme()
         {
-            
             InitializeComponent();
             schemeTopPath = Application.StartupPath + @"\category";
         }
@@ -37,16 +32,21 @@ namespace Scheme
         /// 遍历文件夹
         /// </summary>
         /// <param name="filepath"></param>
-        /// <param name="treelist"></param>
-        void TraverseFolder(string filepath, TreeListNode treelist = null)
+        /// <param name="ParentNode"></param>
+        void TraverseFolder(TreeListNode ParentNode)
         {
-            DirectoryInfo TheFolder = new DirectoryInfo(filepath); //文件夹信息
-            if (!TheFolder.Exists) return;
-            foreach (DirectoryInfo childFolder  in TheFolder.GetDirectories())//获取文件夹的子文件夹
+            //overwrite the logic of function   
+            object O = treeClass.GetDataRecordByNode(ParentNode);
+            string path = O['FullName'];
+            DirectoryInfo DirInfo = (DirectoryInfo)treeClass.GetDataRecordByNode(ParentNode); //文件夹信息
+            
+            if (!DirInfo.Exists) return;
+            foreach (DirectoryInfo childFolder in DirInfo.GetDirectories())//获取文件夹的子文件夹
             {
-                TreeListNode FileNode = this.treeClass.AppendNode(null, treelist);
-                FileNode.SetValue(this.treeClass.Columns["FolderName"], childFolder.Name);
-                TraverseFolder(filepath + childFolder.Name + "\\", FileNode);
+                DirectoryInfo info = new DirectoryInfo(childFolder.FullName);
+                TreeListNode ChildNode = this.treeClass.AppendNode(info, ParentNode);
+                ChildNode.SetValue(this.treeClass.Columns["FolderName"], childFolder.Name);
+                TraverseFolder(ChildNode);
             }
         }
 
@@ -59,7 +59,9 @@ namespace Scheme
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            //remove the focused folder
+            TreeListNode treeListNode = this.treeClass.FocusedNode;
+            treeListNode.Remove();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -67,10 +69,15 @@ namespace Scheme
             //add folders
             FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
             folderBrowserDialog.ShowNewFolderButton = true;
+            folderBrowserDialog.SelectedPath = schemeTopPath;
             folderBrowserDialog.ShowDialog();
             string path = folderBrowserDialog.SelectedPath;
-            if (path != null) {
-                TraverseFolder(path);
+            if (path != null)
+            {
+                DirectoryInfo info = new DirectoryInfo(path);
+                TreeListNode node = this.treeClass.AppendNode(info, null);
+                node.SetValue(this.treeClass.Columns["FolderName"], info.Name);
+                TraverseFolder(node);
             }
         }
 
@@ -98,7 +105,7 @@ namespace Scheme
         /// <param name="node"></param>
         /// <param name="folder"></param>
         /// <returns></returns>
-        private  string getfolder(TreeListNode node, string folder)
+        private string getfolder(TreeListNode node, string folder)
         {
             if (node.ParentNode == null)
             {
@@ -116,7 +123,7 @@ namespace Scheme
             ToolHeight();
             TreeListNode FileNode = this.treeClass.AppendNode(null, null);
             FileNode.SetValue(this.treeClass.Columns["FolderName"], "scheme");
-            TraverseFolder(this.schemeTopPath, FileNode);
+            TraverseFolder(FileNode);
             treeClass.FocusedNode = FileNode;
             TraverseFild(getfolder(FileNode, ""));
         }
@@ -135,8 +142,6 @@ namespace Scheme
 
         }
 
-
-
         private void contextMenuStripResult_Opening(object sender, CancelEventArgs e)
         {
 
@@ -145,12 +150,40 @@ namespace Scheme
         private void buttonResult_Click(object sender, EventArgs e)
         {
 
-         
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void treeClass_DoubleClick(object sender, EventArgs e)
+        {
+            //useless
+            //expand the folder
+        }
+
+        private void treeClass_AfterExpand(object sender, NodeEventArgs e)
+        {
+
+        }
+
+        private void treeClass_RowStateImageClick(object sender, RowClickEventArgs e)
+        {
+
+        }
+
+        private void treeClass_RowSelectImageClick(object sender, RowClickEventArgs e)
+        {
+
+        }
+
+        private void treeClass_CustomDrawNodeButton(object sender, CustomDrawNodeButtonEventArgs e)
+        {
+            //TreeListNode node = treeClass.FocusedNode;
+            //DirectoryInfo info = (DirectoryInfo)treeClass.GetDataRecordByNode(node);
+            //TraverseFolder(info.FullName, node);
         }
     }
 }
