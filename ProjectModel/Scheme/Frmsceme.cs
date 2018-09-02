@@ -13,6 +13,8 @@ using DevExpress.XtraTreeList;
 
 
 using System.IO;
+using System.Collections;
+
 namespace Scheme
 {
     public partial class Frmsceme : Form
@@ -35,13 +37,14 @@ namespace Scheme
         /// <param name="ParentNode"></param>
         void TraverseFolder(TreeListNode ParentNode)
         {
-            //overwrite the logic of function   
-            DirectoryInfo DirInfo = new DirectoryInfo(treeClass.GetDataRecordByNode(ParentNode).ToString()); //文件夹信息
+            //overwrite the logic of function  
+            if (ParentNode.Tag == null) return;
+            string path = ParentNode.Tag.ToString();
+            DirectoryInfo DirInfo = new DirectoryInfo(path); //文件夹信息
             if (!DirInfo.Exists) return;
             foreach (DirectoryInfo childFolder in DirInfo.GetDirectories())//获取文件夹的子文件夹
             {
-                DirectoryInfo info = new DirectoryInfo(childFolder.FullName);
-                TreeListNode ChildNode = this.treeClass.AppendNode(info, ParentNode);
+                TreeListNode ChildNode = this.treeClass.AppendNode(null, ParentNode);
                 ChildNode.SetValue(this.treeClass.Columns["FolderName"], childFolder.Name);
                 TraverseFolder(ChildNode);
             }
@@ -72,7 +75,8 @@ namespace Scheme
             if (path != null)
             {
                 DirectoryInfo info = new DirectoryInfo(path);
-                TreeListNode node = this.treeClass.AppendNode(info, null);
+                TreeListNode node = this.treeClass.AppendNode(null, null);
+                node.Tag = path;
                 node.SetValue(this.treeClass.Columns["FolderName"], info.Name);
                 TraverseFolder(node);
             }
@@ -82,17 +86,18 @@ namespace Scheme
         /// 遍历文件
         /// </summary>
         /// <param name="filepath"></param>
-        private void TraverseFild(string filepath)
+        private void TraverseFile(string filepath)
         {
-            this.treeFile.ClearNodes();
             //this.clearAll();
             //this.currentpackeol = null;
             DirectoryInfo TheFolder = new DirectoryInfo(filepath);
             if (!TheFolder.Exists) return;
-            foreach (FileInfo NextFile in TheFolder.GetFiles())
+            foreach (FileInfo childFile in TheFolder.GetFiles())
             {
-                TreeListNode ParentNode = this.treeFile.AppendNode(null, null);
-                ParentNode.SetValue(this.treeFile.Columns["FileName"], NextFile.Name.Replace(".eol", ""));
+                TreeListNode fileNode = this.treeFile.AppendNode(null, null);
+                fileNode.Tag = childFile.FullName; 
+                //add node tag to bulid assosication between the filenode and the filepath
+                fileNode.SetValue(this.treeFile.Columns["FileName"], childFile.Name);
             }
 
         }
@@ -104,6 +109,7 @@ namespace Scheme
         /// <returns></returns>
         private string getfolder(TreeListNode node, string folder)
         {
+            //useless function
             if (node.ParentNode == null)
             {
                 return this.schemeTopPath + folder;
@@ -117,12 +123,14 @@ namespace Scheme
 
         private void Frmsceme_Load(object sender, EventArgs e)
         {
+            //initial operation
+            //maybe useless
             ToolHeight();
             TreeListNode FileNode = this.treeClass.AppendNode(null, null);
             FileNode.SetValue(this.treeClass.Columns["FolderName"], "scheme");
             TraverseFolder(FileNode);
             treeClass.FocusedNode = FileNode;
-            TraverseFild(getfolder(FileNode, ""));
+            TraverseFile(getfolder(FileNode, ""));
         }
 
         private void ToolHeight()
@@ -155,12 +163,6 @@ namespace Scheme
 
         }
 
-        private void treeClass_DoubleClick(object sender, EventArgs e)
-        {
-            //useless
-            //expand the folder
-        }
-
         private void treeClass_AfterExpand(object sender, NodeEventArgs e)
         {
 
@@ -178,9 +180,19 @@ namespace Scheme
 
         private void treeClass_CustomDrawNodeButton(object sender, CustomDrawNodeButtonEventArgs e)
         {
-            //TreeListNode node = treeClass.FocusedNode;
-            //DirectoryInfo info = (DirectoryInfo)treeClass.GetDataRecordByNode(node);
-            //TraverseFolder(info.FullName, node);
+
+        }
+
+        private void treeClass_FocusedNodeChanged(object sender, FocusedNodeChangedEventArgs e)
+        {
+            Console.WriteLine("FocusNodeChanged function is being called!");
+            treeFile.ClearNodes();
+            TreeListNode node = treeClass.FocusedNode;
+            if (node.Tag == null) return;
+            string path = node.Tag.ToString();
+            treeFile.AppendNode("begin", null);
+            TraverseFile(path);
+            treeFile.AppendNode("end", null);
         }
     }
 }
