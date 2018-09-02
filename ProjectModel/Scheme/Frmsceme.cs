@@ -25,41 +25,40 @@ namespace Scheme
         /// </summary>
         private string schemeTopPath = "";
         string fileUrl = null;
+        string hiddenEditorType = null;
         public Frmsceme()
         {
             InitializeComponent();
             schemeTopPath = Application.StartupPath + @"\category";
         }
-
-
         /// <summary>
-        /// 遍历文件夹
+        /// traverse the folders
         /// </summary>
         /// <param name="ParentNode"></param>
         void TraverseFolder(TreeListNode ParentNode)
         {
-            //overwrite the logic of function  
-
             if (ParentNode.Tag == null) return;
             string path = ParentNode.Tag.ToString();
-            DirectoryInfo DirInfo = new DirectoryInfo(path); //文件夹信息
+            DirectoryInfo DirInfo = new DirectoryInfo(path);
             if (!DirInfo.Exists) return;
-            foreach (DirectoryInfo childFolder in DirInfo.GetDirectories())//获取文件夹的子文件夹
+            foreach (DirectoryInfo childFolder in DirInfo.GetDirectories())
             {
                 TreeListNode ChildNode = this.treeClass.AppendNode(null, ParentNode);
-                ChildNode.SetValue(this.treeClass.Columns["FolderName"], childFolder.Name);//设置子文件夹的值
+                ChildNode.SetValue(this.treeClass.Columns["FolderName"], childFolder.Name);
                 ChildNode.Tag = childFolder.FullName;
                 TraverseFolder(ChildNode);
             }
         }
-
         public Frmsceme(string spath)
         {
             schemeTopPath = spath;
-
-
         }
-
+        /// <summary>
+        /// Remove the folder
+        /// while treeClass is empty it will throw a NullReferenceException
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             //remove the focused folder
@@ -68,14 +67,18 @@ namespace Scheme
             {
                 treeListNode.Remove();
             }
-            catch (System.NullReferenceException)
+            catch (NullReferenceException)
             {
                 Console.WriteLine("can't remove the folder because the list is empty!");
                 return;
             }
 
         }
-
+        /// <summary>
+        /// Import a new folder
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             //add folders
@@ -96,7 +99,6 @@ namespace Scheme
                 //sorting completed!
             }
         }
-
         /// <summary>
         /// 遍历文件
         /// </summary>
@@ -118,6 +120,7 @@ namespace Scheme
         }
         /// <summary>
         /// 获取选中文件夹的路径
+        /// no use function
         /// </summary>
         /// <param name="node"></param>
         /// <param name="folder"></param>
@@ -135,7 +138,11 @@ namespace Scheme
                 return getfolder(node.ParentNode, newfolder);
             }
         }
-
+        /// <summary>
+        /// no use function
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Frmsceme_Load(object sender, EventArgs e)
         {
             //initial operation
@@ -147,7 +154,6 @@ namespace Scheme
             treeClass.FocusedNode = FileNode;
             TraverseFile(getfolder(FileNode, ""));
         }
-
         private void ToolHeight()
         {
             scemePanel.Height = toolboxControl1.Height - 39;
@@ -156,48 +162,44 @@ namespace Scheme
         {
             ToolHeight();
         }
-
         private void tabNNarmalTest_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
         private void contextMenuStripResult_Opening(object sender, CancelEventArgs e)
         {
 
         }
-
         private void buttonResult_Click(object sender, EventArgs e)
         {
 
 
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
 
         }
-
         private void treeClass_AfterExpand(object sender, NodeEventArgs e)
         {
 
         }
-
         private void treeClass_RowStateImageClick(object sender, RowClickEventArgs e)
         {
 
         }
-
         private void treeClass_RowSelectImageClick(object sender, RowClickEventArgs e)
         {
 
         }
-
         private void treeClass_CustomDrawNodeButton(object sender, CustomDrawNodeButtonEventArgs e)
         {
 
         }
-
+        /// <summary>
+        /// sort the nodes by filename when fucused node is changing
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void treeClass_FocusedNodeChanged(object sender, FocusedNodeChangedEventArgs e)
         {
             treeFile.ClearNodes();
@@ -215,7 +217,6 @@ namespace Scheme
                 Console.WriteLine("There is no node focused in the TreeClass!");
             }
         }
-
         private void treeFile_FocusedNodeChanged(object sender, FocusedNodeChangedEventArgs e)
         {
             if (treeFile.AllNodesCount == 0) return;
@@ -232,7 +233,11 @@ namespace Scheme
             }
 
         }
-
+        /// <summary>
+        /// create a new xml file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddclass_Click(object sender, EventArgs e)
         {
             try
@@ -242,12 +247,8 @@ namespace Scheme
                     string folderpath = treeClass.FocusedNode.Tag.ToString();
                     TreeListNode newFileNode = treeFile.AppendNode(null, null);
                     newFileNode.Selected = true;
+                    hiddenEditorType = "addFile";
                     treeFile.ShowEditor();
-                    // string filename = newFileNode.GetValue(treeFile.Columns["FileName"]).ToString();
-                    // string fullpath = folderpath + filename;
-                    //Console.WriteLine(fullpath);
-                    //FileStream fs = new FileStream(fullpath, FileMode.OpenOrCreate, FileAccess.ReadWrite);
-                    //fs.Close();
                 }
 
             }
@@ -263,40 +264,73 @@ namespace Scheme
             }
 
         }
-
+        /// <summary>
+        /// add a listener to response the hidden of editor
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void treeFile_HiddenEditor(object sender, EventArgs e)
         {
-            TreeListNode currentNode = treeFile.FocusedNode;
-            TreeListNode parentNode = treeClass.FocusedNode;
-            if (currentNode == null || parentNode == null) return;
-            try
+            if (hiddenEditorType == "addFile")
             {
-                string filename = currentNode.GetValue(treeFile.Columns["FileName"]).ToString();
-                string filepath = parentNode.Tag.ToString();
-                string fullname = filepath + '\\' + filename;
-                currentNode.Tag = fullname;
-                //Console.WriteLine(fullname);
-                XmlDocument xmlDoc = new XmlDocument();
-                XmlDeclaration declaration = xmlDoc.CreateXmlDeclaration("1.0", "utf-8", "yes");
-                xmlDoc.AppendChild(declaration);
-                XmlElement RootElement = xmlDoc.CreateElement("ROOT");
-                xmlDoc.AppendChild(RootElement);
-                xmlDoc.Save(fullname);
+                TreeListNode currentNode = treeFile.FocusedNode;
+                TreeListNode parentNode = treeClass.FocusedNode;
+                if (currentNode == null || parentNode == null) return;
+                try
+                {
+                    string filename = currentNode.GetValue(treeFile.Columns["FileName"]).ToString();
+                    string filepath = parentNode.Tag.ToString();
+                    string fullname = filepath + '\\' + filename;
+                    currentNode.Tag = fullname;
+                    //Console.WriteLine(fullname);
+                    XmlDocument xmlDoc = new XmlDocument();
+                    XmlDeclaration declaration = xmlDoc.CreateXmlDeclaration("1.0", "utf-8", "yes");
+                    xmlDoc.AppendChild(declaration);
+                    XmlElement RootElement = xmlDoc.CreateElement("ROOT");
+                    xmlDoc.AppendChild(RootElement);
+                    xmlDoc.Save(fullname);
+                }
+                catch (NullReferenceException)
+                {
+                    Console.WriteLine("nothing can describe my mood~~~");
+                    return;
+                }
+                catch (IOException)
+                {
+                    MessageBox.Show("Failed to create the file!");
+                    treeFile.DeleteNode(currentNode);
+                    return;
+                }
             }
-            catch (NullReferenceException)
+            if (hiddenEditorType == "renameFile")
             {
-                Console.WriteLine("nothing can describe my mood~~~");
-                return;
+                TreeListNode node = treeFile.FocusedNode;
+                if (node == null) return;
+                string sourceFile = node.Tag.ToString();
+                string targetFile = node.GetValue(treeFile.Columns["FileName"]).ToString();
+                if (sourceFile != null)
+                {
+                    FileInfo sFile = new FileInfo(sourceFile);
+                    DirectoryInfo dirInfo = sFile.Directory;
+                    targetFile = dirInfo.FullName + "\\" + targetFile;
+                    FileInfo tFile = new FileInfo(targetFile);
+                    if (tFile.Exists)
+                    {
+                        MessageBox.Show("Target file already exists!");
+                        node.SetValue(treeFile.Columns["FileName"], sFile.Name);
+                    }
+                    else
+                    {
+                        sFile.MoveTo(targetFile);
+                    }
+                }
             }
-            catch (IOException)
-            {
-                MessageBox.Show("Failed to create the file!");
-                treeFile.DeleteNode(currentNode);
-                return;
-            }
-
         }
-
+        /// <summary>
+        /// delete the node in the treeFile and delete the local file in the meantime
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDelClass_Click(object sender, EventArgs e)
         {
             try
@@ -318,15 +352,20 @@ namespace Scheme
                 return;
             }
         }
-
+        /// <summary>
+        /// create a dialog
+        /// and copy the current file to a new file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void simpleButton4_Click(object sender, EventArgs e)
         {
             SaveFileDialog dialog = new SaveFileDialog();
             TreeListNode node = treeClass.FocusedNode;
             TreeListNode fnode = treeFile.FocusedNode;
-            string path=null;
+            string path = null;
             string name = null;
-            if (node != null&&fnode!=null)
+            if (node != null && fnode != null)
             {
                 path = node.Tag.ToString();
                 name = fnode.GetValue(treeFile.Columns["FileName"]).ToString();
@@ -345,12 +384,18 @@ namespace Scheme
                 File.Copy(sourceFile, targetFile);
             }
         }
-
+        /// <summary>
+        /// rename the focused file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnReName_Click(object sender, EventArgs e)
         {
             TreeListNode fileNode = treeFile.FocusedNode;
             if (fileNode == null) return;
-
+            fileNode.Selected = true;
+            hiddenEditorType = "renameFile";
+            treeFile.ShowEditor();
         }
     }
 }

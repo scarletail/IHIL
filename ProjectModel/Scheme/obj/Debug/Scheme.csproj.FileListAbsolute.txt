@@ -316,3 +316,4 @@ F:\GitSync\IHIL\ProjectModel\Scheme\obj\Debug\Scheme.csproj.CoreCompileInputs.ca
 F:\GitSync\IHIL\ProjectModel\Scheme\obj\Debug\Scheme.csproj.CopyComplete
 F:\GitSync\IHIL\ProjectModel\Scheme\obj\Debug\Scheme.exe
 F:\GitSync\IHIL\ProjectModel\Scheme\obj\Debug\Scheme.pdb
+F:\GitSync\IHIL\ProjectModel\Scheme\obj\Debug\Scheme.csprojAssemblyReference.cache
