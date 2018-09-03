@@ -145,9 +145,10 @@ namespace Scheme
             ToolHeight();
             TreeListNode FileNode = treeClass.AppendNode(null, null);
             FileNode.SetValue(treeClass.Columns["FolderName"], "scheme");
+            FileNode.Tag = schemeTopPath;
             TraverseFolder(FileNode);
             treeClass.FocusedNode = FileNode;
-            TraverseFile(getfolder(FileNode, ""));
+            TraverseFile(FileNode.Tag.ToString());
         }
         private void ToolHeight()
         {
@@ -281,21 +282,26 @@ namespace Scheme
                     XmlDocument xmlDoc = new XmlDocument();
                     XmlDeclaration declaration = xmlDoc.CreateXmlDeclaration("1.0", "utf-8", "yes");
                     xmlDoc.AppendChild(declaration);
-                    XmlElement RootElement = xmlDoc.CreateElement("ROOT");
+                    XmlElement RootElement = xmlDoc.CreateElement("chHIL");
                     xmlDoc.AppendChild(RootElement);
                     xmlDoc.Save(fullname);
                 }
                 catch (NullReferenceException)
                 {
-                    Console.WriteLine("nothing can describe my mood~~~");
-                    return;
+                    MessageBox.Show("file name cannot be empty!");
+                    currentNode.Selected = true;
+                    treeFile.ShowEditor();
                 }
                 catch (IOException)
                 {
                     MessageBox.Show("Failed to create the file!");
                     treeFile.DeleteNode(currentNode);
-                    return;
                 }
+                finally
+                {
+                    hiddenEditorType = null;
+                }
+                return;
             }
             if (hiddenEditorType == "renameFile")
             {
@@ -319,6 +325,8 @@ namespace Scheme
                         sFile.MoveTo(targetFile);
                     }
                 }
+                hiddenEditorType = null;
+                return;
             }
         }
         /// <summary>
@@ -391,6 +399,69 @@ namespace Scheme
             fileNode.Selected = true;
             hiddenEditorType = "renameFile";
             treeFile.ShowEditor();
+        }
+        /// <summary>
+        /// no use
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void treeFile_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            //TreeListNode currentNode = treeFile.FocusedNode;
+            //if (currentNode == null) return;
+            //string path = currentNode.Tag.ToString();
+            //MessageBox.Show("Selected file path is " + path);
+            //return;
+        }
+        /// <summary>
+        /// show menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void treeFile_MouseDown(object sender, MouseEventArgs e)
+        {
+            TreeListHitInfo hitInfo = (sender as TreeList).CalcHitInfo(new Point(e.X, e.Y));
+            TreeListNode node = hitInfo.Node;
+            if (e.Button == MouseButtons.Right)
+            {
+                if (node != null)
+                {
+                    node.TreeList.FocusedNode = node;
+                    node.TreeList.ContextMenuStrip = this.FileMenuStripResult;
+                }
+            }
+        }
+        /// <summary>
+        /// show file in the explorer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Show_in_explorer_Click(object sender, EventArgs e)
+        {
+            TreeListNode fileNode = treeFile.FocusedNode;
+            if (fileNode != null)
+            {
+                System.Diagnostics.Process.Start("Explorer", "/select," + fileNode.Tag.ToString());
+            }
+        }
+        /// <summary>
+        /// open file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Open_Click(object sender, EventArgs e)
+        {
+            TreeListNode fileNode = treeFile.FocusedNode;
+            if (fileNode == null)
+            {
+                MessageBox.Show("Error, no file selected!");
+                return;
+            }
+            else
+            {
+                string path = fileNode.Tag.ToString();
+                MessageBox.Show("Now we will open " + path);
+            }
         }
     }
 }

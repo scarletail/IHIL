@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmsceme));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
             this.scemePanel = new System.Windows.Forms.Panel();
             this.gbScheme = new System.Windows.Forms.GroupBox();
-            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.btnReName = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
@@ -42,6 +41,9 @@
             this.btnAddclass = new DevExpress.XtraEditors.SimpleButton();
             this.treeFile = new DevExpress.XtraTreeList.TreeList();
             this.FileName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.FileMenuStripResult = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.Open = new System.Windows.Forms.ToolStripMenuItem();
+            this.Show_in_explorer = new System.Windows.Forms.ToolStripMenuItem();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.GbFolder = new System.Windows.Forms.GroupBox();
             this.treeClass = new DevExpress.XtraTreeList.TreeList();
@@ -133,8 +135,6 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.groupControl7 = new DevExpress.XtraEditors.GroupControl();
             this.button14 = new System.Windows.Forms.Button();
-            this.contextMenuStripResult = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.modifyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridControl7 = new DevExpress.XtraGrid.GridControl();
             this.gridView7 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -195,11 +195,13 @@
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.scemePanel.SuspendLayout();
             this.gbScheme.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
-            this.panelControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.treeFile)).BeginInit();
+            this.FileMenuStripResult.SuspendLayout();
             this.GbFolder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.treeClass)).BeginInit();
             this.panel2.SuspendLayout();
@@ -236,7 +238,6 @@
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).BeginInit();
             this.groupControl7.SuspendLayout();
-            this.contextMenuStripResult.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).BeginInit();
@@ -274,6 +275,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // scemePanel
@@ -290,8 +294,7 @@
             // 
             // gbScheme
             // 
-            this.gbScheme.Controls.Add(this.panelControl5);
-            this.gbScheme.Controls.Add(this.treeFile);
+            this.gbScheme.Controls.Add(this.tableLayoutPanel2);
             this.gbScheme.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbScheme.Location = new System.Drawing.Point(0, 238);
             this.gbScheme.Margin = new System.Windows.Forms.Padding(2);
@@ -302,29 +305,15 @@
             this.gbScheme.TabStop = false;
             this.gbScheme.Text = "Scheme";
             // 
-            // panelControl5
-            // 
-            this.panelControl5.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl5.Controls.Add(this.btnReName);
-            this.panelControl5.Controls.Add(this.simpleButton2);
-            this.panelControl5.Controls.Add(this.simpleButton4);
-            this.panelControl5.Controls.Add(this.btnDelClass);
-            this.panelControl5.Controls.Add(this.btnAddclass);
-            this.panelControl5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl5.Location = new System.Drawing.Point(2, 17);
-            this.panelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(264, 37);
-            this.panelControl5.TabIndex = 27;
-            // 
             // btnReName
             // 
             this.btnReName.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReName.Appearance.Options.UseFont = true;
-            this.btnReName.Location = new System.Drawing.Point(150, 6);
-            this.btnReName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnReName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnReName.Location = new System.Drawing.Point(153, 0);
+            this.btnReName.Margin = new System.Windows.Forms.Padding(0);
             this.btnReName.Name = "btnReName";
-            this.btnReName.Size = new System.Drawing.Size(50, 26);
+            this.btnReName.Size = new System.Drawing.Size(51, 34);
             this.btnReName.TabIndex = 9;
             this.btnReName.Text = "Rename";
             this.btnReName.Click += new System.EventHandler(this.btnReName_Click);
@@ -333,10 +322,11 @@
             // 
             this.simpleButton2.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Location = new System.Drawing.Point(201, 6);
-            this.simpleButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.simpleButton2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.simpleButton2.Location = new System.Drawing.Point(204, 0);
+            this.simpleButton2.Margin = new System.Windows.Forms.Padding(0);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(60, 26);
+            this.simpleButton2.Size = new System.Drawing.Size(54, 34);
             this.simpleButton2.TabIndex = 6;
             this.simpleButton2.Text = "Save";
             // 
@@ -344,10 +334,11 @@
             // 
             this.simpleButton4.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton4.Appearance.Options.UseFont = true;
-            this.simpleButton4.Location = new System.Drawing.Point(98, 6);
-            this.simpleButton4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.simpleButton4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.simpleButton4.Location = new System.Drawing.Point(102, 0);
+            this.simpleButton4.Margin = new System.Windows.Forms.Padding(0);
             this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(51, 26);
+            this.simpleButton4.Size = new System.Drawing.Size(51, 34);
             this.simpleButton4.TabIndex = 8;
             this.simpleButton4.Text = "Save as";
             this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
@@ -356,10 +347,11 @@
             // 
             this.btnDelClass.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelClass.Appearance.Options.UseFont = true;
-            this.btnDelClass.Location = new System.Drawing.Point(52, 6);
-            this.btnDelClass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDelClass.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDelClass.Location = new System.Drawing.Point(51, 0);
+            this.btnDelClass.Margin = new System.Windows.Forms.Padding(0);
             this.btnDelClass.Name = "btnDelClass";
-            this.btnDelClass.Size = new System.Drawing.Size(46, 26);
+            this.btnDelClass.Size = new System.Drawing.Size(51, 34);
             this.btnDelClass.TabIndex = 5;
             this.btnDelClass.Text = "Del";
             this.btnDelClass.Click += new System.EventHandler(this.btnDelClass_Click);
@@ -368,10 +360,11 @@
             // 
             this.btnAddclass.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddclass.Appearance.Options.UseFont = true;
-            this.btnAddclass.Location = new System.Drawing.Point(6, 6);
-            this.btnAddclass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddclass.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddclass.Location = new System.Drawing.Point(0, 0);
+            this.btnAddclass.Margin = new System.Windows.Forms.Padding(0);
             this.btnAddclass.Name = "btnAddclass";
-            this.btnAddclass.Size = new System.Drawing.Size(45, 26);
+            this.btnAddclass.Size = new System.Drawing.Size(51, 34);
             this.btnAddclass.TabIndex = 4;
             this.btnAddclass.Text = "&Add";
             this.btnAddclass.Click += new System.EventHandler(this.btnAddclass_Click);
@@ -383,8 +376,10 @@
             this.treeFile.ColumnPanelRowHeight = 20;
             this.treeFile.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
             this.FileName});
+            this.treeFile.ContextMenuStrip = this.FileMenuStripResult;
+            this.treeFile.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeFile.FixedLineWidth = 1;
-            this.treeFile.Location = new System.Drawing.Point(1, 53);
+            this.treeFile.Location = new System.Drawing.Point(3, 42);
             this.treeFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.treeFile.MinWidth = 16;
             this.treeFile.Name = "treeFile";
@@ -394,11 +389,13 @@
             this.treeFile.OptionsView.ShowColumns = false;
             this.treeFile.OptionsView.ShowRoot = false;
             this.treeFile.RowHeight = 20;
-            this.treeFile.Size = new System.Drawing.Size(263, 251);
+            this.treeFile.Size = new System.Drawing.Size(258, 249);
             this.treeFile.TabIndex = 28;
             this.treeFile.TreeLevelWidth = 13;
             this.treeFile.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.treeFile_FocusedNodeChanged);
             this.treeFile.HiddenEditor += new System.EventHandler(this.treeFile_HiddenEditor);
+            this.treeFile.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.treeFile_MouseDoubleClick);
+            this.treeFile.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeFile_MouseDown);
             // 
             // FileName
             // 
@@ -409,6 +406,30 @@
             this.FileName.Visible = true;
             this.FileName.VisibleIndex = 0;
             this.FileName.Width = 56;
+            // 
+            // FileMenuStripResult
+            // 
+            this.FileMenuStripResult.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.FileMenuStripResult.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Open,
+            this.Show_in_explorer});
+            this.FileMenuStripResult.Name = "contextMenuStripResult";
+            this.FileMenuStripResult.Size = new System.Drawing.Size(175, 48);
+            this.FileMenuStripResult.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStripResult_Opening);
+            // 
+            // Open
+            // 
+            this.Open.Name = "Open";
+            this.Open.Size = new System.Drawing.Size(180, 22);
+            this.Open.Text = "Open";
+            this.Open.Click += new System.EventHandler(this.Open_Click);
+            // 
+            // Show_in_explorer
+            // 
+            this.Show_in_explorer.Name = "Show_in_explorer";
+            this.Show_in_explorer.Size = new System.Drawing.Size(180, 22);
+            this.Show_in_explorer.Text = "Show in explorer";
+            this.Show_in_explorer.Click += new System.EventHandler(this.Show_in_explorer_Click);
             // 
             // splitter1
             // 
@@ -447,6 +468,7 @@
             this.treeClass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.treeClass.MinWidth = 16;
             this.treeClass.Name = "treeClass";
+            this.treeClass.OptionsBehavior.Editable = false;
             this.treeClass.OptionsClipboard.AllowCopy = DevExpress.Utils.DefaultBoolean.True;
             this.treeClass.OptionsClipboard.CopyNodeHierarchy = DevExpress.Utils.DefaultBoolean.True;
             this.treeClass.OptionsView.ShowColumns = false;
@@ -474,8 +496,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.delFolder);
-            this.panel2.Controls.Add(this.addFolder);
+            this.panel2.Controls.Add(this.tableLayoutPanel1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(2, 17);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
@@ -485,10 +506,11 @@
             // 
             // delFolder
             // 
-            this.delFolder.Location = new System.Drawing.Point(94, 7);
-            this.delFolder.Margin = new System.Windows.Forms.Padding(2);
+            this.delFolder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.delFolder.Location = new System.Drawing.Point(136, 4);
+            this.delFolder.Margin = new System.Windows.Forms.Padding(4);
             this.delFolder.Name = "delFolder";
-            this.delFolder.Size = new System.Drawing.Size(106, 29);
+            this.delFolder.Size = new System.Drawing.Size(124, 33);
             this.delFolder.TabIndex = 1;
             this.delFolder.Text = "Remove Folder";
             this.delFolder.UseVisualStyleBackColor = true;
@@ -496,12 +518,13 @@
             // 
             // addFolder
             // 
-            this.addFolder.Location = new System.Drawing.Point(7, 6);
-            this.addFolder.Margin = new System.Windows.Forms.Padding(2);
+            this.addFolder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.addFolder.Location = new System.Drawing.Point(4, 4);
+            this.addFolder.Margin = new System.Windows.Forms.Padding(4);
             this.addFolder.Name = "addFolder";
-            this.addFolder.Size = new System.Drawing.Size(82, 29);
+            this.addFolder.Size = new System.Drawing.Size(124, 33);
             this.addFolder.TabIndex = 0;
-            this.addFolder.Text = "Add Folder";
+            this.addFolder.Text = "Import Folder";
             this.addFolder.UseVisualStyleBackColor = true;
             this.addFolder.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -1569,7 +1592,7 @@
             // button14
             // 
             this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button14.ContextMenuStrip = this.contextMenuStripResult;
+            this.button14.ContextMenuStrip = this.FileMenuStripResult;
             this.button14.Location = new System.Drawing.Point(-748, -261);
             this.button14.Margin = new System.Windows.Forms.Padding(2);
             this.button14.Name = "button14";
@@ -1577,21 +1600,6 @@
             this.button14.TabIndex = 11;
             this.button14.Text = "Modi...";
             this.button14.UseVisualStyleBackColor = true;
-            // 
-            // contextMenuStripResult
-            // 
-            this.contextMenuStripResult.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStripResult.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.modifyToolStripMenuItem});
-            this.contextMenuStripResult.Name = "contextMenuStripResult";
-            this.contextMenuStripResult.Size = new System.Drawing.Size(127, 26);
-            this.contextMenuStripResult.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStripResult_Opening);
-            // 
-            // modifyToolStripMenuItem
-            // 
-            this.modifyToolStripMenuItem.Name = "modifyToolStripMenuItem";
-            this.modifyToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
-            this.modifyToolStripMenuItem.Text = "Modify...";
             // 
             // gridControl7
             // 
@@ -1659,7 +1667,7 @@
             // button4
             // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.ContextMenuStrip = this.contextMenuStripResult;
+            this.button4.ContextMenuStrip = this.FileMenuStripResult;
             this.button4.Location = new System.Drawing.Point(236, -262);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
@@ -1756,7 +1764,7 @@
             // buttonCmdSet
             // 
             this.buttonCmdSet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCmdSet.ContextMenuStrip = this.contextMenuStripResult;
+            this.buttonCmdSet.ContextMenuStrip = this.FileMenuStripResult;
             this.buttonCmdSet.Location = new System.Drawing.Point(-738, 0);
             this.buttonCmdSet.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCmdSet.Name = "buttonCmdSet";
@@ -1768,9 +1776,9 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode3.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode3});
+            gridLevelNode2});
             this.gridControl1.Location = new System.Drawing.Point(2, 21);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -1815,7 +1823,7 @@
             // button8
             // 
             this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button8.ContextMenuStrip = this.contextMenuStripResult;
+            this.button8.ContextMenuStrip = this.FileMenuStripResult;
             this.button8.Location = new System.Drawing.Point(242, -1);
             this.button8.Margin = new System.Windows.Forms.Padding(2);
             this.button8.Name = "button8";
@@ -1952,9 +1960,9 @@
             // gridControl6
             // 
             this.gridControl6.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode3.RelationName = "Level1";
             this.gridControl6.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode3});
             this.gridControl6.Location = new System.Drawing.Point(2, 21);
             this.gridControl6.MainView = this.gridView6;
             this.gridControl6.Name = "gridControl6";
@@ -2167,7 +2175,7 @@
             // button9
             // 
             this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.ContextMenuStrip = this.contextMenuStripResult;
+            this.button9.ContextMenuStrip = this.FileMenuStripResult;
             this.button9.Location = new System.Drawing.Point(447, 0);
             this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
@@ -2240,6 +2248,59 @@
             // 
             this.popupMenu1.Name = "popupMenu1";
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.delFolder, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.addFolder, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(264, 41);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.treeFile, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 17);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(264, 293);
+            this.tableLayoutPanel2.TabIndex = 100;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 5;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.Controls.Add(this.btnAddclass, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnDelClass, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.simpleButton4, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnReName, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.simpleButton2, 4, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(258, 34);
+            this.tableLayoutPanel3.TabIndex = 101;
+            // 
             // Frmsceme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2255,9 +2316,8 @@
             this.Resize += new System.EventHandler(this.Frmsceme_Resize);
             this.scemePanel.ResumeLayout(false);
             this.gbScheme.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
-            this.panelControl5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.treeFile)).EndInit();
+            this.FileMenuStripResult.ResumeLayout(false);
             this.GbFolder.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.treeClass)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -2297,7 +2357,6 @@
             this.panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).EndInit();
             this.groupControl7.ResumeLayout(false);
-            this.contextMenuStripResult.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).EndInit();
@@ -2335,6 +2394,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2349,7 +2411,6 @@
         private System.Windows.Forms.Button addFolder;
         private DevExpress.XtraTreeList.TreeList treeFile;
         private DevExpress.XtraTreeList.Columns.TreeListColumn FileName;
-        private DevExpress.XtraEditors.PanelControl panelControl5;
         private DevExpress.XtraEditors.SimpleButton btnReName;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
@@ -2454,8 +2515,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraBars.PopupMenu popupMenu1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStripResult;
-        private System.Windows.Forms.ToolStripMenuItem modifyToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip FileMenuStripResult;
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraGrid.GridControl gridControl3;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
@@ -2505,7 +2565,11 @@
         private System.Windows.Forms.Splitter splitter6;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button16;
-
+        private System.Windows.Forms.ToolStripMenuItem Open;
+        private System.Windows.Forms.ToolStripMenuItem Show_in_explorer;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
     }
 }
 
