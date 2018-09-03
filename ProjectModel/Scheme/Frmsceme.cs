@@ -205,11 +205,16 @@ namespace Scheme
                 TraverseFile(path);
                 treeFile.Columns["FileName"].SortOrder = SortOrder.Ascending;
             }
-            catch (System.NullReferenceException)
+            catch (NullReferenceException)
             {
                 Console.WriteLine("There is no node focused in the TreeClass!");
             }
         }
+        /// <summary>
+        /// what's this ?
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void treeFile_FocusedNodeChanged(object sender, FocusedNodeChangedEventArgs e)
         {
             if (treeFile.AllNodesCount == 0) return;
@@ -285,14 +290,13 @@ namespace Scheme
                 }
                 catch (NullReferenceException)
                 {
-                    MessageBox.Show("file name cannot be empty!");
-                    currentNode.Selected = true;
-                    treeFile.ShowEditor();
+                    MessageBox.Show("file name cannot be empty!", "Warning!");
+                    currentNode.Remove();
                 }
                 catch (IOException)
                 {
-                    MessageBox.Show("Failed to create the file!");
-                    treeFile.DeleteNode(currentNode);
+                    MessageBox.Show("Failed to create the file!", "Error");
+                    currentNode.Remove();
                 }
                 finally
                 {
@@ -312,6 +316,7 @@ namespace Scheme
                     DirectoryInfo dirInfo = sFile.Directory;
                     targetFile = dirInfo.FullName + "\\" + targetFile;
                     FileInfo tFile = new FileInfo(targetFile);
+                    if (sourceFile == targetFile) return;
                     if (tFile.Exists)
                     {
                         MessageBox.Show("Target file already exists!");
@@ -538,7 +543,6 @@ namespace Scheme
                 beditCan0.Text = "";
             }
         }
-
 
         private void beditCan1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
