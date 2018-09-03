@@ -29,51 +29,54 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmsceme));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             this.scemePanel = new System.Windows.Forms.Panel();
             this.gbScheme = new System.Windows.Forms.GroupBox();
-            this.btnReName = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDelClass = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAddclass = new DevExpress.XtraEditors.SimpleButton();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.treeFile = new DevExpress.XtraTreeList.TreeList();
             this.FileName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.FileMenuStripResult = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.Open = new System.Windows.Forms.ToolStripMenuItem();
             this.Show_in_explorer = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAddclass = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDelClass = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnReName = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.GbFolder = new System.Windows.Forms.GroupBox();
             this.treeClass = new DevExpress.XtraTreeList.TreeList();
             this.FolderName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.delFolder = new System.Windows.Forms.Button();
             this.addFolder = new System.Windows.Forms.Button();
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNCAN = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label27 = new System.Windows.Forms.Label();
-            this.chkCan4 = new System.Windows.Forms.CheckBox();
+            this.chkCan3 = new System.Windows.Forms.CheckBox();
             this.cboxCanbtl14 = new System.Windows.Forms.ComboBox();
-            this.beditCan4 = new DevExpress.XtraEditors.ButtonEdit();
+            this.beditCan3 = new DevExpress.XtraEditors.ButtonEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.label25 = new System.Windows.Forms.Label();
-            this.chkCan3 = new System.Windows.Forms.CheckBox();
+            this.chkCan2 = new System.Windows.Forms.CheckBox();
             this.cboxCanbtl13 = new System.Windows.Forms.ComboBox();
-            this.beditCan3 = new DevExpress.XtraEditors.ButtonEdit();
+            this.beditCan2 = new DevExpress.XtraEditors.ButtonEdit();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.chkCan2 = new System.Windows.Forms.CheckBox();
             this.chkCan1 = new System.Windows.Forms.CheckBox();
+            this.chkCan0 = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cboxCanbtl12 = new System.Windows.Forms.ComboBox();
             this.cboxMachineindex = new System.Windows.Forms.ComboBox();
-            this.beditCan2 = new DevExpress.XtraEditors.ButtonEdit();
             this.beditCan1 = new DevExpress.XtraEditors.ButtonEdit();
+            this.beditCan0 = new DevExpress.XtraEditors.ButtonEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.cboxCanbtl11 = new System.Windows.Forms.ComboBox();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
@@ -195,24 +198,24 @@
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.scemePanel.SuspendLayout();
             this.gbScheme.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.treeFile)).BeginInit();
             this.FileMenuStripResult.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.GbFolder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.treeClass)).BeginInit();
             this.panel2.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNCAN.SuspendLayout();
             this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.beditCan4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.beditCan3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.beditCan2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.beditCan1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beditCan0.Properties)).BeginInit();
             this.tabNCOM.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtEidtCom5.Properties)).BeginInit();
@@ -275,9 +278,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // scemePanel
@@ -289,7 +289,7 @@
             this.scemePanel.Location = new System.Drawing.Point(0, 32);
             this.scemePanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.scemePanel.Name = "scemePanel";
-            this.scemePanel.Size = new System.Drawing.Size(268, 550);
+            this.scemePanel.Size = new System.Drawing.Size(324, 550);
             this.scemePanel.TabIndex = 24;
             // 
             // gbScheme
@@ -300,74 +300,25 @@
             this.gbScheme.Margin = new System.Windows.Forms.Padding(2);
             this.gbScheme.Name = "gbScheme";
             this.gbScheme.Padding = new System.Windows.Forms.Padding(2);
-            this.gbScheme.Size = new System.Drawing.Size(268, 312);
+            this.gbScheme.Size = new System.Drawing.Size(324, 312);
             this.gbScheme.TabIndex = 27;
             this.gbScheme.TabStop = false;
             this.gbScheme.Text = "Scheme";
             // 
-            // btnReName
+            // tableLayoutPanel2
             // 
-            this.btnReName.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReName.Appearance.Options.UseFont = true;
-            this.btnReName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnReName.Location = new System.Drawing.Point(153, 0);
-            this.btnReName.Margin = new System.Windows.Forms.Padding(0);
-            this.btnReName.Name = "btnReName";
-            this.btnReName.Size = new System.Drawing.Size(51, 34);
-            this.btnReName.TabIndex = 9;
-            this.btnReName.Text = "Rename";
-            this.btnReName.Click += new System.EventHandler(this.btnReName_Click);
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.simpleButton2.Location = new System.Drawing.Point(204, 0);
-            this.simpleButton2.Margin = new System.Windows.Forms.Padding(0);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(54, 34);
-            this.simpleButton2.TabIndex = 6;
-            this.simpleButton2.Text = "Save";
-            // 
-            // simpleButton4
-            // 
-            this.simpleButton4.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton4.Appearance.Options.UseFont = true;
-            this.simpleButton4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.simpleButton4.Location = new System.Drawing.Point(102, 0);
-            this.simpleButton4.Margin = new System.Windows.Forms.Padding(0);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(51, 34);
-            this.simpleButton4.TabIndex = 8;
-            this.simpleButton4.Text = "Save as";
-            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
-            // 
-            // btnDelClass
-            // 
-            this.btnDelClass.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelClass.Appearance.Options.UseFont = true;
-            this.btnDelClass.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDelClass.Location = new System.Drawing.Point(51, 0);
-            this.btnDelClass.Margin = new System.Windows.Forms.Padding(0);
-            this.btnDelClass.Name = "btnDelClass";
-            this.btnDelClass.Size = new System.Drawing.Size(51, 34);
-            this.btnDelClass.TabIndex = 5;
-            this.btnDelClass.Text = "Del";
-            this.btnDelClass.Click += new System.EventHandler(this.btnDelClass_Click);
-            // 
-            // btnAddclass
-            // 
-            this.btnAddclass.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddclass.Appearance.Options.UseFont = true;
-            this.btnAddclass.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddclass.Location = new System.Drawing.Point(0, 0);
-            this.btnAddclass.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAddclass.Name = "btnAddclass";
-            this.btnAddclass.Size = new System.Drawing.Size(51, 34);
-            this.btnAddclass.TabIndex = 4;
-            this.btnAddclass.Text = "&Add";
-            this.btnAddclass.Click += new System.EventHandler(this.btnAddclass_Click);
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.treeFile, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 17);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(320, 293);
+            this.tableLayoutPanel2.TabIndex = 100;
             // 
             // treeFile
             // 
@@ -389,7 +340,7 @@
             this.treeFile.OptionsView.ShowColumns = false;
             this.treeFile.OptionsView.ShowRoot = false;
             this.treeFile.RowHeight = 20;
-            this.treeFile.Size = new System.Drawing.Size(258, 249);
+            this.treeFile.Size = new System.Drawing.Size(314, 249);
             this.treeFile.TabIndex = 28;
             this.treeFile.TreeLevelWidth = 13;
             this.treeFile.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.treeFile_FocusedNodeChanged);
@@ -420,16 +371,102 @@
             // Open
             // 
             this.Open.Name = "Open";
-            this.Open.Size = new System.Drawing.Size(180, 22);
+            this.Open.Size = new System.Drawing.Size(174, 22);
             this.Open.Text = "Open";
             this.Open.Click += new System.EventHandler(this.Open_Click);
             // 
             // Show_in_explorer
             // 
             this.Show_in_explorer.Name = "Show_in_explorer";
-            this.Show_in_explorer.Size = new System.Drawing.Size(180, 22);
+            this.Show_in_explorer.Size = new System.Drawing.Size(174, 22);
             this.Show_in_explorer.Text = "Show in explorer";
             this.Show_in_explorer.Click += new System.EventHandler(this.Show_in_explorer_Click);
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 5;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.Controls.Add(this.btnAddclass, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnDelClass, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.simpleButton4, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnReName, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.simpleButton2, 4, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(314, 34);
+            this.tableLayoutPanel3.TabIndex = 101;
+            // 
+            // btnAddclass
+            // 
+            this.btnAddclass.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddclass.Appearance.Options.UseFont = true;
+            this.btnAddclass.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddclass.Location = new System.Drawing.Point(0, 0);
+            this.btnAddclass.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAddclass.Name = "btnAddclass";
+            this.btnAddclass.Size = new System.Drawing.Size(62, 34);
+            this.btnAddclass.TabIndex = 4;
+            this.btnAddclass.Text = "&Add";
+            this.btnAddclass.Click += new System.EventHandler(this.btnAddclass_Click);
+            // 
+            // btnDelClass
+            // 
+            this.btnDelClass.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelClass.Appearance.Options.UseFont = true;
+            this.btnDelClass.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDelClass.Location = new System.Drawing.Point(62, 0);
+            this.btnDelClass.Margin = new System.Windows.Forms.Padding(0);
+            this.btnDelClass.Name = "btnDelClass";
+            this.btnDelClass.Size = new System.Drawing.Size(62, 34);
+            this.btnDelClass.TabIndex = 5;
+            this.btnDelClass.Text = "Del";
+            this.btnDelClass.Click += new System.EventHandler(this.btnDelClass_Click);
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton4.Appearance.Options.UseFont = true;
+            this.simpleButton4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.simpleButton4.Location = new System.Drawing.Point(124, 0);
+            this.simpleButton4.Margin = new System.Windows.Forms.Padding(0);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(62, 34);
+            this.simpleButton4.TabIndex = 8;
+            this.simpleButton4.Text = "Save as";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
+            // 
+            // btnReName
+            // 
+            this.btnReName.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReName.Appearance.Options.UseFont = true;
+            this.btnReName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnReName.Location = new System.Drawing.Point(186, 0);
+            this.btnReName.Margin = new System.Windows.Forms.Padding(0);
+            this.btnReName.Name = "btnReName";
+            this.btnReName.Size = new System.Drawing.Size(62, 34);
+            this.btnReName.TabIndex = 9;
+            this.btnReName.Text = "Rename";
+            this.btnReName.Click += new System.EventHandler(this.btnReName_Click);
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.simpleButton2.Location = new System.Drawing.Point(248, 0);
+            this.simpleButton2.Margin = new System.Windows.Forms.Padding(0);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(66, 34);
+            this.simpleButton2.TabIndex = 6;
+            this.simpleButton2.Text = "Save";
             // 
             // splitter1
             // 
@@ -437,7 +474,7 @@
             this.splitter1.Location = new System.Drawing.Point(0, 236);
             this.splitter1.Margin = new System.Windows.Forms.Padding(2);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(268, 2);
+            this.splitter1.Size = new System.Drawing.Size(324, 2);
             this.splitter1.TabIndex = 26;
             this.splitter1.TabStop = false;
             // 
@@ -450,7 +487,7 @@
             this.GbFolder.Margin = new System.Windows.Forms.Padding(2);
             this.GbFolder.Name = "GbFolder";
             this.GbFolder.Padding = new System.Windows.Forms.Padding(2);
-            this.GbFolder.Size = new System.Drawing.Size(268, 236);
+            this.GbFolder.Size = new System.Drawing.Size(324, 236);
             this.GbFolder.TabIndex = 0;
             this.GbFolder.TabStop = false;
             this.GbFolder.Text = "Folder";
@@ -474,7 +511,7 @@
             this.treeClass.OptionsView.ShowColumns = false;
             this.treeClass.RowHeight = 20;
             this.treeClass.ShowButtonMode = DevExpress.XtraTreeList.ShowButtonModeEnum.ShowOnlyInEditor;
-            this.treeClass.Size = new System.Drawing.Size(264, 176);
+            this.treeClass.Size = new System.Drawing.Size(320, 176);
             this.treeClass.TabIndex = 9;
             this.treeClass.TreeLevelWidth = 13;
             this.treeClass.RowStateImageClick += new DevExpress.XtraTreeList.RowClickEventHandler(this.treeClass_RowStateImageClick);
@@ -501,16 +538,32 @@
             this.panel2.Location = new System.Drawing.Point(2, 17);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(264, 41);
+            this.panel2.Size = new System.Drawing.Size(320, 41);
             this.panel2.TabIndex = 1;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.delFolder, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.addFolder, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(320, 41);
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // delFolder
             // 
             this.delFolder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.delFolder.Location = new System.Drawing.Point(136, 4);
+            this.delFolder.Location = new System.Drawing.Point(164, 4);
             this.delFolder.Margin = new System.Windows.Forms.Padding(4);
             this.delFolder.Name = "delFolder";
-            this.delFolder.Size = new System.Drawing.Size(124, 33);
+            this.delFolder.Size = new System.Drawing.Size(152, 33);
             this.delFolder.TabIndex = 1;
             this.delFolder.Text = "Remove Folder";
             this.delFolder.UseVisualStyleBackColor = true;
@@ -522,7 +575,7 @@
             this.addFolder.Location = new System.Drawing.Point(4, 4);
             this.addFolder.Margin = new System.Windows.Forms.Padding(4);
             this.addFolder.Name = "addFolder";
-            this.addFolder.Size = new System.Drawing.Size(124, 33);
+            this.addFolder.Size = new System.Drawing.Size(152, 33);
             this.addFolder.TabIndex = 0;
             this.addFolder.Text = "Import Folder";
             this.addFolder.UseVisualStyleBackColor = true;
@@ -537,7 +590,7 @@
             this.tabPane1.Controls.Add(this.tabNNormalTest);
             this.tabPane1.Controls.Add(this.tabNavigationPage1);
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabPane1.Location = new System.Drawing.Point(268, 0);
+            this.tabPane1.Location = new System.Drawing.Point(324, 0);
             this.tabPane1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
@@ -546,9 +599,9 @@
             this.tabNETH,
             this.tabNNormalTest,
             this.tabNavigationPage1});
-            this.tabPane1.RegularSize = new System.Drawing.Size(1080, 582);
+            this.tabPane1.RegularSize = new System.Drawing.Size(1024, 582);
             this.tabPane1.SelectedPage = this.tabNETH;
-            this.tabPane1.Size = new System.Drawing.Size(1080, 582);
+            this.tabPane1.Size = new System.Drawing.Size(1024, 582);
             this.tabPane1.TabIndex = 110;
             this.tabPane1.Text = "Etherne";
             // 
@@ -562,30 +615,30 @@
             this.tabNCAN.Name = "tabNCAN";
             this.tabNCAN.PageText = "CAN";
             this.tabNCAN.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.tabNCAN.Size = new System.Drawing.Size(1080, 536);
+            this.tabNCAN.Size = new System.Drawing.Size(1024, 536);
             // 
             // panel8
             // 
             this.panel8.Controls.Add(this.label27);
-            this.panel8.Controls.Add(this.chkCan4);
+            this.panel8.Controls.Add(this.chkCan3);
             this.panel8.Controls.Add(this.cboxCanbtl14);
-            this.panel8.Controls.Add(this.beditCan4);
+            this.panel8.Controls.Add(this.beditCan3);
             this.panel8.Controls.Add(this.labelControl18);
             this.panel8.Controls.Add(this.label25);
-            this.panel8.Controls.Add(this.chkCan3);
+            this.panel8.Controls.Add(this.chkCan2);
             this.panel8.Controls.Add(this.cboxCanbtl13);
-            this.panel8.Controls.Add(this.beditCan3);
+            this.panel8.Controls.Add(this.beditCan2);
             this.panel8.Controls.Add(this.labelControl17);
             this.panel8.Controls.Add(this.label16);
             this.panel8.Controls.Add(this.label15);
             this.panel8.Controls.Add(this.label14);
-            this.panel8.Controls.Add(this.chkCan2);
             this.panel8.Controls.Add(this.chkCan1);
+            this.panel8.Controls.Add(this.chkCan0);
             this.panel8.Controls.Add(this.label5);
             this.panel8.Controls.Add(this.cboxCanbtl12);
             this.panel8.Controls.Add(this.cboxMachineindex);
-            this.panel8.Controls.Add(this.beditCan2);
             this.panel8.Controls.Add(this.beditCan1);
+            this.panel8.Controls.Add(this.beditCan0);
             this.panel8.Controls.Add(this.labelControl7);
             this.panel8.Controls.Add(this.cboxCanbtl11);
             this.panel8.Controls.Add(this.labelControl8);
@@ -593,7 +646,7 @@
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1080, 536);
+            this.panel8.Size = new System.Drawing.Size(1024, 536);
             this.panel8.TabIndex = 62;
             // 
             // label27
@@ -604,19 +657,19 @@
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(40, 12);
             this.label27.TabIndex = 99;
-            this.label27.Text = "CAN 4";
+            this.label27.Text = "CAN 3";
             // 
-            // chkCan4
+            // chkCan3
             // 
-            this.chkCan4.AutoSize = true;
-            this.chkCan4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.chkCan4.Location = new System.Drawing.Point(7, 210);
-            this.chkCan4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.chkCan4.Name = "chkCan4";
-            this.chkCan4.Size = new System.Drawing.Size(78, 16);
-            this.chkCan4.TabIndex = 98;
-            this.chkCan4.Text = "bmsx file";
-            this.chkCan4.UseVisualStyleBackColor = true;
+            this.chkCan3.AutoSize = true;
+            this.chkCan3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.chkCan3.Location = new System.Drawing.Point(7, 210);
+            this.chkCan3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkCan3.Name = "chkCan3";
+            this.chkCan3.Size = new System.Drawing.Size(78, 16);
+            this.chkCan3.TabIndex = 98;
+            this.chkCan3.Text = "bmsx file";
+            this.chkCan3.UseVisualStyleBackColor = true;
             // 
             // cboxCanbtl14
             // 
@@ -641,15 +694,16 @@
             this.cboxCanbtl14.TabIndex = 97;
             this.cboxCanbtl14.ValueMember = "1";
             // 
-            // beditCan4
+            // beditCan3
             // 
-            this.beditCan4.Location = new System.Drawing.Point(94, 208);
-            this.beditCan4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.beditCan4.Name = "beditCan4";
-            this.beditCan4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.beditCan3.Location = new System.Drawing.Point(94, 208);
+            this.beditCan3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.beditCan3.Name = "beditCan3";
+            this.beditCan3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.beditCan4.Size = new System.Drawing.Size(362, 20);
-            this.beditCan4.TabIndex = 92;
+            this.beditCan3.Size = new System.Drawing.Size(362, 20);
+            this.beditCan3.TabIndex = 92;
+            this.beditCan3.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.beditCan3_ButtonClick);
             // 
             // labelControl18
             // 
@@ -671,19 +725,19 @@
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(40, 12);
             this.label25.TabIndex = 91;
-            this.label25.Text = "CAN 3";
+            this.label25.Text = "CAN 2";
             // 
-            // chkCan3
+            // chkCan2
             // 
-            this.chkCan3.AutoSize = true;
-            this.chkCan3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.chkCan3.Location = new System.Drawing.Point(7, 166);
-            this.chkCan3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.chkCan3.Name = "chkCan3";
-            this.chkCan3.Size = new System.Drawing.Size(78, 16);
-            this.chkCan3.TabIndex = 90;
-            this.chkCan3.Text = "bmsx file";
-            this.chkCan3.UseVisualStyleBackColor = true;
+            this.chkCan2.AutoSize = true;
+            this.chkCan2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.chkCan2.Location = new System.Drawing.Point(7, 166);
+            this.chkCan2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkCan2.Name = "chkCan2";
+            this.chkCan2.Size = new System.Drawing.Size(78, 16);
+            this.chkCan2.TabIndex = 90;
+            this.chkCan2.Text = "bmsx file";
+            this.chkCan2.UseVisualStyleBackColor = true;
             // 
             // cboxCanbtl13
             // 
@@ -708,15 +762,16 @@
             this.cboxCanbtl13.TabIndex = 89;
             this.cboxCanbtl13.ValueMember = "1";
             // 
-            // beditCan3
+            // beditCan2
             // 
-            this.beditCan3.Location = new System.Drawing.Point(94, 166);
-            this.beditCan3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.beditCan3.Name = "beditCan3";
-            this.beditCan3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.beditCan2.Location = new System.Drawing.Point(94, 166);
+            this.beditCan2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.beditCan2.Name = "beditCan2";
+            this.beditCan2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.beditCan3.Size = new System.Drawing.Size(362, 20);
-            this.beditCan3.TabIndex = 84;
+            this.beditCan2.Size = new System.Drawing.Size(362, 20);
+            this.beditCan2.TabIndex = 84;
+            this.beditCan2.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.beditCan2_ButtonClick);
             // 
             // labelControl17
             // 
@@ -738,7 +793,7 @@
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(40, 12);
             this.label16.TabIndex = 72;
-            this.label16.Text = "CAN 1";
+            this.label16.Text = "CAN 0";
             // 
             // label15
             // 
@@ -748,7 +803,7 @@
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(40, 12);
             this.label15.TabIndex = 71;
-            this.label15.Text = "CAN 2";
+            this.label15.Text = "CAN 1";
             // 
             // label14
             // 
@@ -760,29 +815,29 @@
             this.label14.TabIndex = 70;
             this.label14.Text = "CAN";
             // 
-            // chkCan2
-            // 
-            this.chkCan2.AutoSize = true;
-            this.chkCan2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.chkCan2.Location = new System.Drawing.Point(7, 120);
-            this.chkCan2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.chkCan2.Name = "chkCan2";
-            this.chkCan2.Size = new System.Drawing.Size(78, 16);
-            this.chkCan2.TabIndex = 57;
-            this.chkCan2.Text = "bmsx file";
-            this.chkCan2.UseVisualStyleBackColor = true;
-            // 
             // chkCan1
             // 
             this.chkCan1.AutoSize = true;
             this.chkCan1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.chkCan1.Location = new System.Drawing.Point(7, 70);
+            this.chkCan1.Location = new System.Drawing.Point(7, 120);
             this.chkCan1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkCan1.Name = "chkCan1";
             this.chkCan1.Size = new System.Drawing.Size(78, 16);
-            this.chkCan1.TabIndex = 56;
+            this.chkCan1.TabIndex = 57;
             this.chkCan1.Text = "bmsx file";
             this.chkCan1.UseVisualStyleBackColor = true;
+            // 
+            // chkCan0
+            // 
+            this.chkCan0.AutoSize = true;
+            this.chkCan0.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.chkCan0.Location = new System.Drawing.Point(7, 70);
+            this.chkCan0.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkCan0.Name = "chkCan0";
+            this.chkCan0.Size = new System.Drawing.Size(78, 16);
+            this.chkCan0.TabIndex = 56;
+            this.chkCan0.Text = "bmsx file";
+            this.chkCan0.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -847,25 +902,27 @@
             this.cboxMachineindex.Size = new System.Drawing.Size(75, 20);
             this.cboxMachineindex.TabIndex = 51;
             // 
-            // beditCan2
-            // 
-            this.beditCan2.Location = new System.Drawing.Point(94, 118);
-            this.beditCan2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.beditCan2.Name = "beditCan2";
-            this.beditCan2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.beditCan2.Size = new System.Drawing.Size(362, 20);
-            this.beditCan2.TabIndex = 35;
-            // 
             // beditCan1
             // 
-            this.beditCan1.Location = new System.Drawing.Point(94, 68);
+            this.beditCan1.Location = new System.Drawing.Point(94, 118);
             this.beditCan1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.beditCan1.Name = "beditCan1";
             this.beditCan1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.beditCan1.Size = new System.Drawing.Size(362, 20);
-            this.beditCan1.TabIndex = 33;
+            this.beditCan1.TabIndex = 35;
+            this.beditCan1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.beditCan1_ButtonClick);
+            // 
+            // beditCan0
+            // 
+            this.beditCan0.Location = new System.Drawing.Point(94, 68);
+            this.beditCan0.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.beditCan0.Name = "beditCan0";
+            this.beditCan0.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.beditCan0.Size = new System.Drawing.Size(362, 20);
+            this.beditCan0.TabIndex = 33;
+            this.beditCan0.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.beditCan0_ButtonClick);
             // 
             // labelControl7
             // 
@@ -936,7 +993,7 @@
             this.tabNCOM.PageText = "COM";
             this.tabNCOM.PageVisible = false;
             this.tabNCOM.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.Text;
-            this.tabNCOM.Size = new System.Drawing.Size(1080, 582);
+            this.tabNCOM.Size = new System.Drawing.Size(1080, 536);
             // 
             // panel7
             // 
@@ -982,7 +1039,7 @@
             this.panel7.Location = new System.Drawing.Point(67, 68);
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(964, 304);
+            this.panel7.Size = new System.Drawing.Size(964, 258);
             this.panel7.TabIndex = 60;
             // 
             // chkcom5
@@ -1365,7 +1422,7 @@
             this.tabNETH.Name = "tabNETH";
             this.tabNETH.PageText = "Etherne";
             this.tabNETH.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.tabNETH.Size = new System.Drawing.Size(1080, 536);
+            this.tabNETH.Size = new System.Drawing.Size(1024, 536);
             // 
             // panel6
             // 
@@ -1387,7 +1444,7 @@
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1080, 536);
+            this.panel6.Size = new System.Drawing.Size(1024, 536);
             this.panel6.TabIndex = 59;
             // 
             // label9
@@ -1776,9 +1833,9 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode1.RelationName = "Level1";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.gridControl1.Location = new System.Drawing.Point(2, 21);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -1960,9 +2017,9 @@
             // gridControl6
             // 
             this.gridControl6.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode3.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.gridControl6.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode3});
+            gridLevelNode2});
             this.gridControl6.Location = new System.Drawing.Point(2, 21);
             this.gridControl6.MainView = this.gridView6;
             this.gridControl6.Name = "gridControl6";
@@ -2158,7 +2215,7 @@
             this.tabNavigationPage1.Name = "tabNavigationPage1";
             this.tabNavigationPage1.PageText = "Warn";
             this.tabNavigationPage1.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.tabNavigationPage1.Size = new System.Drawing.Size(1080, 582);
+            this.tabNavigationPage1.Size = new System.Drawing.Size(1080, 536);
             // 
             // groupControl5
             // 
@@ -2168,7 +2225,7 @@
             this.groupControl5.Location = new System.Drawing.Point(0, 0);
             this.groupControl5.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(509, 582);
+            this.groupControl5.Size = new System.Drawing.Size(509, 536);
             this.groupControl5.TabIndex = 33;
             this.groupControl5.Text = "Init";
             // 
@@ -2190,7 +2247,7 @@
             this.gridControl5.Location = new System.Drawing.Point(2, 21);
             this.gridControl5.MainView = this.gridView5;
             this.gridControl5.Name = "gridControl5";
-            this.gridControl5.Size = new System.Drawing.Size(505, 559);
+            this.gridControl5.Size = new System.Drawing.Size(505, 513);
             this.gridControl5.TabIndex = 8;
             this.gridControl5.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView5});
@@ -2228,7 +2285,7 @@
             this.toolboxControl1.OptionsMinimizing.NormalWidth = 268;
             this.toolboxControl1.OptionsView.ShowMenuButton = false;
             this.toolboxControl1.OptionsView.ShowSearchPanel = false;
-            this.toolboxControl1.Size = new System.Drawing.Size(268, 582);
+            this.toolboxControl1.Size = new System.Drawing.Size(324, 582);
             this.toolboxControl1.TabIndex = 111;
             // 
             // repositoryItemCheckEdit1
@@ -2248,59 +2305,6 @@
             // 
             this.popupMenu1.Name = "popupMenu1";
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.delFolder, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.addFolder, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(264, 41);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.treeFile, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 17);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(264, 293);
-            this.tableLayoutPanel2.TabIndex = 100;
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 5;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.Controls.Add(this.btnAddclass, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnDelClass, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.simpleButton4, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnReName, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.simpleButton2, 4, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(258, 34);
-            this.tableLayoutPanel3.TabIndex = 101;
-            // 
             // Frmsceme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2312,24 +2316,28 @@
             this.Name = "Frmsceme";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Scheme Edit";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frmsceme_Load);
             this.Resize += new System.EventHandler(this.Frmsceme_Resize);
             this.scemePanel.ResumeLayout(false);
             this.gbScheme.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.treeFile)).EndInit();
             this.FileMenuStripResult.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.GbFolder.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.treeClass)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).EndInit();
             this.tabPane1.ResumeLayout(false);
             this.tabNCAN.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.beditCan4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.beditCan3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.beditCan2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.beditCan1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beditCan0.Properties)).EndInit();
             this.tabNCOM.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
@@ -2394,9 +2402,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2420,25 +2425,25 @@
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNCAN;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.CheckBox chkCan4;
+        private System.Windows.Forms.CheckBox chkCan3;
         private System.Windows.Forms.ComboBox cboxCanbtl14;
-        private DevExpress.XtraEditors.ButtonEdit beditCan4;
+        private DevExpress.XtraEditors.ButtonEdit beditCan3;
         private DevExpress.XtraEditors.LabelControl labelControl18;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.CheckBox chkCan3;
+        private System.Windows.Forms.CheckBox chkCan2;
         private System.Windows.Forms.ComboBox cboxCanbtl13;
-        private DevExpress.XtraEditors.ButtonEdit beditCan3;
+        private DevExpress.XtraEditors.ButtonEdit beditCan2;
         private DevExpress.XtraEditors.LabelControl labelControl17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.CheckBox chkCan2;
         private System.Windows.Forms.CheckBox chkCan1;
+        private System.Windows.Forms.CheckBox chkCan0;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cboxCanbtl12;
         private System.Windows.Forms.ComboBox cboxMachineindex;
-        private DevExpress.XtraEditors.ButtonEdit beditCan2;
         private DevExpress.XtraEditors.ButtonEdit beditCan1;
+        private DevExpress.XtraEditors.ButtonEdit beditCan0;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private System.Windows.Forms.ComboBox cboxCanbtl11;
         private DevExpress.XtraEditors.LabelControl labelControl8;

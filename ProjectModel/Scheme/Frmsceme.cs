@@ -8,10 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraTreeList.Nodes;
-
 using DevExpress.XtraTreeList;
-
-
 using System.IO;
 using System.Collections;
 using System.Xml;
@@ -460,8 +457,136 @@ namespace Scheme
             else
             {
                 string path = fileNode.Tag.ToString();
-                MessageBox.Show("Now we will open " + path);
+                //MessageBox.Show("Now we will open " + path);
+                XmlDocument xDoc = GetXml(path);
+                SetValueFromXmlFile(xDoc);
+                return;
             }
         }
+
+
+
+        /// <summary>
+        /// some functions may be used
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns>XmlDocument object</returns>
+        public XmlDocument GetXml(string path)
+        {
+            try
+            {
+                XmlDocument xDoc = new XmlDocument();
+                xDoc.Load(path);
+                return xDoc;
+            }
+            catch (FileNotFoundException)
+            {
+                MessageBox.Show("No such xml file, please retry.");
+                return null;
+            }
+            catch (XmlException)
+            {
+                MessageBox.Show("Error,wrong file format!");
+                return null;
+            }
+        }
+        public void SetValueFromXmlFile(XmlDocument xDoc)
+        {
+            //set CAN
+            XmlNodeList list = xDoc.GetElementsByTagName("canitem");
+            string DeviceIndex = null;
+            if (list.Count!=0)
+            {
+                foreach (XmlNode node in list)
+                {
+                    string chindex = node.Attributes["chindex"].Value;
+                    string canFile = node.Attributes["file"].Value;
+                    DeviceIndex = node.Attributes["machineindex"].Value;
+                    switch (chindex)
+                    {
+                        case "0":
+                            chkCan0.Checked = true;
+                            beditCan0.Text = canFile;
+                            break;
+                        case "1":
+                            chkCan1.Checked = true;
+                            beditCan1.Text = canFile;
+                            break;
+                        case "2":
+                            chkCan2.Checked = true;
+                            beditCan2.Text = canFile;
+                            break;
+                        case "3":
+                            chkCan3.Checked = true;
+                            beditCan3.Text = canFile;
+                            break;
+                    }
+                }
+                cboxMachineindex.SelectedIndex = Int32.Parse(DeviceIndex);
+            }
+        }
+
+        private void beditCan0_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            FileInfo info = GetFile();
+            if (info != null)
+            {
+                beditCan0.Text = info.Name;
+            }
+            else
+            {
+                beditCan0.Text = "";
+            }
+        }
+
+
+        private void beditCan1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            FileInfo info = GetFile();
+            if (info != null)
+            {
+                beditCan1.Text = info.Name;
+            }
+            else
+            {
+                beditCan1.Text = "";
+            }
+        }
+
+        private void beditCan2_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            FileInfo info = GetFile();
+            if (info != null)
+            {
+                beditCan2.Text = info.Name;
+            }
+            else
+            {
+                beditCan2.Text = "";
+            }
+        }
+
+        private void beditCan3_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            FileInfo info = GetFile();
+            if (info != null)
+            {
+                beditCan3.Text = info.Name;
+            }
+            else
+            {
+                beditCan3.Text = "";
+            }
+        }
+        private FileInfo GetFile()
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.ShowDialog();
+            string path = Path.GetFullPath(dialog.FileName);
+            FileInfo info = new FileInfo(path);
+            return info;
+        }
     }
+
+    
 }

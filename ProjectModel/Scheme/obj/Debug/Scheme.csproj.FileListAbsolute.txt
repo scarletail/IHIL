@@ -311,9 +311,9 @@ F:\GitSync\IHIL\ProjectModel\Scheme\bin\Debug\ru\DevExpress.XtraTreeList.v18.1.r
 F:\GitSync\IHIL\ProjectModel\Scheme\obj\Debug\Scheme.Frmsceme.resources
 F:\GitSync\IHIL\ProjectModel\Scheme\obj\Debug\Scheme.Properties.Resources.resources
 F:\GitSync\IHIL\ProjectModel\Scheme\obj\Debug\Scheme.csproj.GenerateResource.cache
-F:\GitSync\IHIL\ProjectModel\Scheme\obj\Debug\Scheme.exe.licenses
 F:\GitSync\IHIL\ProjectModel\Scheme\obj\Debug\Scheme.csproj.CoreCompileInputs.cache
 F:\GitSync\IHIL\ProjectModel\Scheme\obj\Debug\Scheme.csproj.CopyComplete
 F:\GitSync\IHIL\ProjectModel\Scheme\obj\Debug\Scheme.exe
 F:\GitSync\IHIL\ProjectModel\Scheme\obj\Debug\Scheme.pdb
+F:\GitSync\IHIL\ProjectModel\Scheme\obj\Debug\Scheme.exe.licenses
 F:\GitSync\IHIL\ProjectModel\Scheme\obj\Debug\Scheme.csprojAssemblyReference.cache
