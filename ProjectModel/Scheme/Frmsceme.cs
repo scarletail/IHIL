@@ -69,7 +69,7 @@ namespace Scheme
             }
             catch (NullReferenceException)
             {
-                Console.WriteLine("can't remove the folder because the list is empty!");
+                MessageBox.Show("can't remove the folder because the list is empty!");
                 return;
             }
 
@@ -120,14 +120,12 @@ namespace Scheme
         }
         /// <summary>
         /// 获取选中文件夹的路径
-        /// no use function
         /// </summary>
         /// <param name="node"></param>
         /// <param name="folder"></param>
         /// <returns></returns>
         private string getfolder(TreeListNode node, string folder)
         {
-            //useless function
             if (node.ParentNode == null)
             {
                 return this.schemeTopPath + folder;
@@ -139,14 +137,11 @@ namespace Scheme
             }
         }
         /// <summary>
-        /// no use function
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Frmsceme_Load(object sender, EventArgs e)
         {
-            //initial operation
-            //maybe useless
             ToolHeight();
             TreeListNode FileNode = treeClass.AppendNode(null, null);
             FileNode.SetValue(treeClass.Columns["FolderName"], "scheme");
