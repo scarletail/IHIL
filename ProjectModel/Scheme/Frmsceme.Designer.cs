@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmsceme));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.scemePanel = new System.Windows.Forms.Panel();
             this.gbScheme = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -138,14 +138,14 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.groupControl7 = new DevExpress.XtraEditors.GroupControl();
             this.button14 = new System.Windows.Forms.Button();
-            this.gridControl7 = new DevExpress.XtraGrid.GridControl();
+            this.gridControlSave = new DevExpress.XtraGrid.GridControl();
             this.gridView7 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemComboBox2 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.splitter6 = new System.Windows.Forms.Splitter();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.JudgeGroupControl = new DevExpress.XtraEditors.GroupControl();
             this.button4 = new System.Windows.Forms.Button();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.gridControlJudge = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
@@ -154,12 +154,12 @@
             this.splitter4 = new System.Windows.Forms.Splitter();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.buttonCmdSet = new System.Windows.Forms.Button();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridControlSetCMD = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.InitGroupControl = new DevExpress.XtraEditors.GroupControl();
             this.button8 = new System.Windows.Forms.Button();
-            this.gridControl4 = new DevExpress.XtraGrid.GridControl();
+            this.gridControlInit = new DevExpress.XtraGrid.GridControl();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.splitter2 = new System.Windows.Forms.Splitter();
@@ -170,7 +170,7 @@
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
-            this.gridControl6 = new DevExpress.XtraGrid.GridControl();
+            this.gridControlProject = new DevExpress.XtraGrid.GridControl();
             this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -181,7 +181,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.gridControl3 = new DevExpress.XtraGrid.GridControl();
+            this.gridControlTest = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.TestID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.text = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -241,31 +241,31 @@
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).BeginInit();
             this.groupControl7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.JudgeGroupControl)).BeginInit();
+            this.JudgeGroupControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlJudge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlSetCMD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
-            this.groupControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InitGroupControl)).BeginInit();
+            this.InitGroupControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlInit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).BeginInit();
             this.groupControl6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlProject)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlTest)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             this.panel11.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
@@ -1572,6 +1572,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.buttonEdit1.Size = new System.Drawing.Size(369, 20);
             this.buttonEdit1.TabIndex = 36;
+            this.buttonEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.buttonEdit1_ButtonClick);
             // 
             // buttonEdit2
             // 
@@ -1582,6 +1583,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.buttonEdit2.Size = new System.Drawing.Size(369, 20);
             this.buttonEdit2.TabIndex = 36;
+            this.buttonEdit2.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.buttonEdit2_ButtonClick);
             // 
             // labelControl5
             // 
@@ -1626,7 +1628,7 @@
             // 
             this.panel9.Controls.Add(this.groupControl7);
             this.panel9.Controls.Add(this.splitter6);
-            this.panel9.Controls.Add(this.groupControl1);
+            this.panel9.Controls.Add(this.JudgeGroupControl);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(0, 262);
             this.panel9.Margin = new System.Windows.Forms.Padding(2);
@@ -1637,7 +1639,7 @@
             // groupControl7
             // 
             this.groupControl7.Controls.Add(this.button14);
-            this.groupControl7.Controls.Add(this.gridControl7);
+            this.groupControl7.Controls.Add(this.gridControlSave);
             this.groupControl7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl7.Location = new System.Drawing.Point(302, 0);
             this.groupControl7.Margin = new System.Windows.Forms.Padding(2);
@@ -1658,17 +1660,17 @@
             this.button14.Text = "Modi...";
             this.button14.UseVisualStyleBackColor = true;
             // 
-            // gridControl7
+            // gridControlSave
             // 
-            this.gridControl7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl7.Location = new System.Drawing.Point(2, 21);
-            this.gridControl7.MainView = this.gridView7;
-            this.gridControl7.Name = "gridControl7";
-            this.gridControl7.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.gridControlSave.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlSave.Location = new System.Drawing.Point(2, 21);
+            this.gridControlSave.MainView = this.gridView7;
+            this.gridControlSave.Name = "gridControlSave";
+            this.gridControlSave.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemComboBox2});
-            this.gridControl7.Size = new System.Drawing.Size(138, 251);
-            this.gridControl7.TabIndex = 8;
-            this.gridControl7.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridControlSave.Size = new System.Drawing.Size(138, 251);
+            this.gridControlSave.TabIndex = 8;
+            this.gridControlSave.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView7});
             // 
             // gridView7
@@ -1677,7 +1679,7 @@
             this.gridView7.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn7});
             this.gridView7.DetailHeight = 280;
-            this.gridView7.GridControl = this.gridControl7;
+            this.gridView7.GridControl = this.gridControlSave;
             this.gridView7.IndicatorWidth = 19;
             this.gridView7.Name = "gridView7";
             this.gridView7.OptionsView.ShowGroupPanel = false;
@@ -1709,17 +1711,17 @@
             this.splitter6.TabIndex = 34;
             this.splitter6.TabStop = false;
             // 
-            // groupControl1
+            // JudgeGroupControl
             // 
-            this.groupControl1.Controls.Add(this.button4);
-            this.groupControl1.Controls.Add(this.gridControl2);
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupControl1.Location = new System.Drawing.Point(0, 0);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(2);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(298, 274);
-            this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "Result Judge";
+            this.JudgeGroupControl.Controls.Add(this.button4);
+            this.JudgeGroupControl.Controls.Add(this.gridControlJudge);
+            this.JudgeGroupControl.Dock = System.Windows.Forms.DockStyle.Left;
+            this.JudgeGroupControl.Location = new System.Drawing.Point(0, 0);
+            this.JudgeGroupControl.Margin = new System.Windows.Forms.Padding(2);
+            this.JudgeGroupControl.Name = "JudgeGroupControl";
+            this.JudgeGroupControl.Size = new System.Drawing.Size(298, 274);
+            this.JudgeGroupControl.TabIndex = 0;
+            this.JudgeGroupControl.Text = "Result Judge";
             // 
             // button4
             // 
@@ -1733,17 +1735,17 @@
             this.button4.Text = "Modi...";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // gridControl2
+            // gridControlJudge
             // 
-            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(2, 21);
-            this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.gridControlJudge.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlJudge.Location = new System.Drawing.Point(2, 21);
+            this.gridControlJudge.MainView = this.gridView2;
+            this.gridControlJudge.Name = "gridControlJudge";
+            this.gridControlJudge.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemComboBox1});
-            this.gridControl2.Size = new System.Drawing.Size(294, 251);
-            this.gridControl2.TabIndex = 8;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridControlJudge.Size = new System.Drawing.Size(294, 251);
+            this.gridControlJudge.TabIndex = 8;
+            this.gridControlJudge.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
             // gridView2
@@ -1752,7 +1754,7 @@
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn3});
             this.gridView2.DetailHeight = 280;
-            this.gridView2.GridControl = this.gridControl2;
+            this.gridView2.GridControl = this.gridControlJudge;
             this.gridView2.IndicatorWidth = 19;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.ShowGroupPanel = false;
@@ -1789,7 +1791,7 @@
             // 
             this.panel3.Controls.Add(this.splitter4);
             this.panel3.Controls.Add(this.groupControl2);
-            this.panel3.Controls.Add(this.groupControl4);
+            this.panel3.Controls.Add(this.InitGroupControl);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
@@ -1809,7 +1811,7 @@
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.buttonCmdSet);
-            this.groupControl2.Controls.Add(this.gridControl1);
+            this.groupControl2.Controls.Add(this.gridControlSetCMD);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(298, 0);
             this.groupControl2.Margin = new System.Windows.Forms.Padding(2);
@@ -1830,18 +1832,18 @@
             this.buttonCmdSet.Text = "Modi...";
             this.buttonCmdSet.UseVisualStyleBackColor = true;
             // 
-            // gridControl1
+            // gridControlSetCMD
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.RelationName = "Level1";
-            this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
-            this.gridControl1.Location = new System.Drawing.Point(2, 21);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(142, 231);
-            this.gridControl1.TabIndex = 8;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridControlSetCMD.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridLevelNode3.RelationName = "Level1";
+            this.gridControlSetCMD.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode3});
+            this.gridControlSetCMD.Location = new System.Drawing.Point(2, 21);
+            this.gridControlSetCMD.MainView = this.gridView1;
+            this.gridControlSetCMD.Name = "gridControlSetCMD";
+            this.gridControlSetCMD.Size = new System.Drawing.Size(142, 231);
+            this.gridControlSetCMD.TabIndex = 8;
+            this.gridControlSetCMD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
@@ -1850,7 +1852,7 @@
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn2});
             this.gridView1.DetailHeight = 280;
-            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GridControl = this.gridControlSetCMD;
             this.gridView1.IndicatorWidth = 19;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -1865,17 +1867,17 @@
             this.gridColumn2.VisibleIndex = 0;
             this.gridColumn2.Width = 126;
             // 
-            // groupControl4
+            // InitGroupControl
             // 
-            this.groupControl4.Controls.Add(this.button8);
-            this.groupControl4.Controls.Add(this.gridControl4);
-            this.groupControl4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupControl4.Location = new System.Drawing.Point(0, 0);
-            this.groupControl4.Margin = new System.Windows.Forms.Padding(2);
-            this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(298, 254);
-            this.groupControl4.TabIndex = 32;
-            this.groupControl4.Text = "Init";
+            this.InitGroupControl.Controls.Add(this.button8);
+            this.InitGroupControl.Controls.Add(this.gridControlInit);
+            this.InitGroupControl.Dock = System.Windows.Forms.DockStyle.Left;
+            this.InitGroupControl.Location = new System.Drawing.Point(0, 0);
+            this.InitGroupControl.Margin = new System.Windows.Forms.Padding(2);
+            this.InitGroupControl.Name = "InitGroupControl";
+            this.InitGroupControl.Size = new System.Drawing.Size(298, 254);
+            this.InitGroupControl.TabIndex = 32;
+            this.InitGroupControl.Text = "Init";
             // 
             // button8
             // 
@@ -1889,15 +1891,15 @@
             this.button8.Text = "Modi...";
             this.button8.UseVisualStyleBackColor = true;
             // 
-            // gridControl4
+            // gridControlInit
             // 
-            this.gridControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl4.Location = new System.Drawing.Point(2, 21);
-            this.gridControl4.MainView = this.gridView4;
-            this.gridControl4.Name = "gridControl4";
-            this.gridControl4.Size = new System.Drawing.Size(294, 231);
-            this.gridControl4.TabIndex = 8;
-            this.gridControl4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridControlInit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlInit.Location = new System.Drawing.Point(2, 21);
+            this.gridControlInit.MainView = this.gridView4;
+            this.gridControlInit.Name = "gridControlInit";
+            this.gridControlInit.Size = new System.Drawing.Size(294, 231);
+            this.gridControlInit.TabIndex = 8;
+            this.gridControlInit.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
             // 
             // gridView4
@@ -1906,7 +1908,7 @@
             this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1});
             this.gridView4.DetailHeight = 280;
-            this.gridView4.GridControl = this.gridControl4;
+            this.gridView4.GridControl = this.gridControlInit;
             this.gridView4.IndicatorWidth = 19;
             this.gridView4.Name = "gridView4";
             this.gridView4.OptionsView.ShowGroupPanel = false;
@@ -1950,7 +1952,7 @@
             this.groupControl6.Controls.Add(this.button11);
             this.groupControl6.Controls.Add(this.button12);
             this.groupControl6.Controls.Add(this.button13);
-            this.groupControl6.Controls.Add(this.gridControl6);
+            this.groupControl6.Controls.Add(this.gridControlProject);
             this.groupControl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl6.Location = new System.Drawing.Point(284, 0);
             this.groupControl6.Margin = new System.Windows.Forms.Padding(2);
@@ -1973,7 +1975,6 @@
             // button10
             // 
             this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button10.Image = global::Scheme.Properties.Resources.down;
             this.button10.Location = new System.Drawing.Point(243, -64);
             this.button10.Margin = new System.Windows.Forms.Padding(2);
             this.button10.Name = "button10";
@@ -1984,7 +1985,6 @@
             // button11
             // 
             this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button11.Image = global::Scheme.Properties.Resources.up1;
             this.button11.Location = new System.Drawing.Point(217, -64);
             this.button11.Margin = new System.Windows.Forms.Padding(2);
             this.button11.Name = "button11";
@@ -1995,7 +1995,6 @@
             // button12
             // 
             this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button12.Image = global::Scheme.Properties.Resources.minus;
             this.button12.Location = new System.Drawing.Point(190, -64);
             this.button12.Margin = new System.Windows.Forms.Padding(2);
             this.button12.Name = "button12";
@@ -2006,7 +2005,6 @@
             // button13
             // 
             this.button13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button13.Image = global::Scheme.Properties.Resources._;
             this.button13.Location = new System.Drawing.Point(166, -64);
             this.button13.Margin = new System.Windows.Forms.Padding(2);
             this.button13.Name = "button13";
@@ -2014,18 +2012,18 @@
             this.button13.TabIndex = 11;
             this.button13.UseVisualStyleBackColor = true;
             // 
-            // gridControl6
+            // gridControlProject
             // 
-            this.gridControl6.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode2.RelationName = "Level1";
-            this.gridControl6.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
-            this.gridControl6.Location = new System.Drawing.Point(2, 21);
-            this.gridControl6.MainView = this.gridView6;
-            this.gridControl6.Name = "gridControl6";
-            this.gridControl6.Size = new System.Drawing.Size(288, 449);
-            this.gridControl6.TabIndex = 5;
-            this.gridControl6.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridControlProject.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridLevelNode1.RelationName = "Level1";
+            this.gridControlProject.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
+            this.gridControlProject.Location = new System.Drawing.Point(2, 21);
+            this.gridControlProject.MainView = this.gridView6;
+            this.gridControlProject.Name = "gridControlProject";
+            this.gridControlProject.Size = new System.Drawing.Size(288, 449);
+            this.gridControlProject.TabIndex = 5;
+            this.gridControlProject.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView6});
             // 
             // gridView6
@@ -2035,7 +2033,7 @@
             this.gridColumn6,
             this.gridColumn5});
             this.gridView6.DetailHeight = 280;
-            this.gridView6.GridControl = this.gridControl6;
+            this.gridView6.GridControl = this.gridControlProject;
             this.gridView6.IndicatorWidth = 19;
             this.gridView6.Name = "gridView6";
             this.gridView6.OptionsView.ShowGroupPanel = false;
@@ -2076,7 +2074,7 @@
             this.groupControl3.Controls.Add(this.button6);
             this.groupControl3.Controls.Add(this.button5);
             this.groupControl3.Controls.Add(this.button3);
-            this.groupControl3.Controls.Add(this.gridControl3);
+            this.groupControl3.Controls.Add(this.gridControlTest);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupControl3.Location = new System.Drawing.Point(0, 0);
             this.groupControl3.Margin = new System.Windows.Forms.Padding(2);
@@ -2099,7 +2097,6 @@
             // button7
             // 
             this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button7.Image = global::Scheme.Properties.Resources.down;
             this.button7.Location = new System.Drawing.Point(230, -64);
             this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
@@ -2110,7 +2107,6 @@
             // button6
             // 
             this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.Image = global::Scheme.Properties.Resources.up1;
             this.button6.Location = new System.Drawing.Point(205, -64);
             this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
@@ -2121,7 +2117,6 @@
             // button5
             // 
             this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.Image = global::Scheme.Properties.Resources.minus;
             this.button5.Location = new System.Drawing.Point(179, -64);
             this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
@@ -2132,7 +2127,6 @@
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Image = global::Scheme.Properties.Resources._;
             this.button3.Location = new System.Drawing.Point(154, -64);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
@@ -2141,15 +2135,15 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // gridControl3
+            // gridControlTest
             // 
-            this.gridControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl3.Location = new System.Drawing.Point(2, 21);
-            this.gridControl3.MainView = this.gridView3;
-            this.gridControl3.Name = "gridControl3";
-            this.gridControl3.Size = new System.Drawing.Size(276, 449);
-            this.gridControl3.TabIndex = 5;
-            this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridControlTest.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlTest.Location = new System.Drawing.Point(2, 21);
+            this.gridControlTest.MainView = this.gridView3;
+            this.gridControlTest.Name = "gridControlTest";
+            this.gridControlTest.Size = new System.Drawing.Size(276, 449);
+            this.gridControlTest.TabIndex = 5;
+            this.gridControlTest.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
             // 
             // gridView3
@@ -2159,7 +2153,7 @@
             this.TestID,
             this.text});
             this.gridView3.DetailHeight = 280;
-            this.gridView3.GridControl = this.gridControl3;
+            this.gridView3.GridControl = this.gridControlTest;
             this.gridView3.IndicatorWidth = 19;
             this.gridView3.Name = "gridView3";
             this.gridView3.OptionsView.ShowGroupPanel = false;
@@ -2365,31 +2359,31 @@
             this.panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).EndInit();
             this.groupControl7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.JudgeGroupControl)).EndInit();
+            this.JudgeGroupControl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlJudge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlSetCMD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
-            this.groupControl4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InitGroupControl)).EndInit();
+            this.InitGroupControl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlInit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).EndInit();
             this.groupControl6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlProject)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlTest)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             this.panel11.ResumeLayout(false);
             this.tabNavigationPage1.ResumeLayout(false);
@@ -2515,14 +2509,14 @@
         private System.Windows.Forms.Splitter splitter3;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraGrid.GridControl gridControl2;
+        private DevExpress.XtraEditors.GroupControl JudgeGroupControl;
+        private DevExpress.XtraGrid.GridControl gridControlJudge;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraBars.PopupMenu popupMenu1;
         private System.Windows.Forms.ContextMenuStrip FileMenuStripResult;
         private DevExpress.XtraEditors.GroupControl groupControl3;
-        private DevExpress.XtraGrid.GridControl gridControl3;
+        private DevExpress.XtraGrid.GridControl gridControlTest;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private DevExpress.XtraGrid.Columns.GridColumn text;
         private System.Windows.Forms.Button button4;
@@ -2534,13 +2528,13 @@
         private System.Windows.Forms.Panel panel3;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private System.Windows.Forms.Button buttonCmdSet;
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.GridControl gridControlSetCMD;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     
-        private DevExpress.XtraEditors.GroupControl groupControl4;
+        private DevExpress.XtraEditors.GroupControl InitGroupControl;
         private System.Windows.Forms.Button button8;
-        private DevExpress.XtraGrid.GridControl gridControl4;
+        private DevExpress.XtraGrid.GridControl gridControlInit;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private System.Windows.Forms.Splitter splitter4;
@@ -2555,7 +2549,7 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
-        private DevExpress.XtraGrid.GridControl gridControl6;
+        private DevExpress.XtraGrid.GridControl gridControlProject;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private System.Windows.Forms.Splitter splitter5;
@@ -2563,7 +2557,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraEditors.GroupControl groupControl7;
         private System.Windows.Forms.Button button14;
-        private DevExpress.XtraGrid.GridControl gridControl7;
+        private DevExpress.XtraGrid.GridControl gridControlSave;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox2;

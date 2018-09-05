@@ -12,6 +12,7 @@ using DevExpress.XtraTreeList;
 using System.IO;
 using System.Collections;
 using System.Xml;
+using System.Xml.Serialization;
 
 namespace Scheme
 {
@@ -23,6 +24,7 @@ namespace Scheme
         private string schemeTopPath = "";
         string fileUrl = null;
         string hiddenEditorType = null;
+        TSchem CurrentTSchem = null;
         public Frmsceme()
         {
             InitializeComponent();
@@ -146,6 +148,7 @@ namespace Scheme
             TraverseFolder(FileNode);
             treeClass.FocusedNode = FileNode;
             TraverseFile(FileNode.Tag.ToString());
+            //gridControlTest.DataSource = null;
         }
         private void ToolHeight()
         {
@@ -462,14 +465,57 @@ namespace Scheme
             else
             {
                 string path = fileNode.Tag.ToString();
-                //MessageBox.Show("Now we will open " + path);
-                XmlDocument xDoc = GetXml(path);
-                SetValueFromXmlFile(xDoc);
+                XmlSerializer serializer = new XmlSerializer(typeof(TSchem));
+                FileStream fs1 = new FileStream(path, FileMode.Open);
+                XmlReader reader = XmlReader.Create(fs1);
+                CurrentTSchem = (TSchem)serializer.Deserialize(reader);
+                fs1.Close();
+                //show information included in xml file
+                setAllPage();
                 return;
             }
         }
 
-
+        private void setAllPage()
+        {
+            if (CurrentTSchem == null)
+            {
+                MessageBox.Show("No file opened!", "Warning");
+                return;
+            }
+            else
+            {
+                //set CAN page checkbox
+                chkCan0.Checked = CurrentTSchem.setCanlist.TSetCans[0].Check == "1" ? true : false;
+                chkCan1.Checked = CurrentTSchem.setCanlist.TSetCans[1].Check == "1" ? true : false;
+                chkCan2.Checked = CurrentTSchem.setCanlist.TSetCans[2].Check == "1" ? true : false;
+                chkCan3.Checked = CurrentTSchem.setCanlist.TSetCans[3].Check == "1" ? true : false;
+                //set file name
+                beditCan0.Text = CurrentTSchem.setCanlist.TSetCans[0].AgreeMentFile;
+                beditCan1.Text = CurrentTSchem.setCanlist.TSetCans[1].AgreeMentFile;
+                beditCan2.Text = CurrentTSchem.setCanlist.TSetCans[2].AgreeMentFile;
+                beditCan3.Text = CurrentTSchem.setCanlist.TSetCans[3].AgreeMentFile;
+                //set baut
+                cboxCanbtl11.SelectedIndex = Int32.Parse(CurrentTSchem.setCanlist.TSetCans[0].Baut);
+                cboxCanbtl12.SelectedIndex = Int32.Parse(CurrentTSchem.setCanlist.TSetCans[1].Baut);
+                cboxCanbtl13.SelectedIndex = Int32.Parse(CurrentTSchem.setCanlist.TSetCans[2].Baut);
+                cboxCanbtl14.SelectedIndex = Int32.Parse(CurrentTSchem.setCanlist.TSetCans[3].Baut);
+                //set ethernet page
+                checkBox1.Checked = CurrentTSchem.SetEthList.TSetEths[0].Check == "1" ? true : false;
+                checkBox2.Checked = CurrentTSchem.SetEthList.TSetEths[1].Check == "1" ? true : false;
+                buttonEdit1.Text = CurrentTSchem.SetEthList.TSetEths[0].AgreeMentFile;
+                buttonEdit2.Text = CurrentTSchem.SetEthList.TSetEths[1].AgreeMentFile;
+                NettextEdit1.Text = CurrentTSchem.SetEthList.TSetEths[0].IP;
+                NettextEdit2.Text = CurrentTSchem.SetEthList.TSetEths[1].IP;
+                TEPortOne1.Text = CurrentTSchem.SetEthList.TSetEths[0].Port;
+                TEPortOne2.Text = CurrentTSchem.SetEthList.TSetEths[1].Port;
+                //set normal test
+            }
+        }
+        private void GetAllPage()
+        {
+            if (CurrentTSchem == null) return;
+        }
 
         /// <summary>
         /// some functions may be used
@@ -500,7 +546,7 @@ namespace Scheme
             //set CAN
             XmlNodeList list = xDoc.GetElementsByTagName("canitem");
             string DeviceIndex = null;
-            if (list.Count!=0)
+            if (list.Count != 0)
             {
                 foreach (XmlNode node in list)
                 {
@@ -585,12 +631,45 @@ namespace Scheme
         private FileInfo GetFile()
         {
             OpenFileDialog dialog = new OpenFileDialog();
+            FileInfo info;
             dialog.ShowDialog();
-            string path = Path.GetFullPath(dialog.FileName);
-            FileInfo info = new FileInfo(path);
+            try
+            {
+                string path = Path.GetFullPath(dialog.FileName);
+                info = new FileInfo(path);
+            }
+            catch(ArgumentException)
+            {
+                info = null;
+            }
             return info;
+        }
+
+        private void buttonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            FileInfo info = GetFile();
+            if (info != null)
+            {
+                buttonEdit1.Text = info.Name;
+            }
+            else
+            {
+                buttonEdit1.Text = "";
+            }
+        }
+
+        private void buttonEdit2_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            FileInfo info = GetFile();
+            if (info != null)
+            {
+                buttonEdit2.Text = info.Name;
+            }
+            else
+            {
+                buttonEdit2.Text = "";
+            }
         }
     }
 
-    
 }
