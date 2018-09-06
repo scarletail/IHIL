@@ -510,6 +510,14 @@ namespace Scheme
                 TEPortOne1.Text = CurrentTSchem.SetEthList.TSetEths[0].Port;
                 TEPortOne2.Text = CurrentTSchem.SetEthList.TSetEths[1].Port;
                 //set normal test
+                //set test project
+                //warning: use list rather than array!
+                List<TStep> steps = CurrentTSchem.StepList.TSteps.ToList();
+                gridControlTest.DataSource = steps;
+                //set Project cmd
+                TStep step = steps.FirstOrDefault();
+                List<TCMD> tCMDs = step.CmdList.TCMDs.ToList();
+                gridControlProject.DataSource = tCMDs;
             }
         }
         private void GetAllPage()

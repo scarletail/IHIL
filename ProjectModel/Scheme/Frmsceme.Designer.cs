@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmsceme));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmsceme));
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             this.scemePanel = new System.Windows.Forms.Panel();
             this.gbScheme = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -183,8 +183,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.gridControlTest = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.TestID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.text = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.testid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.title = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel11 = new System.Windows.Forms.Panel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
@@ -701,6 +701,7 @@
             this.beditCan3.Name = "beditCan3";
             this.beditCan3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.beditCan3.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.beditCan3.Size = new System.Drawing.Size(362, 20);
             this.beditCan3.TabIndex = 92;
             this.beditCan3.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.beditCan3_ButtonClick);
@@ -769,6 +770,7 @@
             this.beditCan2.Name = "beditCan2";
             this.beditCan2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.beditCan2.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.beditCan2.Size = new System.Drawing.Size(362, 20);
             this.beditCan2.TabIndex = 84;
             this.beditCan2.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.beditCan2_ButtonClick);
@@ -909,6 +911,7 @@
             this.beditCan1.Name = "beditCan1";
             this.beditCan1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.beditCan1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.beditCan1.Size = new System.Drawing.Size(362, 20);
             this.beditCan1.TabIndex = 35;
             this.beditCan1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.beditCan1_ButtonClick);
@@ -920,6 +923,7 @@
             this.beditCan0.Name = "beditCan0";
             this.beditCan0.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.beditCan0.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.beditCan0.Size = new System.Drawing.Size(362, 20);
             this.beditCan0.TabIndex = 33;
             this.beditCan0.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.beditCan0_ButtonClick);
@@ -993,7 +997,7 @@
             this.tabNCOM.PageText = "COM";
             this.tabNCOM.PageVisible = false;
             this.tabNCOM.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.Text;
-            this.tabNCOM.Size = new System.Drawing.Size(1080, 536);
+            this.tabNCOM.Size = new System.Drawing.Size(1024, 536);
             // 
             // panel7
             // 
@@ -1039,7 +1043,7 @@
             this.panel7.Location = new System.Drawing.Point(67, 68);
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(964, 258);
+            this.panel7.Size = new System.Drawing.Size(908, 258);
             this.panel7.TabIndex = 60;
             // 
             // chkcom5
@@ -1570,6 +1574,7 @@
             this.buttonEdit1.Name = "buttonEdit1";
             this.buttonEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.buttonEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.buttonEdit1.Size = new System.Drawing.Size(369, 20);
             this.buttonEdit1.TabIndex = 36;
             this.buttonEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.buttonEdit1_ButtonClick);
@@ -1581,6 +1586,7 @@
             this.buttonEdit2.Name = "buttonEdit2";
             this.buttonEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.buttonEdit2.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.buttonEdit2.Size = new System.Drawing.Size(369, 20);
             this.buttonEdit2.TabIndex = 36;
             this.buttonEdit2.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.buttonEdit2_ButtonClick);
@@ -1835,9 +1841,9 @@
             // gridControlSetCMD
             // 
             this.gridControlSetCMD.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode3.RelationName = "Level1";
+            gridLevelNode1.RelationName = "Level1";
             this.gridControlSetCMD.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode3});
+            gridLevelNode1});
             this.gridControlSetCMD.Location = new System.Drawing.Point(2, 21);
             this.gridControlSetCMD.MainView = this.gridView1;
             this.gridControlSetCMD.Name = "gridControlSetCMD";
@@ -2015,9 +2021,9 @@
             // gridControlProject
             // 
             this.gridControlProject.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.gridControlProject.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.gridControlProject.Location = new System.Drawing.Point(2, 21);
             this.gridControlProject.MainView = this.gridView6;
             this.gridControlProject.Name = "gridControlProject";
@@ -2042,7 +2048,7 @@
             // gridColumn6
             // 
             this.gridColumn6.Caption = "CMD";
-            this.gridColumn6.FieldName = "text";
+            this.gridColumn6.FieldName = "Cmd";
             this.gridColumn6.MinWidth = 15;
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
@@ -2052,6 +2058,7 @@
             // gridColumn5
             // 
             this.gridColumn5.Caption = "WaitTime(ms)";
+            this.gridColumn5.FieldName = "WaitTime";
             this.gridColumn5.MinWidth = 15;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
@@ -2150,8 +2157,8 @@
             // 
             this.gridView3.ColumnPanelRowHeight = 32;
             this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.TestID,
-            this.text});
+            this.testid,
+            this.title});
             this.gridView3.DetailHeight = 280;
             this.gridView3.GridControl = this.gridControlTest;
             this.gridView3.IndicatorWidth = 19;
@@ -2159,24 +2166,25 @@
             this.gridView3.OptionsView.ShowGroupPanel = false;
             this.gridView3.RowHeight = 24;
             // 
-            // TestID
+            // testid
             // 
-            this.TestID.Caption = "Test ID";
-            this.TestID.MinWidth = 15;
-            this.TestID.Name = "TestID";
-            this.TestID.Visible = true;
-            this.TestID.VisibleIndex = 0;
-            this.TestID.Width = 56;
+            this.testid.Caption = "Test ID";
+            this.testid.FieldName = "testid";
+            this.testid.MinWidth = 15;
+            this.testid.Name = "testid";
+            this.testid.Visible = true;
+            this.testid.VisibleIndex = 0;
+            this.testid.Width = 56;
             // 
-            // text
+            // title
             // 
-            this.text.Caption = "Test Title";
-            this.text.FieldName = "text";
-            this.text.MinWidth = 15;
-            this.text.Name = "text";
-            this.text.Visible = true;
-            this.text.VisibleIndex = 1;
-            this.text.Width = 228;
+            this.title.Caption = "Test Title";
+            this.title.FieldName = "title";
+            this.title.MinWidth = 15;
+            this.title.Name = "title";
+            this.title.Visible = true;
+            this.title.VisibleIndex = 1;
+            this.title.Width = 228;
             // 
             // panel11
             // 
@@ -2518,7 +2526,7 @@
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraGrid.GridControl gridControlTest;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
-        private DevExpress.XtraGrid.Columns.GridColumn text;
+        private DevExpress.XtraGrid.Columns.GridColumn title;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button5;
@@ -2553,7 +2561,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private System.Windows.Forms.Splitter splitter5;
-        private DevExpress.XtraGrid.Columns.GridColumn TestID;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraEditors.GroupControl groupControl7;
         private System.Windows.Forms.Button button14;
@@ -2569,6 +2576,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        public DevExpress.XtraGrid.Columns.GridColumn testid;
     }
 }
 

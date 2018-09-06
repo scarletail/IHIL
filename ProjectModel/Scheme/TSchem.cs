@@ -116,9 +116,9 @@ namespace Scheme
         [XmlAttribute("Kind")]
         public string Kind;
         [XmlAttribute("Cmd")]
-        public string Cmd;
+        public string Cmd{ get; set; }
         [XmlAttribute("WaitTime")]
-        public string WaitTime;
+        public string WaitTime{ get; set; }
     }
     public class cmdList
     {
@@ -128,19 +128,24 @@ namespace Scheme
     public class TStep
     {
         [XmlAttribute("testid")]
-        public string testid;
+        public string testid { get; set; }
         [XmlAttribute("title")]
-        public string title;
+        public string title{ get; set; }
         [XmlAttribute("kind")]
         public string kind;
         [XmlAttribute("Check")]
         public string Check;
         [XmlElement("cmdList")]
-        public cmdList[] cmdLists;
+        public cmdList CmdList;
     }
     public class stepList
     {
         [XmlElement("TStep")]
         public TStep[] TSteps;
+    }
+    public class test
+    {
+        public string testid { get; set; }
+        public string title { get; set; }
     }
 }
