@@ -69,17 +69,17 @@ namespace Scheme
     public class TCondition
     {
         [XmlAttribute("IsParent")]
-        public string IsParent;
+        public string IsParent { get; set; }
         [XmlAttribute("VarName")]
         public string VarName { get; set; }
         [XmlAttribute("VarCaption")]
-        public string VarCaption;
+        public string VarCaption { get; set; }
         [XmlAttribute("Con")]
-        public string Con;
+        public string Con { get; set; }
         [XmlAttribute("ConValue")]
-        public string ConValue;
+        public string ConValue { get; set; }
         [XmlAttribute("Unit")]
-        public string Unit;
+        public string Unit { get; set; }
         [XmlElement("subCondition")]
         public List<subCondition> subConditions { get; set; }
     }

@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmsceme));
             this.scemePanel = new System.Windows.Forms.Panel();
             this.gbScheme = new System.Windows.Forms.GroupBox();
@@ -185,7 +184,7 @@
             this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.repositoryItemComboBox2 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.gridView7 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.saveVA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.button14 = new System.Windows.Forms.Button();
             this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
             this.gridControlProject = new DevExpress.XtraGrid.GridControl();
@@ -200,6 +199,9 @@
             this.button16 = new System.Windows.Forms.Button();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.saveSymbol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.saveConst = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.saveUnit = new DevExpress.XtraGrid.Columns.GridColumn();
             this.scemePanel.SuspendLayout();
             this.gbScheme.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -1765,9 +1767,9 @@
             // gridControlSetCMD
             // 
             this.gridControlSetCMD.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode3.RelationName = "Level1";
             this.gridControlSetCMD.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode3});
             this.gridControlSetCMD.Location = new System.Drawing.Point(2, 21);
             this.gridControlSetCMD.MainView = this.gridView1;
             this.gridControlSetCMD.Name = "gridControlSetCMD";
@@ -1824,10 +1826,10 @@
             // gridControlJudge
             // 
             this.gridControlJudge.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode2.LevelTemplate = this.Result_judge_subview;
-            gridLevelNode2.RelationName = "subConditions";
+            gridLevelNode1.LevelTemplate = this.Result_judge_subview;
+            gridLevelNode1.RelationName = "subConditions";
             this.gridControlJudge.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.gridControlJudge.Location = new System.Drawing.Point(2, 21);
             this.gridControlJudge.MainView = this.gridView10;
             this.gridControlJudge.Name = "gridControlJudge";
@@ -1941,6 +1943,7 @@
             // gridControlTest
             // 
             this.gridControlTest.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlTest.EmbeddedNavigator.Buttons.Edit.Enabled = false;
             this.gridControlTest.Location = new System.Drawing.Point(2, 21);
             this.gridControlTest.MainView = this.gridView3;
             this.gridControlTest.Name = "gridControlTest";
@@ -1961,6 +1964,7 @@
             this.gridView3.Name = "gridView3";
             this.gridView3.OptionsView.ShowGroupPanel = false;
             this.gridView3.RowHeight = 24;
+            this.gridView3.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView3_SelectionChanged);
             // 
             // testid
             // 
@@ -2139,6 +2143,8 @@
             this.gridView6.Name = "gridView6";
             this.gridView6.OptionsView.ShowGroupPanel = false;
             this.gridView6.RowHeight = 24;
+            this.gridView6.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView6_SelectionChanged);
+            this.gridView6.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView6_FocusedRowChanged);
             // 
             // repositoryItemComboBox2
             // 
@@ -2151,7 +2157,10 @@
             // 
             this.gridView7.ColumnPanelRowHeight = 32;
             this.gridView7.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn7});
+            this.saveVA,
+            this.saveSymbol,
+            this.saveConst,
+            this.saveUnit});
             this.gridView7.DetailHeight = 280;
             this.gridView7.GridControl = this.gridControlSave;
             this.gridView7.IndicatorWidth = 19;
@@ -2159,15 +2168,15 @@
             this.gridView7.OptionsView.ShowGroupPanel = false;
             this.gridView7.RowHeight = 24;
             // 
-            // gridColumn7
+            // saveVA
             // 
-            this.gridColumn7.Caption = "condition";
-            this.gridColumn7.FieldName = "text";
-            this.gridColumn7.MinWidth = 15;
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 0;
-            this.gridColumn7.Width = 210;
+            this.saveVA.Caption = "VA";
+            this.saveVA.FieldName = "VarCaption";
+            this.saveVA.MinWidth = 15;
+            this.saveVA.Name = "saveVA";
+            this.saveVA.Visible = true;
+            this.saveVA.VisibleIndex = 0;
+            this.saveVA.Width = 77;
             // 
             // button14
             // 
@@ -2200,9 +2209,6 @@
             // gridControlProject
             // 
             this.gridControlProject.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode3.RelationName = "subConditions";
-            this.gridControlProject.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode3});
             this.gridControlProject.Location = new System.Drawing.Point(2, 21);
             this.gridControlProject.MainView = this.gridView6;
             this.gridControlProject.Name = "gridControlProject";
@@ -2231,7 +2237,7 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 0;
-            this.gridColumn6.Width = 154;
+            this.gridColumn6.Width = 98;
             // 
             // gridColumn5
             // 
@@ -2241,7 +2247,7 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 1;
-            this.gridColumn5.Width = 87;
+            this.gridColumn5.Width = 130;
             // 
             // button13
             // 
@@ -2324,6 +2330,33 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(249, 530);
             this.tableLayoutPanel5.TabIndex = 36;
+            // 
+            // saveSymbol
+            // 
+            this.saveSymbol.Caption = "SYM";
+            this.saveSymbol.FieldName = "Con";
+            this.saveSymbol.Name = "saveSymbol";
+            this.saveSymbol.Visible = true;
+            this.saveSymbol.VisibleIndex = 1;
+            this.saveSymbol.Width = 47;
+            // 
+            // saveConst
+            // 
+            this.saveConst.Caption = "CONST";
+            this.saveConst.FieldName = "ConValue";
+            this.saveConst.Name = "saveConst";
+            this.saveConst.Visible = true;
+            this.saveConst.VisibleIndex = 2;
+            this.saveConst.Width = 47;
+            // 
+            // saveUnit
+            // 
+            this.saveUnit.Caption = "UNIT";
+            this.saveUnit.FieldName = "Unit";
+            this.saveUnit.Name = "saveUnit";
+            this.saveUnit.Visible = true;
+            this.saveUnit.VisibleIndex = 3;
+            this.saveUnit.Width = 51;
             // 
             // Frmsceme
             // 
@@ -2550,7 +2583,7 @@
         private System.Windows.Forms.Button button14;
         private DevExpress.XtraGrid.GridControl gridControlSave;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView7;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn saveVA;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox2;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private System.Windows.Forms.Button buttonCmdSet;
@@ -2597,6 +2630,9 @@
         public DevExpress.XtraGrid.Columns.GridColumn testid;
         private DevExpress.XtraGrid.Columns.GridColumn title;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn saveSymbol;
+        private DevExpress.XtraGrid.Columns.GridColumn saveConst;
+        private DevExpress.XtraGrid.Columns.GridColumn saveUnit;
     }
 }
 

@@ -512,17 +512,27 @@ namespace Scheme
                 //set normal test
                 //set test project
                 //warning: datasource is a list rather than an array!
-                List<TStep> steps = CurrentTSchem.StepList.TSteps;
-                gridControlTest.DataSource = steps;
+                setTestProj();
                 //set Project cmd
-                TStep step = steps.FirstOrDefault();
-                List<TCMD> tCMDs = step.CmdList.TCMDs.ToList();
-                gridControlProject.DataSource = tCMDs;
+                setProjCMD(CurrentTSchem.StepList.TSteps.FirstOrDefault().CmdList);
                 //set init omited...
                 //set Set omited...
                 //set Result judge
-                gridControlJudge.DataSource = tCMDs.FirstOrDefault().Judgelist.tconditions;
+                //set save panel
+                setOther(CurrentTSchem.StepList.TSteps.FirstOrDefault().CmdList.TCMDs.FirstOrDefault());
             }
+        }
+        private void setTestProj() {
+            List<TStep> steps = CurrentTSchem.StepList.TSteps;
+            gridControlTest.DataSource = steps;
+        }
+        private void setProjCMD(cmdList list) {
+            List<TCMD> tCMDs = list.TCMDs;
+            gridControlProject.DataSource = tCMDs;
+        }
+        private void setOther(TCMD tcmd) {
+            gridControlJudge.DataSource = tcmd.Judgelist.tconditions;
+            gridControlSave.DataSource = tcmd.Savelist.TConditions;
         }
         private void GetAllPage()
         {
@@ -657,6 +667,33 @@ namespace Scheme
             {
                 buttonEdit2.Text = "";
             }
+        }
+
+        private void gridView3_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        {
+            //set project cmd
+            //to do
+            int[] handle = gridView3.GetSelectedRows();
+            int h = gridView3.GetDataSourceRowIndex(handle[0]);
+            List<TStep> list = (List<TStep>)gridControlTest.DataSource;
+            TStep nextTstep = list[h];
+            setProjCMD(nextTstep.CmdList);
+        }
+
+        private void gridView6_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        {
+            //no use
+        }
+
+        private void gridView6_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            //set init & set & result judge & save
+            //get cmd selected row
+            int[] handle = gridView6.GetSelectedRows();
+            int h = gridView6.GetDataSourceRowIndex(handle[0]);
+            List<TCMD> tcmds = (List<TCMD>)gridControlProject.DataSource;
+            TCMD nextTCMD = tcmds[h];
+            setOther(nextTCMD);
         }
     }
 
