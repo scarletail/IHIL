@@ -518,6 +518,10 @@ namespace Scheme
                 TStep step = steps.FirstOrDefault();
                 List<TCMD> tCMDs = step.CmdList.TCMDs.ToList();
                 gridControlProject.DataSource = tCMDs;
+                //set init omited...
+                //set Set omited...
+                //set Result judge
+
             }
         }
         private void GetAllPage()
