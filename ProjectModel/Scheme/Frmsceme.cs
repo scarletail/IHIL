@@ -285,7 +285,7 @@ namespace Scheme
                     currentNode.Tag = fullname;
                     //Console.WriteLine(fullname);
                     XmlDocument xmlDoc = new XmlDocument();
-                    XmlDeclaration declaration = xmlDoc.CreateXmlDeclaration("1.0", "utf-8", "yes");
+                    XmlDeclaration declaration = xmlDoc.CreateXmlDeclaration("1.0", "gb2312", "yes");
                     xmlDoc.AppendChild(declaration);
                     XmlElement RootElement = xmlDoc.CreateElement("chHIL");
                     xmlDoc.AppendChild(RootElement);
@@ -464,14 +464,20 @@ namespace Scheme
             }
             else
             {
-                string path = fileNode.Tag.ToString();
-                XmlSerializer serializer = new XmlSerializer(typeof(TSchem));
-                FileStream fs1 = new FileStream(path, FileMode.Open);
-                XmlReader reader = XmlReader.Create(fs1);
-                CurrentTSchem = (TSchem)serializer.Deserialize(reader);
-                fs1.Close();
-                //show information included in xml file
-                setAllPage();
+                try
+                {
+                    string path = fileNode.Tag.ToString();
+                    XmlSerializer serializer = new XmlSerializer(typeof(TSchem));
+                    FileStream fs1 = new FileStream(path, FileMode.Open);
+                    XmlReader reader = XmlReader.Create(fs1);
+                    CurrentTSchem = (TSchem)serializer.Deserialize(reader);
+                    fs1.Close();
+                    //show information included in xml file
+                    setAllPage();
+                }
+                catch(InvalidOperationException) {
+                    MessageBox.Show("File format error", "Error!");
+                }
                 return;
             }
         }
