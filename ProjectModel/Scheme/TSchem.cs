@@ -31,7 +31,7 @@ namespace Scheme
     public class SetCanlist
     {
         [XmlElement("TSetCan")]
-        public TSetCan[] TSetCans;
+        public List<TSetCan> TSetCans;
     }
     public class TSetEth
     {
@@ -49,29 +49,29 @@ namespace Scheme
     public class setEthList
     {
         [XmlElement("TSetEth")]
-        public TSetEth[] TSetEths;
+        public List<TSetEth> TSetEths;
     }
     public class subCondition
     {
         [XmlAttribute("IsParent")]
-        public string IsParent;
+        public string IsParent { get; set; }
         [XmlAttribute("VarName")]
-        public string VarName;
+        public string VarName { get; set; }
         [XmlAttribute("VarCaption")]
-        public string VarCaption;
+        public string VarCaption { get; set; }
         [XmlAttribute("Con")]
-        public string Con;
+        public string Con { get; set; }
         [XmlAttribute("ConValue")]
-        public string ConValue;
+        public string ConValue { get; set; }
         [XmlAttribute("Unit")]
-        public string Unit;
+        public string Unit { get; set; }
     }
     public class TCondition
     {
         [XmlAttribute("IsParent")]
         public string IsParent;
         [XmlAttribute("VarName")]
-        public string VarName;
+        public string VarName { get; set; }
         [XmlAttribute("VarCaption")]
         public string VarCaption;
         [XmlAttribute("Con")]
@@ -81,27 +81,28 @@ namespace Scheme
         [XmlAttribute("Unit")]
         public string Unit;
         [XmlElement("subCondition")]
-        public subCondition[] subConditions;
+        public List<subCondition> subConditions { get; set; }
     }
     public class judgelist
     {
         [XmlElement("TCondition")]
-        public TCondition tcondition;
+        public List<TCondition> tconditions { get; set; }
     }
+
     public class savelist
     {
         [XmlElement("TCondition")]
-        public TCondition[] TConditions;
+        public List<TCondition> TConditions;
     }
     public class initlist
     {
         [XmlElement("TCondition")]
-        public TCondition[] TConditions;
+        public List<TCondition> TConditions;
     }
     public class setlist
     {
         [XmlElement("TCondition")]
-        public TCondition[] TConditions;
+        public List<TCondition> TConditions;
     }
     public class TCMD
     {
@@ -123,7 +124,7 @@ namespace Scheme
     public class cmdList
     {
         [XmlElement("TCMD")]
-        public TCMD[] TCMDs;
+        public List<TCMD> TCMDs;
     }
     public class TStep
     {
@@ -141,7 +142,7 @@ namespace Scheme
     public class stepList
     {
         [XmlElement("TStep")]
-        public TStep[] TSteps;
+        public List<TStep> TSteps;
     }
     public class test
     {

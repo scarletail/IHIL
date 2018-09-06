@@ -511,8 +511,8 @@ namespace Scheme
                 TEPortOne2.Text = CurrentTSchem.SetEthList.TSetEths[1].Port;
                 //set normal test
                 //set test project
-                //warning: use list rather than array!
-                List<TStep> steps = CurrentTSchem.StepList.TSteps.ToList();
+                //warning: datasource is a list rather than an array!
+                List<TStep> steps = CurrentTSchem.StepList.TSteps;
                 gridControlTest.DataSource = steps;
                 //set Project cmd
                 TStep step = steps.FirstOrDefault();
@@ -521,7 +521,7 @@ namespace Scheme
                 //set init omited...
                 //set Set omited...
                 //set Result judge
-
+                gridControlJudge.DataSource = tCMDs.FirstOrDefault().Judgelist.tconditions;
             }
         }
         private void GetAllPage()
@@ -529,30 +529,6 @@ namespace Scheme
             if (CurrentTSchem == null) return;
         }
 
-        /// <summary>
-        /// some functions may be used
-        /// </summary>
-        /// <param name="path"></param>
-        /// <returns>XmlDocument object</returns>
-        public XmlDocument GetXml(string path)
-        {
-            try
-            {
-                XmlDocument xDoc = new XmlDocument();
-                xDoc.Load(path);
-                return xDoc;
-            }
-            catch (FileNotFoundException)
-            {
-                MessageBox.Show("No such xml file, please retry.");
-                return null;
-            }
-            catch (XmlException)
-            {
-                MessageBox.Show("Error,wrong file format!");
-                return null;
-            }
-        }
         public void SetValueFromXmlFile(XmlDocument xDoc)
         {
             //set CAN
