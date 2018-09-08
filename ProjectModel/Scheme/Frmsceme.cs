@@ -24,7 +24,7 @@ namespace Scheme
         private string schemeTopPath = "";
         string fileUrl = null;
         string hiddenEditorType = null;
-        TSchem CurrentTSchem = null;
+        TSchem CurrentTSchem = new TSchem();
         public Frmsceme()
         {
             InitializeComponent();
@@ -84,11 +84,10 @@ namespace Scheme
             FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
             folderBrowserDialog.ShowNewFolderButton = true;
             //set the default folder path
-            folderBrowserDialog.SelectedPath = @"F:\GitSync\IHIL\test";
-            folderBrowserDialog.ShowDialog();
-            string path = folderBrowserDialog.SelectedPath;
-            if (path != null)
+            //folderBrowserDialog.SelectedPath = @"F:\GitSync\IHIL\test";
+            if (folderBrowserDialog.ShowDialog()==DialogResult.OK)
             {
+                string path = folderBrowserDialog.SelectedPath;
                 DirectoryInfo info = new DirectoryInfo(path);
                 TreeListNode node = treeClass.AppendNode(null, null);
                 node.Tag = path;
@@ -382,14 +381,16 @@ namespace Scheme
             dialog.InitialDirectory = path;
             dialog.FileName = name;
             dialog.Filter = "All files|*.*|Xml file|*.xml";
-            dialog.ShowDialog();
-            string sourceFile = path + "//" + name;
-            string targetFile = null;
-            if (dialog.FileName != "")
+            if (dialog.ShowDialog() == DialogResult.OK)
             {
-                //FileStream fs = (FileStream)dialog.OpenFile();
-                targetFile = dialog.FileName;
-                File.Copy(sourceFile, targetFile);
+                string sourceFile = path + "//" + name;
+                string targetFile = null;
+                if (dialog.FileName != "")
+                {
+                    //FileStream fs = (FileStream)dialog.OpenFile();
+                    targetFile = dialog.FileName;
+                    File.Copy(sourceFile, targetFile);
+                }
             }
         }
         /// <summary>
@@ -481,7 +482,6 @@ namespace Scheme
                 return;
             }
         }
-
         private void setAllPage()
         {
             if (CurrentTSchem == null)
@@ -530,57 +530,72 @@ namespace Scheme
         }
         private void setTestProj() {
             List<TStep> steps = CurrentTSchem.StepList.TSteps;
-            gridControlTest.DataSource = steps;
+            BindingSource bs = new BindingSource();
+            bs.DataSource = steps;
+            gridControlTest.DataSource = bs;
         }
         private void setProjCMD(cmdList list) {
             List<TCMD> tCMDs = list.TCMDs;
-            gridControlProject.DataSource = tCMDs;
+            BindingSource bs = new BindingSource();
+            bs.DataSource = tCMDs;
+            gridControlProject.DataSource = bs;
         }
         private void setOther(TCMD tcmd) {
-            gridControlJudge.DataSource = tcmd.Judgelist.tconditions;
-            gridControlSave.DataSource = tcmd.Savelist.TConditions;
+            BindingSource jdbs = new BindingSource();
+            BindingSource svbs = new BindingSource();
+            jdbs.DataSource = tcmd.Judgelist.tconditions;
+            svbs.DataSource = tcmd.Savelist.TConditions;
+            gridControlJudge.DataSource = jdbs;
+            gridControlSave.DataSource = svbs;
         }
         private void GetAllPage()
         {
             if (CurrentTSchem == null) return;
+            //get CAN page checkbox
+            CurrentTSchem.setCanlist.TSetCans[0].Check = chkCan0.Checked ? "1" : "0";
+            CurrentTSchem.setCanlist.TSetCans[1].Check = chkCan1.Checked ? "1" : "0";
+            CurrentTSchem.setCanlist.TSetCans[2].Check = chkCan2.Checked ? "1" : "0";
+            CurrentTSchem.setCanlist.TSetCans[3].Check = chkCan3.Checked ? "1" : "0";
+            //get file name
+            CurrentTSchem.setCanlist.TSetCans[0].AgreeMentFile = beditCan0.Text;
+            CurrentTSchem.setCanlist.TSetCans[1].AgreeMentFile = beditCan1.Text;
+            CurrentTSchem.setCanlist.TSetCans[2].AgreeMentFile = beditCan2.Text;
+            CurrentTSchem.setCanlist.TSetCans[3].AgreeMentFile = beditCan3.Text;
+            //get baut
+            CurrentTSchem.setCanlist.TSetCans[0].Baut = cboxCanbtl11.SelectedIndex.ToString();
+            CurrentTSchem.setCanlist.TSetCans[1].Baut = cboxCanbtl12.SelectedIndex.ToString();
+            CurrentTSchem.setCanlist.TSetCans[2].Baut = cboxCanbtl13.SelectedIndex.ToString();
+            CurrentTSchem.setCanlist.TSetCans[3].Baut = cboxCanbtl14.SelectedIndex.ToString();
+            //get ethernet page
+            CurrentTSchem.SetEthList.TSetEths[0].Check = checkBox1.Checked ? "1" : "0";
+            CurrentTSchem.SetEthList.TSetEths[1].Check = checkBox2.Checked ? "1" : "0";
+            CurrentTSchem.SetEthList.TSetEths[0].AgreeMentFile = buttonEdit1.Text;
+            CurrentTSchem.SetEthList.TSetEths[1].AgreeMentFile = buttonEdit2.Text;
+            CurrentTSchem.SetEthList.TSetEths[0].IP = NettextEdit1.Text;
+            CurrentTSchem.SetEthList.TSetEths[1].IP = NettextEdit2.Text;
+            CurrentTSchem.SetEthList.TSetEths[0].Port = TEPortOne1.Text;
+            CurrentTSchem.SetEthList.TSetEths[1].Port = TEPortOne2.Text;
         }
-
-        public void SetValueFromXmlFile(XmlDocument xDoc)
+        private void SaveLocalFile(string filepath)
         {
-            //set CAN
-            XmlNodeList list = xDoc.GetElementsByTagName("canitem");
-            string DeviceIndex = null;
-            if (list.Count != 0)
-            {
-                foreach (XmlNode node in list)
-                {
-                    string chindex = node.Attributes["chindex"].Value;
-                    string canFile = node.Attributes["file"].Value;
-                    DeviceIndex = node.Attributes["machineindex"].Value;
-                    switch (chindex)
-                    {
-                        case "0":
-                            chkCan0.Checked = true;
-                            beditCan0.Text = canFile;
-                            break;
-                        case "1":
-                            chkCan1.Checked = true;
-                            beditCan1.Text = canFile;
-                            break;
-                        case "2":
-                            chkCan2.Checked = true;
-                            beditCan2.Text = canFile;
-                            break;
-                        case "3":
-                            chkCan3.Checked = true;
-                            beditCan3.Text = canFile;
-                            break;
-                    }
-                }
-                cboxMachineindex.SelectedIndex = Int32.Parse(DeviceIndex);
-            }
+            //called when cell value changed
         }
-
+        /// <summary>
+        /// call the function to save current TSchem to file instantly while hidden editor
+        /// </summary>
+        /// <param name="path"></param>
+        private void SaveToFile(string path)
+        {
+            XmlSerializer xs = new XmlSerializer(CurrentTSchem.GetType());
+            XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
+            XmlWriterSettings settings = new XmlWriterSettings();
+            settings.Encoding = Encoding.GetEncoding("gb2312");
+            settings.Indent = true;
+            XmlWriter writer = XmlWriter.Create(path, settings);
+            ns.Add("", "");
+            xs.Serialize(writer, CurrentTSchem, ns);
+            writer.Close();
+        }
         private void beditCan0_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             FileInfo info = GetFile();
@@ -636,13 +651,19 @@ namespace Scheme
         {
             OpenFileDialog dialog = new OpenFileDialog();
             FileInfo info;
-            dialog.ShowDialog();
-            try
+            if (dialog.ShowDialog() == DialogResult.OK)
             {
-                string path = Path.GetFullPath(dialog.FileName);
-                info = new FileInfo(path);
+                try
+                {
+                    string path = Path.GetFullPath(dialog.FileName);
+                    info = new FileInfo(path);
+                }
+                catch (ArgumentException)
+                {
+                    info = null;
+                }
             }
-            catch(ArgumentException)
+            else
             {
                 info = null;
             }
@@ -698,8 +719,34 @@ namespace Scheme
             int[] handle = gridView6.GetSelectedRows();
             int h = gridView6.GetDataSourceRowIndex(handle[0]);
             List<TCMD> tcmds = (List<TCMD>)gridControlProject.DataSource;
+
             TCMD nextTCMD = tcmds[h];
             setOther(nextTCMD);
+        }
+
+        private void gridControlProject_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gridControlTest_MouseDown(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void gridView3_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            GetAllPage();
+            string path = treeFile.FocusedNode.Tag.ToString();
+            try
+            {
+                File.Delete(path);
+                SaveToFile(path);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error!");
+            }
         }
     }
 

@@ -11,45 +11,74 @@ namespace Scheme
     public class TSchem
     {
         [XmlElement("setCanlist")]
-        public SetCanlist setCanlist;
+        public SetCanlist setCanlist{ get; set; }
         [XmlElement("setEthList")]
-        public setEthList SetEthList;
+        public setEthList SetEthList { get; set; }
         [XmlElement("stepList")]
-        public stepList StepList;
+        public stepList StepList { get; set; }
+        public TSchem()
+        {
+            setCanlist = new SetCanlist();
+            SetEthList = new setEthList();
+            StepList = new stepList();
+        }
     }
     public class TSetCan
     {
         [XmlAttribute("Check")]
-        public string Check;
+        public string Check { get; set; }
         [XmlAttribute("AgreeMentFile")]
-        public string AgreeMentFile;
+        public string AgreeMentFile { get; set; }
         [XmlAttribute("Baut")]
-        public string Baut;
+        public string Baut { get; set; }
         [XmlAttribute("Alias")]
-        public string Alias;
+        public string Alias { get; set; }
+        public TSetCan()
+        {
+            Check = "";
+            AgreeMentFile = "";
+            Baut = "";
+            Alias = "";
+        }
     }
     public class SetCanlist
     {
         [XmlElement("TSetCan")]
-        public List<TSetCan> TSetCans;
+        public List<TSetCan> TSetCans { get; set; }
+        public SetCanlist()
+        {
+            TSetCans = new List<TSetCan>();
+        }
     }
     public class TSetEth
     {
         [XmlAttribute("Check")]
-        public string Check;
+        public string Check { get; set; }
         [XmlAttribute("IP")]
-        public string IP;
+        public string IP { get; set; }
         [XmlAttribute("Port")]
-        public string Port;
+        public string Port { get; set; }
         [XmlAttribute("AgreeMentFile")]
-        public string AgreeMentFile;
+        public string AgreeMentFile { get; set; }
         [XmlAttribute("Alias")]
-        public string Alias;
+        public string Alias { get; set; }
+        public TSetEth()
+        {
+            Check = "";
+            IP = "";
+            Port = "";
+            AgreeMentFile = "";
+            Alias = "";
+        }
     }
     public class setEthList
     {
         [XmlElement("TSetEth")]
-        public List<TSetEth> TSetEths;
+        public List<TSetEth> TSetEths { get; set; }
+        public setEthList()
+        {
+            TSetEths = new List<TSetEth>();
+        }
     }
     public class subCondition
     {
@@ -65,6 +94,15 @@ namespace Scheme
         public string ConValue { get; set; }
         [XmlAttribute("Unit")]
         public string Unit { get; set; }
+        public subCondition()
+        {
+            IsParent = "";
+            VarName = "";
+            VarCaption = "";
+            Con = "";
+            ConValue = "";
+            Unit = "";
+        }
     }
     public class TCondition
     {
@@ -82,49 +120,89 @@ namespace Scheme
         public string Unit { get; set; }
         [XmlElement("subCondition")]
         public List<subCondition> subConditions { get; set; }
+        public TCondition()
+        {
+            IsParent = "";
+            VarName = "";
+            VarCaption = "";
+            Con = "";
+            ConValue = "";
+            Unit = "";
+            subConditions = new List<subCondition>();
+        }
     }
     public class judgelist
     {
         [XmlElement("TCondition")]
         public List<TCondition> tconditions { get; set; }
+        public judgelist()
+        {
+            tconditions = new List<TCondition>();
+        }
     }
 
     public class savelist
     {
         [XmlElement("TCondition")]
-        public List<TCondition> TConditions;
+        public List<TCondition> TConditions { get; set; }
+        public savelist()
+        {
+            TConditions = new List<TCondition>();
+        }
     }
     public class initlist
     {
         [XmlElement("TCondition")]
-        public List<TCondition> TConditions;
+        public List<TCondition> TConditions { get; set; }
+        public initlist()
+        {
+            TConditions = new List<TCondition>();
+        }
     }
     public class setlist
     {
         [XmlElement("TCondition")]
-        public List<TCondition> TConditions;
+        public List<TCondition> TConditions { get; set; }
+        public setlist()
+        {
+            TConditions = new List<TCondition>();
+        }
     }
     public class TCMD
     {
         [XmlElement("initlist")]
-        public initlist Initlist;
+        public initlist Initlist { get; set; }
         [XmlElement("setlist")]
-        public setlist Setlist;
+        public setlist Setlist { get; set; }
         [XmlElement("judgelist")]
-        public judgelist Judgelist;
+        public judgelist Judgelist { get; set; }
         [XmlElement("savelist")]
-        public savelist Savelist;
+        public savelist Savelist { get; set; }
         [XmlAttribute("Kind")]
-        public string Kind;
+        public string Kind { get; set; }
         [XmlAttribute("Cmd")]
         public string Cmd{ get; set; }
         [XmlAttribute("WaitTime")]
         public string WaitTime{ get; set; }
+        public TCMD()
+        {
+            Initlist = new initlist();
+            Setlist = new setlist();
+            Judgelist = new judgelist();
+            Savelist = new savelist();
+            Kind = "";
+            Cmd = "";
+            WaitTime = "";
+        }
     }
     public class cmdList
     {
         [XmlElement("TCMD")]
-        public List<TCMD> TCMDs;
+        public List<TCMD> TCMDs { get; set; }
+        public cmdList()
+        {
+            TCMDs = new List<TCMD>();
+        }
     }
     public class TStep
     {
@@ -133,20 +211,37 @@ namespace Scheme
         [XmlAttribute("title")]
         public string title{ get; set; }
         [XmlAttribute("kind")]
-        public string kind;
+        public string kind { get; set; }
         [XmlAttribute("Check")]
-        public string Check;
+        public string Check { get; set; }
         [XmlElement("cmdList")]
-        public cmdList CmdList;
+        public cmdList CmdList { get; set; }
+        public TStep()
+        {
+            testid = "";
+            title = "";
+            kind = "";
+            Check = "";
+            CmdList = new cmdList();
+        }
     }
     public class stepList
     {
         [XmlElement("TStep")]
-        public List<TStep> TSteps;
+        public List<TStep> TSteps { get; set; }
+        public stepList()
+        {
+            TSteps = new List<TStep>();
+        }
     }
     public class test
     {
         public string testid { get; set; }
         public string title { get; set; }
+        public test()
+        {
+            testid = "";
+            title = "";
+        }
     }
 }

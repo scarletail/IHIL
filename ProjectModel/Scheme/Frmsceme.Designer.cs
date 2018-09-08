@@ -29,9 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmsceme));
+            this.Result_judge_subview = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.variableColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.symbolColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.constantColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.unitColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridControlJudge = new DevExpress.XtraGrid.GridControl();
+            this.OperationMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.OperationAdd = new System.Windows.Forms.ToolStripMenuItem();
+            this.OperationDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.OperationMoveUp = new System.Windows.Forms.ToolStripMenuItem();
+            this.OperationMoveDown = new System.Windows.Forms.ToolStripMenuItem();
+            this.gridView10 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.scemePanel = new System.Windows.Forms.Panel();
             this.gbScheme = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -134,6 +149,47 @@
             this.buttonEdit2 = new DevExpress.XtraEditors.ButtonEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.tabNNormalTest = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupControl7 = new DevExpress.XtraEditors.GroupControl();
+            this.button14 = new System.Windows.Forms.Button();
+            this.gridControlSave = new DevExpress.XtraGrid.GridControl();
+            this.gridView7 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.saveVA = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.saveSymbol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.saveConst = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.saveUnit = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemComboBox2 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.buttonCmdSet = new System.Windows.Forms.Button();
+            this.gridControlSetCMD = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.InitGroupControl = new DevExpress.XtraEditors.GroupControl();
+            this.button8 = new System.Windows.Forms.Button();
+            this.gridControlInit = new DevExpress.XtraGrid.GridControl();
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.JudgeGroupControl = new DevExpress.XtraEditors.GroupControl();
+            this.button4 = new System.Windows.Forms.Button();
+            this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
+            this.gridControlProject = new DevExpress.XtraGrid.GridControl();
+            this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridView8 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridView9 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.gridControlTest = new DevExpress.XtraGrid.GridControl();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.testid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.title = new DevExpress.XtraGrid.Columns.GridColumn();
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
@@ -146,62 +202,12 @@
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.gridControlSetCMD = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.buttonCmdSet = new System.Windows.Forms.Button();
-            this.JudgeGroupControl = new DevExpress.XtraEditors.GroupControl();
-            this.gridControlJudge = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
-            this.Result_judge_subview = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.variableColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.symbolColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.constantColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.unitColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridView10 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.gridControlTest = new DevExpress.XtraGrid.GridControl();
-            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.testid = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.title = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.InitGroupControl = new DevExpress.XtraEditors.GroupControl();
-            this.gridControlInit = new DevExpress.XtraGrid.GridControl();
-            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.button8 = new System.Windows.Forms.Button();
-            this.groupControl7 = new DevExpress.XtraEditors.GroupControl();
-            this.gridControlSave = new DevExpress.XtraGrid.GridControl();
-            this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.repositoryItemComboBox2 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
-            this.gridView7 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.saveVA = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.button14 = new System.Windows.Forms.Button();
-            this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
-            this.gridControlProject = new DevExpress.XtraGrid.GridControl();
-            this.gridView8 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridView9 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.saveSymbol = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.saveConst = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.saveUnit = new DevExpress.XtraGrid.Columns.GridColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.Result_judge_subview)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlJudge)).BeginInit();
+            this.OperationMenuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.scemePanel.SuspendLayout();
             this.gbScheme.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -241,6 +247,34 @@
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit2.Properties)).BeginInit();
             this.tabNNormalTest.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).BeginInit();
+            this.groupControl7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlSave)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlSetCMD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.tableLayoutPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.InitGroupControl)).BeginInit();
+            this.InitGroupControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlInit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.JudgeGroupControl)).BeginInit();
+            this.JudgeGroupControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).BeginInit();
+            this.groupControl6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlProject)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlTest)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             this.tabNavigationPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
             this.groupControl5.SuspendLayout();
@@ -251,40 +285,150 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
-            this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlSetCMD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.JudgeGroupControl)).BeginInit();
-            this.JudgeGroupControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlJudge)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Result_judge_subview)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
-            this.groupControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlTest)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.InitGroupControl)).BeginInit();
-            this.InitGroupControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlInit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).BeginInit();
-            this.groupControl7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlSave)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).BeginInit();
-            this.groupControl6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlProject)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView9)).BeginInit();
-            this.tableLayoutPanel6.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // Result_judge_subview
+            // 
+            this.Result_judge_subview.ColumnPanelRowHeight = 32;
+            this.Result_judge_subview.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.variableColumn,
+            this.symbolColumn,
+            this.constantColumn,
+            this.unitColumn});
+            this.Result_judge_subview.DetailHeight = 280;
+            this.Result_judge_subview.GridControl = this.gridControlJudge;
+            this.Result_judge_subview.IndicatorWidth = 19;
+            this.Result_judge_subview.Name = "Result_judge_subview";
+            this.Result_judge_subview.OptionsCustomization.AllowSort = false;
+            this.Result_judge_subview.OptionsView.ShowGroupPanel = false;
+            this.Result_judge_subview.RowHeight = 24;
+            // 
+            // variableColumn
+            // 
+            this.variableColumn.Caption = "VA";
+            this.variableColumn.FieldName = "VarName";
+            this.variableColumn.MinWidth = 15;
+            this.variableColumn.Name = "variableColumn";
+            this.variableColumn.Visible = true;
+            this.variableColumn.VisibleIndex = 0;
+            this.variableColumn.Width = 210;
+            // 
+            // symbolColumn
+            // 
+            this.symbolColumn.Caption = "SYM";
+            this.symbolColumn.FieldName = "Con";
+            this.symbolColumn.Name = "symbolColumn";
+            this.symbolColumn.Visible = true;
+            this.symbolColumn.VisibleIndex = 1;
+            // 
+            // constantColumn
+            // 
+            this.constantColumn.Caption = "CONST";
+            this.constantColumn.FieldName = "ConValue";
+            this.constantColumn.Name = "constantColumn";
+            this.constantColumn.Visible = true;
+            this.constantColumn.VisibleIndex = 2;
+            // 
+            // unitColumn
+            // 
+            this.unitColumn.Caption = "UNIT";
+            this.unitColumn.FieldName = "Unit";
+            this.unitColumn.Name = "unitColumn";
+            this.unitColumn.Visible = true;
+            this.unitColumn.VisibleIndex = 3;
+            // 
+            // gridControlJudge
+            // 
+            this.gridControlJudge.ContextMenuStrip = this.OperationMenuStrip;
+            this.gridControlJudge.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridLevelNode1.LevelTemplate = this.Result_judge_subview;
+            gridLevelNode1.RelationName = "subConditions";
+            this.gridControlJudge.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
+            this.gridControlJudge.Location = new System.Drawing.Point(2, 21);
+            this.gridControlJudge.MainView = this.gridView10;
+            this.gridControlJudge.Name = "gridControlJudge";
+            this.gridControlJudge.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemComboBox1});
+            this.gridControlJudge.Size = new System.Drawing.Size(255, 238);
+            this.gridControlJudge.TabIndex = 8;
+            this.gridControlJudge.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView10,
+            this.gridView2,
+            this.Result_judge_subview});
+            // 
+            // OperationMenuStrip
+            // 
+            this.OperationMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.OperationAdd,
+            this.OperationDelete,
+            this.OperationMoveUp,
+            this.OperationMoveDown});
+            this.OperationMenuStrip.Name = "ProjCMDMenuStrip";
+            this.OperationMenuStrip.Size = new System.Drawing.Size(146, 92);
+            // 
+            // OperationAdd
+            // 
+            this.OperationAdd.Image = global::Scheme.Properties.Resources.plus;
+            this.OperationAdd.Name = "OperationAdd";
+            this.OperationAdd.Size = new System.Drawing.Size(145, 22);
+            this.OperationAdd.Text = "Add";
+            // 
+            // OperationDelete
+            // 
+            this.OperationDelete.Image = global::Scheme.Properties.Resources.minus2;
+            this.OperationDelete.Name = "OperationDelete";
+            this.OperationDelete.Size = new System.Drawing.Size(145, 22);
+            this.OperationDelete.Text = "Delete";
+            // 
+            // OperationMoveUp
+            // 
+            this.OperationMoveUp.Image = global::Scheme.Properties.Resources.moveup;
+            this.OperationMoveUp.Name = "OperationMoveUp";
+            this.OperationMoveUp.Size = new System.Drawing.Size(145, 22);
+            this.OperationMoveUp.Text = "Move up";
+            // 
+            // OperationMoveDown
+            // 
+            this.OperationMoveDown.Image = global::Scheme.Properties.Resources.movedown;
+            this.OperationMoveDown.Name = "OperationMoveDown";
+            this.OperationMoveDown.Size = new System.Drawing.Size(145, 22);
+            this.OperationMoveDown.Text = "Move down";
+            // 
+            // gridView10
+            // 
+            this.gridView10.ColumnPanelRowHeight = 32;
+            this.gridView10.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn8});
+            this.gridView10.DetailHeight = 280;
+            this.gridView10.GridControl = this.gridControlJudge;
+            this.gridView10.IndicatorWidth = 19;
+            this.gridView10.Name = "gridView10";
+            this.gridView10.OptionsView.ShowGroupPanel = false;
+            this.gridView10.RowHeight = 24;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "condition";
+            this.gridColumn8.FieldName = "VarName";
+            this.gridColumn8.MinWidth = 15;
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 0;
+            this.gridColumn8.Width = 210;
+            // 
+            // repositoryItemComboBox1
+            // 
+            this.repositoryItemComboBox1.AutoHeight = false;
+            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
+            // 
+            // gridView2
+            // 
+            this.gridView2.GridControl = this.gridControlJudge;
+            this.gridView2.Name = "gridView2";
             // 
             // scemePanel
             // 
@@ -295,7 +439,7 @@
             this.scemePanel.Location = new System.Drawing.Point(0, 32);
             this.scemePanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.scemePanel.Name = "scemePanel";
-            this.scemePanel.Size = new System.Drawing.Size(324, 550);
+            this.scemePanel.Size = new System.Drawing.Size(268, 550);
             this.scemePanel.TabIndex = 24;
             // 
             // gbScheme
@@ -306,7 +450,7 @@
             this.gbScheme.Margin = new System.Windows.Forms.Padding(2);
             this.gbScheme.Name = "gbScheme";
             this.gbScheme.Padding = new System.Windows.Forms.Padding(2);
-            this.gbScheme.Size = new System.Drawing.Size(324, 312);
+            this.gbScheme.Size = new System.Drawing.Size(268, 312);
             this.gbScheme.TabIndex = 27;
             this.gbScheme.TabStop = false;
             this.gbScheme.Text = "Scheme";
@@ -323,7 +467,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(320, 293);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(264, 293);
             this.tableLayoutPanel2.TabIndex = 100;
             // 
             // treeFile
@@ -346,7 +490,7 @@
             this.treeFile.OptionsView.ShowColumns = false;
             this.treeFile.OptionsView.ShowRoot = false;
             this.treeFile.RowHeight = 20;
-            this.treeFile.Size = new System.Drawing.Size(314, 249);
+            this.treeFile.Size = new System.Drawing.Size(258, 249);
             this.treeFile.TabIndex = 28;
             this.treeFile.TreeLevelWidth = 13;
             this.treeFile.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.treeFile_FocusedNodeChanged);
@@ -407,7 +551,7 @@
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(314, 34);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(258, 34);
             this.tableLayoutPanel3.TabIndex = 101;
             // 
             // btnAddclass
@@ -418,7 +562,7 @@
             this.btnAddclass.Location = new System.Drawing.Point(0, 0);
             this.btnAddclass.Margin = new System.Windows.Forms.Padding(0);
             this.btnAddclass.Name = "btnAddclass";
-            this.btnAddclass.Size = new System.Drawing.Size(62, 34);
+            this.btnAddclass.Size = new System.Drawing.Size(51, 34);
             this.btnAddclass.TabIndex = 4;
             this.btnAddclass.Text = "&Add";
             this.btnAddclass.Click += new System.EventHandler(this.btnAddclass_Click);
@@ -428,10 +572,10 @@
             this.btnDelClass.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelClass.Appearance.Options.UseFont = true;
             this.btnDelClass.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDelClass.Location = new System.Drawing.Point(62, 0);
+            this.btnDelClass.Location = new System.Drawing.Point(51, 0);
             this.btnDelClass.Margin = new System.Windows.Forms.Padding(0);
             this.btnDelClass.Name = "btnDelClass";
-            this.btnDelClass.Size = new System.Drawing.Size(62, 34);
+            this.btnDelClass.Size = new System.Drawing.Size(51, 34);
             this.btnDelClass.TabIndex = 5;
             this.btnDelClass.Text = "Del";
             this.btnDelClass.Click += new System.EventHandler(this.btnDelClass_Click);
@@ -441,10 +585,10 @@
             this.simpleButton4.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton4.Appearance.Options.UseFont = true;
             this.simpleButton4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.simpleButton4.Location = new System.Drawing.Point(124, 0);
+            this.simpleButton4.Location = new System.Drawing.Point(102, 0);
             this.simpleButton4.Margin = new System.Windows.Forms.Padding(0);
             this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(62, 34);
+            this.simpleButton4.Size = new System.Drawing.Size(51, 34);
             this.simpleButton4.TabIndex = 8;
             this.simpleButton4.Text = "Save as";
             this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
@@ -454,10 +598,10 @@
             this.btnReName.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReName.Appearance.Options.UseFont = true;
             this.btnReName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnReName.Location = new System.Drawing.Point(186, 0);
+            this.btnReName.Location = new System.Drawing.Point(153, 0);
             this.btnReName.Margin = new System.Windows.Forms.Padding(0);
             this.btnReName.Name = "btnReName";
-            this.btnReName.Size = new System.Drawing.Size(62, 34);
+            this.btnReName.Size = new System.Drawing.Size(51, 34);
             this.btnReName.TabIndex = 9;
             this.btnReName.Text = "Rename";
             this.btnReName.Click += new System.EventHandler(this.btnReName_Click);
@@ -467,10 +611,10 @@
             this.simpleButton2.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.simpleButton2.Location = new System.Drawing.Point(248, 0);
+            this.simpleButton2.Location = new System.Drawing.Point(204, 0);
             this.simpleButton2.Margin = new System.Windows.Forms.Padding(0);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(66, 34);
+            this.simpleButton2.Size = new System.Drawing.Size(54, 34);
             this.simpleButton2.TabIndex = 6;
             this.simpleButton2.Text = "Save";
             // 
@@ -480,7 +624,7 @@
             this.splitter1.Location = new System.Drawing.Point(0, 236);
             this.splitter1.Margin = new System.Windows.Forms.Padding(2);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(324, 2);
+            this.splitter1.Size = new System.Drawing.Size(268, 2);
             this.splitter1.TabIndex = 26;
             this.splitter1.TabStop = false;
             // 
@@ -493,7 +637,7 @@
             this.GbFolder.Margin = new System.Windows.Forms.Padding(2);
             this.GbFolder.Name = "GbFolder";
             this.GbFolder.Padding = new System.Windows.Forms.Padding(2);
-            this.GbFolder.Size = new System.Drawing.Size(324, 236);
+            this.GbFolder.Size = new System.Drawing.Size(268, 236);
             this.GbFolder.TabIndex = 0;
             this.GbFolder.TabStop = false;
             this.GbFolder.Text = "Folder";
@@ -517,7 +661,7 @@
             this.treeClass.OptionsView.ShowColumns = false;
             this.treeClass.RowHeight = 20;
             this.treeClass.ShowButtonMode = DevExpress.XtraTreeList.ShowButtonModeEnum.ShowOnlyInEditor;
-            this.treeClass.Size = new System.Drawing.Size(320, 176);
+            this.treeClass.Size = new System.Drawing.Size(264, 176);
             this.treeClass.TabIndex = 9;
             this.treeClass.TreeLevelWidth = 13;
             this.treeClass.RowStateImageClick += new DevExpress.XtraTreeList.RowClickEventHandler(this.treeClass_RowStateImageClick);
@@ -544,7 +688,7 @@
             this.panel2.Location = new System.Drawing.Point(2, 17);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(320, 41);
+            this.panel2.Size = new System.Drawing.Size(264, 41);
             this.panel2.TabIndex = 1;
             // 
             // tableLayoutPanel1
@@ -560,16 +704,16 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(320, 41);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(264, 41);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // delFolder
             // 
             this.delFolder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.delFolder.Location = new System.Drawing.Point(164, 4);
+            this.delFolder.Location = new System.Drawing.Point(136, 4);
             this.delFolder.Margin = new System.Windows.Forms.Padding(4);
             this.delFolder.Name = "delFolder";
-            this.delFolder.Size = new System.Drawing.Size(152, 33);
+            this.delFolder.Size = new System.Drawing.Size(124, 33);
             this.delFolder.TabIndex = 1;
             this.delFolder.Text = "Remove Folder";
             this.delFolder.UseVisualStyleBackColor = true;
@@ -581,7 +725,7 @@
             this.addFolder.Location = new System.Drawing.Point(4, 4);
             this.addFolder.Margin = new System.Windows.Forms.Padding(4);
             this.addFolder.Name = "addFolder";
-            this.addFolder.Size = new System.Drawing.Size(152, 33);
+            this.addFolder.Size = new System.Drawing.Size(124, 33);
             this.addFolder.TabIndex = 0;
             this.addFolder.Text = "Import Folder";
             this.addFolder.UseVisualStyleBackColor = true;
@@ -596,7 +740,7 @@
             this.tabPane1.Controls.Add(this.tabNNormalTest);
             this.tabPane1.Controls.Add(this.tabNavigationPage1);
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabPane1.Location = new System.Drawing.Point(324, 0);
+            this.tabPane1.Location = new System.Drawing.Point(268, 0);
             this.tabPane1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
@@ -605,9 +749,9 @@
             this.tabNETH,
             this.tabNNormalTest,
             this.tabNavigationPage1});
-            this.tabPane1.RegularSize = new System.Drawing.Size(1024, 582);
+            this.tabPane1.RegularSize = new System.Drawing.Size(1080, 582);
             this.tabPane1.SelectedPage = this.tabNETH;
-            this.tabPane1.Size = new System.Drawing.Size(1024, 582);
+            this.tabPane1.Size = new System.Drawing.Size(1080, 582);
             this.tabPane1.TabIndex = 110;
             this.tabPane1.Text = "Etherne";
             // 
@@ -621,7 +765,7 @@
             this.tabNCAN.Name = "tabNCAN";
             this.tabNCAN.PageText = "CAN";
             this.tabNCAN.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.tabNCAN.Size = new System.Drawing.Size(1024, 536);
+            this.tabNCAN.Size = new System.Drawing.Size(1080, 536);
             // 
             // panel8
             // 
@@ -652,7 +796,7 @@
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1024, 536);
+            this.panel8.Size = new System.Drawing.Size(1080, 536);
             this.panel8.TabIndex = 62;
             // 
             // label27
@@ -1432,7 +1576,7 @@
             this.tabNETH.Name = "tabNETH";
             this.tabNETH.PageText = "Etherne";
             this.tabNETH.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.tabNETH.Size = new System.Drawing.Size(1024, 536);
+            this.tabNETH.Size = new System.Drawing.Size(1080, 536);
             // 
             // panel6
             // 
@@ -1454,7 +1598,7 @@
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1024, 536);
+            this.panel6.Size = new System.Drawing.Size(1080, 536);
             this.panel6.TabIndex = 59;
             // 
             // label9
@@ -1620,8 +1764,494 @@
             this.tabNNormalTest.Name = "tabNNormalTest";
             this.tabNNormalTest.PageText = "NormalTest";
             this.tabNNormalTest.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.tabNNormalTest.Size = new System.Drawing.Size(1024, 536);
+            this.tabNNormalTest.Size = new System.Drawing.Size(1080, 536);
             this.tabNNormalTest.Paint += new System.Windows.Forms.PaintEventHandler(this.tabNNarmalTest_Paint);
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 4;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 3, 0);
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel6, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.groupControl6, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.groupControl3, 0, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(4, 0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 536F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1076, 536);
+            this.tableLayoutPanel4.TabIndex = 16;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel5.Controls.Add(this.groupControl7, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.groupControl2, 0, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(810, 3);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(263, 530);
+            this.tableLayoutPanel5.TabIndex = 36;
+            // 
+            // groupControl7
+            // 
+            this.groupControl7.Controls.Add(this.button14);
+            this.groupControl7.Controls.Add(this.gridControlSave);
+            this.groupControl7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl7.Location = new System.Drawing.Point(2, 267);
+            this.groupControl7.Margin = new System.Windows.Forms.Padding(2);
+            this.groupControl7.Name = "groupControl7";
+            this.groupControl7.Size = new System.Drawing.Size(259, 261);
+            this.groupControl7.TabIndex = 35;
+            this.groupControl7.Text = "Save";
+            // 
+            // button14
+            // 
+            this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button14.ContextMenuStrip = this.FileMenuStripResult;
+            this.button14.Location = new System.Drawing.Point(-687, -261);
+            this.button14.Margin = new System.Windows.Forms.Padding(2);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(53, 21);
+            this.button14.TabIndex = 11;
+            this.button14.Text = "Modi...";
+            this.button14.UseVisualStyleBackColor = true;
+            // 
+            // gridControlSave
+            // 
+            this.gridControlSave.ContextMenuStrip = this.FileMenuStripResult;
+            this.gridControlSave.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlSave.Location = new System.Drawing.Point(2, 21);
+            this.gridControlSave.MainView = this.gridView7;
+            this.gridControlSave.Name = "gridControlSave";
+            this.gridControlSave.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemComboBox2});
+            this.gridControlSave.Size = new System.Drawing.Size(255, 238);
+            this.gridControlSave.TabIndex = 8;
+            this.gridControlSave.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView7});
+            // 
+            // gridView7
+            // 
+            this.gridView7.ColumnPanelRowHeight = 32;
+            this.gridView7.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.saveVA,
+            this.saveSymbol,
+            this.saveConst,
+            this.saveUnit});
+            this.gridView7.DetailHeight = 280;
+            this.gridView7.GridControl = this.gridControlSave;
+            this.gridView7.IndicatorWidth = 19;
+            this.gridView7.Name = "gridView7";
+            this.gridView7.OptionsView.ShowGroupPanel = false;
+            this.gridView7.RowHeight = 24;
+            // 
+            // saveVA
+            // 
+            this.saveVA.Caption = "VA";
+            this.saveVA.FieldName = "VarCaption";
+            this.saveVA.MinWidth = 15;
+            this.saveVA.Name = "saveVA";
+            this.saveVA.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.saveVA.Visible = true;
+            this.saveVA.VisibleIndex = 0;
+            this.saveVA.Width = 77;
+            // 
+            // saveSymbol
+            // 
+            this.saveSymbol.Caption = "SYM";
+            this.saveSymbol.FieldName = "Con";
+            this.saveSymbol.Name = "saveSymbol";
+            this.saveSymbol.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.saveSymbol.Visible = true;
+            this.saveSymbol.VisibleIndex = 1;
+            this.saveSymbol.Width = 47;
+            // 
+            // saveConst
+            // 
+            this.saveConst.Caption = "CONST";
+            this.saveConst.FieldName = "ConValue";
+            this.saveConst.Name = "saveConst";
+            this.saveConst.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.saveConst.Visible = true;
+            this.saveConst.VisibleIndex = 2;
+            this.saveConst.Width = 47;
+            // 
+            // saveUnit
+            // 
+            this.saveUnit.Caption = "UNIT";
+            this.saveUnit.FieldName = "Unit";
+            this.saveUnit.Name = "saveUnit";
+            this.saveUnit.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.saveUnit.Visible = true;
+            this.saveUnit.VisibleIndex = 3;
+            this.saveUnit.Width = 51;
+            // 
+            // repositoryItemComboBox2
+            // 
+            this.repositoryItemComboBox2.AutoHeight = false;
+            this.repositoryItemComboBox2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemComboBox2.Name = "repositoryItemComboBox2";
+            // 
+            // groupControl2
+            // 
+            this.groupControl2.Controls.Add(this.buttonCmdSet);
+            this.groupControl2.Controls.Add(this.gridControlSetCMD);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl2.Location = new System.Drawing.Point(2, 2);
+            this.groupControl2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(259, 261);
+            this.groupControl2.TabIndex = 31;
+            this.groupControl2.Text = "Set ";
+            // 
+            // buttonCmdSet
+            // 
+            this.buttonCmdSet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonCmdSet.ContextMenuStrip = this.FileMenuStripResult;
+            this.buttonCmdSet.Location = new System.Drawing.Point(-681, 0);
+            this.buttonCmdSet.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonCmdSet.Name = "buttonCmdSet";
+            this.buttonCmdSet.Size = new System.Drawing.Size(53, 21);
+            this.buttonCmdSet.TabIndex = 10;
+            this.buttonCmdSet.Text = "Modi...";
+            this.buttonCmdSet.UseVisualStyleBackColor = true;
+            // 
+            // gridControlSetCMD
+            // 
+            this.gridControlSetCMD.ContextMenuStrip = this.OperationMenuStrip;
+            this.gridControlSetCMD.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridLevelNode2.RelationName = "Level1";
+            this.gridControlSetCMD.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode2});
+            this.gridControlSetCMD.Location = new System.Drawing.Point(2, 21);
+            this.gridControlSetCMD.MainView = this.gridView1;
+            this.gridControlSetCMD.Name = "gridControlSetCMD";
+            this.gridControlSetCMD.Size = new System.Drawing.Size(255, 238);
+            this.gridControlSetCMD.TabIndex = 8;
+            this.gridControlSetCMD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.ColumnPanelRowHeight = 32;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn2});
+            this.gridView1.DetailHeight = 280;
+            this.gridView1.GridControl = this.gridControlSetCMD;
+            this.gridView1.IndicatorWidth = 19;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.RowHeight = 24;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "CMD";
+            this.gridColumn2.MinWidth = 15;
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
+            this.gridColumn2.Width = 126;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 1;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.InitGroupControl, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.JudgeGroupControl, 0, 1);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(541, 3);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 2;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(263, 530);
+            this.tableLayoutPanel6.TabIndex = 37;
+            // 
+            // InitGroupControl
+            // 
+            this.InitGroupControl.Controls.Add(this.button8);
+            this.InitGroupControl.Controls.Add(this.gridControlInit);
+            this.InitGroupControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.InitGroupControl.Location = new System.Drawing.Point(2, 2);
+            this.InitGroupControl.Margin = new System.Windows.Forms.Padding(2);
+            this.InitGroupControl.Name = "InitGroupControl";
+            this.InitGroupControl.Size = new System.Drawing.Size(259, 261);
+            this.InitGroupControl.TabIndex = 32;
+            this.InitGroupControl.Text = "Init";
+            // 
+            // button8
+            // 
+            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button8.ContextMenuStrip = this.FileMenuStripResult;
+            this.button8.Location = new System.Drawing.Point(204, 0);
+            this.button8.Margin = new System.Windows.Forms.Padding(2);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(53, 21);
+            this.button8.TabIndex = 10;
+            this.button8.Text = "Modi...";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // gridControlInit
+            // 
+            this.gridControlInit.ContextMenuStrip = this.OperationMenuStrip;
+            this.gridControlInit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlInit.Location = new System.Drawing.Point(2, 21);
+            this.gridControlInit.MainView = this.gridView4;
+            this.gridControlInit.Name = "gridControlInit";
+            this.gridControlInit.Size = new System.Drawing.Size(255, 238);
+            this.gridControlInit.TabIndex = 8;
+            this.gridControlInit.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView4});
+            // 
+            // gridView4
+            // 
+            this.gridView4.ColumnPanelRowHeight = 32;
+            this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1});
+            this.gridView4.DetailHeight = 280;
+            this.gridView4.GridControl = this.gridControlInit;
+            this.gridView4.IndicatorWidth = 19;
+            this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsView.ShowGroupPanel = false;
+            this.gridView4.RowHeight = 24;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Value";
+            this.gridColumn1.MinWidth = 15;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.Width = 342;
+            // 
+            // JudgeGroupControl
+            // 
+            this.JudgeGroupControl.Controls.Add(this.button4);
+            this.JudgeGroupControl.Controls.Add(this.gridControlJudge);
+            this.JudgeGroupControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.JudgeGroupControl.Location = new System.Drawing.Point(2, 267);
+            this.JudgeGroupControl.Margin = new System.Windows.Forms.Padding(2);
+            this.JudgeGroupControl.Name = "JudgeGroupControl";
+            this.JudgeGroupControl.Size = new System.Drawing.Size(259, 261);
+            this.JudgeGroupControl.TabIndex = 0;
+            this.JudgeGroupControl.Text = "Result Judge";
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.ContextMenuStrip = this.FileMenuStripResult;
+            this.button4.Location = new System.Drawing.Point(197, -262);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(53, 21);
+            this.button4.TabIndex = 11;
+            this.button4.Text = "Modi...";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // groupControl6
+            // 
+            this.groupControl6.Controls.Add(this.gridControlProject);
+            this.groupControl6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl6.Location = new System.Drawing.Point(271, 2);
+            this.groupControl6.Margin = new System.Windows.Forms.Padding(2);
+            this.groupControl6.Name = "groupControl6";
+            this.groupControl6.Size = new System.Drawing.Size(265, 532);
+            this.groupControl6.TabIndex = 29;
+            this.groupControl6.Text = "Project CMD";
+            // 
+            // gridControlProject
+            // 
+            this.gridControlProject.ContextMenuStrip = this.OperationMenuStrip;
+            this.gridControlProject.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlProject.Location = new System.Drawing.Point(2, 21);
+            this.gridControlProject.MainView = this.gridView6;
+            this.gridControlProject.Name = "gridControlProject";
+            this.gridControlProject.Size = new System.Drawing.Size(261, 509);
+            this.gridControlProject.TabIndex = 5;
+            this.gridControlProject.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView6,
+            this.gridView8,
+            this.gridView9});
+            this.gridControlProject.Click += new System.EventHandler(this.gridControlProject_Click);
+            // 
+            // gridView6
+            // 
+            this.gridView6.ColumnPanelRowHeight = 32;
+            this.gridView6.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn6,
+            this.gridColumn5});
+            this.gridView6.DetailHeight = 280;
+            this.gridView6.GridControl = this.gridControlProject;
+            this.gridView6.IndicatorWidth = 19;
+            this.gridView6.Name = "gridView6";
+            this.gridView6.OptionsView.ShowGroupPanel = false;
+            this.gridView6.RowHeight = 24;
+            this.gridView6.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView6_SelectionChanged);
+            this.gridView6.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView6_FocusedRowChanged);
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "CMD";
+            this.gridColumn6.FieldName = "Cmd";
+            this.gridColumn6.MinWidth = 15;
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 0;
+            this.gridColumn6.Width = 98;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "WaitTime(ms)";
+            this.gridColumn5.FieldName = "WaitTime";
+            this.gridColumn5.MinWidth = 15;
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 1;
+            this.gridColumn5.Width = 130;
+            // 
+            // gridView8
+            // 
+            this.gridView8.GridControl = this.gridControlProject;
+            this.gridView8.Name = "gridView8";
+            // 
+            // gridView9
+            // 
+            this.gridView9.GridControl = this.gridControlProject;
+            this.gridView9.Name = "gridView9";
+            // 
+            // groupControl3
+            // 
+            this.groupControl3.Controls.Add(this.button15);
+            this.groupControl3.Controls.Add(this.button7);
+            this.groupControl3.Controls.Add(this.button6);
+            this.groupControl3.Controls.Add(this.button5);
+            this.groupControl3.Controls.Add(this.button3);
+            this.groupControl3.Controls.Add(this.gridControlTest);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl3.Location = new System.Drawing.Point(2, 2);
+            this.groupControl3.Margin = new System.Windows.Forms.Padding(2);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(265, 532);
+            this.groupControl3.TabIndex = 7;
+            this.groupControl3.Text = "Test Project";
+            // 
+            // button15
+            // 
+            this.button15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button15.Image = ((System.Drawing.Image)(resources.GetObject("button15.Image")));
+            this.button15.Location = new System.Drawing.Point(241, -64);
+            this.button15.Margin = new System.Windows.Forms.Padding(2);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(22, 21);
+            this.button15.TabIndex = 15;
+            this.button15.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button7.Location = new System.Drawing.Point(215, -64);
+            this.button7.Margin = new System.Windows.Forms.Padding(2);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(22, 21);
+            this.button7.TabIndex = 14;
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button6.Location = new System.Drawing.Point(190, -64);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(22, 21);
+            this.button6.TabIndex = 13;
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.Location = new System.Drawing.Point(164, -64);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(22, 21);
+            this.button5.TabIndex = 12;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.Location = new System.Drawing.Point(139, -64);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(22, 21);
+            this.button3.TabIndex = 11;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // gridControlTest
+            // 
+            this.gridControlTest.ContextMenuStrip = this.OperationMenuStrip;
+            this.gridControlTest.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlTest.EmbeddedNavigator.Buttons.Edit.Enabled = false;
+            this.gridControlTest.Location = new System.Drawing.Point(2, 21);
+            this.gridControlTest.MainView = this.gridView3;
+            this.gridControlTest.Name = "gridControlTest";
+            this.gridControlTest.Size = new System.Drawing.Size(261, 509);
+            this.gridControlTest.TabIndex = 5;
+            this.gridControlTest.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView3});
+            this.gridControlTest.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gridControlTest_MouseDown);
+            // 
+            // gridView3
+            // 
+            this.gridView3.ColumnPanelRowHeight = 32;
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.testid,
+            this.title});
+            this.gridView3.DetailHeight = 280;
+            this.gridView3.GridControl = this.gridControlTest;
+            this.gridView3.IndicatorWidth = 19;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            this.gridView3.RowHeight = 24;
+            this.gridView3.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView3_SelectionChanged);
+            this.gridView3.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView3_CellValueChanged);
+            // 
+            // testid
+            // 
+            this.testid.Caption = "Test ID";
+            this.testid.FieldName = "testid";
+            this.testid.MinWidth = 15;
+            this.testid.Name = "testid";
+            this.testid.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.testid.Visible = true;
+            this.testid.VisibleIndex = 0;
+            this.testid.Width = 56;
+            // 
+            // title
+            // 
+            this.title.Caption = "Test Title";
+            this.title.FieldName = "title";
+            this.title.MinWidth = 15;
+            this.title.Name = "title";
+            this.title.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.title.Visible = true;
+            this.title.VisibleIndex = 1;
+            this.title.Width = 228;
             // 
             // splitter2
             // 
@@ -1712,7 +2342,7 @@
             this.toolboxControl1.OptionsMinimizing.NormalWidth = 268;
             this.toolboxControl1.OptionsView.ShowMenuButton = false;
             this.toolboxControl1.OptionsView.ShowSearchPanel = false;
-            this.toolboxControl1.Size = new System.Drawing.Size(324, 582);
+            this.toolboxControl1.Size = new System.Drawing.Size(268, 582);
             this.toolboxControl1.TabIndex = 111;
             // 
             // repositoryItemCheckEdit1
@@ -1732,632 +2362,6 @@
             // 
             this.popupMenu1.Name = "popupMenu1";
             // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 4;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 3, 0);
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel6, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.groupControl6, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.groupControl3, 0, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(4, 0);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1020, 536);
-            this.tableLayoutPanel4.TabIndex = 16;
-            // 
-            // groupControl2
-            // 
-            this.groupControl2.Controls.Add(this.buttonCmdSet);
-            this.groupControl2.Controls.Add(this.gridControlSetCMD);
-            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(2, 2);
-            this.groupControl2.Margin = new System.Windows.Forms.Padding(2);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(245, 261);
-            this.groupControl2.TabIndex = 31;
-            this.groupControl2.Text = "Set ";
-            // 
-            // gridControlSetCMD
-            // 
-            this.gridControlSetCMD.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode3.RelationName = "Level1";
-            this.gridControlSetCMD.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode3});
-            this.gridControlSetCMD.Location = new System.Drawing.Point(2, 21);
-            this.gridControlSetCMD.MainView = this.gridView1;
-            this.gridControlSetCMD.Name = "gridControlSetCMD";
-            this.gridControlSetCMD.Size = new System.Drawing.Size(241, 238);
-            this.gridControlSetCMD.TabIndex = 8;
-            this.gridControlSetCMD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.ColumnPanelRowHeight = 32;
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn2});
-            this.gridView1.DetailHeight = 280;
-            this.gridView1.GridControl = this.gridControlSetCMD;
-            this.gridView1.IndicatorWidth = 19;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.RowHeight = 24;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "CMD";
-            this.gridColumn2.MinWidth = 15;
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 0;
-            this.gridColumn2.Width = 126;
-            // 
-            // buttonCmdSet
-            // 
-            this.buttonCmdSet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCmdSet.ContextMenuStrip = this.FileMenuStripResult;
-            this.buttonCmdSet.Location = new System.Drawing.Point(-695, 0);
-            this.buttonCmdSet.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonCmdSet.Name = "buttonCmdSet";
-            this.buttonCmdSet.Size = new System.Drawing.Size(53, 21);
-            this.buttonCmdSet.TabIndex = 10;
-            this.buttonCmdSet.Text = "Modi...";
-            this.buttonCmdSet.UseVisualStyleBackColor = true;
-            // 
-            // JudgeGroupControl
-            // 
-            this.JudgeGroupControl.Controls.Add(this.button4);
-            this.JudgeGroupControl.Controls.Add(this.gridControlJudge);
-            this.JudgeGroupControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.JudgeGroupControl.Location = new System.Drawing.Point(2, 267);
-            this.JudgeGroupControl.Margin = new System.Windows.Forms.Padding(2);
-            this.JudgeGroupControl.Name = "JudgeGroupControl";
-            this.JudgeGroupControl.Size = new System.Drawing.Size(245, 261);
-            this.JudgeGroupControl.TabIndex = 0;
-            this.JudgeGroupControl.Text = "Result Judge";
-            // 
-            // gridControlJudge
-            // 
-            this.gridControlJudge.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.LevelTemplate = this.Result_judge_subview;
-            gridLevelNode1.RelationName = "subConditions";
-            this.gridControlJudge.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
-            this.gridControlJudge.Location = new System.Drawing.Point(2, 21);
-            this.gridControlJudge.MainView = this.gridView10;
-            this.gridControlJudge.Name = "gridControlJudge";
-            this.gridControlJudge.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemComboBox1});
-            this.gridControlJudge.Size = new System.Drawing.Size(241, 238);
-            this.gridControlJudge.TabIndex = 8;
-            this.gridControlJudge.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView10,
-            this.Result_judge_subview});
-            // 
-            // gridView2
-            // 
-            this.gridView2.GridControl = this.gridControlJudge;
-            this.gridView2.Name = "gridView2";
-            // 
-            // repositoryItemComboBox1
-            // 
-            this.repositoryItemComboBox1.AutoHeight = false;
-            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
-            // 
-            // Result_judge_subview
-            // 
-            this.Result_judge_subview.ColumnPanelRowHeight = 32;
-            this.Result_judge_subview.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.variableColumn,
-            this.symbolColumn,
-            this.constantColumn,
-            this.unitColumn});
-            this.Result_judge_subview.DetailHeight = 280;
-            this.Result_judge_subview.GridControl = this.gridControlJudge;
-            this.Result_judge_subview.IndicatorWidth = 19;
-            this.Result_judge_subview.Name = "Result_judge_subview";
-            this.Result_judge_subview.OptionsView.ShowGroupPanel = false;
-            this.Result_judge_subview.RowHeight = 24;
-            // 
-            // variableColumn
-            // 
-            this.variableColumn.Caption = "VA";
-            this.variableColumn.FieldName = "VarName";
-            this.variableColumn.MinWidth = 15;
-            this.variableColumn.Name = "variableColumn";
-            this.variableColumn.Visible = true;
-            this.variableColumn.VisibleIndex = 0;
-            this.variableColumn.Width = 210;
-            // 
-            // symbolColumn
-            // 
-            this.symbolColumn.Caption = "SYM";
-            this.symbolColumn.FieldName = "Con";
-            this.symbolColumn.Name = "symbolColumn";
-            this.symbolColumn.Visible = true;
-            this.symbolColumn.VisibleIndex = 1;
-            // 
-            // constantColumn
-            // 
-            this.constantColumn.Caption = "CONST";
-            this.constantColumn.FieldName = "ConValue";
-            this.constantColumn.Name = "constantColumn";
-            this.constantColumn.Visible = true;
-            this.constantColumn.VisibleIndex = 2;
-            // 
-            // unitColumn
-            // 
-            this.unitColumn.Caption = "UNIT";
-            this.unitColumn.FieldName = "Unit";
-            this.unitColumn.Name = "unitColumn";
-            this.unitColumn.Visible = true;
-            this.unitColumn.VisibleIndex = 3;
-            // 
-            // gridView10
-            // 
-            this.gridView10.ColumnPanelRowHeight = 32;
-            this.gridView10.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn8});
-            this.gridView10.DetailHeight = 280;
-            this.gridView10.GridControl = this.gridControlJudge;
-            this.gridView10.IndicatorWidth = 19;
-            this.gridView10.Name = "gridView10";
-            this.gridView10.OptionsView.ShowGroupPanel = false;
-            this.gridView10.RowHeight = 24;
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.Caption = "condition";
-            this.gridColumn8.FieldName = "VarName";
-            this.gridColumn8.MinWidth = 15;
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 0;
-            this.gridColumn8.Width = 210;
-            // 
-            // groupControl3
-            // 
-            this.groupControl3.Controls.Add(this.button15);
-            this.groupControl3.Controls.Add(this.button7);
-            this.groupControl3.Controls.Add(this.button6);
-            this.groupControl3.Controls.Add(this.button5);
-            this.groupControl3.Controls.Add(this.button3);
-            this.groupControl3.Controls.Add(this.gridControlTest);
-            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl3.Location = new System.Drawing.Point(2, 2);
-            this.groupControl3.Margin = new System.Windows.Forms.Padding(2);
-            this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(251, 532);
-            this.groupControl3.TabIndex = 7;
-            this.groupControl3.Text = "Test Project";
-            // 
-            // gridControlTest
-            // 
-            this.gridControlTest.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlTest.EmbeddedNavigator.Buttons.Edit.Enabled = false;
-            this.gridControlTest.Location = new System.Drawing.Point(2, 21);
-            this.gridControlTest.MainView = this.gridView3;
-            this.gridControlTest.Name = "gridControlTest";
-            this.gridControlTest.Size = new System.Drawing.Size(247, 509);
-            this.gridControlTest.TabIndex = 5;
-            this.gridControlTest.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView3});
-            // 
-            // gridView3
-            // 
-            this.gridView3.ColumnPanelRowHeight = 32;
-            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.testid,
-            this.title});
-            this.gridView3.DetailHeight = 280;
-            this.gridView3.GridControl = this.gridControlTest;
-            this.gridView3.IndicatorWidth = 19;
-            this.gridView3.Name = "gridView3";
-            this.gridView3.OptionsView.ShowGroupPanel = false;
-            this.gridView3.RowHeight = 24;
-            this.gridView3.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView3_SelectionChanged);
-            // 
-            // testid
-            // 
-            this.testid.Caption = "Test ID";
-            this.testid.FieldName = "testid";
-            this.testid.MinWidth = 15;
-            this.testid.Name = "testid";
-            this.testid.Visible = true;
-            this.testid.VisibleIndex = 0;
-            this.testid.Width = 56;
-            // 
-            // title
-            // 
-            this.title.Caption = "Test Title";
-            this.title.FieldName = "title";
-            this.title.MinWidth = 15;
-            this.title.Name = "title";
-            this.title.Visible = true;
-            this.title.VisibleIndex = 1;
-            this.title.Width = 228;
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(125, -64);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(22, 21);
-            this.button3.TabIndex = 11;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button5
-            // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.Location = new System.Drawing.Point(150, -64);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(22, 21);
-            this.button5.TabIndex = 12;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.Location = new System.Drawing.Point(176, -64);
-            this.button6.Margin = new System.Windows.Forms.Padding(2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(22, 21);
-            this.button6.TabIndex = 13;
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button7.Location = new System.Drawing.Point(201, -64);
-            this.button7.Margin = new System.Windows.Forms.Padding(2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(22, 21);
-            this.button7.TabIndex = 14;
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button15
-            // 
-            this.button15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button15.Image = ((System.Drawing.Image)(resources.GetObject("button15.Image")));
-            this.button15.Location = new System.Drawing.Point(227, -64);
-            this.button15.Margin = new System.Windows.Forms.Padding(2);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(22, 21);
-            this.button15.TabIndex = 15;
-            this.button15.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.ContextMenuStrip = this.FileMenuStripResult;
-            this.button4.Location = new System.Drawing.Point(183, -262);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(53, 21);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "Modi...";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // InitGroupControl
-            // 
-            this.InitGroupControl.Controls.Add(this.button8);
-            this.InitGroupControl.Controls.Add(this.gridControlInit);
-            this.InitGroupControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.InitGroupControl.Location = new System.Drawing.Point(2, 2);
-            this.InitGroupControl.Margin = new System.Windows.Forms.Padding(2);
-            this.InitGroupControl.Name = "InitGroupControl";
-            this.InitGroupControl.Size = new System.Drawing.Size(245, 261);
-            this.InitGroupControl.TabIndex = 32;
-            this.InitGroupControl.Text = "Init";
-            // 
-            // gridControlInit
-            // 
-            this.gridControlInit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlInit.Location = new System.Drawing.Point(2, 21);
-            this.gridControlInit.MainView = this.gridView4;
-            this.gridControlInit.Name = "gridControlInit";
-            this.gridControlInit.Size = new System.Drawing.Size(241, 238);
-            this.gridControlInit.TabIndex = 8;
-            this.gridControlInit.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView4});
-            // 
-            // gridView4
-            // 
-            this.gridView4.ColumnPanelRowHeight = 32;
-            this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1});
-            this.gridView4.DetailHeight = 280;
-            this.gridView4.GridControl = this.gridControlInit;
-            this.gridView4.IndicatorWidth = 19;
-            this.gridView4.Name = "gridView4";
-            this.gridView4.OptionsView.ShowGroupPanel = false;
-            this.gridView4.RowHeight = 24;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Value";
-            this.gridColumn1.MinWidth = 15;
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 342;
-            // 
-            // button8
-            // 
-            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button8.ContextMenuStrip = this.FileMenuStripResult;
-            this.button8.Location = new System.Drawing.Point(189, -1);
-            this.button8.Margin = new System.Windows.Forms.Padding(2);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(53, 21);
-            this.button8.TabIndex = 10;
-            this.button8.Text = "Modi...";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // groupControl7
-            // 
-            this.groupControl7.Controls.Add(this.button14);
-            this.groupControl7.Controls.Add(this.gridControlSave);
-            this.groupControl7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl7.Location = new System.Drawing.Point(2, 267);
-            this.groupControl7.Margin = new System.Windows.Forms.Padding(2);
-            this.groupControl7.Name = "groupControl7";
-            this.groupControl7.Size = new System.Drawing.Size(245, 261);
-            this.groupControl7.TabIndex = 35;
-            this.groupControl7.Text = "Save";
-            // 
-            // gridControlSave
-            // 
-            this.gridControlSave.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlSave.Location = new System.Drawing.Point(2, 21);
-            this.gridControlSave.MainView = this.gridView7;
-            this.gridControlSave.Name = "gridControlSave";
-            this.gridControlSave.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemComboBox2});
-            this.gridControlSave.Size = new System.Drawing.Size(241, 238);
-            this.gridControlSave.TabIndex = 8;
-            this.gridControlSave.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView7});
-            // 
-            // gridView6
-            // 
-            this.gridView6.ColumnPanelRowHeight = 32;
-            this.gridView6.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn6,
-            this.gridColumn5});
-            this.gridView6.DetailHeight = 280;
-            this.gridView6.GridControl = this.gridControlProject;
-            this.gridView6.IndicatorWidth = 19;
-            this.gridView6.Name = "gridView6";
-            this.gridView6.OptionsView.ShowGroupPanel = false;
-            this.gridView6.RowHeight = 24;
-            this.gridView6.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView6_SelectionChanged);
-            this.gridView6.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView6_FocusedRowChanged);
-            // 
-            // repositoryItemComboBox2
-            // 
-            this.repositoryItemComboBox2.AutoHeight = false;
-            this.repositoryItemComboBox2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemComboBox2.Name = "repositoryItemComboBox2";
-            // 
-            // gridView7
-            // 
-            this.gridView7.ColumnPanelRowHeight = 32;
-            this.gridView7.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.saveVA,
-            this.saveSymbol,
-            this.saveConst,
-            this.saveUnit});
-            this.gridView7.DetailHeight = 280;
-            this.gridView7.GridControl = this.gridControlSave;
-            this.gridView7.IndicatorWidth = 19;
-            this.gridView7.Name = "gridView7";
-            this.gridView7.OptionsView.ShowGroupPanel = false;
-            this.gridView7.RowHeight = 24;
-            // 
-            // saveVA
-            // 
-            this.saveVA.Caption = "VA";
-            this.saveVA.FieldName = "VarCaption";
-            this.saveVA.MinWidth = 15;
-            this.saveVA.Name = "saveVA";
-            this.saveVA.Visible = true;
-            this.saveVA.VisibleIndex = 0;
-            this.saveVA.Width = 77;
-            // 
-            // button14
-            // 
-            this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button14.ContextMenuStrip = this.FileMenuStripResult;
-            this.button14.Location = new System.Drawing.Point(-701, -261);
-            this.button14.Margin = new System.Windows.Forms.Padding(2);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(53, 21);
-            this.button14.TabIndex = 11;
-            this.button14.Text = "Modi...";
-            this.button14.UseVisualStyleBackColor = true;
-            // 
-            // groupControl6
-            // 
-            this.groupControl6.Controls.Add(this.button16);
-            this.groupControl6.Controls.Add(this.button10);
-            this.groupControl6.Controls.Add(this.button11);
-            this.groupControl6.Controls.Add(this.button12);
-            this.groupControl6.Controls.Add(this.button13);
-            this.groupControl6.Controls.Add(this.gridControlProject);
-            this.groupControl6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl6.Location = new System.Drawing.Point(257, 2);
-            this.groupControl6.Margin = new System.Windows.Forms.Padding(2);
-            this.groupControl6.Name = "groupControl6";
-            this.groupControl6.Size = new System.Drawing.Size(251, 532);
-            this.groupControl6.TabIndex = 29;
-            this.groupControl6.Text = "Project CMD";
-            // 
-            // gridControlProject
-            // 
-            this.gridControlProject.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlProject.Location = new System.Drawing.Point(2, 21);
-            this.gridControlProject.MainView = this.gridView6;
-            this.gridControlProject.Name = "gridControlProject";
-            this.gridControlProject.Size = new System.Drawing.Size(247, 509);
-            this.gridControlProject.TabIndex = 5;
-            this.gridControlProject.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView6,
-            this.gridView8,
-            this.gridView9});
-            // 
-            // gridView8
-            // 
-            this.gridView8.GridControl = this.gridControlProject;
-            this.gridView8.Name = "gridView8";
-            // 
-            // gridView9
-            // 
-            this.gridView9.GridControl = this.gridControlProject;
-            this.gridView9.Name = "gridView9";
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "CMD";
-            this.gridColumn6.FieldName = "Cmd";
-            this.gridColumn6.MinWidth = 15;
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 0;
-            this.gridColumn6.Width = 98;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "WaitTime(ms)";
-            this.gridColumn5.FieldName = "WaitTime";
-            this.gridColumn5.MinWidth = 15;
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 1;
-            this.gridColumn5.Width = 130;
-            // 
-            // button13
-            // 
-            this.button13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button13.Location = new System.Drawing.Point(125, -64);
-            this.button13.Margin = new System.Windows.Forms.Padding(2);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(22, 21);
-            this.button13.TabIndex = 11;
-            this.button13.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button12.Location = new System.Drawing.Point(149, -64);
-            this.button12.Margin = new System.Windows.Forms.Padding(2);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(22, 21);
-            this.button12.TabIndex = 12;
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button11.Location = new System.Drawing.Point(176, -64);
-            this.button11.Margin = new System.Windows.Forms.Padding(2);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(22, 21);
-            this.button11.TabIndex = 13;
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button10.Location = new System.Drawing.Point(202, -64);
-            this.button10.Margin = new System.Windows.Forms.Padding(2);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(22, 21);
-            this.button10.TabIndex = 14;
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button16
-            // 
-            this.button16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button16.Image = ((System.Drawing.Image)(resources.GetObject("button16.Image")));
-            this.button16.Location = new System.Drawing.Point(226, -64);
-            this.button16.Margin = new System.Windows.Forms.Padding(2);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(22, 21);
-            this.button16.TabIndex = 16;
-            this.button16.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.ColumnCount = 1;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Controls.Add(this.InitGroupControl, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.JudgeGroupControl, 0, 1);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(513, 3);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 2;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(249, 530);
-            this.tableLayoutPanel6.TabIndex = 37;
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 1;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Controls.Add(this.groupControl7, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.groupControl2, 0, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(768, 3);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(249, 530);
-            this.tableLayoutPanel5.TabIndex = 36;
-            // 
-            // saveSymbol
-            // 
-            this.saveSymbol.Caption = "SYM";
-            this.saveSymbol.FieldName = "Con";
-            this.saveSymbol.Name = "saveSymbol";
-            this.saveSymbol.Visible = true;
-            this.saveSymbol.VisibleIndex = 1;
-            this.saveSymbol.Width = 47;
-            // 
-            // saveConst
-            // 
-            this.saveConst.Caption = "CONST";
-            this.saveConst.FieldName = "ConValue";
-            this.saveConst.Name = "saveConst";
-            this.saveConst.Visible = true;
-            this.saveConst.VisibleIndex = 2;
-            this.saveConst.Width = 47;
-            // 
-            // saveUnit
-            // 
-            this.saveUnit.Caption = "UNIT";
-            this.saveUnit.FieldName = "Unit";
-            this.saveUnit.Name = "saveUnit";
-            this.saveUnit.Visible = true;
-            this.saveUnit.VisibleIndex = 3;
-            this.saveUnit.Width = 51;
-            // 
             // Frmsceme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2372,6 +2376,12 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frmsceme_Load);
             this.Resize += new System.EventHandler(this.Frmsceme_Resize);
+            ((System.ComponentModel.ISupportInitialize)(this.Result_judge_subview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlJudge)).EndInit();
+            this.OperationMenuStrip.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridView10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.scemePanel.ResumeLayout(false);
             this.gbScheme.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -2414,6 +2424,34 @@
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit2.Properties)).EndInit();
             this.tabNNormalTest.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).EndInit();
+            this.groupControl7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlSave)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlSetCMD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            this.tableLayoutPanel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.InitGroupControl)).EndInit();
+            this.InitGroupControl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlInit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.JudgeGroupControl)).EndInit();
+            this.JudgeGroupControl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).EndInit();
+            this.groupControl6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlProject)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlTest)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             this.tabNavigationPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
             this.groupControl5.ResumeLayout(false);
@@ -2424,39 +2462,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlSetCMD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.JudgeGroupControl)).EndInit();
-            this.JudgeGroupControl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlJudge)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Result_judge_subview)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
-            this.groupControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlTest)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.InitGroupControl)).EndInit();
-            this.InitGroupControl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlInit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).EndInit();
-            this.groupControl7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlSave)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).EndInit();
-            this.groupControl6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlProject)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView9)).EndInit();
-            this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2608,11 +2613,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
         private DevExpress.XtraEditors.GroupControl groupControl6;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
         private DevExpress.XtraGrid.GridControl gridControlProject;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
@@ -2633,6 +2633,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn saveSymbol;
         private DevExpress.XtraGrid.Columns.GridColumn saveConst;
         private DevExpress.XtraGrid.Columns.GridColumn saveUnit;
+        private System.Windows.Forms.ContextMenuStrip OperationMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem OperationAdd;
+        private System.Windows.Forms.ToolStripMenuItem OperationDelete;
+        private System.Windows.Forms.ToolStripMenuItem OperationMoveUp;
+        private System.Windows.Forms.ToolStripMenuItem OperationMoveDown;
     }
 }
 
