@@ -58,7 +58,6 @@
             this.btnDelClass = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.btnReName = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.GbFolder = new System.Windows.Forms.GroupBox();
             this.treeClass = new DevExpress.XtraTreeList.TreeList();
@@ -165,7 +164,6 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.InitGroupControl = new DevExpress.XtraEditors.GroupControl();
-            this.button8 = new System.Windows.Forms.Button();
             this.gridControlInit = new DevExpress.XtraGrid.GridControl();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -198,6 +196,7 @@
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.btnOpen = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.Result_judge_subview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlJudge)).BeginInit();
             this.OperationMenuStrip.SuspendLayout();
@@ -344,7 +343,7 @@
             this.gridControlJudge.Name = "gridControlJudge";
             this.gridControlJudge.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemComboBox1});
-            this.gridControlJudge.Size = new System.Drawing.Size(255, 238);
+            this.gridControlJudge.Size = new System.Drawing.Size(261, 241);
             this.gridControlJudge.TabIndex = 8;
             this.gridControlJudge.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView10,
@@ -533,13 +532,12 @@
             this.tableLayoutPanel3.Controls.Add(this.btnDelClass, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.simpleButton4, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnReName, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.simpleButton2, 4, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnOpen, 4, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(258, 34);
             this.tableLayoutPanel3.TabIndex = 101;
             // 
@@ -594,18 +592,6 @@
             this.btnReName.TabIndex = 9;
             this.btnReName.Text = "Rename";
             this.btnReName.Click += new System.EventHandler(this.btnReName_Click);
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.simpleButton2.Location = new System.Drawing.Point(204, 0);
-            this.simpleButton2.Margin = new System.Windows.Forms.Padding(0);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(54, 34);
-            this.simpleButton2.TabIndex = 6;
-            this.simpleButton2.Text = "Save";
             // 
             // splitter1
             // 
@@ -809,6 +795,7 @@
             this.chkCan3.TabIndex = 98;
             this.chkCan3.Text = "bmsx file";
             this.chkCan3.UseVisualStyleBackColor = true;
+            this.chkCan3.CheckedChanged += new System.EventHandler(this.beditCan0_EditValueChanged);
             // 
             // cboxCanbtl14
             // 
@@ -832,6 +819,7 @@
             this.cboxCanbtl14.Size = new System.Drawing.Size(70, 20);
             this.cboxCanbtl14.TabIndex = 97;
             this.cboxCanbtl14.ValueMember = "1";
+            this.cboxCanbtl14.SelectedIndexChanged += new System.EventHandler(this.beditCan0_EditValueChanged);
             // 
             // beditCan3
             // 
@@ -844,6 +832,7 @@
             this.beditCan3.Size = new System.Drawing.Size(362, 20);
             this.beditCan3.TabIndex = 92;
             this.beditCan3.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.beditCan3_ButtonClick);
+            this.beditCan3.EditValueChanged += new System.EventHandler(this.beditCan0_EditValueChanged);
             // 
             // labelControl18
             // 
@@ -878,6 +867,7 @@
             this.chkCan2.TabIndex = 90;
             this.chkCan2.Text = "bmsx file";
             this.chkCan2.UseVisualStyleBackColor = true;
+            this.chkCan2.CheckedChanged += new System.EventHandler(this.beditCan0_EditValueChanged);
             // 
             // cboxCanbtl13
             // 
@@ -901,6 +891,7 @@
             this.cboxCanbtl13.Size = new System.Drawing.Size(70, 20);
             this.cboxCanbtl13.TabIndex = 89;
             this.cboxCanbtl13.ValueMember = "1";
+            this.cboxCanbtl13.SelectedIndexChanged += new System.EventHandler(this.beditCan0_EditValueChanged);
             // 
             // beditCan2
             // 
@@ -913,6 +904,7 @@
             this.beditCan2.Size = new System.Drawing.Size(362, 20);
             this.beditCan2.TabIndex = 84;
             this.beditCan2.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.beditCan2_ButtonClick);
+            this.beditCan2.EditValueChanged += new System.EventHandler(this.beditCan0_EditValueChanged);
             // 
             // labelControl17
             // 
@@ -967,6 +959,7 @@
             this.chkCan1.TabIndex = 57;
             this.chkCan1.Text = "bmsx file";
             this.chkCan1.UseVisualStyleBackColor = true;
+            this.chkCan1.CheckedChanged += new System.EventHandler(this.beditCan0_EditValueChanged);
             // 
             // chkCan0
             // 
@@ -979,6 +972,7 @@
             this.chkCan0.TabIndex = 56;
             this.chkCan0.Text = "bmsx file";
             this.chkCan0.UseVisualStyleBackColor = true;
+            this.chkCan0.CheckedChanged += new System.EventHandler(this.beditCan0_EditValueChanged);
             // 
             // label5
             // 
@@ -1012,6 +1006,7 @@
             this.cboxCanbtl12.Size = new System.Drawing.Size(70, 20);
             this.cboxCanbtl12.TabIndex = 49;
             this.cboxCanbtl12.ValueMember = "1";
+            this.cboxCanbtl12.SelectedIndexChanged += new System.EventHandler(this.beditCan0_EditValueChanged);
             // 
             // cboxMachineindex
             // 
@@ -1054,6 +1049,7 @@
             this.beditCan1.Size = new System.Drawing.Size(362, 20);
             this.beditCan1.TabIndex = 35;
             this.beditCan1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.beditCan1_ButtonClick);
+            this.beditCan1.EditValueChanged += new System.EventHandler(this.beditCan0_EditValueChanged);
             // 
             // beditCan0
             // 
@@ -1066,6 +1062,7 @@
             this.beditCan0.Size = new System.Drawing.Size(362, 20);
             this.beditCan0.TabIndex = 33;
             this.beditCan0.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.beditCan0_ButtonClick);
+            this.beditCan0.EditValueChanged += new System.EventHandler(this.beditCan0_EditValueChanged);
             // 
             // labelControl7
             // 
@@ -1112,6 +1109,7 @@
             this.cboxCanbtl11.Size = new System.Drawing.Size(70, 20);
             this.cboxCanbtl11.TabIndex = 38;
             this.cboxCanbtl11.ValueMember = "3";
+            this.cboxCanbtl11.SelectedIndexChanged += new System.EventHandler(this.beditCan0_EditValueChanged);
             // 
             // labelControl8
             // 
@@ -1618,6 +1616,7 @@
             this.TEPortOne1.Name = "TEPortOne1";
             this.TEPortOne1.Size = new System.Drawing.Size(62, 20);
             this.TEPortOne1.TabIndex = 63;
+            this.TEPortOne1.EditValueChanged += new System.EventHandler(this.beditCan0_EditValueChanged);
             // 
             // checkBox1
             // 
@@ -1630,6 +1629,7 @@
             this.checkBox1.TabIndex = 60;
             this.checkBox1.Text = "netx file";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.beditCan0_EditValueChanged);
             // 
             // labelControl9
             // 
@@ -1666,6 +1666,7 @@
             this.checkBox2.TabIndex = 60;
             this.checkBox2.Text = "netx file";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.beditCan0_EditValueChanged);
             // 
             // NettextEdit1
             // 
@@ -1675,6 +1676,7 @@
             this.NettextEdit1.Name = "NettextEdit1";
             this.NettextEdit1.Size = new System.Drawing.Size(110, 20);
             this.NettextEdit1.TabIndex = 39;
+            this.NettextEdit1.EditValueChanged += new System.EventHandler(this.beditCan0_EditValueChanged);
             // 
             // TEPortOne2
             // 
@@ -1684,6 +1686,7 @@
             this.TEPortOne2.Name = "TEPortOne2";
             this.TEPortOne2.Size = new System.Drawing.Size(62, 20);
             this.TEPortOne2.TabIndex = 63;
+            this.TEPortOne2.EditValueChanged += new System.EventHandler(this.beditCan0_EditValueChanged);
             // 
             // labelControl4
             // 
@@ -1705,6 +1708,7 @@
             this.NettextEdit2.Name = "NettextEdit2";
             this.NettextEdit2.Size = new System.Drawing.Size(110, 20);
             this.NettextEdit2.TabIndex = 39;
+            this.NettextEdit2.EditValueChanged += new System.EventHandler(this.beditCan0_EditValueChanged);
             // 
             // buttonEdit1
             // 
@@ -1717,6 +1721,7 @@
             this.buttonEdit1.Size = new System.Drawing.Size(369, 20);
             this.buttonEdit1.TabIndex = 36;
             this.buttonEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.buttonEdit1_ButtonClick);
+            this.buttonEdit1.EditValueChanged += new System.EventHandler(this.beditCan0_EditValueChanged);
             // 
             // buttonEdit2
             // 
@@ -1729,6 +1734,7 @@
             this.buttonEdit2.Size = new System.Drawing.Size(369, 20);
             this.buttonEdit2.TabIndex = 36;
             this.buttonEdit2.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.buttonEdit2_ButtonClick);
+            this.buttonEdit2.EditValueChanged += new System.EventHandler(this.beditCan0_EditValueChanged);
             // 
             // labelControl5
             // 
@@ -1784,12 +1790,13 @@
             this.tableLayoutPanel5.Controls.Add(this.groupControl7, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.groupControl2, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(810, 3);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(807, 0);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(263, 530);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(269, 536);
             this.tableLayoutPanel5.TabIndex = 36;
             // 
             // groupControl7
@@ -1797,10 +1804,10 @@
             this.groupControl7.Controls.Add(this.button14);
             this.groupControl7.Controls.Add(this.gridControlSave);
             this.groupControl7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl7.Location = new System.Drawing.Point(2, 267);
+            this.groupControl7.Location = new System.Drawing.Point(2, 270);
             this.groupControl7.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl7.Name = "groupControl7";
-            this.groupControl7.Size = new System.Drawing.Size(259, 261);
+            this.groupControl7.Size = new System.Drawing.Size(265, 264);
             this.groupControl7.TabIndex = 35;
             this.groupControl7.Text = "Save";
             // 
@@ -1808,7 +1815,7 @@
             // 
             this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button14.ContextMenuStrip = this.FileMenuStripResult;
-            this.button14.Location = new System.Drawing.Point(-687, -261);
+            this.button14.Location = new System.Drawing.Point(-681, -261);
             this.button14.Margin = new System.Windows.Forms.Padding(2);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(53, 21);
@@ -1825,7 +1832,7 @@
             this.gridControlSave.Name = "gridControlSave";
             this.gridControlSave.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemComboBox2});
-            this.gridControlSave.Size = new System.Drawing.Size(255, 238);
+            this.gridControlSave.Size = new System.Drawing.Size(261, 241);
             this.gridControlSave.TabIndex = 8;
             this.gridControlSave.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView7});
@@ -1902,7 +1909,7 @@
             this.groupControl2.Location = new System.Drawing.Point(2, 2);
             this.groupControl2.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(259, 261);
+            this.groupControl2.Size = new System.Drawing.Size(265, 264);
             this.groupControl2.TabIndex = 31;
             this.groupControl2.Text = "Set ";
             // 
@@ -1910,7 +1917,7 @@
             // 
             this.buttonCmdSet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCmdSet.ContextMenuStrip = this.FileMenuStripResult;
-            this.buttonCmdSet.Location = new System.Drawing.Point(-681, 0);
+            this.buttonCmdSet.Location = new System.Drawing.Point(-675, 0);
             this.buttonCmdSet.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCmdSet.Name = "buttonCmdSet";
             this.buttonCmdSet.Size = new System.Drawing.Size(53, 21);
@@ -1925,7 +1932,7 @@
             this.gridControlSetCMD.Location = new System.Drawing.Point(2, 21);
             this.gridControlSetCMD.MainView = this.gridView1;
             this.gridControlSetCMD.Name = "gridControlSetCMD";
-            this.gridControlSetCMD.Size = new System.Drawing.Size(255, 238);
+            this.gridControlSetCMD.Size = new System.Drawing.Size(261, 241);
             this.gridControlSetCMD.TabIndex = 8;
             this.gridControlSetCMD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -1959,37 +1966,25 @@
             this.tableLayoutPanel6.Controls.Add(this.InitGroupControl, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.JudgeGroupControl, 0, 1);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(541, 3);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(538, 0);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(263, 530);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(269, 536);
             this.tableLayoutPanel6.TabIndex = 37;
             // 
             // InitGroupControl
             // 
-            this.InitGroupControl.Controls.Add(this.button8);
             this.InitGroupControl.Controls.Add(this.gridControlInit);
             this.InitGroupControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.InitGroupControl.Location = new System.Drawing.Point(2, 2);
             this.InitGroupControl.Margin = new System.Windows.Forms.Padding(2);
             this.InitGroupControl.Name = "InitGroupControl";
-            this.InitGroupControl.Size = new System.Drawing.Size(259, 261);
+            this.InitGroupControl.Size = new System.Drawing.Size(265, 264);
             this.InitGroupControl.TabIndex = 32;
             this.InitGroupControl.Text = "Init";
-            // 
-            // button8
-            // 
-            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button8.ContextMenuStrip = this.FileMenuStripResult;
-            this.button8.Location = new System.Drawing.Point(204, 0);
-            this.button8.Margin = new System.Windows.Forms.Padding(2);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(53, 21);
-            this.button8.TabIndex = 10;
-            this.button8.Text = "Modi...";
-            this.button8.UseVisualStyleBackColor = true;
             // 
             // gridControlInit
             // 
@@ -1998,7 +1993,7 @@
             this.gridControlInit.Location = new System.Drawing.Point(2, 21);
             this.gridControlInit.MainView = this.gridView4;
             this.gridControlInit.Name = "gridControlInit";
-            this.gridControlInit.Size = new System.Drawing.Size(255, 238);
+            this.gridControlInit.Size = new System.Drawing.Size(261, 241);
             this.gridControlInit.TabIndex = 8;
             this.gridControlInit.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -2031,10 +2026,10 @@
             this.JudgeGroupControl.Controls.Add(this.button4);
             this.JudgeGroupControl.Controls.Add(this.gridControlJudge);
             this.JudgeGroupControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.JudgeGroupControl.Location = new System.Drawing.Point(2, 267);
+            this.JudgeGroupControl.Location = new System.Drawing.Point(2, 270);
             this.JudgeGroupControl.Margin = new System.Windows.Forms.Padding(2);
             this.JudgeGroupControl.Name = "JudgeGroupControl";
-            this.JudgeGroupControl.Size = new System.Drawing.Size(259, 261);
+            this.JudgeGroupControl.Size = new System.Drawing.Size(265, 264);
             this.JudgeGroupControl.TabIndex = 0;
             this.JudgeGroupControl.Text = "Result Judge";
             // 
@@ -2042,7 +2037,7 @@
             // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button4.ContextMenuStrip = this.FileMenuStripResult;
-            this.button4.Location = new System.Drawing.Point(197, -262);
+            this.button4.Location = new System.Drawing.Point(203, -262);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(53, 21);
@@ -2340,6 +2335,19 @@
             // 
             this.popupMenu1.Name = "popupMenu1";
             // 
+            // btnOpen
+            // 
+            this.btnOpen.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnOpen.Appearance.Options.UseFont = true;
+            this.btnOpen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnOpen.Location = new System.Drawing.Point(204, 0);
+            this.btnOpen.Margin = new System.Windows.Forms.Padding(0);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(54, 34);
+            this.btnOpen.TabIndex = 10;
+            this.btnOpen.Text = "Open";
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
+            // 
             // Frmsceme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2453,7 +2461,6 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn FileName;
         private DevExpress.XtraEditors.SimpleButton btnReName;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton btnDelClass;
         private DevExpress.XtraEditors.SimpleButton btnAddclass;
         private DevExpress.XtraBars.Navigation.TabPane tabPane1;
@@ -2572,7 +2579,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private DevExpress.XtraEditors.GroupControl InitGroupControl;
-        private System.Windows.Forms.Button button8;
         private DevExpress.XtraGrid.GridControl gridControlInit;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
@@ -2610,6 +2616,7 @@
         private System.Windows.Forms.ToolStripMenuItem OperationDelete;
         private System.Windows.Forms.ToolStripMenuItem OperationMoveUp;
         private System.Windows.Forms.ToolStripMenuItem OperationMoveDown;
+        private DevExpress.XtraEditors.SimpleButton btnOpen;
     }
 }
 

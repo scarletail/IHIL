@@ -25,6 +25,7 @@ namespace Scheme
         string fileUrl = null;
         string hiddenEditorType = null;
         TSchem CurrentTSchem = new TSchem();
+        bool SaveMode = false;
         public Frmsceme()
         {
             InitializeComponent();
@@ -85,7 +86,7 @@ namespace Scheme
             folderBrowserDialog.ShowNewFolderButton = true;
             //set the default folder path
             //folderBrowserDialog.SelectedPath = @"F:\GitSync\IHIL\test";
-            if (folderBrowserDialog.ShowDialog()==DialogResult.OK)
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
             {
                 string path = folderBrowserDialog.SelectedPath;
                 DirectoryInfo info = new DirectoryInfo(path);
@@ -368,28 +369,22 @@ namespace Scheme
         private void simpleButton4_Click(object sender, EventArgs e)
         {
             SaveFileDialog dialog = new SaveFileDialog();
-            TreeListNode node = treeClass.FocusedNode;
-            TreeListNode fnode = treeFile.FocusedNode;
-            string path = null;
-            string name = null;
-            if (node != null && fnode != null)
-            {
-                path = node.Tag.ToString();
-                name = fnode.GetValue(treeFile.Columns["FileName"]).ToString();
-            }
             dialog.OverwritePrompt = true;
-            dialog.InitialDirectory = path;
-            dialog.FileName = name;
-            dialog.Filter = "All files|*.*|Xml file|*.xml";
+            dialog.InitialDirectory = schemeTopPath;
+            dialog.Filter = "Test sample|*.hil";
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                string sourceFile = path + "//" + name;
-                string targetFile = null;
                 if (dialog.FileName != "")
                 {
-                    //FileStream fs = (FileStream)dialog.OpenFile();
-                    targetFile = dialog.FileName;
-                    File.Copy(sourceFile, targetFile);
+                    SaveToFile(dialog.FileName);
+                    //reload file tree
+                    TreeListNode node = treeClass.FocusedNode;
+                    string path = node.Tag.ToString();
+                    TraverseFile(path);
+                }
+                else
+                {
+                    MessageBox.Show("File name cannot be empty!", "Error");
                 }
             }
         }
@@ -475,8 +470,10 @@ namespace Scheme
                     fs1.Close();
                     //show information included in xml file
                     setAllPage();
+                    SaveMode = true;
                 }
-                catch(InvalidOperationException) {
+                catch (InvalidOperationException)
+                {
                     MessageBox.Show("File format error", "Error!");
                 }
                 return;
@@ -491,6 +488,7 @@ namespace Scheme
             }
             else
             {
+                SaveMode = false;
                 //set CAN page checkbox
                 chkCan0.Checked = CurrentTSchem.setCanlist.TSetCans[0].Check == "1" ? true : false;
                 chkCan1.Checked = CurrentTSchem.setCanlist.TSetCans[1].Check == "1" ? true : false;
@@ -526,21 +524,25 @@ namespace Scheme
                 //set Result judge
                 //set save panel
                 setOther(CurrentTSchem.StepList.TSteps.FirstOrDefault().CmdList.TCMDs.FirstOrDefault());
+                SaveMode = true;
             }
         }
-        private void setTestProj() {
+        private void setTestProj()
+        {
             List<TStep> steps = CurrentTSchem.StepList.TSteps;
             BindingSource bs = new BindingSource();
             bs.DataSource = steps;
             gridControlTest.DataSource = bs;
         }
-        private void setProjCMD(cmdList list) {
+        private void setProjCMD(cmdList list)
+        {
             List<TCMD> tCMDs = list.TCMDs;
             BindingSource bs = new BindingSource();
             bs.DataSource = tCMDs;
             gridControlProject.DataSource = bs;
         }
-        private void setOther(TCMD tcmd) {
+        private void setOther(TCMD tcmd)
+        {
             BindingSource jdbs = new BindingSource();
             BindingSource svbs = new BindingSource();
             jdbs.DataSource = tcmd.Judgelist.tconditions;
@@ -731,12 +733,67 @@ namespace Scheme
 
         private void gridControlTest_MouseDown(object sender, MouseEventArgs e)
         {
-            
+
         }
 
         private void gridView3_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
+            if (!SaveMode) return;
             GetAllPage();
+            
+            string path = treeFile.FocusedNode.Tag.ToString();
+            try
+            {
+                File.Delete(path);
+                SaveToFile(path);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error!");
+            }
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOpen_Click(object sender, EventArgs e)
+        {
+            TreeListNode fileNode = treeFile.FocusedNode;
+            if (fileNode == null)
+            {
+                MessageBox.Show("Error, no file selected!");
+                return;
+            }
+            else
+            {
+                try
+                {
+                    string path = fileNode.Tag.ToString();
+                    XmlSerializer serializer = new XmlSerializer(typeof(TSchem));
+                    FileStream fs1 = new FileStream(path, FileMode.Open);
+                    XmlReader reader = XmlReader.Create(fs1);
+                    CurrentTSchem = (TSchem)serializer.Deserialize(reader);
+                    fs1.Close();
+                    //show information included in xml file
+                    setAllPage();
+                    SaveMode = true;
+                }
+                catch (InvalidOperationException)
+                {
+                    MessageBox.Show("File format error", "Error!");
+                }
+                return;
+            }
+        }
+
+        private void beditCan0_EditValueChanged(object sender, EventArgs e)
+        {
+            //it can be abstracted
+            if (!SaveMode) return;
+            GetAllPage();
+
             string path = treeFile.FocusedNode.Tag.ToString();
             try
             {
