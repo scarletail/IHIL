@@ -18,137 +18,39 @@ namespace Scheme
 {
     public partial class Frmsceme : Form
     {
-        /// <summary>
-        /// 方案的顶级路径
-        /// </summary>
         private string schemeTopPath = "";
-        string fileUrl = null;
+        string CurrentFileUrl = null;
         string hiddenEditorType = null;
         TSchem CurrentTSchem = new TSchem();
         bool SaveMode = false;
+        FileRW frw = new FileRW();
+        XMLFunction XmlFunc = new XMLFunction();
         public Frmsceme()
         {
             InitializeComponent();
             schemeTopPath = Application.StartupPath + @"\category";
         }
-        /// <summary>
-        /// traverse the folders
-        /// </summary>
-        /// <param name="ParentNode"></param>
-        void TraverseFolder(TreeListNode ParentNode)
-        {
-            if (ParentNode.Tag == null) return;
-            string path = ParentNode.Tag.ToString();
-            DirectoryInfo DirInfo = new DirectoryInfo(path);
-            if (!DirInfo.Exists) return;
-            foreach (DirectoryInfo childFolder in DirInfo.GetDirectories())
-            {
-                TreeListNode ChildNode = this.treeClass.AppendNode(null, ParentNode);
-                ChildNode.SetValue(this.treeClass.Columns["FolderName"], childFolder.Name);
-                ChildNode.Tag = childFolder.FullName;
-                TraverseFolder(ChildNode);
-            }
-        }
         public Frmsceme(string spath)
         {
             schemeTopPath = spath;
         }
-        /// <summary>
-        /// Remove the folder
-        /// while treeClass is empty it will throw a NullReferenceException
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
-            //remove the focused folder
-            TreeListNode treeListNode = this.treeClass.FocusedNode;
-            try
-            {
-                treeListNode.Remove();
-            }
-            catch (NullReferenceException)
-            {
-                MessageBox.Show("can't remove the folder because the list is empty!");
-                return;
-            }
-
+            frw.RemoveFolder(ref treeClass);
         }
-        /// <summary>
-        /// Import a new folder
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            //add folders
-            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
-            folderBrowserDialog.ShowNewFolderButton = true;
-            //set the default folder path
-            //folderBrowserDialog.SelectedPath = @"F:\GitSync\IHIL\test";
-            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
-            {
-                string path = folderBrowserDialog.SelectedPath;
-                DirectoryInfo info = new DirectoryInfo(path);
-                TreeListNode node = treeClass.AppendNode(null, null);
-                node.Tag = path;
-                node.SetValue(treeClass.Columns["FolderName"], info.Name);
-                TraverseFolder(node);
-                treeClass.Columns["FolderName"].SortOrder = SortOrder.Ascending;
-                //sorting completed!
-            }
+            frw.ImportFolder(ref treeClass);
         }
-        /// <summary>
-        /// 遍历文件
-        /// </summary>
-        /// <param name="filepath"></param>
-        private void TraverseFile(string filepath)
-        {
-            //this.clearAll();
-            //this.currentpackeol = null;
-            DirectoryInfo TheFolder = new DirectoryInfo(filepath);
-            if (!TheFolder.Exists) return;
-            foreach (FileInfo childFile in TheFolder.GetFiles())
-            {
-                TreeListNode fileNode = treeFile.AppendNode(null, null);
-                fileNode.Tag = childFile.FullName;
-                //add node tag to bulid assosication between the filenode and the filepath
-                fileNode.SetValue(treeFile.Columns["FileName"], childFile.Name);
-            }
-
-        }
-        /// <summary>
-        /// 获取选中文件夹的路径
-        /// </summary>
-        /// <param name="node"></param>
-        /// <param name="folder"></param>
-        /// <returns></returns>
-        private string getfolder(TreeListNode node, string folder)
-        {
-            if (node.ParentNode == null)
-            {
-                return this.schemeTopPath + folder;
-            }
-            else
-            {
-                string newfolder = node.GetValue(treeClass.Columns["FolderName"]).ToString() + "\\" + folder;
-                return getfolder(node.ParentNode, newfolder);
-            }
-        }
-        /// <summary>
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void Frmsceme_Load(object sender, EventArgs e)
         {
             ToolHeight();
             TreeListNode FileNode = treeClass.AppendNode(null, null);
             FileNode.SetValue(treeClass.Columns["FolderName"], "scheme");
             FileNode.Tag = schemeTopPath;
-            TraverseFolder(FileNode);
+            frw.TraverseFolder(FileNode, ref treeClass);
             treeClass.FocusedNode = FileNode;
-            TraverseFile(FileNode.Tag.ToString());
-            //gridControlTest.DataSource = null;
+            frw.TraverseFile(ref treeClass, ref treeFile);
         }
         private void ToolHeight()
         {
@@ -158,87 +60,10 @@ namespace Scheme
         {
             ToolHeight();
         }
-        private void tabNNarmalTest_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-        private void contextMenuStripResult_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-        private void buttonResult_Click(object sender, EventArgs e)
-        {
-
-
-        }
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void treeClass_AfterExpand(object sender, NodeEventArgs e)
-        {
-
-        }
-        private void treeClass_RowStateImageClick(object sender, RowClickEventArgs e)
-        {
-
-        }
-        private void treeClass_RowSelectImageClick(object sender, RowClickEventArgs e)
-        {
-
-        }
-        private void treeClass_CustomDrawNodeButton(object sender, CustomDrawNodeButtonEventArgs e)
-        {
-
-        }
-        /// <summary>
-        /// sort the nodes by filename when fucused node is changing
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void treeClass_FocusedNodeChanged(object sender, FocusedNodeChangedEventArgs e)
         {
-            treeFile.ClearNodes();
-            if (treeClass.AllNodesCount == 0) return;
-            try
-            {
-                TreeListNode node = treeClass.FocusedNode;
-                if (node.Tag == null) return;
-                string path = node.Tag.ToString();
-                TraverseFile(path);
-                treeFile.Columns["FileName"].SortOrder = SortOrder.Ascending;
-            }
-            catch (NullReferenceException)
-            {
-                Console.WriteLine("There is no node focused in the TreeClass!");
-            }
+            frw.TraverseFile(ref treeClass, ref treeFile);
         }
-        /// <summary>
-        /// what's this ?
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void treeFile_FocusedNodeChanged(object sender, FocusedNodeChangedEventArgs e)
-        {
-            if (treeFile.AllNodesCount == 0) return;
-            try
-            {
-                TreeListNode fnode = treeFile.FocusedNode;
-                if (fnode.Tag == null) return;
-                fileUrl = fnode.Tag.ToString();
-            }
-            catch (System.NullReferenceException)
-            {
-                Console.WriteLine("There is no node focused in the TreeFile!");
-                return;
-            }
-
-        }
-        /// <summary>
-        /// create a new xml file
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void btnAddclass_Click(object sender, EventArgs e)
         {
             try
@@ -251,121 +76,23 @@ namespace Scheme
                     hiddenEditorType = "addFile";
                     treeFile.ShowEditor();
                 }
-
             }
-            catch (NullReferenceException)
+            catch (Exception ex)
             {
-                Console.WriteLine("There're some unreasonable problems!");
-                return;
-            }
-            catch (DirectoryNotFoundException)
-            {
-                Console.WriteLine("File created filed,no such folder!");
-                return;
+                MessageBox.Show(ex.ToString(), "Error");
             }
 
         }
-        /// <summary>
-        /// add a listener to response the hidden of editor
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void treeFile_HiddenEditor(object sender, EventArgs e)
         {
-            if (hiddenEditorType == "addFile")
-            {
-                TreeListNode currentNode = treeFile.FocusedNode;
-                TreeListNode parentNode = treeClass.FocusedNode;
-                if (currentNode == null || parentNode == null) return;
-                try
-                {
-                    string filename = currentNode.GetValue(treeFile.Columns["FileName"]).ToString();
-                    string filepath = parentNode.Tag.ToString();
-                    string fullname = filepath + '\\' + filename;
-                    currentNode.Tag = fullname;
-                    //Console.WriteLine(fullname);
-                    XmlDocument xmlDoc = new XmlDocument();
-                    XmlDeclaration declaration = xmlDoc.CreateXmlDeclaration("1.0", "gb2312", "yes");
-                    xmlDoc.AppendChild(declaration);
-                    XmlElement RootElement = xmlDoc.CreateElement("chHIL");
-                    xmlDoc.AppendChild(RootElement);
-                    xmlDoc.Save(fullname);
-                }
-                catch (NullReferenceException)
-                {
-                    MessageBox.Show("file name cannot be empty!", "Warning!");
-                    currentNode.Remove();
-                }
-                catch (IOException)
-                {
-                    MessageBox.Show("Failed to create the file!", "Error");
-                    currentNode.Remove();
-                }
-                finally
-                {
-                    hiddenEditorType = null;
-                }
-                return;
-            }
-            if (hiddenEditorType == "renameFile")
-            {
-                TreeListNode node = treeFile.FocusedNode;
-                if (node == null) return;
-                string sourceFile = node.Tag.ToString();
-                string targetFile = node.GetValue(treeFile.Columns["FileName"]).ToString();
-                if (sourceFile != null)
-                {
-                    FileInfo sFile = new FileInfo(sourceFile);
-                    DirectoryInfo dirInfo = sFile.Directory;
-                    targetFile = dirInfo.FullName + "\\" + targetFile;
-                    FileInfo tFile = new FileInfo(targetFile);
-                    if (sourceFile == targetFile) return;
-                    if (tFile.Exists)
-                    {
-                        MessageBox.Show("Target file already exists!");
-                        node.SetValue(treeFile.Columns["FileName"], sFile.Name);
-                    }
-                    else
-                    {
-                        sFile.MoveTo(targetFile);
-                    }
-                }
-                hiddenEditorType = null;
-                return;
-            }
+            frw.FileNameEditorHidden(ref hiddenEditorType, ref treeFile, ref treeClass);
+            //reload the file list after hidden editor
+            frw.TraverseFile(ref treeClass, ref treeFile);
         }
-        /// <summary>
-        /// delete the node in the treeFile and delete the local file in the meantime
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void btnDelClass_Click(object sender, EventArgs e)
         {
-            try
-            {
-                TreeListNode deleteNode = treeFile.FocusedNode;
-                string deleteFile = deleteNode.Tag.ToString();
-                treeFile.DeleteNode(deleteNode);
-                if (File.Exists(deleteFile))
-                {
-                    File.Delete(deleteFile);
-                }
-            }
-            catch (NullReferenceException)
-            {
-                return;
-            }
-            catch (IOException)
-            {
-                return;
-            }
+            frw.DeleteFile(ref treeFile);
         }
-        /// <summary>
-        /// create a dialog
-        /// and copy the current file to a new file
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void simpleButton4_Click(object sender, EventArgs e)
         {
             SaveFileDialog dialog = new SaveFileDialog();
@@ -374,25 +101,12 @@ namespace Scheme
             dialog.Filter = "Test sample|*.hil";
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                if (dialog.FileName != "")
-                {
-                    SaveToFile(dialog.FileName);
-                    //reload file tree
-                    TreeListNode node = treeClass.FocusedNode;
-                    string path = node.Tag.ToString();
-                    TraverseFile(path);
-                }
-                else
-                {
-                    MessageBox.Show("File name cannot be empty!", "Error");
-                }
+                frw.SaveFile(CurrentTSchem, dialog.FileName);
+                TreeListNode node = treeClass.FocusedNode;
+                string path = node.Tag.ToString();
+                frw.TraverseFile(ref treeClass, ref treeFile);
             }
         }
-        /// <summary>
-        /// rename the focused file
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void btnReName_Click(object sender, EventArgs e)
         {
             TreeListNode fileNode = treeFile.FocusedNode;
@@ -401,42 +115,6 @@ namespace Scheme
             hiddenEditorType = "renameFile";
             treeFile.ShowEditor();
         }
-        /// <summary>
-        /// no use
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void treeFile_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            //TreeListNode currentNode = treeFile.FocusedNode;
-            //if (currentNode == null) return;
-            //string path = currentNode.Tag.ToString();
-            //MessageBox.Show("Selected file path is " + path);
-            //return;
-        }
-        /// <summary>
-        /// show menu
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void treeFile_MouseDown(object sender, MouseEventArgs e)
-        {
-            TreeListHitInfo hitInfo = (sender as TreeList).CalcHitInfo(new Point(e.X, e.Y));
-            TreeListNode node = hitInfo.Node;
-            if (e.Button == MouseButtons.Right)
-            {
-                if (node != null)
-                {
-                    node.TreeList.FocusedNode = node;
-                    node.TreeList.ContextMenuStrip = this.FileMenuStripResult;
-                }
-            }
-        }
-        /// <summary>
-        /// show file in the explorer
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void Show_in_explorer_Click(object sender, EventArgs e)
         {
             TreeListNode fileNode = treeFile.FocusedNode;
@@ -445,11 +123,6 @@ namespace Scheme
                 System.Diagnostics.Process.Start("Explorer", "/select," + fileNode.Tag.ToString());
             }
         }
-        /// <summary>
-        /// open file
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void Open_Click(object sender, EventArgs e)
         {
             TreeListNode fileNode = treeFile.FocusedNode;
@@ -463,12 +136,8 @@ namespace Scheme
                 try
                 {
                     string path = fileNode.Tag.ToString();
-                    XmlSerializer serializer = new XmlSerializer(typeof(TSchem));
-                    FileStream fs1 = new FileStream(path, FileMode.Open);
-                    XmlReader reader = XmlReader.Create(fs1);
-                    CurrentTSchem = (TSchem)serializer.Deserialize(reader);
-                    fs1.Close();
-                    //show information included in xml file
+                    CurrentFileUrl = path;
+                    XmlFunc.LoadXml(path, ref CurrentTSchem);
                     setAllPage();
                     SaveMode = true;
                 }
@@ -481,51 +150,44 @@ namespace Scheme
         }
         private void setAllPage()
         {
-            if (CurrentTSchem == null)
-            {
-                MessageBox.Show("No file opened!", "Warning");
-                return;
-            }
-            else
-            {
-                SaveMode = false;
-                //set CAN page checkbox
-                chkCan0.Checked = CurrentTSchem.setCanlist.TSetCans[0].Check == "1" ? true : false;
-                chkCan1.Checked = CurrentTSchem.setCanlist.TSetCans[1].Check == "1" ? true : false;
-                chkCan2.Checked = CurrentTSchem.setCanlist.TSetCans[2].Check == "1" ? true : false;
-                chkCan3.Checked = CurrentTSchem.setCanlist.TSetCans[3].Check == "1" ? true : false;
-                //set file name
-                beditCan0.Text = CurrentTSchem.setCanlist.TSetCans[0].AgreeMentFile;
-                beditCan1.Text = CurrentTSchem.setCanlist.TSetCans[1].AgreeMentFile;
-                beditCan2.Text = CurrentTSchem.setCanlist.TSetCans[2].AgreeMentFile;
-                beditCan3.Text = CurrentTSchem.setCanlist.TSetCans[3].AgreeMentFile;
-                //set baut
-                cboxCanbtl11.SelectedIndex = Int32.Parse(CurrentTSchem.setCanlist.TSetCans[0].Baut);
-                cboxCanbtl12.SelectedIndex = Int32.Parse(CurrentTSchem.setCanlist.TSetCans[1].Baut);
-                cboxCanbtl13.SelectedIndex = Int32.Parse(CurrentTSchem.setCanlist.TSetCans[2].Baut);
-                cboxCanbtl14.SelectedIndex = Int32.Parse(CurrentTSchem.setCanlist.TSetCans[3].Baut);
-                //set ethernet page
-                checkBox1.Checked = CurrentTSchem.SetEthList.TSetEths[0].Check == "1" ? true : false;
-                checkBox2.Checked = CurrentTSchem.SetEthList.TSetEths[1].Check == "1" ? true : false;
-                buttonEdit1.Text = CurrentTSchem.SetEthList.TSetEths[0].AgreeMentFile;
-                buttonEdit2.Text = CurrentTSchem.SetEthList.TSetEths[1].AgreeMentFile;
-                NettextEdit1.Text = CurrentTSchem.SetEthList.TSetEths[0].IP;
-                NettextEdit2.Text = CurrentTSchem.SetEthList.TSetEths[1].IP;
-                TEPortOne1.Text = CurrentTSchem.SetEthList.TSetEths[0].Port;
-                TEPortOne2.Text = CurrentTSchem.SetEthList.TSetEths[1].Port;
-                //set normal test
-                //set test project
-                //warning: datasource is a list rather than an array!
-                setTestProj();
-                //set Project cmd
-                setProjCMD(CurrentTSchem.StepList.TSteps.FirstOrDefault().CmdList);
-                //set init omited...
-                //set Set omited...
-                //set Result judge
-                //set save panel
-                setOther(CurrentTSchem.StepList.TSteps.FirstOrDefault().CmdList.TCMDs.FirstOrDefault());
-                SaveMode = true;
-            }
+            SaveMode = false;
+            //set CAN page checkbox
+            chkCan0.Checked = CurrentTSchem.setCanlist.TSetCans[0].Check == "1" ? true : false;
+            chkCan1.Checked = CurrentTSchem.setCanlist.TSetCans[1].Check == "1" ? true : false;
+            chkCan2.Checked = CurrentTSchem.setCanlist.TSetCans[2].Check == "1" ? true : false;
+            chkCan3.Checked = CurrentTSchem.setCanlist.TSetCans[3].Check == "1" ? true : false;
+            //set file name
+            beditCan0.Text = CurrentTSchem.setCanlist.TSetCans[0].AgreeMentFile;
+            beditCan1.Text = CurrentTSchem.setCanlist.TSetCans[1].AgreeMentFile;
+            beditCan2.Text = CurrentTSchem.setCanlist.TSetCans[2].AgreeMentFile;
+            beditCan3.Text = CurrentTSchem.setCanlist.TSetCans[3].AgreeMentFile;
+            //set baut
+            cboxCanbtl11.SelectedIndex = Int32.Parse(CurrentTSchem.setCanlist.TSetCans[0].Baut);
+            cboxCanbtl12.SelectedIndex = Int32.Parse(CurrentTSchem.setCanlist.TSetCans[1].Baut);
+            cboxCanbtl13.SelectedIndex = Int32.Parse(CurrentTSchem.setCanlist.TSetCans[2].Baut);
+            cboxCanbtl14.SelectedIndex = Int32.Parse(CurrentTSchem.setCanlist.TSetCans[3].Baut);
+            //set ethernet page
+            checkBox1.Checked = CurrentTSchem.SetEthList.TSetEths[0].Check == "1" ? true : false;
+            checkBox2.Checked = CurrentTSchem.SetEthList.TSetEths[1].Check == "1" ? true : false;
+            buttonEdit1.Text = CurrentTSchem.SetEthList.TSetEths[0].AgreeMentFile;
+            buttonEdit2.Text = CurrentTSchem.SetEthList.TSetEths[1].AgreeMentFile;
+            NettextEdit1.Text = CurrentTSchem.SetEthList.TSetEths[0].IP;
+            NettextEdit2.Text = CurrentTSchem.SetEthList.TSetEths[1].IP;
+            TEPortOne1.Text = CurrentTSchem.SetEthList.TSetEths[0].Port;
+            TEPortOne2.Text = CurrentTSchem.SetEthList.TSetEths[1].Port;
+            //set normal test
+            //set test project
+            //warning: datasource is a list rather than an array!
+            setTestProj();
+            //set Project cmd
+            setProjCMD(CurrentTSchem.StepList.TSteps.FirstOrDefault().CmdList);
+            //set init omited...
+            //set Set omited...
+            //set Result judge
+            //set save panel
+            setOther(CurrentTSchem.StepList.TSteps.FirstOrDefault().CmdList.TCMDs.FirstOrDefault());
+            SaveMode = true;
+
         }
         private void setTestProj()
         {
@@ -578,29 +240,9 @@ namespace Scheme
             CurrentTSchem.SetEthList.TSetEths[0].Port = TEPortOne1.Text;
             CurrentTSchem.SetEthList.TSetEths[1].Port = TEPortOne2.Text;
         }
-        private void SaveLocalFile(string filepath)
-        {
-            //called when cell value changed
-        }
-        /// <summary>
-        /// call the function to save current TSchem to file instantly while hidden editor
-        /// </summary>
-        /// <param name="path"></param>
-        private void SaveToFile(string path)
-        {
-            XmlSerializer xs = new XmlSerializer(CurrentTSchem.GetType());
-            XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
-            XmlWriterSettings settings = new XmlWriterSettings();
-            settings.Encoding = Encoding.GetEncoding("gb2312");
-            settings.Indent = true;
-            XmlWriter writer = XmlWriter.Create(path, settings);
-            ns.Add("", "");
-            xs.Serialize(writer, CurrentTSchem, ns);
-            writer.Close();
-        }
         private void beditCan0_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            FileInfo info = GetFile();
+            FileInfo info = frw.GetFile();
             if (info != null)
             {
                 beditCan0.Text = info.Name;
@@ -610,10 +252,9 @@ namespace Scheme
                 beditCan0.Text = "";
             }
         }
-
         private void beditCan1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            FileInfo info = GetFile();
+            FileInfo info = frw.GetFile();
             if (info != null)
             {
                 beditCan1.Text = info.Name;
@@ -623,10 +264,9 @@ namespace Scheme
                 beditCan1.Text = "";
             }
         }
-
         private void beditCan2_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            FileInfo info = GetFile();
+            FileInfo info = frw.GetFile();
             if (info != null)
             {
                 beditCan2.Text = info.Name;
@@ -636,10 +276,9 @@ namespace Scheme
                 beditCan2.Text = "";
             }
         }
-
         private void beditCan3_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            FileInfo info = GetFile();
+            FileInfo info = frw.GetFile();
             if (info != null)
             {
                 beditCan3.Text = info.Name;
@@ -649,32 +288,9 @@ namespace Scheme
                 beditCan3.Text = "";
             }
         }
-        private FileInfo GetFile()
-        {
-            OpenFileDialog dialog = new OpenFileDialog();
-            FileInfo info;
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    string path = Path.GetFullPath(dialog.FileName);
-                    info = new FileInfo(path);
-                }
-                catch (ArgumentException)
-                {
-                    info = null;
-                }
-            }
-            else
-            {
-                info = null;
-            }
-            return info;
-        }
-
         private void buttonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            FileInfo info = GetFile();
+            FileInfo info = frw.GetFile();
             if (info != null)
             {
                 buttonEdit1.Text = info.Name;
@@ -684,10 +300,9 @@ namespace Scheme
                 buttonEdit1.Text = "";
             }
         }
-
         private void buttonEdit2_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            FileInfo info = GetFile();
+            FileInfo info = frw.GetFile();
             if (info != null)
             {
                 buttonEdit2.Text = info.Name;
@@ -697,27 +312,16 @@ namespace Scheme
                 buttonEdit2.Text = "";
             }
         }
-
         private void gridView3_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
         {
-            //set project cmd
-            //to do
             int[] handle = gridView3.GetSelectedRows();
             int h = gridView3.GetDataSourceRowIndex(handle[0]);
             List<TStep> list = (List<TStep>)gridControlTest.DataSource;
             TStep nextTstep = list[h];
             setProjCMD(nextTstep.CmdList);
         }
-
-        private void gridView6_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
-        {
-            //no use
-        }
-
         private void gridView6_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            //set init & set & result judge & save
-            //get cmd selected row
             int[] handle = gridView6.GetSelectedRows();
             int h = gridView6.GetDataSourceRowIndex(handle[0]);
             BindingSource bs = (BindingSource)gridControlProject.DataSource;
@@ -725,39 +329,22 @@ namespace Scheme
             TCMD nextTCMD = tcmds[h];
             setOther(nextTCMD);
         }
-
-        private void gridControlProject_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gridControlTest_MouseDown(object sender, MouseEventArgs e)
-        {
-
-        }
-
         private void gridView3_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             if (!SaveMode) return;
+            if (CurrentFileUrl == null) return;
             GetAllPage();
-            
             string path = treeFile.FocusedNode.Tag.ToString();
             try
             {
                 File.Delete(path);
-                SaveToFile(path);
+                XmlFunc.SaveXml(path, CurrentTSchem);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString(), "Error!");
             }
         }
-
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnOpen_Click(object sender, EventArgs e)
         {
             TreeListNode fileNode = treeFile.FocusedNode;
@@ -770,13 +357,10 @@ namespace Scheme
             {
                 try
                 {
+                    SaveMode = false;
                     string path = fileNode.Tag.ToString();
-                    XmlSerializer serializer = new XmlSerializer(typeof(TSchem));
-                    FileStream fs1 = new FileStream(path, FileMode.Open);
-                    XmlReader reader = XmlReader.Create(fs1);
-                    CurrentTSchem = (TSchem)serializer.Deserialize(reader);
-                    fs1.Close();
-                    //show information included in xml file
+                    CurrentFileUrl = path;
+                    XmlFunc.LoadXml(path,ref CurrentTSchem);
                     setAllPage();
                     SaveMode = true;
                 }
@@ -787,18 +371,18 @@ namespace Scheme
                 return;
             }
         }
-
         private void beditCan0_EditValueChanged(object sender, EventArgs e)
         {
-            //it can be abstracted
             if (!SaveMode) return;
+            if (CurrentFileUrl == null) return;
             GetAllPage();
 
             string path = treeFile.FocusedNode.Tag.ToString();
             try
             {
                 File.Delete(path);
-                SaveToFile(path);
+                //SaveToFile(path);
+                XmlFunc.SaveXml(path, CurrentTSchem);
             }
             catch (Exception ex)
             {

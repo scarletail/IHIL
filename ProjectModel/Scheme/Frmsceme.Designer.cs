@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmsceme));
             this.Result_judge_subview = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.variableColumn = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -334,10 +334,10 @@
             // 
             this.gridControlJudge.ContextMenuStrip = this.OperationMenuStrip;
             this.gridControlJudge.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.LevelTemplate = this.Result_judge_subview;
-            gridLevelNode1.RelationName = "subConditions";
+            gridLevelNode2.LevelTemplate = this.Result_judge_subview;
+            gridLevelNode2.RelationName = "subConditions";
             this.gridControlJudge.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.gridControlJudge.Location = new System.Drawing.Point(2, 21);
             this.gridControlJudge.MainView = this.gridView10;
             this.gridControlJudge.Name = "gridControlJudge";
@@ -481,10 +481,7 @@
             this.treeFile.Size = new System.Drawing.Size(258, 249);
             this.treeFile.TabIndex = 28;
             this.treeFile.TreeLevelWidth = 13;
-            this.treeFile.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.treeFile_FocusedNodeChanged);
             this.treeFile.HiddenEditor += new System.EventHandler(this.treeFile_HiddenEditor);
-            this.treeFile.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.treeFile_MouseDoubleClick);
-            this.treeFile.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeFile_MouseDown);
             // 
             // FileName
             // 
@@ -504,7 +501,7 @@
             this.Show_in_explorer});
             this.FileMenuStripResult.Name = "contextMenuStripResult";
             this.FileMenuStripResult.Size = new System.Drawing.Size(175, 48);
-            this.FileMenuStripResult.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStripResult_Opening);
+
             // 
             // Open
             // 
@@ -639,11 +636,7 @@
             this.treeClass.Size = new System.Drawing.Size(264, 176);
             this.treeClass.TabIndex = 9;
             this.treeClass.TreeLevelWidth = 13;
-            this.treeClass.RowStateImageClick += new DevExpress.XtraTreeList.RowClickEventHandler(this.treeClass_RowStateImageClick);
-            this.treeClass.RowSelectImageClick += new DevExpress.XtraTreeList.RowClickEventHandler(this.treeClass_RowSelectImageClick);
-            this.treeClass.AfterExpand += new DevExpress.XtraTreeList.NodeEventHandler(this.treeClass_AfterExpand);
             this.treeClass.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.treeClass_FocusedNodeChanged);
-            this.treeClass.CustomDrawNodeButton += new DevExpress.XtraTreeList.CustomDrawNodeButtonEventHandler(this.treeClass_CustomDrawNodeButton);
             // 
             // FolderName
             // 
@@ -1760,7 +1753,6 @@
             this.tabNNormalTest.PageText = "NormalTest";
             this.tabNNormalTest.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             this.tabNNormalTest.Size = new System.Drawing.Size(1080, 536);
-            this.tabNNormalTest.Paint += new System.Windows.Forms.PaintEventHandler(this.tabNNarmalTest_Paint);
             // 
             // tableLayoutPanel4
             // 
@@ -2067,7 +2059,6 @@
             this.gridControlProject.TabIndex = 5;
             this.gridControlProject.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView6});
-            this.gridControlProject.Click += new System.EventHandler(this.gridControlProject_Click);
             // 
             // gridView6
             // 
@@ -2081,7 +2072,6 @@
             this.gridView6.Name = "gridView6";
             this.gridView6.OptionsView.ShowGroupPanel = false;
             this.gridView6.RowHeight = 24;
-            this.gridView6.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView6_SelectionChanged);
             this.gridView6.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView6_FocusedRowChanged);
             this.gridView6.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView3_CellValueChanged);
             // 
@@ -2173,7 +2163,6 @@
             this.button3.Size = new System.Drawing.Size(22, 21);
             this.button3.TabIndex = 11;
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // gridControlTest
             // 
@@ -2187,7 +2176,6 @@
             this.gridControlTest.TabIndex = 5;
             this.gridControlTest.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
-            this.gridControlTest.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gridControlTest_MouseDown);
             // 
             // gridView3
             // 
@@ -2245,7 +2233,7 @@
             this.tabNavigationPage1.Name = "tabNavigationPage1";
             this.tabNavigationPage1.PageText = "Warn";
             this.tabNavigationPage1.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.tabNavigationPage1.Size = new System.Drawing.Size(1024, 536);
+            this.tabNavigationPage1.Size = new System.Drawing.Size(1080, 536);
             // 
             // groupControl5
             // 

@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileRW.cs" />
     <Compile Include="Frmsceme.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +74,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TSchem.cs" />
+    <Compile Include="XMLFunction.cs" />
     <EmbeddedResource Include="Frmsceme.resx">
       <DependentUpon>Frmsceme.cs</DependentUpon>
     </EmbeddedResource>
