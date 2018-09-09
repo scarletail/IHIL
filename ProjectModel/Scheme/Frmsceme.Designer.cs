@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmsceme));
             this.Result_judge_subview = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.variableColumn = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -46,7 +45,6 @@
             this.gridView10 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.scemePanel = new System.Windows.Forms.Panel();
             this.gbScheme = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -178,8 +176,6 @@
             this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridView8 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridView9 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.button15 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -207,7 +203,6 @@
             this.OperationMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridView10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.scemePanel.SuspendLayout();
             this.gbScheme.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -269,8 +264,6 @@
             this.groupControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlProject)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTest)).BeginInit();
@@ -302,6 +295,7 @@
             this.Result_judge_subview.OptionsCustomization.AllowSort = false;
             this.Result_judge_subview.OptionsView.ShowGroupPanel = false;
             this.Result_judge_subview.RowHeight = 24;
+            this.Result_judge_subview.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView3_CellValueChanged);
             // 
             // variableColumn
             // 
@@ -354,7 +348,6 @@
             this.gridControlJudge.TabIndex = 8;
             this.gridControlJudge.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView10,
-            this.gridView2,
             this.Result_judge_subview});
             // 
             // OperationMenuStrip
@@ -406,6 +399,7 @@
             this.gridView10.Name = "gridView10";
             this.gridView10.OptionsView.ShowGroupPanel = false;
             this.gridView10.RowHeight = 24;
+            this.gridView10.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView3_CellValueChanged);
             // 
             // gridColumn8
             // 
@@ -424,11 +418,6 @@
             this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
-            // 
-            // gridView2
-            // 
-            this.gridView2.GridControl = this.gridControlJudge;
-            this.gridView2.Name = "gridView2";
             // 
             // scemePanel
             // 
@@ -1855,6 +1844,7 @@
             this.gridView7.Name = "gridView7";
             this.gridView7.OptionsView.ShowGroupPanel = false;
             this.gridView7.RowHeight = 24;
+            this.gridView7.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView3_CellValueChanged);
             // 
             // saveVA
             // 
@@ -1932,9 +1922,6 @@
             // 
             this.gridControlSetCMD.ContextMenuStrip = this.OperationMenuStrip;
             this.gridControlSetCMD.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode2.RelationName = "Level1";
-            this.gridControlSetCMD.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
             this.gridControlSetCMD.Location = new System.Drawing.Point(2, 21);
             this.gridControlSetCMD.MainView = this.gridView1;
             this.gridControlSetCMD.Name = "gridControlSetCMD";
@@ -1954,6 +1941,7 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.RowHeight = 24;
+            this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView3_CellValueChanged);
             // 
             // gridColumn2
             // 
@@ -2026,6 +2014,7 @@
             this.gridView4.Name = "gridView4";
             this.gridView4.OptionsView.ShowGroupPanel = false;
             this.gridView4.RowHeight = 24;
+            this.gridView4.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView3_CellValueChanged);
             // 
             // gridColumn1
             // 
@@ -2082,9 +2071,7 @@
             this.gridControlProject.Size = new System.Drawing.Size(261, 509);
             this.gridControlProject.TabIndex = 5;
             this.gridControlProject.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView6,
-            this.gridView8,
-            this.gridView9});
+            this.gridView6});
             this.gridControlProject.Click += new System.EventHandler(this.gridControlProject_Click);
             // 
             // gridView6
@@ -2101,6 +2088,7 @@
             this.gridView6.RowHeight = 24;
             this.gridView6.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView6_SelectionChanged);
             this.gridView6.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView6_FocusedRowChanged);
+            this.gridView6.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView3_CellValueChanged);
             // 
             // gridColumn6
             // 
@@ -2123,16 +2111,6 @@
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 1;
             this.gridColumn5.Width = 130;
-            // 
-            // gridView8
-            // 
-            this.gridView8.GridControl = this.gridControlProject;
-            this.gridView8.Name = "gridView8";
-            // 
-            // gridView9
-            // 
-            this.gridView9.GridControl = this.gridControlProject;
-            this.gridView9.Name = "gridView9";
             // 
             // groupControl3
             // 
@@ -2381,7 +2359,6 @@
             this.OperationMenuStrip.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridView10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.scemePanel.ResumeLayout(false);
             this.gbScheme.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -2446,8 +2423,6 @@
             this.groupControl6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlProject)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTest)).EndInit();
@@ -2617,8 +2592,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView8;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView9;
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button7;
@@ -2629,7 +2602,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         public DevExpress.XtraGrid.Columns.GridColumn testid;
         private DevExpress.XtraGrid.Columns.GridColumn title;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn saveSymbol;
         private DevExpress.XtraGrid.Columns.GridColumn saveConst;
         private DevExpress.XtraGrid.Columns.GridColumn saveUnit;

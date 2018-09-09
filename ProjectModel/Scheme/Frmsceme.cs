@@ -718,8 +718,8 @@ namespace Scheme
             //get cmd selected row
             int[] handle = gridView6.GetSelectedRows();
             int h = gridView6.GetDataSourceRowIndex(handle[0]);
-            List<TCMD> tcmds = (List<TCMD>)gridControlProject.DataSource;
-
+            BindingSource bs = (BindingSource)gridControlProject.DataSource;
+            List<TCMD> tcmds = (List<TCMD>)bs.DataSource;
             TCMD nextTCMD = tcmds[h];
             setOther(nextTCMD);
         }
