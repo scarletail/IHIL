@@ -13,27 +13,6 @@
   <stepList>
     <TStep testid="" title="Âö³åÇ°µÄµçÐ¾×éÑ¹²î¼ÆËã" kind="" Check="true">
       <cmdList>
-        <TCMD Kind="¹ý¶É" Cmd="NOT_EXIST" WaitTime="0">
-          <initlist />
-          <setlist />
-          <judgelist>
-            <TCondition IsParent="true" VarName="ÓëÌõ¼þ" VarCaption="" Con="" ConValue="0" Unit="">
-              <subCondition IsParent="false" VarName="Âö³åÇ°celldiffT" VarCaption="Âö³åÇ°celldiffT" Con="&lt;=" ConValue="0" Unit="¡æ" />
-              <subCondition IsParent="false" VarName="Âö³åÇ°BusbardiffT" VarCaption="Âö³åÇ°BusbardiffT" Con="&lt;=" ConValue="0" Unit="¡æ" />
-              <subCondition IsParent="false" VarName="Âö³åÇ°µÄÑ¹²î" VarCaption="Âö³åÇ°µÄÑ¹²î" Con="&lt;=" ConValue="0" Unit="mV" />
-            </TCondition>
-          </judgelist>
-          <savelist>
-            <TCondition IsParent="false" VarName="Âö³åÇ°cellTMax" VarCaption="Âö³åÇ°cellTMax" Con="=" ConValue="0" Unit="¡æ" />
-            <TCondition IsParent="false" VarName="Âö³åÇ°cellTMin" VarCaption="Âö³åÇ°cellTMin" Con="=" ConValue="0" Unit="¡æ" />
-            <TCondition IsParent="false" VarName="Âö³åÇ°BusbarTMax" VarCaption="Âö³åÇ°BusbarTMax" Con="=" ConValue="0" Unit="¡æ" />
-            <TCondition IsParent="false" VarName="Âö³åÇ°BusbarTMin" VarCaption="Âö³åÇ°BusbarTMin" Con="=" ConValue="0" Unit="¡æ" />
-            <TCondition IsParent="false" VarName="Âö³åÇ°SOC" VarCaption="Âö³åÇ°SOC" Con="" ConValue="0" Unit="%" />
-            <TCondition IsParent="false" VarName="Âö³åÇ°celldiffT" VarCaption="Âö³åÇ°celldiffT" Con="=" ConValue="0" Unit="¡æ" />
-            <TCondition IsParent="false" VarName="Âö³åÇ°BusbardiffT" VarCaption="Âö³åÇ°BusbardiffT" Con="=" ConValue="0" Unit="¡æ" />
-            <TCondition IsParent="false" VarName="Âö³åÇ°µÄÑ¹²î" VarCaption="Âö³åÇ°µÄÑ¹²î" Con="=" ConValue="0" Unit="mV" />
-          </savelist>
-        </TCMD>
         <TCMD Kind="CAN2" Cmd="DTC" WaitTime="200">
           <initlist />
           <setlist />
@@ -55,7 +34,32 @@
             <TCondition IsParent="false" VarName="" VarCaption="" Con="" ConValue="0" Unit="" />
           </savelist>
         </TCMD>
+        <TCMD Kind="¹ý¶É" Cmd="NOT_EXIST" WaitTime="0">
+          <initlist />
+          <setlist />
+          <judgelist>
+            <TCondition IsParent="true" VarName="ÓëÌõ¼þ" VarCaption="" Con="" ConValue="0" Unit="">
+              <subCondition IsParent="false" VarName="Âö³åÇ°celldiffT" VarCaption="Âö³åÇ°celldiffT" Con="&lt;=" ConValue="0" Unit="¡æ" />
+              <subCondition IsParent="false" VarName="Âö³åÇ°BusbardiffT" VarCaption="Âö³åÇ°BusbardiffT" Con="&lt;=" ConValue="0" Unit="¡æ" />
+              <subCondition IsParent="false" VarName="Âö³åÇ°µÄÑ¹²î" VarCaption="Âö³åÇ°µÄÑ¹²î" Con="&lt;=" ConValue="0" Unit="mV" />
+            </TCondition>
+            <TCondition IsParent="" VarName="" VarCaption="" Con="" ConValue="" Unit="" />
+          </judgelist>
+          <savelist>
+            <TCondition IsParent="false" VarName="Âö³åÇ°cellTMax" VarCaption="Âö³åÇ°cellTMax" Con="=" ConValue="0" Unit="¡æ" />
+            <TCondition IsParent="false" VarName="Âö³åÇ°BusbarTMax" VarCaption="Âö³åÇ°BusbarTMax" Con="=" ConValue="0" Unit="¡æ" />
+            <TCondition IsParent="false" VarName="Âö³åÇ°cellTMin" VarCaption="Âö³åÇ°cellTMin" Con="=" ConValue="0" Unit="¡æ" />
+            <TCondition IsParent="false" VarName="Âö³åÇ°BusbarTMin" VarCaption="Âö³åÇ°BusbarTMin" Con="=" ConValue="0" Unit="¡æ" />
+            <TCondition IsParent="false" VarName="Âö³åÇ°SOC" VarCaption="Âö³åÇ°SOC" Con="" ConValue="0" Unit="%" />
+            <TCondition IsParent="false" VarName="Âö³åÇ°celldiffT" VarCaption="Âö³åÇ°celldiffT" Con="=" ConValue="0" Unit="¡æ" />
+            <TCondition IsParent="false" VarName="Âö³åÇ°BusbardiffT" VarCaption="Âö³åÇ°BusbardiffT" Con="=" ConValue="0" Unit="¡æ" />
+            <TCondition IsParent="false" VarName="Âö³åÇ°µÄÑ¹²î" VarCaption="Âö³åÇ°µÄÑ¹²î" Con="=" ConValue="0" Unit="mV" />
+          </savelist>
+        </TCMD>
       </cmdList>
+    </TStep>
+    <TStep testid="1" title="12" kind="" Check="">
+      <cmdList />
     </TStep>
   </stepList>
 </TSchem>

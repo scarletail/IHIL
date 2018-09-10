@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmsceme));
             this.Result_judge_subview = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.variableColumn = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -298,6 +298,9 @@
             this.Result_judge_subview.OptionsView.ShowGroupPanel = false;
             this.Result_judge_subview.RowHeight = 24;
             this.Result_judge_subview.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView3_CellValueChanged);
+            this.Result_judge_subview.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Result_judge_subview_MouseUp);
+            this.Result_judge_subview.MouseEnter += new System.EventHandler(this.Result_judge_subview_MouseEnter);
+            this.Result_judge_subview.MouseLeave += new System.EventHandler(this.Result_judge_subview_MouseLeave);
             // 
             // variableColumn
             // 
@@ -336,10 +339,10 @@
             // gridControlJudge
             // 
             this.gridControlJudge.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.LevelTemplate = this.Result_judge_subview;
-            gridLevelNode1.RelationName = "subConditions";
+            gridLevelNode2.LevelTemplate = this.Result_judge_subview;
+            gridLevelNode2.RelationName = "subConditions";
             this.gridControlJudge.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.gridControlJudge.Location = new System.Drawing.Point(2, 21);
             this.gridControlJudge.MainView = this.gridView10;
             this.gridControlJudge.Name = "gridControlJudge";
@@ -350,6 +353,7 @@
             this.gridControlJudge.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView10,
             this.Result_judge_subview});
+            this.gridControlJudge.MouseEnter += new System.EventHandler(this.gridControlJudge_MouseEnter);
             // 
             // gridView10
             // 
@@ -368,6 +372,7 @@
             this.gridView10.OptionsView.ShowGroupPanel = false;
             this.gridView10.RowHeight = 24;
             this.gridView10.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView3_CellValueChanged);
+            this.gridView10.MouseUp += new System.Windows.Forms.MouseEventHandler(this.gridView10_MouseUp);
             // 
             // gridColumn8
             // 
@@ -1808,6 +1813,7 @@
             this.gridControlSave.TabIndex = 8;
             this.gridControlSave.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView7});
+            this.gridControlSave.MouseEnter += new System.EventHandler(this.gridControlSave_MouseEnter);
             // 
             // gridView7
             // 
@@ -1829,6 +1835,7 @@
             this.gridView7.OptionsView.ShowGroupPanel = false;
             this.gridView7.RowHeight = 24;
             this.gridView7.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView3_CellValueChanged);
+            this.gridView7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.gridView7_MouseUp);
             // 
             // saveVA
             // 
@@ -1930,6 +1937,7 @@
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.RowHeight = 24;
             this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView3_CellValueChanged);
+            this.gridView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.gridView1_MouseUp);
             // 
             // gridColumn2
             // 
@@ -1995,6 +2003,7 @@
             this.gridView4.OptionsView.ShowGroupPanel = false;
             this.gridView4.RowHeight = 24;
             this.gridView4.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView3_CellValueChanged);
+            this.gridView4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.gridView4_MouseUp);
             // 
             // gridColumn1
             // 
@@ -2051,6 +2060,7 @@
             this.gridControlProject.TabIndex = 5;
             this.gridControlProject.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView6});
+            this.gridControlProject.MouseEnter += new System.EventHandler(this.gridControlProject_MouseEnter);
             // 
             // gridView6
             // 
@@ -2173,6 +2183,7 @@
             this.gridControlTest.TabIndex = 5;
             this.gridControlTest.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
+            this.gridControlTest.MouseEnter += new System.EventHandler(this.gridControlTest_MouseEnter);
             // 
             // gridView3
             // 
@@ -2191,8 +2202,9 @@
             this.gridView3.OptionsEditForm.ShowUpdateCancelPanel = DevExpress.Utils.DefaultBoolean.True;
             this.gridView3.OptionsView.ShowGroupPanel = false;
             this.gridView3.RowHeight = 24;
-            this.gridView3.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView3_SelectionChanged);
+            this.gridView3.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView3_FocusedRowChanged);
             this.gridView3.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView3_CellValueChanged);
+            this.gridView3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.gridView3_MouseUp);
             // 
             // testid
             // 
@@ -2329,8 +2341,7 @@
             this.toolStripMenuItemMvUp,
             this.toolStripMenuItemMvDn});
             this.MenuStripOpera.Name = "MenuStripOpera";
-            this.MenuStripOpera.Size = new System.Drawing.Size(181, 114);
-            this.MenuStripOpera.Opening += new System.ComponentModel.CancelEventHandler(this.MenuStripOpera_Opening);
+            this.MenuStripOpera.Size = new System.Drawing.Size(146, 92);
             // 
             // toolStripMenuItemAdd
             // 

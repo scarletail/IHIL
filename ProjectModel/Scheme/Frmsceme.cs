@@ -11,12 +11,14 @@ namespace Scheme
     public partial class Frmsceme : Form
     {
         private string schemeTopPath = "";
-        string CurrentFileUrl = null;
-        string hiddenEditorType = null;
-        TSchem CurrentTSchem = new TSchem();
-        bool SaveMode = false;
-        FileRW frw = new FileRW();
-        XMLFunction XmlFunc = new XMLFunction();
+        private string CurrentFileUrl = null;
+        private string hiddenEditorType = null;
+        private TSchem CurrentTSchem = new TSchem();
+        private bool SaveMode = false;
+        private FileRW frw = new FileRW();
+        private XMLFunction XmlFunc = new XMLFunction();
+        private DevExpress.XtraGrid.Views.Grid.GridView CurrentgridView=null;
+
         public Frmsceme()
         {
             InitializeComponent();
@@ -304,21 +306,28 @@ namespace Scheme
                 buttonEdit2.Text = "";
             }
         }
-        private void gridView3_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        private void gridView3_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            int[] handle = gridView3.GetSelectedRows();
-            int h = gridView3.GetDataSourceRowIndex(handle[0]);
-            List<TStep> list = (List<TStep>)gridControlTest.DataSource;
-            TStep nextTstep = list[h];
+            TStep nextTstep = new TStep();
+            if (gridView3.RowCount != 0)
+            {
+                int h = gridView3.GetSelectedRows()[0];
+                BindingSource bs = (BindingSource)gridControlTest.DataSource;
+                List<TStep> list = (List<TStep>)bs.DataSource;
+                nextTstep = list[h];
+            }
             setProjCMD(nextTstep.CmdList);
         }
         private void gridView6_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            int[] handle = gridView6.GetSelectedRows();
-            int h = gridView6.GetDataSourceRowIndex(handle[0]);
-            BindingSource bs = (BindingSource)gridControlProject.DataSource;
-            List<TCMD> tcmds = (List<TCMD>)bs.DataSource;
-            TCMD nextTCMD = tcmds[h];
+            TCMD nextTCMD = new TCMD();
+            if (gridView6.RowCount != 0)
+            {
+                int h = gridView6.GetSelectedRows()[0];
+                BindingSource bs = (BindingSource)gridControlProject.DataSource;
+                List<TCMD> tcmds = (List<TCMD>)bs.DataSource;
+                nextTCMD = tcmds[h];
+            }
             setOther(nextTCMD);
         }
         private void gridView3_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
@@ -357,56 +366,53 @@ namespace Scheme
         }
         private void gridView6_MouseUp(object sender, MouseEventArgs e)
         {
-            DevExpress.XtraGrid.Views.Grid.ViewInfo.GridHitInfo hitinfo = gridView6.CalcHitInfo(e.Location);
-            if (e.Button == MouseButtons.Right)
-            {
-                toolStripMenuItemAdd.Enabled = true;
-                toolStripMenuItemDel.Enabled = true;
-                toolStripMenuItemMvDn.Enabled = true;
-                toolStripMenuItemMvUp.Enabled = true;
-                if (!hitinfo.InRow)
-                {
-                    toolStripMenuItemMvUp.Enabled = false;
-                    toolStripMenuItemMvDn.Enabled = false;
-                    toolStripMenuItemDel.Enabled = false;
-                }
-                else
-                {
-                    int[] index = gridView6.GetSelectedRows();
-                    if (index[0] == 0)
-                    {
-                        toolStripMenuItemMvUp.Enabled = false;
-                    }
-                    if (index[0] == gridView6.RowCount - 1)
-                    {
-                        toolStripMenuItemMvDn.Enabled = false;
-                    }
-                }
-                MenuStripOpera.Show(MousePosition);
-            }
+            ShowMenu(ref gridView6, sender, e);
         }
         private void toolStripMenuItemAdd_Click(object sender, EventArgs e)
         {
-            gridView6.AddNewRow();
+            if (CurrentgridView == null) return;
+            CurrentgridView.AddNewRow();
         }
         private void toolStripMenuItemDel_Click(object sender, EventArgs e)
         {
-            gridView6.DeleteSelectedRows();
+            if (CurrentgridView == null) return;
+            CurrentgridView.DeleteSelectedRows();
             SaveToFile();
         }
         private void toolStripMenuItemMvUp_Click(object sender, EventArgs e)
         {
-            int []index = gridView6.GetSelectedRows();
-            int i = index[0];
-            //gridView6.rows
-            BindingSource bs = (BindingSource)gridView6.DataSource;
-            List<TCMD> list = (List<TCMD>)bs.DataSource;
-            TCMD temp = list[i];
-            list[i] = list[i - 1];
-            list[i - 1] = temp;
+            int i = CurrentgridView.GetSelectedRows()[0];
+            BindingSource bs = (BindingSource)CurrentgridView.DataSource;
+            if(CurrentgridView.Name== "gridView3")
+            {
+                List<TStep> list = (List<TStep>)bs.DataSource;
+                TStep temp = list[i];
+                list[i] = list[i - 1];
+                list[i - 1] = temp;
+            }else if (CurrentgridView.Name == "gridView6")
+            {
+                List<TCMD> list = (List<TCMD>)bs.DataSource;
+                TCMD temp = list[i];
+                list[i] = list[i - 1];
+                list[i - 1] = temp;
+            }
+            else if(CurrentgridView.Name== "Result_judge_subview")
+            {
+                List<subCondition> list = (List<subCondition>)bs.DataSource;
+                subCondition temp = list[i];
+                list[i] = list[i - 1];
+                list[i - 1] = temp;
+            }
+            else
+            {
+                List<TCondition> list = (List<TCondition>)bs.DataSource;
+                TCondition temp = list[i];
+                list[i] = list[i - 1];
+                list[i - 1] = temp;
+            }
             setAllPage();
+            SaveToFile();
         }
-
         private void toolStripMenuItemMvDn_Click(object sender, EventArgs e)
         {
             int[] index = gridView6.GetSelectedRows();
@@ -418,11 +424,7 @@ namespace Scheme
             list[i] = list[i + 1];
             list[i + 1] = temp;
             setAllPage();
-        }
-
-        private void MenuStripOpera_Opening(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            
+            SaveToFile();
         }
         private void SaveToFile()
         {
@@ -439,6 +441,92 @@ namespace Scheme
             {
                 MessageBox.Show(ex.ToString(), "Error!");
             }
+        }
+        private void ShowMenu(ref DevExpress.XtraGrid.Views.Grid.GridView gridView, object sender, MouseEventArgs e)
+        {
+            DevExpress.XtraGrid.Views.Grid.ViewInfo.GridHitInfo hitinfo = gridView.CalcHitInfo(e.Location);
+            if (e.Button == MouseButtons.Right)
+            {
+                toolStripMenuItemAdd.Enabled = true;
+                toolStripMenuItemDel.Enabled = true;
+                toolStripMenuItemMvDn.Enabled = true;
+                toolStripMenuItemMvUp.Enabled = true;
+                if (!hitinfo.InRow)
+                {
+                    toolStripMenuItemMvUp.Enabled = false;
+                    toolStripMenuItemMvDn.Enabled = false;
+                    toolStripMenuItemDel.Enabled = false;
+                }
+                else
+                {
+                    int[] index = gridView.GetSelectedRows();
+                    if (index[0] == 0)
+                    {
+                        toolStripMenuItemMvUp.Enabled = false;
+                    }
+                    if (index[0] == gridView.RowCount - 1)
+                    {
+                        toolStripMenuItemMvDn.Enabled = false;
+                    }
+                }
+                MenuStripOpera.Show(MousePosition);
+                Console.WriteLine(CurrentgridView.Name);
+            }
+        }
+
+        private void gridView3_MouseUp(object sender, MouseEventArgs e)
+        {
+            ShowMenu(ref gridView3, sender, e);
+        }
+
+        private void gridView4_MouseUp(object sender, MouseEventArgs e)
+        {
+            ShowMenu(ref gridView4, sender, e);
+        }
+
+        private void gridView10_MouseUp(object sender, MouseEventArgs e)
+        {
+            ShowMenu(ref gridView10, sender, e);
+        }
+
+        private void Result_judge_subview_MouseUp(object sender, MouseEventArgs e)
+        {
+            ShowMenu(ref Result_judge_subview, sender, e);
+        }
+
+        private void gridView1_MouseUp(object sender, MouseEventArgs e)
+        {
+            ShowMenu(ref gridView1, sender, e);
+        }
+
+        private void gridView7_MouseUp(object sender, MouseEventArgs e)
+        {
+            ShowMenu(ref gridView7, sender, e);
+        }
+
+        private void gridControlTest_MouseEnter(object sender, EventArgs e)
+        {
+            CurrentgridView = (DevExpress.XtraGrid.Views.Grid.GridView)gridControlTest.FocusedView;
+        }
+        private void gridControlSave_MouseEnter(object sender, EventArgs e)
+        {
+            CurrentgridView = (DevExpress.XtraGrid.Views.Grid.GridView)gridControlSave.FocusedView;
+        }
+        private void gridControlJudge_MouseEnter(object sender, EventArgs e)
+        {
+            CurrentgridView = (DevExpress.XtraGrid.Views.Grid.GridView)gridControlJudge.FocusedView;
+        }
+        private void gridControlProject_MouseEnter(object sender, EventArgs e)
+        {
+            CurrentgridView = (DevExpress.XtraGrid.Views.Grid.GridView)gridControlProject.FocusedView;
+        }
+        private void Result_judge_subview_MouseEnter(object sender, EventArgs e)
+        {
+            CurrentgridView = Result_judge_subview;
+        }
+        private void Result_judge_subview_MouseLeave(object sender, EventArgs e)
+        {
+            CurrentgridView = (DevExpress.XtraGrid.Views.Grid.GridView)gridControlJudge.FocusedView;
         }
     }
 
