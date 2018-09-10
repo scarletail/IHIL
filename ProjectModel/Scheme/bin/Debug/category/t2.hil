@@ -17,7 +17,7 @@
           <initlist />
           <setlist />
           <judgelist>
-            <TCondition IsParent="true" VarName="与条件" ConValue="0">
+            <TCondition IsParent="true" VarName="与条件" VarCaption="" Con="" ConValue="0" Unit="">
               <subCondition IsParent="false" VarName="脉冲前celldiffT" VarCaption="脉冲前celldiffT" Con="&lt;=" ConValue="0" Unit="℃" />
               <subCondition IsParent="false" VarName="脉冲前BusbardiffT" VarCaption="脉冲前BusbardiffT" Con="&lt;=" ConValue="0" Unit="℃" />
               <subCondition IsParent="false" VarName="脉冲前的压差" VarCaption="脉冲前的压差" Con="&lt;=" ConValue="0" Unit="mV" />
@@ -28,7 +28,7 @@
             <TCondition IsParent="false" VarName="脉冲前cellTMin" VarCaption="脉冲前cellTMin" Con="=" ConValue="0" Unit="℃" />
             <TCondition IsParent="false" VarName="脉冲前BusbarTMax" VarCaption="脉冲前BusbarTMax" Con="=" ConValue="0" Unit="℃" />
             <TCondition IsParent="false" VarName="脉冲前BusbarTMin" VarCaption="脉冲前BusbarTMin" Con="=" ConValue="0" Unit="℃" />
-            <TCondition IsParent="false" VarName="脉冲前SOC" VarCaption="脉冲前SOC" ConValue="0" Unit="%" />
+            <TCondition IsParent="false" VarName="脉冲前SOC" VarCaption="脉冲前SOC" Con="" ConValue="0" Unit="%" />
             <TCondition IsParent="false" VarName="脉冲前celldiffT" VarCaption="脉冲前celldiffT" Con="=" ConValue="0" Unit="℃" />
             <TCondition IsParent="false" VarName="脉冲前BusbardiffT" VarCaption="脉冲前BusbardiffT" Con="=" ConValue="0" Unit="℃" />
             <TCondition IsParent="false" VarName="脉冲前的压差" VarCaption="脉冲前的压差" Con="=" ConValue="0" Unit="mV" />
@@ -38,21 +38,21 @@
           <initlist />
           <setlist />
           <judgelist>
-            <TCondition IsParent="true" VarName="与条件" ConValue="0">
+            <TCondition IsParent="true" VarName="与条件" VarCaption="" Con="" ConValue="0" Unit="">
               <subCondition IsParent="false" VarName="脉冲前celldiffT" VarCaption="脉冲前celldiffT" Con="&lt;=" ConValue="0" Unit="℃" />
               <subCondition IsParent="false" VarName="脉冲前BusbardiffT" VarCaption="脉冲前BusbardiffT" Con="&lt;=" ConValue="0" Unit="℃" />
               <subCondition IsParent="false" VarName="脉冲前的压差" VarCaption="脉冲前的压差" Con="&lt;=" ConValue="0" Unit="mV" />
             </TCondition>
           </judgelist>
           <savelist>
-            <TCondition IsParent="false" ConValue="0" />
-            <TCondition IsParent="false" ConValue="0" />
-            <TCondition IsParent="false" ConValue="0" />
-            <TCondition IsParent="false" ConValue="0" />
-            <TCondition IsParent="false" ConValue="0" />
-            <TCondition IsParent="false" ConValue="0" />
-            <TCondition IsParent="false" ConValue="0" />
-            <TCondition IsParent="false" ConValue="0" />
+            <TCondition IsParent="false" VarName="" VarCaption="" Con="" ConValue="0" Unit="" />
+            <TCondition IsParent="false" VarName="" VarCaption="" Con="" ConValue="0" Unit="" />
+            <TCondition IsParent="false" VarName="" VarCaption="" Con="" ConValue="0" Unit="" />
+            <TCondition IsParent="false" VarName="" VarCaption="" Con="" ConValue="0" Unit="" />
+            <TCondition IsParent="false" VarName="" VarCaption="" Con="" ConValue="0" Unit="" />
+            <TCondition IsParent="false" VarName="" VarCaption="" Con="" ConValue="0" Unit="" />
+            <TCondition IsParent="false" VarName="" VarCaption="" Con="" ConValue="0" Unit="" />
+            <TCondition IsParent="false" VarName="" VarCaption="" Con="" ConValue="0" Unit="" />
           </savelist>
         </TCMD>
       </cmdList>

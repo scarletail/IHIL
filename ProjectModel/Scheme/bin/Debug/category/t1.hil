@@ -55,6 +55,12 @@
             <TCondition IsParent="false" VarName="" VarCaption="" Con="" ConValue="0" Unit="" />
           </savelist>
         </TCMD>
+        <TCMD Kind="" Cmd="QQQ" WaitTime="300">
+          <initlist />
+          <setlist />
+          <judgelist />
+          <savelist />
+        </TCMD>
       </cmdList>
     </TStep>
   </stepList>

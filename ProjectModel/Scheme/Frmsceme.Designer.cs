@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmsceme));
             this.Result_judge_subview = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.variableColumn = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -37,11 +37,6 @@
             this.constantColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.unitColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControlJudge = new DevExpress.XtraGrid.GridControl();
-            this.OperationMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.OperationAdd = new System.Windows.Forms.ToolStripMenuItem();
-            this.OperationDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.OperationMoveUp = new System.Windows.Forms.ToolStripMenuItem();
-            this.OperationMoveDown = new System.Windows.Forms.ToolStripMenuItem();
             this.gridView10 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
@@ -58,6 +53,7 @@
             this.btnDelClass = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.btnReName = new DevExpress.XtraEditors.SimpleButton();
+            this.btnOpen = new DevExpress.XtraEditors.SimpleButton();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.GbFolder = new System.Windows.Forms.GroupBox();
             this.treeClass = new DevExpress.XtraTreeList.TreeList();
@@ -195,11 +191,13 @@
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.btnOpen = new DevExpress.XtraEditors.SimpleButton();
+            this.MenuStripOpera = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItemAdd = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemDel = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemMvUp = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemMvDn = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.Result_judge_subview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlJudge)).BeginInit();
-            this.OperationMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridView10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             this.scemePanel.SuspendLayout();
@@ -276,7 +274,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
+            this.MenuStripOpera.SuspendLayout();
             this.SuspendLayout();
             // 
             // Result_judge_subview
@@ -291,7 +289,12 @@
             this.Result_judge_subview.GridControl = this.gridControlJudge;
             this.Result_judge_subview.IndicatorWidth = 19;
             this.Result_judge_subview.Name = "Result_judge_subview";
+            this.Result_judge_subview.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
             this.Result_judge_subview.OptionsCustomization.AllowSort = false;
+            this.Result_judge_subview.OptionsEditForm.ShowOnDoubleClick = DevExpress.Utils.DefaultBoolean.False;
+            this.Result_judge_subview.OptionsEditForm.ShowOnEnterKey = DevExpress.Utils.DefaultBoolean.False;
+            this.Result_judge_subview.OptionsEditForm.ShowOnF2Key = DevExpress.Utils.DefaultBoolean.True;
+            this.Result_judge_subview.OptionsEditForm.ShowUpdateCancelPanel = DevExpress.Utils.DefaultBoolean.True;
             this.Result_judge_subview.OptionsView.ShowGroupPanel = false;
             this.Result_judge_subview.RowHeight = 24;
             this.Result_judge_subview.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView3_CellValueChanged);
@@ -332,12 +335,11 @@
             // 
             // gridControlJudge
             // 
-            this.gridControlJudge.ContextMenuStrip = this.OperationMenuStrip;
             this.gridControlJudge.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode2.LevelTemplate = this.Result_judge_subview;
-            gridLevelNode2.RelationName = "subConditions";
+            gridLevelNode1.LevelTemplate = this.Result_judge_subview;
+            gridLevelNode1.RelationName = "subConditions";
             this.gridControlJudge.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.gridControlJudge.Location = new System.Drawing.Point(2, 21);
             this.gridControlJudge.MainView = this.gridView10;
             this.gridControlJudge.Name = "gridControlJudge";
@@ -349,44 +351,6 @@
             this.gridView10,
             this.Result_judge_subview});
             // 
-            // OperationMenuStrip
-            // 
-            this.OperationMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.OperationAdd,
-            this.OperationDelete,
-            this.OperationMoveUp,
-            this.OperationMoveDown});
-            this.OperationMenuStrip.Name = "ProjCMDMenuStrip";
-            this.OperationMenuStrip.Size = new System.Drawing.Size(146, 92);
-            // 
-            // OperationAdd
-            // 
-            this.OperationAdd.Image = global::Scheme.Properties.Resources.plus;
-            this.OperationAdd.Name = "OperationAdd";
-            this.OperationAdd.Size = new System.Drawing.Size(145, 22);
-            this.OperationAdd.Text = "Add";
-            // 
-            // OperationDelete
-            // 
-            this.OperationDelete.Image = global::Scheme.Properties.Resources.minus2;
-            this.OperationDelete.Name = "OperationDelete";
-            this.OperationDelete.Size = new System.Drawing.Size(145, 22);
-            this.OperationDelete.Text = "Delete";
-            // 
-            // OperationMoveUp
-            // 
-            this.OperationMoveUp.Image = global::Scheme.Properties.Resources.moveup;
-            this.OperationMoveUp.Name = "OperationMoveUp";
-            this.OperationMoveUp.Size = new System.Drawing.Size(145, 22);
-            this.OperationMoveUp.Text = "Move up";
-            // 
-            // OperationMoveDown
-            // 
-            this.OperationMoveDown.Image = global::Scheme.Properties.Resources.movedown;
-            this.OperationMoveDown.Name = "OperationMoveDown";
-            this.OperationMoveDown.Size = new System.Drawing.Size(145, 22);
-            this.OperationMoveDown.Text = "Move down";
-            // 
             // gridView10
             // 
             this.gridView10.ColumnPanelRowHeight = 32;
@@ -396,6 +360,11 @@
             this.gridView10.GridControl = this.gridControlJudge;
             this.gridView10.IndicatorWidth = 19;
             this.gridView10.Name = "gridView10";
+            this.gridView10.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
+            this.gridView10.OptionsEditForm.ShowOnDoubleClick = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView10.OptionsEditForm.ShowOnEnterKey = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView10.OptionsEditForm.ShowOnF2Key = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView10.OptionsEditForm.ShowUpdateCancelPanel = DevExpress.Utils.DefaultBoolean.True;
             this.gridView10.OptionsView.ShowGroupPanel = false;
             this.gridView10.RowHeight = 24;
             this.gridView10.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView3_CellValueChanged);
@@ -501,7 +470,6 @@
             this.Show_in_explorer});
             this.FileMenuStripResult.Name = "contextMenuStripResult";
             this.FileMenuStripResult.Size = new System.Drawing.Size(175, 48);
-
             // 
             // Open
             // 
@@ -589,6 +557,19 @@
             this.btnReName.TabIndex = 9;
             this.btnReName.Text = "Rename";
             this.btnReName.Click += new System.EventHandler(this.btnReName_Click);
+            // 
+            // btnOpen
+            // 
+            this.btnOpen.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnOpen.Appearance.Options.UseFont = true;
+            this.btnOpen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnOpen.Location = new System.Drawing.Point(204, 0);
+            this.btnOpen.Margin = new System.Windows.Forms.Padding(0);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(54, 34);
+            this.btnOpen.TabIndex = 10;
+            this.btnOpen.Text = "Open";
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // splitter1
             // 
@@ -1817,7 +1798,6 @@
             // 
             // gridControlSave
             // 
-            this.gridControlSave.ContextMenuStrip = this.FileMenuStripResult;
             this.gridControlSave.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControlSave.Location = new System.Drawing.Point(2, 21);
             this.gridControlSave.MainView = this.gridView7;
@@ -1841,6 +1821,11 @@
             this.gridView7.GridControl = this.gridControlSave;
             this.gridView7.IndicatorWidth = 19;
             this.gridView7.Name = "gridView7";
+            this.gridView7.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
+            this.gridView7.OptionsEditForm.ShowOnDoubleClick = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView7.OptionsEditForm.ShowOnEnterKey = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView7.OptionsEditForm.ShowOnF2Key = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView7.OptionsEditForm.ShowUpdateCancelPanel = DevExpress.Utils.DefaultBoolean.True;
             this.gridView7.OptionsView.ShowGroupPanel = false;
             this.gridView7.RowHeight = 24;
             this.gridView7.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView3_CellValueChanged);
@@ -1919,7 +1904,6 @@
             // 
             // gridControlSetCMD
             // 
-            this.gridControlSetCMD.ContextMenuStrip = this.OperationMenuStrip;
             this.gridControlSetCMD.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControlSetCMD.Location = new System.Drawing.Point(2, 21);
             this.gridControlSetCMD.MainView = this.gridView1;
@@ -1938,6 +1922,11 @@
             this.gridView1.GridControl = this.gridControlSetCMD;
             this.gridView1.IndicatorWidth = 19;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
+            this.gridView1.OptionsEditForm.ShowOnDoubleClick = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsEditForm.ShowOnEnterKey = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsEditForm.ShowOnF2Key = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView1.OptionsEditForm.ShowUpdateCancelPanel = DevExpress.Utils.DefaultBoolean.True;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.RowHeight = 24;
             this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView3_CellValueChanged);
@@ -1980,7 +1969,6 @@
             // 
             // gridControlInit
             // 
-            this.gridControlInit.ContextMenuStrip = this.OperationMenuStrip;
             this.gridControlInit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControlInit.Location = new System.Drawing.Point(2, 21);
             this.gridControlInit.MainView = this.gridView4;
@@ -1999,6 +1987,11 @@
             this.gridView4.GridControl = this.gridControlInit;
             this.gridView4.IndicatorWidth = 19;
             this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
+            this.gridView4.OptionsEditForm.ShowOnDoubleClick = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView4.OptionsEditForm.ShowOnEnterKey = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView4.OptionsEditForm.ShowOnF2Key = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView4.OptionsEditForm.ShowUpdateCancelPanel = DevExpress.Utils.DefaultBoolean.True;
             this.gridView4.OptionsView.ShowGroupPanel = false;
             this.gridView4.RowHeight = 24;
             this.gridView4.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView3_CellValueChanged);
@@ -2050,7 +2043,6 @@
             // 
             // gridControlProject
             // 
-            this.gridControlProject.ContextMenuStrip = this.OperationMenuStrip;
             this.gridControlProject.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControlProject.Location = new System.Drawing.Point(2, 21);
             this.gridControlProject.MainView = this.gridView6;
@@ -2070,10 +2062,16 @@
             this.gridView6.GridControl = this.gridControlProject;
             this.gridView6.IndicatorWidth = 19;
             this.gridView6.Name = "gridView6";
+            this.gridView6.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
+            this.gridView6.OptionsEditForm.ShowOnDoubleClick = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView6.OptionsEditForm.ShowOnEnterKey = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView6.OptionsEditForm.ShowOnF2Key = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView6.OptionsEditForm.ShowUpdateCancelPanel = DevExpress.Utils.DefaultBoolean.True;
             this.gridView6.OptionsView.ShowGroupPanel = false;
             this.gridView6.RowHeight = 24;
             this.gridView6.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView6_FocusedRowChanged);
             this.gridView6.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView3_CellValueChanged);
+            this.gridView6.MouseUp += new System.Windows.Forms.MouseEventHandler(this.gridView6_MouseUp);
             // 
             // gridColumn6
             // 
@@ -2166,7 +2164,6 @@
             // 
             // gridControlTest
             // 
-            this.gridControlTest.ContextMenuStrip = this.OperationMenuStrip;
             this.gridControlTest.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControlTest.EmbeddedNavigator.Buttons.Edit.Enabled = false;
             this.gridControlTest.Location = new System.Drawing.Point(2, 21);
@@ -2187,6 +2184,11 @@
             this.gridView3.GridControl = this.gridControlTest;
             this.gridView3.IndicatorWidth = 19;
             this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
+            this.gridView3.OptionsEditForm.ShowOnDoubleClick = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView3.OptionsEditForm.ShowOnEnterKey = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView3.OptionsEditForm.ShowOnF2Key = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView3.OptionsEditForm.ShowUpdateCancelPanel = DevExpress.Utils.DefaultBoolean.True;
             this.gridView3.OptionsView.ShowGroupPanel = false;
             this.gridView3.RowHeight = 24;
             this.gridView3.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView3_SelectionChanged);
@@ -2319,22 +2321,48 @@
             // 
             this.repositoryItemMemoEdit2.Name = "repositoryItemMemoEdit2";
             // 
-            // popupMenu1
+            // MenuStripOpera
             // 
-            this.popupMenu1.Name = "popupMenu1";
+            this.MenuStripOpera.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemAdd,
+            this.toolStripMenuItemDel,
+            this.toolStripMenuItemMvUp,
+            this.toolStripMenuItemMvDn});
+            this.MenuStripOpera.Name = "MenuStripOpera";
+            this.MenuStripOpera.Size = new System.Drawing.Size(181, 114);
+            this.MenuStripOpera.Opening += new System.ComponentModel.CancelEventHandler(this.MenuStripOpera_Opening);
             // 
-            // btnOpen
+            // toolStripMenuItemAdd
             // 
-            this.btnOpen.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnOpen.Appearance.Options.UseFont = true;
-            this.btnOpen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnOpen.Location = new System.Drawing.Point(204, 0);
-            this.btnOpen.Margin = new System.Windows.Forms.Padding(0);
-            this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(54, 34);
-            this.btnOpen.TabIndex = 10;
-            this.btnOpen.Text = "Open";
-            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
+            this.toolStripMenuItemAdd.Image = global::Scheme.Properties.Resources.plus;
+            this.toolStripMenuItemAdd.Name = "toolStripMenuItemAdd";
+            this.toolStripMenuItemAdd.Size = new System.Drawing.Size(145, 22);
+            this.toolStripMenuItemAdd.Text = "Add";
+            this.toolStripMenuItemAdd.Click += new System.EventHandler(this.toolStripMenuItemAdd_Click);
+            // 
+            // toolStripMenuItemDel
+            // 
+            this.toolStripMenuItemDel.Image = global::Scheme.Properties.Resources.minus2;
+            this.toolStripMenuItemDel.Name = "toolStripMenuItemDel";
+            this.toolStripMenuItemDel.Size = new System.Drawing.Size(145, 22);
+            this.toolStripMenuItemDel.Text = "Delete";
+            this.toolStripMenuItemDel.Click += new System.EventHandler(this.toolStripMenuItemDel_Click);
+            // 
+            // toolStripMenuItemMvUp
+            // 
+            this.toolStripMenuItemMvUp.Image = global::Scheme.Properties.Resources.moveup;
+            this.toolStripMenuItemMvUp.Name = "toolStripMenuItemMvUp";
+            this.toolStripMenuItemMvUp.Size = new System.Drawing.Size(145, 22);
+            this.toolStripMenuItemMvUp.Text = "Move up";
+            this.toolStripMenuItemMvUp.Click += new System.EventHandler(this.toolStripMenuItemMvUp_Click);
+            // 
+            // toolStripMenuItemMvDn
+            // 
+            this.toolStripMenuItemMvDn.Image = global::Scheme.Properties.Resources.movedown;
+            this.toolStripMenuItemMvDn.Name = "toolStripMenuItemMvDn";
+            this.toolStripMenuItemMvDn.Size = new System.Drawing.Size(145, 22);
+            this.toolStripMenuItemMvDn.Text = "Move down";
+            this.toolStripMenuItemMvDn.Click += new System.EventHandler(this.toolStripMenuItemMvDn_Click);
             // 
             // Frmsceme
             // 
@@ -2352,7 +2380,6 @@
             this.Resize += new System.EventHandler(this.Frmsceme_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.Result_judge_subview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlJudge)).EndInit();
-            this.OperationMenuStrip.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridView10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
             this.scemePanel.ResumeLayout(false);
@@ -2432,7 +2459,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
+            this.MenuStripOpera.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2539,7 +2566,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit2;
         private System.Windows.Forms.Splitter splitter2;
-        private DevExpress.XtraBars.PopupMenu popupMenu1;
         private System.Windows.Forms.ContextMenuStrip FileMenuStripResult;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage1;
         private DevExpress.XtraEditors.GroupControl groupControl5;
@@ -2599,12 +2625,12 @@
         private DevExpress.XtraGrid.Columns.GridColumn saveSymbol;
         private DevExpress.XtraGrid.Columns.GridColumn saveConst;
         private DevExpress.XtraGrid.Columns.GridColumn saveUnit;
-        private System.Windows.Forms.ContextMenuStrip OperationMenuStrip;
-        private System.Windows.Forms.ToolStripMenuItem OperationAdd;
-        private System.Windows.Forms.ToolStripMenuItem OperationDelete;
-        private System.Windows.Forms.ToolStripMenuItem OperationMoveUp;
-        private System.Windows.Forms.ToolStripMenuItem OperationMoveDown;
         private DevExpress.XtraEditors.SimpleButton btnOpen;
+        private System.Windows.Forms.ContextMenuStrip MenuStripOpera;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemAdd;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDel;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemMvUp;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemMvDn;
     }
 }
 

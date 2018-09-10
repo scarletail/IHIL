@@ -1,18 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraTreeList.Nodes;
 using DevExpress.XtraTreeList;
 using System.IO;
-using System.Collections;
-using System.Xml;
-using System.Xml.Serialization;
 
 namespace Scheme
 {
@@ -331,19 +323,7 @@ namespace Scheme
         }
         private void gridView3_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            if (!SaveMode) return;
-            if (CurrentFileUrl == null) return;
-            GetAllPage();
-            string path = treeFile.FocusedNode.Tag.ToString();
-            try
-            {
-                File.Delete(path);
-                XmlFunc.SaveXml(path, CurrentTSchem);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString(), "Error!");
-            }
+            SaveToFile();
         }
         private void btnOpen_Click(object sender, EventArgs e)
         {
@@ -360,7 +340,7 @@ namespace Scheme
                     SaveMode = false;
                     string path = fileNode.Tag.ToString();
                     CurrentFileUrl = path;
-                    XmlFunc.LoadXml(path,ref CurrentTSchem);
+                    XmlFunc.LoadXml(path, ref CurrentTSchem);
                     setAllPage();
                     SaveMode = true;
                 }
@@ -373,15 +353,86 @@ namespace Scheme
         }
         private void beditCan0_EditValueChanged(object sender, EventArgs e)
         {
+            SaveToFile();
+        }
+        private void gridView6_MouseUp(object sender, MouseEventArgs e)
+        {
+            DevExpress.XtraGrid.Views.Grid.ViewInfo.GridHitInfo hitinfo = gridView6.CalcHitInfo(e.Location);
+            if (e.Button == MouseButtons.Right)
+            {
+                toolStripMenuItemAdd.Enabled = true;
+                toolStripMenuItemDel.Enabled = true;
+                toolStripMenuItemMvDn.Enabled = true;
+                toolStripMenuItemMvUp.Enabled = true;
+                if (!hitinfo.InRow)
+                {
+                    toolStripMenuItemMvUp.Enabled = false;
+                    toolStripMenuItemMvDn.Enabled = false;
+                    toolStripMenuItemDel.Enabled = false;
+                }
+                else
+                {
+                    int[] index = gridView6.GetSelectedRows();
+                    if (index[0] == 0)
+                    {
+                        toolStripMenuItemMvUp.Enabled = false;
+                    }
+                    if (index[0] == gridView6.RowCount - 1)
+                    {
+                        toolStripMenuItemMvDn.Enabled = false;
+                    }
+                }
+                MenuStripOpera.Show(MousePosition);
+            }
+        }
+        private void toolStripMenuItemAdd_Click(object sender, EventArgs e)
+        {
+            gridView6.AddNewRow();
+        }
+        private void toolStripMenuItemDel_Click(object sender, EventArgs e)
+        {
+            gridView6.DeleteSelectedRows();
+            SaveToFile();
+        }
+        private void toolStripMenuItemMvUp_Click(object sender, EventArgs e)
+        {
+            int []index = gridView6.GetSelectedRows();
+            int i = index[0];
+            //gridView6.rows
+            BindingSource bs = (BindingSource)gridView6.DataSource;
+            List<TCMD> list = (List<TCMD>)bs.DataSource;
+            TCMD temp = list[i];
+            list[i] = list[i - 1];
+            list[i - 1] = temp;
+            setAllPage();
+        }
+
+        private void toolStripMenuItemMvDn_Click(object sender, EventArgs e)
+        {
+            int[] index = gridView6.GetSelectedRows();
+            int i = index[0];
+            //gridView6.rows
+            BindingSource bs = (BindingSource)gridView6.DataSource;
+            List<TCMD> list = (List<TCMD>)bs.DataSource;
+            TCMD temp = list[i];
+            list[i] = list[i + 1];
+            list[i + 1] = temp;
+            setAllPage();
+        }
+
+        private void MenuStripOpera_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            
+        }
+        private void SaveToFile()
+        {
             if (!SaveMode) return;
             if (CurrentFileUrl == null) return;
             GetAllPage();
-
             string path = treeFile.FocusedNode.Tag.ToString();
             try
             {
                 File.Delete(path);
-                //SaveToFile(path);
                 XmlFunc.SaveXml(path, CurrentTSchem);
             }
             catch (Exception ex)

@@ -317,3 +317,4 @@ F:\GitSync\IHIL\ProjectModel\Scheme\obj\Debug\Scheme.exe
 F:\GitSync\IHIL\ProjectModel\Scheme\obj\Debug\Scheme.pdb
 F:\GitSync\IHIL\ProjectModel\Scheme\obj\Debug\Scheme.exe.licenses
 F:\GitSync\IHIL\ProjectModel\Scheme\obj\Debug\Scheme.csprojAssemblyReference.cache
+F:\GitSync\IHIL\ProjectModel\Scheme\bin\Debug\LiuQF.Common.dll
