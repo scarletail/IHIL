@@ -1896,6 +1896,7 @@
             this.groupControl2.Size = new System.Drawing.Size(265, 264);
             this.groupControl2.TabIndex = 31;
             this.groupControl2.Text = "Set ";
+            this.groupControl2.MouseEnter += new System.EventHandler(this.gridControlSetCMD_MouseEnter);
             // 
             // buttonCmdSet
             // 
@@ -1919,6 +1920,7 @@
             this.gridControlSetCMD.TabIndex = 8;
             this.gridControlSetCMD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControlSetCMD.MouseEnter += new System.EventHandler(this.gridControlSetCMD_MouseEnter);
             // 
             // gridView1
             // 
@@ -1985,6 +1987,7 @@
             this.gridControlInit.TabIndex = 8;
             this.gridControlInit.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
+            this.gridControlInit.MouseEnter += new System.EventHandler(this.gridControlInit_MouseEnter);
             // 
             // gridView4
             // 

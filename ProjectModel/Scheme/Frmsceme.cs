@@ -17,7 +17,7 @@ namespace Scheme
         private bool SaveMode = false;
         private FileRW frw = new FileRW();
         private XMLFunction XmlFunc = new XMLFunction();
-        private DevExpress.XtraGrid.Views.Grid.GridView CurrentgridView=null;
+        private DevExpress.XtraGrid.Views.Grid.GridView CurrentgridView = null;
 
         public Frmsceme()
         {
@@ -174,12 +174,12 @@ namespace Scheme
             //warning: datasource is a list rather than an array!
             setTestProj();
             //set Project cmd
-            setProjCMD(CurrentTSchem.StepList.TSteps.FirstOrDefault().CmdList);
+            setProjCMD(CurrentTSchem.StepList.TSteps.FirstOrDefault().CmdList == null ? new cmdList() : CurrentTSchem.StepList.TSteps.FirstOrDefault().CmdList);
             //set init omited...
             //set Set omited...
             //set Result judge
             //set save panel
-            setOther(CurrentTSchem.StepList.TSteps.FirstOrDefault().CmdList.TCMDs.FirstOrDefault());
+            setOther(CurrentTSchem.StepList.TSteps.FirstOrDefault().CmdList.TCMDs.FirstOrDefault() == null ? new TCMD() : CurrentTSchem.StepList.TSteps.FirstOrDefault().CmdList.TCMDs.FirstOrDefault());
             SaveMode = true;
 
         }
@@ -364,10 +364,36 @@ namespace Scheme
         {
             SaveToFile();
         }
+
         private void gridView6_MouseUp(object sender, MouseEventArgs e)
         {
             ShowMenu(ref gridView6, sender, e);
         }
+        private void gridView3_MouseUp(object sender, MouseEventArgs e)
+        {
+            ShowMenu(ref gridView3, sender, e);
+        }
+        private void gridView4_MouseUp(object sender, MouseEventArgs e)
+        {
+            ShowMenu(ref gridView4, sender, e);
+        }
+        private void gridView10_MouseUp(object sender, MouseEventArgs e)
+        {
+            ShowMenu(ref gridView10, sender, e);
+        }
+        private void Result_judge_subview_MouseUp(object sender, MouseEventArgs e)
+        {
+            ShowMenu(ref Result_judge_subview, sender, e);
+        }
+        private void gridView1_MouseUp(object sender, MouseEventArgs e)
+        {
+            ShowMenu(ref gridView1, sender, e);
+        }
+        private void gridView7_MouseUp(object sender, MouseEventArgs e)
+        {
+            ShowMenu(ref gridView7, sender, e);
+        }
+
         private void toolStripMenuItemAdd_Click(object sender, EventArgs e)
         {
             if (CurrentgridView == null) return;
@@ -383,20 +409,21 @@ namespace Scheme
         {
             int i = CurrentgridView.GetSelectedRows()[0];
             BindingSource bs = (BindingSource)CurrentgridView.DataSource;
-            if(CurrentgridView.Name== "gridView3")
+            if (CurrentgridView.Name == "gridView3")
             {
                 List<TStep> list = (List<TStep>)bs.DataSource;
                 TStep temp = list[i];
                 list[i] = list[i - 1];
                 list[i - 1] = temp;
-            }else if (CurrentgridView.Name == "gridView6")
+            }
+            else if (CurrentgridView.Name == "gridView6")
             {
                 List<TCMD> list = (List<TCMD>)bs.DataSource;
                 TCMD temp = list[i];
                 list[i] = list[i - 1];
                 list[i - 1] = temp;
             }
-            else if(CurrentgridView.Name== "Result_judge_subview")
+            else if (CurrentgridView.Name == "Result_judge_subview")
             {
                 List<subCondition> list = (List<subCondition>)bs.DataSource;
                 subCondition temp = list[i];
@@ -415,17 +442,40 @@ namespace Scheme
         }
         private void toolStripMenuItemMvDn_Click(object sender, EventArgs e)
         {
-            int[] index = gridView6.GetSelectedRows();
-            int i = index[0];
-            //gridView6.rows
-            BindingSource bs = (BindingSource)gridView6.DataSource;
-            List<TCMD> list = (List<TCMD>)bs.DataSource;
-            TCMD temp = list[i];
-            list[i] = list[i + 1];
-            list[i + 1] = temp;
+            int i = CurrentgridView.GetSelectedRows()[0];
+            BindingSource bs = (BindingSource)CurrentgridView.DataSource;
+            if (CurrentgridView.Name == "gridView3")
+            {
+                List<TStep> list = (List<TStep>)bs.DataSource;
+                TStep temp = list[i];
+                list[i] = list[i + 1];
+                list[i + 1] = temp;
+            }
+            else if (CurrentgridView.Name == "gridView6")
+            {
+                List<TCMD> list = (List<TCMD>)bs.DataSource;
+                TCMD temp = list[i];
+                list[i] = list[i + 1];
+                list[i + 1] = temp;
+            }
+            else if (CurrentgridView.Name == "Result_judge_subview")
+            {
+                List<subCondition> list = (List<subCondition>)bs.DataSource;
+                subCondition temp = list[i];
+                list[i] = list[i + 1];
+                list[i + 1] = temp;
+            }
+            else
+            {
+                List<TCondition> list = (List<TCondition>)bs.DataSource;
+                TCondition temp = list[i];
+                list[i] = list[i + 1];
+                list[i + 1] = temp;
+            }
             setAllPage();
             SaveToFile();
         }
+
         private void SaveToFile()
         {
             if (!SaveMode) return;
@@ -474,36 +524,6 @@ namespace Scheme
             }
         }
 
-        private void gridView3_MouseUp(object sender, MouseEventArgs e)
-        {
-            ShowMenu(ref gridView3, sender, e);
-        }
-
-        private void gridView4_MouseUp(object sender, MouseEventArgs e)
-        {
-            ShowMenu(ref gridView4, sender, e);
-        }
-
-        private void gridView10_MouseUp(object sender, MouseEventArgs e)
-        {
-            ShowMenu(ref gridView10, sender, e);
-        }
-
-        private void Result_judge_subview_MouseUp(object sender, MouseEventArgs e)
-        {
-            ShowMenu(ref Result_judge_subview, sender, e);
-        }
-
-        private void gridView1_MouseUp(object sender, MouseEventArgs e)
-        {
-            ShowMenu(ref gridView1, sender, e);
-        }
-
-        private void gridView7_MouseUp(object sender, MouseEventArgs e)
-        {
-            ShowMenu(ref gridView7, sender, e);
-        }
-
         private void gridControlTest_MouseEnter(object sender, EventArgs e)
         {
             CurrentgridView = (DevExpress.XtraGrid.Views.Grid.GridView)gridControlTest.FocusedView;
@@ -528,6 +548,15 @@ namespace Scheme
         {
             CurrentgridView = (DevExpress.XtraGrid.Views.Grid.GridView)gridControlJudge.FocusedView;
         }
+        private void gridControlInit_MouseEnter(object sender, EventArgs e)
+        {
+            CurrentgridView = (DevExpress.XtraGrid.Views.Grid.GridView)gridControlInit.FocusedView;
+        }
+        private void gridControlSetCMD_MouseEnter(object sender, EventArgs e)
+        {
+            CurrentgridView = (DevExpress.XtraGrid.Views.Grid.GridView)gridControlSetCMD.FocusedView;
+        }
+
     }
 
 }
