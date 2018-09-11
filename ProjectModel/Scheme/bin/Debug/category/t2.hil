@@ -11,19 +11,13 @@
     <TSetEth Check="0" IP="169.254.4.10" Port="234" AgreeMentFile="" Alias="耐压仪" />
   </setEthList>
   <stepList>
-    <TStep testid="1" title="12" kind="" Check="">
-      <cmdList />
-    </TStep>
-    <TStep testid="" title="脉冲前的电芯组压差计算" kind="" Check="true">
+    <TStep testid="100" title="脉冲前的电芯组压差计算" kind="" Check="true">
       <cmdList>
         <TCMD Kind="CAN2" Cmd="DTC" WaitTime="200">
           <initlist />
           <setlist />
           <judgelist>
-            <TCondition IsParent="true" VarName="与条件" VarCaption="" Con="" ConValue="0" Unit="">
-              <subCondition IsParent="false" VarName="脉冲前BusbardiffT" VarCaption="脉冲前BusbardiffT" Con="&lt;=" ConValue="0" Unit="℃" />
-              <subCondition IsParent="false" VarName="脉冲前的压差" VarCaption="脉冲前的压差" Con="&lt;=" ConValue="0" Unit="mV" />
-            </TCondition>
+            <TCondition IsParent="true" VarName="与条件" VarCaption="" Con="" ConValue="0" Unit="" />
           </judgelist>
           <savelist>
             <TCondition IsParent="false" VarName="" VarCaption="" Con="" ConValue="0" Unit="" />
@@ -59,6 +53,9 @@
           </savelist>
         </TCMD>
       </cmdList>
+    </TStep>
+    <TStep testid="" title="" kind="" Check="">
+      <cmdList />
     </TStep>
   </stepList>
 </TSchem>

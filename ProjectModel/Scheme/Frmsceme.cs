@@ -10,17 +10,21 @@ namespace Scheme
 {
     public partial class Frmsceme : Form
     {
-        private string schemeTopPath = "";
+        private string schemeTopPath;
         private string CurrentFileUrl = null;
         private string hiddenEditorType = null;
-        private TSchem CurrentTSchem = new TSchem();
-        private bool SaveMode = false;
-        private FileRW frw = new FileRW();
-        private XMLFunction XmlFunc = new XMLFunction();
+        private TSchem CurrentTSchem;
+        private bool SaveMode;
+        private FileRW frw;
+        private XMLFunction XmlFunc;
         private DevExpress.XtraGrid.Views.Grid.GridView CurrentgridView = null;
 
         public Frmsceme()
         {
+            CurrentTSchem = new TSchem();
+            SaveMode = false;
+            frw = new FileRW();
+            XmlFunc = new XMLFunction();
             InitializeComponent();
             schemeTopPath = Application.StartupPath + @"\category";
         }
@@ -179,7 +183,8 @@ namespace Scheme
             //set Set omited...
             //set Result judge
             //set save panel
-            setOther(CurrentTSchem.StepList.TSteps.FirstOrDefault().CmdList.TCMDs.FirstOrDefault() == null ? new TCMD() : CurrentTSchem.StepList.TSteps.FirstOrDefault().CmdList.TCMDs.FirstOrDefault());
+            SetSvList(CurrentTSchem.StepList.TSteps.FirstOrDefault().CmdList.TCMDs.FirstOrDefault() == null ? new TCMD() : CurrentTSchem.StepList.TSteps.FirstOrDefault().CmdList.TCMDs.FirstOrDefault());
+            SetResJug(CurrentTSchem.StepList.TSteps.FirstOrDefault().CmdList.TCMDs.FirstOrDefault() == null ? new TCMD() : CurrentTSchem.StepList.TSteps.FirstOrDefault().CmdList.TCMDs.FirstOrDefault());
             SaveMode = true;
 
         }
@@ -197,14 +202,17 @@ namespace Scheme
             bs.DataSource = tCMDs;
             gridControlProject.DataSource = bs;
         }
-        private void setOther(TCMD tcmd)
+        private void SetResJug(TCMD tcmd)
         {
-            BindingSource jdbs = new BindingSource();
-            BindingSource svbs = new BindingSource();
-            jdbs.DataSource = tcmd.Judgelist.tconditions;
-            svbs.DataSource = tcmd.Savelist.TConditions;
-            gridControlJudge.DataSource = jdbs;
-            gridControlSave.DataSource = svbs;
+            BindingSource bs = new BindingSource();
+            bs.DataSource = tcmd.Judgelist.tconditions;
+            gridControlJudge.DataSource = bs;
+        }
+        private void SetSvList(TCMD tcmd)
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = tcmd.Setlist.TConditions;
+            gridControlSave.DataSource = bs;
         }
         private void GetAllPage()
         {
@@ -233,6 +241,14 @@ namespace Scheme
             CurrentTSchem.SetEthList.TSetEths[1].IP = NettextEdit2.Text;
             CurrentTSchem.SetEthList.TSetEths[0].Port = TEPortOne1.Text;
             CurrentTSchem.SetEthList.TSetEths[1].Port = TEPortOne2.Text;
+        }
+        private void RefreshPage(ref DevExpress.XtraGrid.Views.Grid.GridView gridView)
+        {
+            int handle = gridView.GetSelectedRows()[0];
+            BindingSource bs = new BindingSource();
+            bs = (BindingSource)gridView.DataSource;
+            gridView.GridControl.DataSource = bs;
+            gridView.SelectRow(handle);
         }
         private void beditCan0_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
@@ -328,7 +344,8 @@ namespace Scheme
                 List<TCMD> tcmds = (List<TCMD>)bs.DataSource;
                 nextTCMD = tcmds[h];
             }
-            setOther(nextTCMD);
+            SetSvList(nextTCMD);
+            SetResJug(nextTCMD);
         }
         private void gridView3_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
@@ -364,7 +381,7 @@ namespace Scheme
         {
             SaveToFile();
         }
-
+         
         private void gridView6_MouseUp(object sender, MouseEventArgs e)
         {
             ShowMenu(ref gridView6, sender, e);
@@ -437,8 +454,8 @@ namespace Scheme
                 list[i] = list[i - 1];
                 list[i - 1] = temp;
             }
-            setAllPage();
             SaveToFile();
+            CurrentgridView.SelectRow(i);
         }
         private void toolStripMenuItemMvDn_Click(object sender, EventArgs e)
         {
@@ -471,9 +488,10 @@ namespace Scheme
                 TCondition temp = list[i];
                 list[i] = list[i + 1];
                 list[i + 1] = temp;
+
             }
-            setAllPage();
             SaveToFile();
+            CurrentgridView.SelectRow(i);
         }
 
         private void SaveToFile()
@@ -518,6 +536,8 @@ namespace Scheme
                     {
                         toolStripMenuItemMvDn.Enabled = false;
                     }
+                    Console.WriteLine("RowsCount: " + gridView.RowCount);
+                    Console.WriteLine("CurrentIndex: " + index[0]);
                 }
                 MenuStripOpera.Show(MousePosition);
                 Console.WriteLine(CurrentgridView.Name);
@@ -556,6 +576,8 @@ namespace Scheme
         {
             CurrentgridView = (DevExpress.XtraGrid.Views.Grid.GridView)gridControlSetCMD.FocusedView;
         }
+
+
 
     }
 

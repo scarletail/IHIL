@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmsceme));
             this.Result_judge_subview = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.variableColumn = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -339,10 +339,10 @@
             // gridControlJudge
             // 
             this.gridControlJudge.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode2.LevelTemplate = this.Result_judge_subview;
-            gridLevelNode2.RelationName = "subConditions";
+            gridLevelNode1.LevelTemplate = this.Result_judge_subview;
+            gridLevelNode1.RelationName = "subConditions";
             this.gridControlJudge.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.gridControlJudge.Location = new System.Drawing.Point(2, 21);
             this.gridControlJudge.MainView = this.gridView10;
             this.gridControlJudge.Name = "gridControlJudge";
@@ -475,7 +475,7 @@
             this.Show_in_explorer});
             this.FileMenuStripResult.Name = "contextMenuStripResult";
             this.FileMenuStripResult.Size = new System.Drawing.Size(175, 48);
-            // 
+         // 
             // Open
             // 
             this.Open.Name = "Open";
@@ -2344,13 +2344,13 @@
             this.toolStripMenuItemMvUp,
             this.toolStripMenuItemMvDn});
             this.MenuStripOpera.Name = "MenuStripOpera";
-            this.MenuStripOpera.Size = new System.Drawing.Size(146, 92);
-            // 
+            this.MenuStripOpera.Size = new System.Drawing.Size(181, 114);
+             // 
             // toolStripMenuItemAdd
             // 
             this.toolStripMenuItemAdd.Image = global::Scheme.Properties.Resources.plus;
             this.toolStripMenuItemAdd.Name = "toolStripMenuItemAdd";
-            this.toolStripMenuItemAdd.Size = new System.Drawing.Size(145, 22);
+            this.toolStripMenuItemAdd.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemAdd.Text = "Add";
             this.toolStripMenuItemAdd.Click += new System.EventHandler(this.toolStripMenuItemAdd_Click);
             // 
@@ -2358,7 +2358,7 @@
             // 
             this.toolStripMenuItemDel.Image = global::Scheme.Properties.Resources.minus2;
             this.toolStripMenuItemDel.Name = "toolStripMenuItemDel";
-            this.toolStripMenuItemDel.Size = new System.Drawing.Size(145, 22);
+            this.toolStripMenuItemDel.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemDel.Text = "Delete";
             this.toolStripMenuItemDel.Click += new System.EventHandler(this.toolStripMenuItemDel_Click);
             // 
@@ -2366,7 +2366,7 @@
             // 
             this.toolStripMenuItemMvUp.Image = global::Scheme.Properties.Resources.moveup;
             this.toolStripMenuItemMvUp.Name = "toolStripMenuItemMvUp";
-            this.toolStripMenuItemMvUp.Size = new System.Drawing.Size(145, 22);
+            this.toolStripMenuItemMvUp.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemMvUp.Text = "Move up";
             this.toolStripMenuItemMvUp.Click += new System.EventHandler(this.toolStripMenuItemMvUp_Click);
             // 
@@ -2374,7 +2374,7 @@
             // 
             this.toolStripMenuItemMvDn.Image = global::Scheme.Properties.Resources.movedown;
             this.toolStripMenuItemMvDn.Name = "toolStripMenuItemMvDn";
-            this.toolStripMenuItemMvDn.Size = new System.Drawing.Size(145, 22);
+            this.toolStripMenuItemMvDn.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItemMvDn.Text = "Move down";
             this.toolStripMenuItemMvDn.Click += new System.EventHandler(this.toolStripMenuItemMvDn_Click);
             // 
