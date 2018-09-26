@@ -6,22 +6,16 @@ using System.Threading.Tasks;
 using iinterface;
 using System.ComponentModel.Composition;
 using System.Xml;
+
+//将"TCommuniationBase"更名为"TCommunicationBase",修改了相应的接口名，并重新生成dll文件，重设工程的引用逻辑 @Deer
+
 namespace instance
 {
-    [Export("TCommuniationBase", typeof(iCommunicationBase))]
+    [Export("TCommunicationBase", typeof(iCommunicationBase))]
     [PartCreationPolicy(CreationPolicy.NonShared)]  
-    public class TCommuniationBase : iCommunicationBase
+    public class TCommunicationBase : iCommunicationBase
     {
-        private XmlElement fileNodeXe;
-        public XmlElement FileNodeXe
-        {
-            get
-            { return fileNodeXe; }
-            set
-            {
-                fileNodeXe = value;
-            }
-        }
+        public XmlElement FileNodeXe { get; set; }
         /// <summary>
         /// 变量名称
         /// </summary>
@@ -32,8 +26,8 @@ namespace instance
             set
             {
                 varName = value;
-                if (fileNodeXe != null)
-                    fileNodeXe.SetAttribute("id", value);
+                if (FileNodeXe != null)
+                    FileNodeXe.SetAttribute("id", value);
             }
         }
         /// <summary
@@ -46,8 +40,8 @@ namespace instance
             set
             {
                 varCaption = value;
-                if (fileNodeXe != null)
-                    fileNodeXe.SetAttribute("caption", value);
+                if (FileNodeXe != null)
+                    FileNodeXe.SetAttribute("caption", value);
             }
         }
 
@@ -62,8 +56,8 @@ namespace instance
             set
             {
                 varUnit = value;
-                if (fileNodeXe != null)
-                    fileNodeXe.SetAttribute("dw", value);
+                if (FileNodeXe != null)
+                    FileNodeXe.SetAttribute("dw", value);
             }
         }
         /// <summary>
@@ -88,10 +82,10 @@ namespace instance
 
         public void CaseNode(XmlNode filenode)
         {
-            fileNodeXe = (XmlElement) filenode;
-            varName = fileNodeXe.GetAttribute("id");
-            varCaption = fileNodeXe.GetAttribute("caption");
-            varUnit = fileNodeXe.GetAttribute("unit");
+            FileNodeXe = (XmlElement) filenode;
+            varName = FileNodeXe.GetAttribute("id");
+            varCaption = FileNodeXe.GetAttribute("caption");
+            varUnit = FileNodeXe.GetAttribute("unit");
 
         }
 

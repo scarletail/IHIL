@@ -7,3 +7,8 @@ E:\VSProject\iHIL0828\Interface\iCommunicationBase\bin\Debug\iCommunicationBase.
 E:\VSProject\iHIL0828\Interface\iCommunicationBase\obj\Debug\iCommunicationBase.csproj.CoreCompileInputs.cache
 E:\VSProject\iHIL0828\Interface\iCommunicationBase\obj\Debug\iCommunicationBase.dll
 E:\VSProject\iHIL0828\Interface\iCommunicationBase\obj\Debug\iCommunicationBase.pdb
+F:\GitSync\IHIL\Interface\iCommunicationBase\bin\Debug\iCommunicationBase.dll
+F:\GitSync\IHIL\Interface\iCommunicationBase\bin\Debug\iCommunicationBase.pdb
+F:\GitSync\IHIL\Interface\iCommunicationBase\obj\Debug\iCommunicationBase.csproj.CoreCompileInputs.cache
+F:\GitSync\IHIL\Interface\iCommunicationBase\obj\Debug\iCommunicationBase.dll
+F:\GitSync\IHIL\Interface\iCommunicationBase\obj\Debug\iCommunicationBase.pdb

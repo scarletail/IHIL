@@ -1,2 +1,13 @@
 E:\VSProject\iHIL0828\Instance\TBMS\obj\Debug\TBMS.csprojAssemblyReference.cache
 E:\VSProject\iHIL0828\Instance\TBMS\obj\Debug\TBMS.csproj.CoreCompileInputs.cache
+F:\GitSync\IHIL\Instance\TBMS\obj\Debug\TBMS.csprojAssemblyReference.cache
+F:\GitSync\IHIL\Instance\TBMS\obj\Debug\TBMS.csproj.CoreCompileInputs.cache
+F:\GitSync\IHIL\Instance\TBMS\bin\Debug\TBMS.dll
+F:\GitSync\IHIL\Instance\TBMS\bin\Debug\TBMS.pdb
+F:\GitSync\IHIL\Instance\TBMS\bin\Debug\iCommunicationBase.dll
+F:\GitSync\IHIL\Instance\TBMS\bin\Debug\TCommunicationBase.dll
+F:\GitSync\IHIL\Instance\TBMS\bin\Debug\iCommunicationBase.pdb
+F:\GitSync\IHIL\Instance\TBMS\bin\Debug\TCommunicationBase.pdb
+F:\GitSync\IHIL\Instance\TBMS\obj\Debug\TBMS.csproj.CopyComplete
+F:\GitSync\IHIL\Instance\TBMS\obj\Debug\TBMS.dll
+F:\GitSync\IHIL\Instance\TBMS\obj\Debug\TBMS.pdb

@@ -13,3 +13,11 @@ E:\VSProject\iHIL0828\Interface\iCAN\obj\Debug\iCAN.csproj.CoreCompileInputs.cac
 E:\VSProject\iHIL0828\Interface\iCAN\obj\Debug\iCAN.csproj.CopyComplete
 E:\VSProject\iHIL0828\Interface\iCAN\obj\Debug\iCAN.dll
 E:\VSProject\iHIL0828\Interface\iCAN\obj\Debug\iCAN.pdb
+F:\GitSync\IHIL\Interface\iCAN\bin\Debug\iCAN.dll
+F:\GitSync\IHIL\Interface\iCAN\bin\Debug\iCAN.pdb
+F:\GitSync\IHIL\Interface\iCAN\bin\Debug\iBms.dll
+F:\GitSync\IHIL\Interface\iCAN\obj\Debug\iCAN.csprojAssemblyReference.cache
+F:\GitSync\IHIL\Interface\iCAN\obj\Debug\iCAN.csproj.CoreCompileInputs.cache
+F:\GitSync\IHIL\Interface\iCAN\obj\Debug\iCAN.csproj.CopyComplete
+F:\GitSync\IHIL\Interface\iCAN\obj\Debug\iCAN.dll
+F:\GitSync\IHIL\Interface\iCAN\obj\Debug\iCAN.pdb

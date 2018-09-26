@@ -1,0 +1,5 @@
+F:\GitSync\IHIL\Instance\TCommuniationBase\obj\Debug\TCommunicationBase.csproj.CoreCompileInputs.cache
+F:\GitSync\IHIL\Instance\TCommuniationBase\bin\Debug\TCommunicationBase.dll
+F:\GitSync\IHIL\Instance\TCommuniationBase\bin\Debug\TCommunicationBase.pdb
+F:\GitSync\IHIL\Instance\TCommuniationBase\obj\Debug\TCommunicationBase.dll
+F:\GitSync\IHIL\Instance\TCommuniationBase\obj\Debug\TCommunicationBase.pdb

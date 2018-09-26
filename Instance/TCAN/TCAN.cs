@@ -8,6 +8,9 @@ using instance;
 using System.IO;
 using System.Xml;
 using System.ComponentModel.Composition;
+
+//实现了iCan和iCanDevice中定义的成员与方法
+
 namespace TCAN
 {
 

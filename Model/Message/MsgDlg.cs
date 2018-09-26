@@ -55,8 +55,8 @@ namespace NeMessage
             //string msg = "ss";
             int intervalTime = 6000;
             MessageForm messageform = new MessageForm(title,msg, intervalTime) { ShowInTaskbar = false };
-            int x = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Width - messageform.Width;
-            int y = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Height;
+            int x = Screen.PrimaryScreen.WorkingArea.Width - messageform.Width;
+            int y = Screen.PrimaryScreen.WorkingArea.Height;
             Point p = new Point(x, y - messageform.Height);
             messageform.PointToScreen(p);
             messageform.Location = p;

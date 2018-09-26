@@ -10,3 +10,9 @@ E:\VSProject\iHIL0828\iHilBms\MEF\obj\Debug\MEF.csprojAssemblyReference.cache
 E:\VSProject\iHIL0828\iHilBms\MEF\obj\Debug\MEF.csproj.CoreCompileInputs.cache
 E:\VSProject\iHIL0828\iHilBms\MEF\obj\Debug\MEF.dll
 E:\VSProject\iHIL0828\iHilBms\MEF\obj\Debug\MEF.pdb
+F:\GitSync\IHIL\iHilBms\iHilBms\bin\Debug\MEF\MEF.dll
+F:\GitSync\IHIL\iHilBms\iHilBms\bin\Debug\MEF\MEF.pdb
+F:\GitSync\IHIL\iHilBms\MEF\obj\Debug\MEF.csprojAssemblyReference.cache
+F:\GitSync\IHIL\iHilBms\MEF\obj\Debug\MEF.csproj.CoreCompileInputs.cache
+F:\GitSync\IHIL\iHilBms\MEF\obj\Debug\MEF.dll
+F:\GitSync\IHIL\iHilBms\MEF\obj\Debug\MEF.pdb

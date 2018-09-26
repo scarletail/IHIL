@@ -17,3 +17,9 @@ E:\VSProject\iHIL0828\Instance\TOptions\obj\Debug\TOptions.csprojAssemblyReferen
 E:\VSProject\iHIL0828\Instance\TOptions\obj\Debug\TOptions.csproj.CoreCompileInputs.cache
 E:\VSProject\iHIL0828\Instance\TOptions\obj\Debug\TOptions.dll
 E:\VSProject\iHIL0828\Instance\TOptions\obj\Debug\TOptions.pdb
+F:\GitSync\IHIL\Instance\TOptions\bin\Debug\TOptions.dll
+F:\GitSync\IHIL\Instance\TOptions\bin\Debug\TOptions.pdb
+F:\GitSync\IHIL\Instance\TOptions\obj\Debug\TOptions.csprojAssemblyReference.cache
+F:\GitSync\IHIL\Instance\TOptions\obj\Debug\TOptions.csproj.CoreCompileInputs.cache
+F:\GitSync\IHIL\Instance\TOptions\obj\Debug\TOptions.dll
+F:\GitSync\IHIL\Instance\TOptions\obj\Debug\TOptions.pdb

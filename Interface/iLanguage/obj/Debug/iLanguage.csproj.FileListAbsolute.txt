@@ -14,3 +14,8 @@ E:\VSProject\iHIL0828\Interface\iLanguage\bin\Debug\iLanguage.pdb
 E:\VSProject\iHIL0828\Interface\iLanguage\obj\Debug\iLanguage.csproj.CoreCompileInputs.cache
 E:\VSProject\iHIL0828\Interface\iLanguage\obj\Debug\iLanguage.dll
 E:\VSProject\iHIL0828\Interface\iLanguage\obj\Debug\iLanguage.pdb
+F:\GitSync\IHIL\Interface\iLanguage\bin\Debug\iLanguage.dll
+F:\GitSync\IHIL\Interface\iLanguage\bin\Debug\iLanguage.pdb
+F:\GitSync\IHIL\Interface\iLanguage\obj\Debug\iLanguage.csproj.CoreCompileInputs.cache
+F:\GitSync\IHIL\Interface\iLanguage\obj\Debug\iLanguage.dll
+F:\GitSync\IHIL\Interface\iLanguage\obj\Debug\iLanguage.pdb

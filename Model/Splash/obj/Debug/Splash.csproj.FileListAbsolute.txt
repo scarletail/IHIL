@@ -15,3 +15,11 @@ E:\VSProject\iHIL0828\Model\Splash\obj\Debug\Splash.csproj.GenerateResource.cach
 E:\VSProject\iHIL0828\Model\Splash\obj\Debug\Splash.csproj.CoreCompileInputs.cache
 E:\VSProject\iHIL0828\Model\Splash\obj\Debug\Splash.dll
 E:\VSProject\iHIL0828\Model\Splash\obj\Debug\Splash.pdb
+F:\GitSync\IHIL\Model\Splash\bin\Debug\Splash.dll
+F:\GitSync\IHIL\Model\Splash\bin\Debug\Splash.pdb
+F:\GitSync\IHIL\Model\Splash\obj\Debug\Splash.csprojAssemblyReference.cache
+F:\GitSync\IHIL\Model\Splash\obj\Debug\NeSplash.Frmsplash.resources
+F:\GitSync\IHIL\Model\Splash\obj\Debug\Splash.csproj.GenerateResource.cache
+F:\GitSync\IHIL\Model\Splash\obj\Debug\Splash.csproj.CoreCompileInputs.cache
+F:\GitSync\IHIL\Model\Splash\obj\Debug\Splash.dll
+F:\GitSync\IHIL\Model\Splash\obj\Debug\Splash.pdb

@@ -7,3 +7,13 @@ E:\work\iHil\Instance\TLanguage\TLanguage\obj\Debug\TLanguage.dll
 E:\work\iHil\Instance\TLanguage\TLanguage\obj\Debug\TLanguage.pdb
 E:\VSProject\iHIL0828\Instance\TLanguage\TLanguage\obj\Debug\TLanguage.csprojAssemblyReference.cache
 E:\VSProject\iHIL0828\Instance\TLanguage\TLanguage\obj\Debug\TLanguage.csproj.CoreCompileInputs.cache
+F:\GitSync\IHIL\Instance\TLanguage\TLanguage\bin\Debug\TLanguage.dll
+F:\GitSync\IHIL\Instance\TLanguage\TLanguage\bin\Debug\TLanguage.pdb
+F:\GitSync\IHIL\Instance\TLanguage\TLanguage\bin\Debug\iLanguage.dll
+F:\GitSync\IHIL\Instance\TLanguage\TLanguage\bin\Debug\LiuQF.Common.dll
+F:\GitSync\IHIL\Instance\TLanguage\TLanguage\bin\Debug\ICommon.dll
+F:\GitSync\IHIL\Instance\TLanguage\TLanguage\obj\Debug\TLanguage.csprojAssemblyReference.cache
+F:\GitSync\IHIL\Instance\TLanguage\TLanguage\obj\Debug\TLanguage.csproj.CoreCompileInputs.cache
+F:\GitSync\IHIL\Instance\TLanguage\TLanguage\obj\Debug\TLanguage.csproj.CopyComplete
+F:\GitSync\IHIL\Instance\TLanguage\TLanguage\obj\Debug\TLanguage.dll
+F:\GitSync\IHIL\Instance\TLanguage\TLanguage\obj\Debug\TLanguage.pdb

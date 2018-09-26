@@ -7,8 +7,8 @@
     <ProjectGuid>{1D213BD7-06AB-4342-AD8E-D9CD58DFA50A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TCommuniationBase</RootNamespace>
-    <AssemblyName>TCommuniationBase</AssemblyName>
+    <RootNamespace>TCommunicationBase</RootNamespace>
+    <AssemblyName>TCommunicationBase</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -44,7 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TCommuniationBase.cs" />
+    <Compile Include="TCommunicationBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -8,3 +8,11 @@ E:\VSProject\iHIL0828\Model\Message\obj\Debug\Message.csproj.GenerateResource.ca
 E:\VSProject\iHIL0828\Model\Message\obj\Debug\Message.csproj.CoreCompileInputs.cache
 E:\VSProject\iHIL0828\Model\Message\obj\Debug\Message.dll
 E:\VSProject\iHIL0828\Model\Message\obj\Debug\Message.pdb
+F:\GitSync\IHIL\Model\Message\bin\Debug\Message.dll
+F:\GitSync\IHIL\Model\Message\bin\Debug\Message.pdb
+F:\GitSync\IHIL\Model\Message\obj\Debug\Message.csprojAssemblyReference.cache
+F:\GitSync\IHIL\Model\Message\obj\Debug\Message.MessageForm.resources
+F:\GitSync\IHIL\Model\Message\obj\Debug\Message.csproj.GenerateResource.cache
+F:\GitSync\IHIL\Model\Message\obj\Debug\Message.csproj.CoreCompileInputs.cache
+F:\GitSync\IHIL\Model\Message\obj\Debug\Message.dll
+F:\GitSync\IHIL\Model\Message\obj\Debug\Message.pdb

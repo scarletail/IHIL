@@ -42,14 +42,20 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="TCommuniationBase">
-      <HintPath>..\..\iHilBms\iHilBms\bin\Debug\Instance\TCommuniationBase.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="TBMS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Interface\iCommunicationBase\iCommunicationBase.csproj">
+      <Project>{d0ca54f2-0469-4fd6-abe6-47efe56cdb82}</Project>
+      <Name>iCommunicationBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TCommuniationBase\TCommunicationBase.csproj">
+      <Project>{1d213bd7-06ab-4342-ad8e-d9cd58dfa50a}</Project>
+      <Name>TCommunicationBase</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

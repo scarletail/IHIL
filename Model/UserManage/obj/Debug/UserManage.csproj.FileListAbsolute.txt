@@ -21,3 +21,12 @@ E:\VSProject\iHIL0828\Model\UserManage\obj\Debug\UserManage.csproj.GenerateResou
 E:\VSProject\iHIL0828\Model\UserManage\obj\Debug\UserManage.csproj.CoreCompileInputs.cache
 E:\VSProject\iHIL0828\Model\UserManage\obj\Debug\UserManage.dll
 E:\VSProject\iHIL0828\Model\UserManage\obj\Debug\UserManage.pdb
+F:\GitSync\IHIL\Model\UserManage\bin\Debug\UserManage.dll
+F:\GitSync\IHIL\Model\UserManage\bin\Debug\UserManage.pdb
+F:\GitSync\IHIL\Model\UserManage\obj\Debug\UserManage.csprojAssemblyReference.cache
+F:\GitSync\IHIL\Model\UserManage\obj\Debug\Nebule_login.FrmLogin.resources
+F:\GitSync\IHIL\Model\UserManage\obj\Debug\Nebula_People.FrmUsersManagement.resources
+F:\GitSync\IHIL\Model\UserManage\obj\Debug\UserManage.csproj.GenerateResource.cache
+F:\GitSync\IHIL\Model\UserManage\obj\Debug\UserManage.csproj.CoreCompileInputs.cache
+F:\GitSync\IHIL\Model\UserManage\obj\Debug\UserManage.dll
+F:\GitSync\IHIL\Model\UserManage\obj\Debug\UserManage.pdb

@@ -10,3 +10,9 @@ E:\VSProject\iHIL0828\Instance\TUser\obj\Debug\TUser.csprojAssemblyReference.cac
 E:\VSProject\iHIL0828\Instance\TUser\obj\Debug\TUser.csproj.CoreCompileInputs.cache
 E:\VSProject\iHIL0828\Instance\TUser\obj\Debug\TUser.dll
 E:\VSProject\iHIL0828\Instance\TUser\obj\Debug\TUser.pdb
+F:\GitSync\IHIL\Instance\TUser\bin\Debug\TUser.dll
+F:\GitSync\IHIL\Instance\TUser\bin\Debug\TUser.pdb
+F:\GitSync\IHIL\Instance\TUser\obj\Debug\TUser.csprojAssemblyReference.cache
+F:\GitSync\IHIL\Instance\TUser\obj\Debug\TUser.csproj.CoreCompileInputs.cache
+F:\GitSync\IHIL\Instance\TUser\obj\Debug\TUser.dll
+F:\GitSync\IHIL\Instance\TUser\obj\Debug\TUser.pdb

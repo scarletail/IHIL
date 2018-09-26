@@ -12,7 +12,6 @@ E:\VSProject\iHIL0828\Interface\iUser\obj\Debug\iUser.dll
 E:\VSProject\iHIL0828\Interface\iUser\obj\Debug\iUser.pdb
 F:\GitSync\IHIL\Interface\iUser\bin\Debug\iUser.dll
 F:\GitSync\IHIL\Interface\iUser\bin\Debug\iUser.pdb
-F:\GitSync\IHIL\Interface\iUser\obj\Debug\iUser.csprojAssemblyReference.cache
 F:\GitSync\IHIL\Interface\iUser\obj\Debug\iUser.csproj.CoreCompileInputs.cache
 F:\GitSync\IHIL\Interface\iUser\obj\Debug\iUser.dll
 F:\GitSync\IHIL\Interface\iUser\obj\Debug\iUser.pdb

@@ -16,3 +16,9 @@ E:\VSProject\iHIL0828\Interface\iComm\bin\Debug\iComm.pdb
 E:\VSProject\iHIL0828\Interface\iComm\obj\Debug\iComm.csproj.CoreCompileInputs.cache
 E:\VSProject\iHIL0828\Interface\iComm\obj\Debug\iComm.dll
 E:\VSProject\iHIL0828\Interface\iComm\obj\Debug\iComm.pdb
+F:\GitSync\IHIL\Interface\iComm\bin\Debug\iComm.dll
+F:\GitSync\IHIL\Interface\iComm\bin\Debug\iComm.pdb
+F:\GitSync\IHIL\Interface\iComm\obj\Debug\iComm.csprojAssemblyReference.cache
+F:\GitSync\IHIL\Interface\iComm\obj\Debug\iComm.csproj.CoreCompileInputs.cache
+F:\GitSync\IHIL\Interface\iComm\obj\Debug\iComm.dll
+F:\GitSync\IHIL\Interface\iComm\obj\Debug\iComm.pdb
