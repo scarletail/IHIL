@@ -6,5 +6,15 @@ E:\work\iHil\Instance\TCAN\obj\Debug\TCAN.dll
 E:\work\iHil\Instance\TCAN\obj\Debug\TCAN.pdb
 E:\VSProject\iHIL0828\Instance\TCAN\obj\Debug\TCAN.csprojAssemblyReference.cache
 E:\VSProject\iHIL0828\Instance\TCAN\obj\Debug\TCAN.csproj.CoreCompileInputs.cache
+F:\GitSync\IHIL\Instance\TCAN\bin\Debug\TCAN.dll
+F:\GitSync\IHIL\Instance\TCAN\bin\Debug\TCAN.pdb
+F:\GitSync\IHIL\Instance\TCAN\bin\Debug\iBms.dll
+F:\GitSync\IHIL\Instance\TCAN\bin\Debug\TBMS.dll
+F:\GitSync\IHIL\Instance\TCAN\bin\Debug\TCommunicationBase.dll
+F:\GitSync\IHIL\Instance\TCAN\bin\Debug\TBMS.pdb
+F:\GitSync\IHIL\Instance\TCAN\bin\Debug\TCommunicationBase.pdb
 F:\GitSync\IHIL\Instance\TCAN\obj\Debug\TCAN.csprojAssemblyReference.cache
 F:\GitSync\IHIL\Instance\TCAN\obj\Debug\TCAN.csproj.CoreCompileInputs.cache
+F:\GitSync\IHIL\Instance\TCAN\obj\Debug\TCAN.csproj.CopyComplete
+F:\GitSync\IHIL\Instance\TCAN\obj\Debug\TCAN.dll
+F:\GitSync\IHIL\Instance\TCAN\obj\Debug\TCAN.pdb

@@ -1,0 +1,9 @@
+F:\GitSync\IHIL\iHilBms\iXmlFunction\bin\Debug\iXmlFunction.dll
+F:\GitSync\IHIL\iHilBms\iXmlFunction\bin\Debug\iXmlFunction.pdb
+F:\GitSync\IHIL\iHilBms\iXmlFunction\bin\Debug\TSchem.dll
+F:\GitSync\IHIL\iHilBms\iXmlFunction\bin\Debug\TSchem.pdb
+F:\GitSync\IHIL\iHilBms\iXmlFunction\obj\Debug\iXmlFunction.csprojAssemblyReference.cache
+F:\GitSync\IHIL\iHilBms\iXmlFunction\obj\Debug\iXmlFunction.csproj.CoreCompileInputs.cache
+F:\GitSync\IHIL\iHilBms\iXmlFunction\obj\Debug\iXmlFunction.csproj.CopyComplete
+F:\GitSync\IHIL\iHilBms\iXmlFunction\obj\Debug\iXmlFunction.dll
+F:\GitSync\IHIL\iHilBms\iXmlFunction\obj\Debug\iXmlFunction.pdb

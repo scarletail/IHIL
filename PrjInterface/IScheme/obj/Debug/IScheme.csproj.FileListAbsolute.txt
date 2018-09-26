@@ -1,0 +1,11 @@
+E:\work\iHil\PrjInterface\IScheme\bin\Debug\IScheme.dll
+E:\work\iHil\PrjInterface\IScheme\bin\Debug\IScheme.pdb
+E:\work\iHil\PrjInterface\IScheme\obj\Debug\IScheme.dll
+E:\work\iHil\PrjInterface\IScheme\obj\Debug\IScheme.pdb
+E:\work\iHil\PrjInterface\IScheme\obj\Debug\IScheme.csprojResolveAssemblyReference.cache
+F:\GitSync\IHIL\PrjInterface\IScheme\bin\Debug\IScheme.dll
+F:\GitSync\IHIL\PrjInterface\IScheme\bin\Debug\IScheme.pdb
+F:\GitSync\IHIL\PrjInterface\IScheme\obj\Debug\IScheme.csprojAssemblyReference.cache
+F:\GitSync\IHIL\PrjInterface\IScheme\obj\Debug\IScheme.csproj.CoreCompileInputs.cache
+F:\GitSync\IHIL\PrjInterface\IScheme\obj\Debug\IScheme.dll
+F:\GitSync\IHIL\PrjInterface\IScheme\obj\Debug\IScheme.pdb

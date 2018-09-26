@@ -1,10 +1,10 @@
 E:\VSProject\iHIL0828\Instance\TEthernet\obj\Debug\TEthernet.csprojAssemblyReference.cache
 E:\VSProject\iHIL0828\Instance\TEthernet\obj\Debug\TEthernet.csproj.CoreCompileInputs.cache
+F:\GitSync\IHIL\Instance\TEthernet\obj\Debug\TEthernet.csprojAssemblyReference.cache
+F:\GitSync\IHIL\Instance\TEthernet\obj\Debug\TEthernet.csproj.CoreCompileInputs.cache
 F:\GitSync\IHIL\Instance\TEthernet\bin\Debug\TEthernet.dll
 F:\GitSync\IHIL\Instance\TEthernet\bin\Debug\TEthernet.pdb
 F:\GitSync\IHIL\Instance\TEthernet\bin\Debug\TCommuniationBase.dll
-F:\GitSync\IHIL\Instance\TEthernet\obj\Debug\TEthernet.csprojAssemblyReference.cache
-F:\GitSync\IHIL\Instance\TEthernet\obj\Debug\TEthernet.csproj.CoreCompileInputs.cache
 F:\GitSync\IHIL\Instance\TEthernet\obj\Debug\TEthernet.csproj.CopyComplete
 F:\GitSync\IHIL\Instance\TEthernet\obj\Debug\TEthernet.dll
 F:\GitSync\IHIL\Instance\TEthernet\obj\Debug\TEthernet.pdb

@@ -11,6 +11,5 @@ E:\VSProject\iHIL0828\Interface\ioptions\bin\Debug\ioptions.dll
 E:\VSProject\iHIL0828\Interface\ioptions\obj\Debug\iOptions.csproj.CoreCompileInputs.cache
 E:\VSProject\iHIL0828\Interface\ioptions\obj\Debug\ioptions.dll
 F:\GitSync\IHIL\Interface\ioptions\bin\Debug\ioptions.dll
-F:\GitSync\IHIL\Interface\ioptions\obj\Debug\iOptions.csprojAssemblyReference.cache
 F:\GitSync\IHIL\Interface\ioptions\obj\Debug\iOptions.csproj.CoreCompileInputs.cache
 F:\GitSync\IHIL\Interface\ioptions\obj\Debug\ioptions.dll

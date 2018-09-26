@@ -34,7 +34,7 @@
       <HintPath>..\..\..\iHilBms\iHilBms\bin\Debug\Interface\iLanguage.dll</HintPath>
     </Reference>
     <Reference Include="LiuQF.Common">
-      <HintPath>..\..\..\iHilBms\iHilBms\bin\Debug\LiuQF.Common.dll</HintPath>
+      <HintPath>..\..\..\iHilBms\iHilBms\bin\Debug\SysCommon\LiuQF.Common.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />

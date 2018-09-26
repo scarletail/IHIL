@@ -1,0 +1,11 @@
+F:\GitSync\IHIL\iHilBms\TXmlFunction\bin\Debug\TXmlFunction.dll
+F:\GitSync\IHIL\iHilBms\TXmlFunction\bin\Debug\TXmlFunction.pdb
+F:\GitSync\IHIL\iHilBms\TXmlFunction\bin\Debug\iXmlFunction.dll
+F:\GitSync\IHIL\iHilBms\TXmlFunction\bin\Debug\TSchem.dll
+F:\GitSync\IHIL\iHilBms\TXmlFunction\bin\Debug\iXmlFunction.pdb
+F:\GitSync\IHIL\iHilBms\TXmlFunction\bin\Debug\TSchem.pdb
+F:\GitSync\IHIL\iHilBms\TXmlFunction\obj\Debug\TXmlFunction.csprojAssemblyReference.cache
+F:\GitSync\IHIL\iHilBms\TXmlFunction\obj\Debug\TXmlFunction.csproj.CoreCompileInputs.cache
+F:\GitSync\IHIL\iHilBms\TXmlFunction\obj\Debug\TXmlFunction.csproj.CopyComplete
+F:\GitSync\IHIL\iHilBms\TXmlFunction\obj\Debug\TXmlFunction.dll
+F:\GitSync\IHIL\iHilBms\TXmlFunction\obj\Debug\TXmlFunction.pdb

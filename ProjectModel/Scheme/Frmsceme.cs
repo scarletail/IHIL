@@ -2,12 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using DevExpress.XtraTreeList.Nodes;
-using DevExpress.XtraTreeList;
 using System.IO;
+using Model;
+using DevExpress.XtraTreeList;
+using DevExpress.XtraTreeList.Nodes;
+using System.ComponentModel.Composition;
+using MEF;
+using HilInterface;
 
 namespace Scheme
 {
+
+    
     public partial class Frmsceme : Form
     {
         private string schemeTopPath;
@@ -15,16 +21,20 @@ namespace Scheme
         private string hiddenEditorType = null;
         private TSchem CurrentTSchem;
         private bool SaveMode;
-        private FileRW frw;
-        private XMLFunction XmlFunc;
+        private TFileRW.TFileRW frw;
+        private TXmlFunction.TXmlFunction XmlFunc;
         private DevExpress.XtraGrid.Views.Grid.GridView CurrentgridView = null;
 
         public Frmsceme()
         {
             CurrentTSchem = new TSchem();
             SaveMode = false;
-            frw = new FileRW();
-            XmlFunc = new XMLFunction();
+            frw = new TFileRW.TFileRW();
+            XmlFunc = new TXmlFunction.TXmlFunction();
+            //Instance
+            //ISchemeManage FSchemeManage;
+            //CreateNewDllInstance gll = new CreateNewDllInstance(Application.StartupPath + @"\\PrjInstance");
+            //FSchemeManage = gll.CreateByContainer<ISchemeManage>("TSchemeManage");
             InitializeComponent();
             schemeTopPath = Application.StartupPath + @"\category";
         }
@@ -32,14 +42,29 @@ namespace Scheme
         {
             schemeTopPath = spath;
         }
+        /// <summary>
+        /// 移除当前焦点所在的treelistnode所代表的文件夹
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             frw.RemoveFolder(ref treeClass);
         }
+        /// <summary>
+        /// 在treeclass中添加一个代表文件夹的treelistnode
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             frw.ImportFolder(ref treeClass);
         }
+        /// <summary>
+        /// 界面加载时进行的初始化操作
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Frmsceme_Load(object sender, EventArgs e)
         {
             ToolHeight();
@@ -50,6 +75,9 @@ namespace Scheme
             treeClass.FocusedNode = FileNode;
             frw.TraverseFile(ref treeClass, ref treeFile);
         }
+        /// <summary>
+        /// 控件高度设置
+        /// </summary>
         private void ToolHeight()
         {
             scemePanel.Height = toolboxControl1.Height - 39;
@@ -58,10 +86,20 @@ namespace Scheme
         {
             ToolHeight();
         }
+        /// <summary>
+        /// 调用FileRW中的方法，当treeClass中代表文件夹的焦点改变时，重新加载treeFile中的文件节点
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void treeClass_FocusedNodeChanged(object sender, FocusedNodeChangedEventArgs e)
         {
             frw.TraverseFile(ref treeClass, ref treeFile);
         }
+        /// <summary>
+        /// 添加一个新的文件节点，调用ShowEditor方法，提供修改文件名的编辑框
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddclass_Click(object sender, EventArgs e)
         {
             try
@@ -81,16 +119,31 @@ namespace Scheme
             }
 
         }
+        /// <summary>
+        /// 编辑框关闭之后调用此方法，根据hiddenEditorType属性判断是“新建文件”还是“修改文件名”
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void treeFile_HiddenEditor(object sender, EventArgs e)
         {
             frw.FileNameEditorHidden(ref hiddenEditorType, ref treeFile, ref treeClass);
             //reload the file list after hidden editor
             frw.TraverseFile(ref treeClass, ref treeFile);
         }
+        /// <summary>
+        /// 删除treeFile中获得焦点的treelistnode所代表的的节点
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDelClass_Click(object sender, EventArgs e)
         {
             frw.DeleteFile(ref treeFile);
         }
+        /// <summary>
+        /// 提供保存文件的对话框
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void simpleButton4_Click(object sender, EventArgs e)
         {
             SaveFileDialog dialog = new SaveFileDialog();
@@ -105,6 +158,11 @@ namespace Scheme
                 frw.TraverseFile(ref treeClass, ref treeFile);
             }
         }
+        /// <summary>
+        /// 使选中的代表文件的节点激活编辑框，用于文件重命名
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnReName_Click(object sender, EventArgs e)
         {
             TreeListNode fileNode = treeFile.FocusedNode;
@@ -113,6 +171,11 @@ namespace Scheme
             hiddenEditorType = "renameFile";
             treeFile.ShowEditor();
         }
+        /// <summary>
+        /// 调用Explorer进程打开文件所在的文件夹
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Show_in_explorer_Click(object sender, EventArgs e)
         {
             TreeListNode fileNode = treeFile.FocusedNode;
@@ -121,6 +184,11 @@ namespace Scheme
                 System.Diagnostics.Process.Start("Explorer", "/select," + fileNode.Tag.ToString());
             }
         }
+        /// <summary>
+        /// 打开获得焦点的结点所代表的文件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Open_Click(object sender, EventArgs e)
         {
             TreeListNode fileNode = treeFile.FocusedNode;
@@ -146,6 +214,9 @@ namespace Scheme
                 return;
             }
         }
+        /// <summary>
+        /// 根据当前反序列化类设置所有界面的相关值
+        /// </summary>
         private void setAllPage()
         {
             SaveMode = false;
@@ -188,6 +259,9 @@ namespace Scheme
             SaveMode = true;
 
         }
+        /// <summary>
+        /// 设置Test project控件的值
+        /// </summary>
         private void setTestProj()
         {
             List<TStep> steps = CurrentTSchem.StepList.TSteps;
@@ -195,6 +269,10 @@ namespace Scheme
             bs.DataSource = steps;
             gridControlTest.DataSource = bs;
         }
+        /// <summary>
+        /// 设置project cmd的值
+        /// </summary>
+        /// <param name="list"></param>
         private void setProjCMD(cmdList list)
         {
             List<TCMD> tCMDs = list.TCMDs;
@@ -202,18 +280,29 @@ namespace Scheme
             bs.DataSource = tCMDs;
             gridControlProject.DataSource = bs;
         }
+        /// <summary>
+        /// 设置result judge的值
+        /// </summary>
+        /// <param name="tcmd"></param>
         private void SetResJug(TCMD tcmd)
         {
             BindingSource bs = new BindingSource();
             bs.DataSource = tcmd.Judgelist.tconditions;
             gridControlJudge.DataSource = bs;
         }
+        /// <summary>
+        /// 设置 save list的值
+        /// </summary>
+        /// <param name="tcmd"></param>
         private void SetSvList(TCMD tcmd)
         {
             BindingSource bs = new BindingSource();
             bs.DataSource = tcmd.Setlist.TConditions;
             gridControlSave.DataSource = bs;
         }
+        /// <summary>
+        /// 根据界面上所有的值更新TSchem类相关成员
+        /// </summary>
         private void GetAllPage()
         {
             if (CurrentTSchem == null) return;
@@ -242,6 +331,10 @@ namespace Scheme
             CurrentTSchem.SetEthList.TSetEths[0].Port = TEPortOne1.Text;
             CurrentTSchem.SetEthList.TSetEths[1].Port = TEPortOne2.Text;
         }
+        /// <summary>
+        /// 刷新界面
+        /// </summary>
+        /// <param name="gridView"></param>
         private void RefreshPage(ref DevExpress.XtraGrid.Views.Grid.GridView gridView)
         {
             int handle = gridView.GetSelectedRows()[0];
@@ -250,6 +343,11 @@ namespace Scheme
             gridView.GridControl.DataSource = bs;
             gridView.SelectRow(handle);
         }
+        /// <summary>
+        /// 部分选择文件按钮的点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void beditCan0_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             FileInfo info = frw.GetFile();
@@ -322,6 +420,12 @@ namespace Scheme
                 buttonEdit2.Text = "";
             }
         }
+
+        /// <summary>
+        /// 焦点改变之后更新数据源
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void gridView3_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             TStep nextTstep = new TStep();
@@ -347,6 +451,11 @@ namespace Scheme
             SetSvList(nextTCMD);
             SetResJug(nextTCMD);
         }
+        /// <summary>
+        /// 控件上的值改变之后更新数据源
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void gridView3_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             SaveToFile();
@@ -382,6 +491,11 @@ namespace Scheme
             SaveToFile();
         }
          
+        /// <summary>
+        /// 弹出鼠标右键菜单
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void gridView6_MouseUp(object sender, MouseEventArgs e)
         {
             ShowMenu(ref gridView6, sender, e);
@@ -411,6 +525,11 @@ namespace Scheme
             ShowMenu(ref gridView7, sender, e);
         }
 
+        /// <summary>
+        /// 实现右键菜单功能
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void toolStripMenuItemAdd_Click(object sender, EventArgs e)
         {
             if (CurrentgridView == null) return;
@@ -494,6 +613,9 @@ namespace Scheme
             CurrentgridView.SelectRow(i);
         }
 
+        /// <summary>
+        /// 保存文件
+        /// </summary>
         private void SaveToFile()
         {
             if (!SaveMode) return;
@@ -510,6 +632,12 @@ namespace Scheme
                 MessageBox.Show(ex.ToString(), "Error!");
             }
         }
+        /// <summary>
+        /// 设置右键菜单的可用逻辑
+        /// </summary>
+        /// <param name="gridView"></param>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ShowMenu(ref DevExpress.XtraGrid.Views.Grid.GridView gridView, object sender, MouseEventArgs e)
         {
             DevExpress.XtraGrid.Views.Grid.ViewInfo.GridHitInfo hitinfo = gridView.CalcHitInfo(e.Location);
@@ -544,6 +672,12 @@ namespace Scheme
             }
         }
 
+
+        /// <summary>
+        /// 监控鼠标所在位置
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void gridControlTest_MouseEnter(object sender, EventArgs e)
         {
             CurrentgridView = (DevExpress.XtraGrid.Views.Grid.GridView)gridControlTest.FocusedView;
@@ -576,8 +710,6 @@ namespace Scheme
         {
             CurrentgridView = (DevExpress.XtraGrid.Views.Grid.GridView)gridControlSetCMD.FocusedView;
         }
-
-
 
     }
 

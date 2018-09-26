@@ -135,6 +135,13 @@ E:\VSProject\iHIL0828\iHilBms\iHilBms\obj\Debug\iHilBms.csproj.CoreCompileInputs
 E:\VSProject\iHIL0828\iHilBms\iHilBms\obj\Debug\iHilBms.csproj.CopyComplete
 E:\VSProject\iHIL0828\iHilBms\iHilBms\obj\Debug\iHilBms.exe
 E:\VSProject\iHIL0828\iHilBms\iHilBms\obj\Debug\iHilBms.pdb
+F:\GitSync\IHIL\iHilBms\iHilBms\obj\Debug\iHilBms.csprojAssemblyReference.cache
+F:\GitSync\IHIL\iHilBms\iHilBms\obj\Debug\iHilBms.iFrom.FrmMain.resources
+F:\GitSync\IHIL\iHilBms\iHilBms\obj\Debug\iHilBms.iFrom.FrmOptions.resources
+F:\GitSync\IHIL\iHilBms\iHilBms\obj\Debug\iHilBms.iFrom.FrmTest.resources
+F:\GitSync\IHIL\iHilBms\iHilBms\obj\Debug\iHilBms.Properties.Resources.resources
+F:\GitSync\IHIL\iHilBms\iHilBms\obj\Debug\iHilBms.csproj.GenerateResource.cache
+F:\GitSync\IHIL\iHilBms\iHilBms\obj\Debug\iHilBms.csproj.CoreCompileInputs.cache
 F:\GitSync\IHIL\iHilBms\iHilBms\bin\Debug\iHilBms.exe.config
 F:\GitSync\IHIL\iHilBms\iHilBms\bin\Debug\iHilBms.exe
 F:\GitSync\IHIL\iHilBms\iHilBms\bin\Debug\iHilBms.pdb
@@ -247,13 +254,6 @@ F:\GitSync\IHIL\iHilBms\iHilBms\bin\Debug\de\DevExpress.XtraTreeList.v18.1.resou
 F:\GitSync\IHIL\iHilBms\iHilBms\bin\Debug\es\DevExpress.XtraTreeList.v18.1.resources.dll
 F:\GitSync\IHIL\iHilBms\iHilBms\bin\Debug\ja\DevExpress.XtraTreeList.v18.1.resources.dll
 F:\GitSync\IHIL\iHilBms\iHilBms\bin\Debug\ru\DevExpress.XtraTreeList.v18.1.resources.dll
-F:\GitSync\IHIL\iHilBms\iHilBms\obj\Debug\iHilBms.csprojAssemblyReference.cache
-F:\GitSync\IHIL\iHilBms\iHilBms\obj\Debug\iHilBms.iFrom.FrmMain.resources
-F:\GitSync\IHIL\iHilBms\iHilBms\obj\Debug\iHilBms.iFrom.FrmOptions.resources
-F:\GitSync\IHIL\iHilBms\iHilBms\obj\Debug\iHilBms.iFrom.FrmTest.resources
-F:\GitSync\IHIL\iHilBms\iHilBms\obj\Debug\iHilBms.Properties.Resources.resources
-F:\GitSync\IHIL\iHilBms\iHilBms\obj\Debug\iHilBms.csproj.GenerateResource.cache
-F:\GitSync\IHIL\iHilBms\iHilBms\obj\Debug\iHilBms.csproj.CoreCompileInputs.cache
 F:\GitSync\IHIL\iHilBms\iHilBms\obj\Debug\iHilBms.csproj.CopyComplete
 F:\GitSync\IHIL\iHilBms\iHilBms\obj\Debug\iHilBms.exe
 F:\GitSync\IHIL\iHilBms\iHilBms\obj\Debug\iHilBms.pdb

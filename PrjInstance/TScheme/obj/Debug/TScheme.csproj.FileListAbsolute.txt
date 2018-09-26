@@ -1,0 +1,13 @@
+E:\work\iHil\PrjInstance\TScheme\bin\Debug\TScheme.dll
+E:\work\iHil\PrjInstance\TScheme\bin\Debug\TScheme.pdb
+E:\work\iHil\PrjInstance\TScheme\obj\Debug\TScheme.dll
+E:\work\iHil\PrjInstance\TScheme\obj\Debug\TScheme.pdb
+E:\work\iHil\PrjInstance\TScheme\obj\Debug\TScheme.csprojResolveAssemblyReference.cache
+E:\work\iHil\PrjInstance\TScheme\bin\Debug\IScheme.dll
+F:\GitSync\IHIL\PrjInstance\TScheme\bin\Debug\TScheme.dll
+F:\GitSync\IHIL\PrjInstance\TScheme\bin\Debug\TScheme.pdb
+F:\GitSync\IHIL\PrjInstance\TScheme\obj\Debug\TScheme.csprojAssemblyReference.cache
+F:\GitSync\IHIL\PrjInstance\TScheme\obj\Debug\TScheme.csproj.CoreCompileInputs.cache
+F:\GitSync\IHIL\PrjInstance\TScheme\obj\Debug\TScheme.csproj.CopyComplete
+F:\GitSync\IHIL\PrjInstance\TScheme\obj\Debug\TScheme.dll
+F:\GitSync\IHIL\PrjInstance\TScheme\obj\Debug\TScheme.pdb

@@ -18,8 +18,8 @@ E:\VSProject\iHIL0828\Interface\iBms\obj\Debug\iBms.pdb
 F:\GitSync\IHIL\Interface\iBms\bin\Debug\iBms.dll
 F:\GitSync\IHIL\Interface\iBms\bin\Debug\iBms.pdb
 F:\GitSync\IHIL\Interface\iBms\bin\Debug\iCommunicationBase.dll
-F:\GitSync\IHIL\Interface\iBms\obj\Debug\iBms.csprojAssemblyReference.cache
 F:\GitSync\IHIL\Interface\iBms\obj\Debug\iBms.csproj.CoreCompileInputs.cache
 F:\GitSync\IHIL\Interface\iBms\obj\Debug\iBms.csproj.CopyComplete
 F:\GitSync\IHIL\Interface\iBms\obj\Debug\iBms.dll
 F:\GitSync\IHIL\Interface\iBms\obj\Debug\iBms.pdb
+F:\GitSync\IHIL\Interface\iBms\obj\Debug\iBms.csprojAssemblyReference.cache

@@ -9,6 +9,7 @@ E:\VSProject\iHIL0828\Instance\TComm\obj\Debug\TComm.pdb
 F:\GitSync\IHIL\Instance\TComm\bin\Debug\TComm.dll
 F:\GitSync\IHIL\Instance\TComm\bin\Debug\TComm.pdb
 F:\GitSync\IHIL\Instance\TComm\bin\Debug\iComm.dll
+F:\GitSync\IHIL\Instance\TComm\obj\Debug\TComm.csprojAssemblyReference.cache
 F:\GitSync\IHIL\Instance\TComm\obj\Debug\TComm.csproj.CoreCompileInputs.cache
 F:\GitSync\IHIL\Instance\TComm\obj\Debug\TComm.csproj.CopyComplete
 F:\GitSync\IHIL\Instance\TComm\obj\Debug\TComm.dll

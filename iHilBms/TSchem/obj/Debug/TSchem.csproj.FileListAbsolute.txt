@@ -1,0 +1,6 @@
+F:\GitSync\IHIL\iHilBms\TSchem\bin\Debug\TSchem.dll
+F:\GitSync\IHIL\iHilBms\TSchem\bin\Debug\TSchem.pdb
+F:\GitSync\IHIL\iHilBms\TSchem\obj\Debug\TSchem.csproj.CoreCompileInputs.cache
+F:\GitSync\IHIL\iHilBms\TSchem\obj\Debug\TSchem.dll
+F:\GitSync\IHIL\iHilBms\TSchem\obj\Debug\TSchem.pdb
+F:\GitSync\IHIL\iHilBms\TSchem\obj\Debug\TSchem.csprojAssemblyReference.cache
