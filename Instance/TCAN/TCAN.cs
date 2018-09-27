@@ -14,8 +14,6 @@ using System.ComponentModel.Composition;
 namespace TCAN
 {
 
-
-
     [Export("TCan", typeof(iCan))]
     [PartCreationPolicy(CreationPolicy.NonShared)] 
     /// <summary>
@@ -33,6 +31,7 @@ namespace TCAN
         /// </summary>
         private string agreementFile;
         private XmlDocument xDoc = new XmlDocument();
+        //在调用AgreementFile的set方法时将尝试从文件加载bms的子结点，并存放至CanBwList（按照TBMS的定义，应该代表的是采集到的CAN报文） @Deer
         public string AgreementFile
         {
             get
@@ -63,6 +62,7 @@ namespace TCAN
         /// <returns>正常为TRUE</returns>
         public bool StartCan(int Baut)
         {
+            //这部分函数的相关功能实现应该是和硬件相关，等待后续完善 @Deer
             return true;
         }
         /// <summary>
@@ -71,8 +71,12 @@ namespace TCAN
         /// <returns>成功主TRUE</returns>
         public bool StopCan()
         {
+            //同上 @Deer
             return true;
         }
+
+        //以下函数声称的对应变量应该是指采集到的CAN报文 @Deer
+
         /// <summary>
         /// 根据变量名，获取对应变量的值
         /// </summary>
@@ -117,7 +121,7 @@ namespace TCAN
         {
 
             iCANID reCanid= CanBwList.Find( t  => ((iCANID)t).CANName  == sName   );
-
+            //返回的实际上是继承了该接口的对象，即"TCANID" @Deer
             return reCanid;
 
         }

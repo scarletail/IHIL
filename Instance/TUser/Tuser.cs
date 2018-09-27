@@ -17,7 +17,7 @@ namespace instance
 
     [Export("TLoginUser", typeof(ILoginUser))]
     [PartCreationPolicy(CreationPolicy.NonShared)]  
-
+    //存放登录用户的信息 @Deer
     public class TLoginUser : ILoginUser
     {
         string loginName;

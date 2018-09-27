@@ -20,6 +20,7 @@ namespace TEthernet
         //其他的属性,待定义
         public void CaseNode(XmlNode EthNode)
         {
+            //调用父类的CaseNode方法 @Deer
             base.CaseNode( EthNode);
             
             //其他的继续实例
@@ -34,6 +35,7 @@ namespace TEthernet
     public class TEthCmd :iEthCmd
     {
         XmlElement fileNodeXe;
+        //类似于CAN报文，以太网报文同样是发送列表和接收列表 @Deer
         private List<TEthVariables> sendList = new List<TEthVariables>();
         private List<TEthVariables> receList = new List<TEthVariables>();
         //<cmd caption="VOLT" id="VOLT" sendlen="0" recelen="0" waittime="0" isreturnval="0" checktype="CRLF" submethod="Sub">

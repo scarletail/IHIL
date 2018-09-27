@@ -16,7 +16,7 @@ namespace HILInstance
    [Export("TSchemeManage", typeof(ISchemeManage))]
    [PartCreationPolicy(CreationPolicy.NonShared)]
 
-
+   //提供了部分属性以及序列化反序列化的方法 @Deer
     public class TSchemeManage:ISchemeManage
     {
         private string schemeFile;

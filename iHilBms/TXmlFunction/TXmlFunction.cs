@@ -16,6 +16,11 @@ namespace TXmlFunction
     [PartCreationPolicy(CreationPolicy.NonShared)]
     public class TXmlFunction:iXmlFunction
     {
+        /// <summary>
+        /// 反序列化方式读取xml文件
+        /// </summary>
+        /// <param name="path">文件路径</param>
+        /// <param name="schem">引用传递全局的TSchem类作为赋值对象</param>
         public void LoadXml(string path, ref TSchem schem)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(TSchem));
@@ -24,6 +29,11 @@ namespace TXmlFunction
             schem = (TSchem)serializer.Deserialize(reader);
             fs1.Close();
         }
+        /// <summary>
+        /// 将TSchem类序列化为xml文件并保存
+        /// </summary>
+        /// <param name="path">文件保存路径</param>
+        /// <param name="schem">待序列化的类</param>
         public void SaveXml(string path, TSchem schem)
         {
             XmlSerializer xs = new XmlSerializer(schem.GetType());

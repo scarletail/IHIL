@@ -7,9 +7,10 @@ using iinterface;
 using instance;
 namespace TComm
 {
+    //该类中方法均未实现，处于待完善状态 @Deer
     public class TCommVariables : TCommuniationBase,iCommVariables
     {
-
+        //继承了一个类和一个接口，却并未实现相关成员 @Deer
     }
     public class TComm:iComm
     {

@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 namespace VerticalProgressBar
 {
+    //不知道是干什么的 @Deer
     public class VerticalProgressBar : ProgressBar
     {
         get

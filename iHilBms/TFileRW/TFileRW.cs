@@ -16,6 +16,11 @@ namespace TFileRW
     [PartCreationPolicy(CreationPolicy.NonShared)]
     public class TFileRW: iFileRW
     {
+        /// <summary>
+        /// 遍历文件夹
+        /// </summary>
+        /// <param name="ParentNode">文件夹父节点</param>
+        /// <param name="treeClass">引用传递treeClass控件句柄</param>
         public void TraverseFolder(TreeListNode ParentNode, ref TreeList treeClass)
         {
             if (ParentNode.Tag == null) return;
@@ -30,6 +35,10 @@ namespace TFileRW
                 TraverseFolder(ChildNode, ref treeClass);
             }
         }
+        /// <summary>
+        /// 移除当前获得焦点的结点对应的文件夹
+        /// </summary>
+        /// <param name="treeClass">文件夹列表控件的引用传递</param>
         public void RemoveFolder(ref TreeList treeClass)
         {
             if (treeClass.FocusedNode == null)
@@ -39,6 +48,11 @@ namespace TFileRW
             }
             treeClass.FocusedNode.Remove();
         }
+        /// <summary>
+        /// 遍历文件夹下的文件
+        /// </summary>
+        /// <param name="treeClass">文件夹列表控件的引用传递</param>
+        /// <param name="treeFile">文件列表控件的引用传递</param>
         public void TraverseFile(ref TreeList treeClass, ref TreeList treeFile)
         {
             if (treeFile.AllNodesCount != 0) treeFile.ClearNodes();
@@ -62,6 +76,10 @@ namespace TFileRW
                 return;
             }
         }
+        /// <summary>
+        /// 导入文件夹
+        /// </summary>
+        /// <param name="treeClass">文件夹列表控件的引用传递</param>
         public void ImportFolder(ref TreeList treeClass)
         {
             FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
@@ -78,6 +96,10 @@ namespace TFileRW
                 treeClass.Columns["FolderName"].SortOrder = SortOrder.Ascending;
             }
         }
+        /// <summary>
+        /// 删除文件结点及文件
+        /// </summary>
+        /// <param name="treeFile">文件列表控件的引用传递</param>
         public void DeleteFile(ref TreeList treeFile)
         {
             try
@@ -96,6 +118,11 @@ namespace TFileRW
                 return;
             }
         }
+        /// <summary>
+        /// 保存文件
+        /// </summary>
+        /// <param name="schem">存储测试相关信息的类</param>
+        /// <param name="path">文件保存路径</param>
         public void SaveFile(TSchem schem, string path)
         {
             try
@@ -115,6 +142,12 @@ namespace TFileRW
                 MessageBox.Show(ex.ToString(), "Error");
             }
         }
+        /// <summary>
+        /// 编辑框关闭之后调用此方法完成后续工作
+        /// </summary>
+        /// <param name="hiddenEditorType">编辑类型"addFile"或"renameFile"</param>
+        /// <param name="treeFile">文件列表控件的引用传递</param>
+        /// <param name="treeClass">文件夹列表控件的引用传递</param>
         public void FileNameEditorHidden(ref string hiddenEditorType, ref TreeList treeFile, ref TreeList treeClass)
         {
             if (hiddenEditorType == "addFile")
@@ -179,6 +212,10 @@ namespace TFileRW
                 return;
             }
         }
+        /// <summary>
+        /// 获取文件信息
+        /// </summary>
+        /// <returns>文件信息</returns>
         public FileInfo GetFile()
         {
             OpenFileDialog dialog = new OpenFileDialog();

@@ -12,7 +12,7 @@ using System.Xml;
 namespace instance
 {
     [Export("TCommunicationBase", typeof(iCommunicationBase))]
-    [PartCreationPolicy(CreationPolicy.NonShared)]  
+    [PartCreationPolicy(CreationPolicy.NonShared)]
     public class TCommunicationBase : iCommunicationBase
     {
         public XmlElement FileNodeXe { get; set; }
@@ -20,9 +20,10 @@ namespace instance
         /// 变量名称
         /// </summary>
         private string varName;
-        public string VarName 
-        { get 
-            {return varName;}
+        public string VarName
+        {
+            get
+            { return varName; }
             set
             {
                 varName = value;
@@ -34,9 +35,10 @@ namespace instance
         /// 变量显示值
         /// </summary>
         private string varCaption;
-        public string VarCaption 
-        { get 
-            {return varCaption;}
+        public string VarCaption
+        {
+            get
+            { return varCaption; }
             set
             {
                 varCaption = value;
@@ -78,15 +80,14 @@ namespace instance
 
             }
         }
-
-
+        //在调用类成员set方法时均对FileNodeXe中的对应Attribute进行赋值，但是遗漏了"varUnit"和"prev" @Deer
+        //CaseNode方法中将filenode的引用传递给FileNodeXe，并提取相关属性赋值给类中成员 @Deer
         public void CaseNode(XmlNode filenode)
         {
-            FileNodeXe = (XmlElement) filenode;
+            FileNodeXe = (XmlElement)filenode;
             varName = FileNodeXe.GetAttribute("id");
             varCaption = FileNodeXe.GetAttribute("caption");
             varUnit = FileNodeXe.GetAttribute("unit");
-
         }
 
     }

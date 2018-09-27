@@ -102,13 +102,13 @@ namespace instance
             }
         }
         //系统自动生成 @Deer
+        //继承自TCommunicationBase @Deer
         public string VarUnit { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string VarValue { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string Prev { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
 
         //CaseNode方法中已将VarUnit,VarValue,Prev的实例化加入 @Deer
-        //该方法中定义的成员与0904.hil中格式不符，无法确定最终格式 @Deer
         public void CaseNode(XmlNode iVarible)
         {
             base.CaseNode(iVarible);
@@ -126,13 +126,12 @@ namespace instance
 
     }
 
-
-
     [Export("TCANID", typeof(iCANID))]
     [PartCreationPolicy(CreationPolicy.NonShared)]
     /// <summary>
     /// CAN的报文
     /// </summary>
+    //该类对应接收的报文结点
     public class TCANID : iCANID
     {
         private List<TCANVarible> CanBlList = new List<TCANVarible>();
@@ -171,8 +170,6 @@ namespace instance
         /// 报文备注
         /// </summary>
         public string CANMemo { get; set; }
-
-
         public iCANVariables FindByIndex(int idx)
         {
             return CanBlList[idx];
@@ -207,7 +204,7 @@ namespace instance
         }
     }
 
-    //TSendCAN尚未确定对应的功能实现 @Deer
+    //该类对应发送的报文结点 @Deer
     public class TSendCAN
     {
         private XmlNode fileNode;
@@ -264,12 +261,17 @@ namespace instance
         }
     }
 
+    //TBMS类应该是用于保存接收和发送CAN报文相关信息，并提供相关的方法成员函数 @Deer
     public class TBMS
     {
+        //CanBwList对应的是采集的CAN报文 @Deer
         private List<TCANID> CanBwList = new List<TCANID>();
+        //SendCanList对应的是发送的CAN报文 @Deer
         private List<TSendCAN> SendCanList = new List<TSendCAN>();
         private string fileName;
         private XmlDocument xdoc = new XmlDocument();
+        //当调用Filename的set方法时，将尝试从Filename所存储的文件路径处加载xml文件 @Deer
+        //并调用Case和CaseSend方法获取指定结点数据 @Deer
         public string FileName
         {
             get
@@ -283,7 +285,10 @@ namespace instance
                 {
                     xdoc.Load(fileName);
                     //0904.hil文件中尚未定义与sendbms和bms相关的XMLNode,BMS相关报文应该是采用另外的格式 @Deer
+                    //xdoc已经代表xml文档的根元素，或许此处不应再加".OwnerDocument"? @Deer
+                    //Case方法是将名为"bms"结点的子结点信息赋给CanBwList，即采集的CAN报文 @Deer
                     Case(xdoc.OwnerDocument.SelectSingleNode("bms"));
+                    //CaseSend方法是将名为"sendbms"结点的子结点信息赋给SendCanList，即发送的CAN报文 @Deer
                     CaseSend(xdoc.OwnerDocument.SelectSingleNode("sendbms"));
                 }
             }
@@ -344,3 +349,4 @@ namespace instance
     }
 
 }
+//其它：TBMS类并未采用序列化反序列化的方式读写xml文件，而是采取结点化的形式。
